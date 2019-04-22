@@ -1,0 +1,22 @@
+<ParaGroup>
+ <Dimensions>
+  <Param Name="TurnAngle" Min="-3.1414001" Max="3.1415" Cells="9" locked="1"/>
+ </Dimensions>
+ <ExampleList>
+  <Example SetPara0="-3.1415915" AName="barb_1hnd_com_idle_turn_180_right_01"/>
+  <Example SetPara0="-1.5707961" AName="barb_1hnd_com_idle_turn_90_right_01"/>
+  <Example SetPara0="-0.80007124" AName="barb_1hnd_com_idle_turn_45_right_01"/>
+  <Example SetPara0="2.8421716e-014" AName="barb_1hnd_com_idle_Lf_01"/>
+  <Example SetPara0="0.78147221" AName="barb_1hnd_com_idle_turn_45_left_01"/>
+  <Example SetPara0="1.5707955" AName="barb_1hnd_com_idle_turn_90_left_01"/>
+  <Example SetPara0="3.1442049" AName="barb_1hnd_com_idle_turn_180_left_01"/>
+ </ExampleList>
+ <Blendable>
+  <Face p0="0" p1="1"/>
+  <Face p0="1" p1="2"/>
+  <Face p0="2" p1="3"/>
+  <Face p0="3" p1="4"/>
+  <Face p0="4" p1="5"/>
+  <Face p0="5" p1="6"/>
+ </Blendable>
+</ParaGroup>

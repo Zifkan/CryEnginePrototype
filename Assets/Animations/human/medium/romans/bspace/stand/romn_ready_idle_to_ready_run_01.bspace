@@ -1,0 +1,32 @@
+<ParaGroup>
+  <Dimensions>
+    <Param name="TurnAngle" min="-3.1415" max="+3.1415" cells="9" locked="1"/>
+  </Dimensions>
+  
+  <AdditionalExtraction>
+    <Param name="MoveSpeed" />
+  </AdditionalExtraction>
+  
+  <ExampleList>
+    <Example SetPara0="-3.1415" AName="romn_ready_idle_into_ready_run_rgt_180_01"/>
+    <Example SetPara0="-2.3562" AName="romn_ready_idle_into_ready_run_rgt_135_01"/>
+    <Example SetPara0="-1.5708" AName="romn_ready_idle_into_ready_run_rgt_90_01"/>
+    <Example SetPara0="-0.7854" AName="romn_ready_idle_into_ready_run_rgt_45_01"/>
+    <Example SetPara0="-0.0000" AName="romn_ready_idle_into_ready_run_lft_0_01"/>
+    <Example SetPara0="0.7854"  AName="romn_ready_idle_into_ready_run_lft_45_01"/>
+    <Example SetPara0="1.5708"  AName="romn_ready_idle_into_ready_run_lft_90_01"/>
+    <Example SetPara0="2.3562"  AName="romn_ready_idle_into_ready_run_lft_135_01"/>
+    <Example SetPara0="3.1415"  AName="romn_ready_idle_into_ready_run_lft_180_01"/>
+ </ExampleList>
+  
+  <Blendable>
+    <Face p0=" 0" p1=" 1" />
+    <Face p0=" 1" p1=" 2" />
+    <Face p0=" 2" p1=" 3" />
+    <Face p0=" 3" p1=" 4" />
+    <Face p0=" 4" p1=" 5" />
+    <Face p0=" 5" p1=" 6" />
+    <Face p0=" 6" p1=" 7" />
+    <Face p0=" 7" p1=" 8" />
+  </Blendable>
+</ParaGroup>

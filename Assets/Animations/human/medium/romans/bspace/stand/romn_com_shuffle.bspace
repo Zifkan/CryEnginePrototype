@@ -1,0 +1,55 @@
+<ParaGroup>
+ <Dimensions>
+  <Param Name="TravelDist" Min="0" Max="2" Cells="17" locked="1"/>
+  <Param Name="TravelAngle" Min="-3.1415" Max="3.1415" Cells="37" locked="1"/>
+ </Dimensions>
+ <ExampleList>
+  <Example SetPara0="0" SetPara1="-3.1415" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="-2.5014999" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="-1.5700001" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="-1.2615" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="0" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="1.2615" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="1.5700001" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="2.5014999" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara0="0" SetPara1="3.1415" AName="barb_1hnd_com_idle_Lf_01" UseDirectlyForDeltaMotion1="1"/>
+  <Example SetPara1="-3.1415" AName="barb_1hnd_com_shuffle_bwd_lf_01"/>
+  <Example AName="barb_1hnd_com_shuffle_rgt_144_01"/>
+  <Example AName="barb_1hnd_com_shuffle_rgt_01"/>
+  <Example AName="barb_1hnd_com_shuffle_rgt_72_01"/>
+  <Example AName="barb_1hnd_com_shuffle_fwd_lf_01"/>
+  <Example AName="barb_1hnd_com_shuffle_lft_72_01"/>
+  <Example AName="barb_1hnd_com_shuffle_lft_01"/>
+  <Example AName="barb_1hnd_com_shuffle_lft_144_01"/>
+  <Example SetPara1="3.1415" AName="barb_1hnd_com_shuffle_bwd_lf_01"/>
+ </ExampleList>
+ <ExamplePseudo>
+  <Pseudo p0="0" p1="9" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="10" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="11" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="12" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="13" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="14" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="15" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="16" w0="-1.5" w1="2.5"/>
+  <Pseudo p0="0" p1="9" w0="-1.5" w1="2.5"/>
+ </ExamplePseudo>
+ <Blendable>
+  <Face p0="0" p1="9" p2="10" p3="1"/>
+  <Face p0="1" p1="10" p2="11" p3="2"/>
+  <Face p0="2" p1="11" p2="12" p3="3"/>
+  <Face p0="3" p1="12" p2="13" p3="4"/>
+  <Face p0="4" p1="13" p2="14" p3="5"/>
+  <Face p0="5" p1="14" p2="15" p3="6"/>
+  <Face p0="6" p1="15" p2="16" p3="7"/>
+  <Face p0="7" p1="16" p2="17" p3="8"/>
+  <Face p0="9" p1="18" p2="19" p3="10"/>
+  <Face p0="10" p1="19" p2="20" p3="11"/>
+  <Face p0="11" p1="20" p2="21" p3="12"/>
+  <Face p0="12" p1="21" p2="22" p3="13"/>
+  <Face p0="13" p1="22" p2="23" p3="14"/>
+  <Face p0="14" p1="23" p2="24" p3="15"/>
+  <Face p0="15" p1="24" p2="25" p3="16"/>
+  <Face p0="16" p1="25" p2="26" p3="17"/>
+ </Blendable>
+</ParaGroup>

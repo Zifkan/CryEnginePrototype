@@ -1,0 +1,57 @@
+<ParaGroup>
+
+  <VEGPARAMS Idle2Move="1" />
+
+  <Dimensions>
+    <Param name="MoveSpeed" min="+0.50" max="+5.00" cells="9" skey="0.9" ekey="1.0"/>
+	<Param name="TurnAngle" min="-3.1415" max="+0.0" cells="9" locked="1" deltaextraction="1"/>
+  </Dimensions>
+  
+  <AdditionalExtraction>
+    <Param name="TravelAngle" />
+  </AdditionalExtraction>
+  
+  <ExampleList>
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_180_01" PlaybackScale="0.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_135_01" PlaybackScale="0.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_90_01" PlaybackScale="0.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_45_01" PlaybackScale="0.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_0_01" PlaybackScale="0.15" />
+  
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_180_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_135_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_90_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_45_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_walk_rgt_0_01" />
+
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_180_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_135_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_90_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_45_01"/>
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_0_01" />
+
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_180_01" PlaybackScale="2.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_135_01" PlaybackScale="2.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_90_01"  PlaybackScale="2.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_45_01"  PlaybackScale="2.15" />
+    <Example AName="barb_1hnd_awr_idle_into_awr_run_rgt_0_01"   PlaybackScale="2.15" />
+
+  </ExampleList>
+  
+  <Blendable>	
+	<Face p0="9" p1="8"  p2="3"  p3="4" />
+	<Face p0="8" p1="7"  p2="2"  p3="3" />
+	<Face p0="7" p1="6"  p2="1"  p3="2" />	
+	<Face p0="6" p1="5"  p2="0"  p3="1" />	  
+
+	<Face p0="9" p1="14"  p2="13"  p3="8" />
+	<Face p0="8" p1="13"  p2="12"  p3="7" />
+	<Face p0="7" p1="12"  p2="11"  p3="6" />
+	<Face p0="6" p1="11"  p2="10"  p3="5" />
+
+	<Face p0="13" p1="18"  p2="19"  p3="14" />
+	<Face p0="12" p1="17"  p2="18"  p3="13" />
+	<Face p0="11" p1="16"  p2="17"  p3="12" />
+	<Face p0="10" p1="15"  p2="16"  p3="11" />
+  </Blendable>
+</ParaGroup>

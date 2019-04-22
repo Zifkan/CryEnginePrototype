@@ -1,0 +1,11 @@
+<AnimationSettings>
+ <Skeleton value="char_medium_roman"/>
+ <AdditiveAnimation value="1"/>
+ <CompressionSettings>
+  <Version value="0"/>
+  <Compression value="100"/>
+  <RotEpsilon value="0.001"/>
+  <PosEpsilon value="0.005"/>
+  <PerBoneCompression />
+ </CompressionSettings>
+</AnimationSettings>

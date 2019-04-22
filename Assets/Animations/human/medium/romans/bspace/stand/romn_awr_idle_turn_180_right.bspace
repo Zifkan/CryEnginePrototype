@@ -1,0 +1,14 @@
+<ParaGroup>
+  <Dimensions>
+    <Param name="TurnAngle" min="-3.1415" max="-1.5707" cells="9" locked="1"/>
+  </Dimensions>
+
+  <ExampleList>
+    <Example AName="romn_awr_idle_turn_180_right_01" />	
+    <Example AName="romn_awr_idle_turn_90_right_02" />
+  </ExampleList>
+
+  <Blendable>
+    <Face p0=" 0" p1=" 1" />
+  </Blendable>
+</ParaGroup>

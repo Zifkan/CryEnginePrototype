@@ -1,0 +1,37 @@
+<ParaGroup>
+
+  <Dimensions>
+    <Param name="MoveSpeed" min="+0.00" max="+9.00" cells="9" locked="1" skey="0.0" ekey="0.1"/>
+    <Param name="StopLeg"   min="-1.00" max="+1.00" cells="9" locked="1" />
+  </Dimensions>
+
+  <ExampleList>
+   <Example SetPara1="-1.0" AName="romn_awr_walk_into_awr_idle_lf_01" PlaybackScale="0.5"/>
+   <Example SetPara1="-0.0" AName="romn_awr_walk_into_awr_idle_lf_01" PlaybackScale="0.5"/>
+   <Example SetPara1="-1.0" AName="romn_awr_walk_into_awr_idle_lf_01" />
+   <Example SetPara1="-0.0" AName="romn_awr_walk_into_awr_idle_lf_01" />
+
+   <Example SetPara1=" 0.0" AName="romn_awr_walk_into_awr_idle_rf_01" PlaybackScale="0.5"/>
+   <Example SetPara1=" 1.0" AName="romn_awr_walk_into_awr_idle_rf_01" PlaybackScale="0.5"/>
+   <Example SetPara1=" 0.0" AName="romn_awr_walk_into_awr_idle_rf_01" />
+   <Example SetPara1=" 1.0" AName="romn_awr_walk_into_awr_idle_rf_01" />
+
+   <Example SetPara1="-1.0" AName="romn_awr_walk_into_awr_idle_lf_01" />
+   <Example SetPara1="-0.0" AName="romn_awr_walk_into_awr_idle_lf_01" />
+   <Example SetPara1="-1.0" AName="romn_awr_walk_into_awr_idle_lf_01" PlaybackScale="2.5"/>
+   <Example SetPara1="-0.0" AName="romn_awr_walk_into_awr_idle_lf_01" PlaybackScale="2.5"/>
+
+   <Example SetPara1=" 0.0" AName="romn_awr_walk_into_awr_idle_rf_01" />
+   <Example SetPara1=" 1.0" AName="romn_awr_walk_into_awr_idle_rf_01" />
+   <Example SetPara1=" 0.0" AName="romn_awr_walk_into_awr_idle_rf_01" PlaybackScale="2.5"/>
+   <Example SetPara1=" 1.0" AName="romn_awr_walk_into_awr_idle_rf_01" PlaybackScale="2.5"/>
+  </ExampleList>
+
+  <Blendable>
+    <Face p0=" 7" p1=" 5" p2=" 4"  p3=" 6" />
+    <Face p0=" 3" p1=" 1" p2=" 0"  p3=" 2" />
+    <Face p0="15" p1="13" p2="12"  p3="14" />
+    <Face p0="11" p1=" 9" p2=" 8"  p3="10" />
+  </Blendable>
+
+</ParaGroup>

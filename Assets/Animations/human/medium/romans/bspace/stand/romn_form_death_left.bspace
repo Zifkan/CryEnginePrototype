@@ -1,0 +1,14 @@
+<ParaGroup>
+  <Dimensions>
+		<Param name="BlendWeight" min="0.0" max="1.0" cells="2" />
+  </Dimensions>
+
+  <ExampleList>
+    <Example SetPara0="0.0" AName="romn_form_death_left_fwd_01"/>
+		<Example SetPara0="1.0" AName="romn_form_death_block_01"/>
+  </ExampleList>
+	
+  <Blendable>
+		<Face p0="0" p1="1"/>
+  </Blendable>
+</ParaGroup>

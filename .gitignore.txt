@@ -1,0 +1,89 @@
+
+# Asset files.
+*.pak
+*.caf
+
+# Assets that are just too large to place in the repo for the moment.
+*.spp
+*.tif
+*.tiff
+
+# Config files
+/user.cfg
+/system.cfg
+/editor.cfg
+/.bootstrap*.*
+
+# Temporary files.
+*.log
+*.dmp
+*.pyo
+*.pyc
+*.bak
+*.bak2
+*.out
+_WAF_/user_settings.options
+/TestResults/
+/.depproj/*
+/[Ll]og[Bb]ackups
+/[Uu]ser*/
+__pycache__/*
+/Backup/
+_tmp/
+*.fbm/
+*.bck/
+
+# Build files we can do without.
+*.ilk
+*.pdb
+
+# Don't let the Solutions folder get into the repo.
+Solutions/
+
+# User folders
+/user/
+/user1/
+/user2/
+/user3/
+/user4/
+/assets/user/
+/assets/user1/
+/assets/user2/
+/assets/user3/
+/assets/user4/
+
+# Assets we don't want to include for various reasons e.g. copyright
+/assets/chrysalis/audio/
+/assets/chrysalis/objects/items/compass/
+/assets/dark-vale/
+
+# Keep out the generated files and folders.
+/assets/_tmp/
+/assets/engineassets/
+/assets/textures/cubemaps/
+/assets/textures/reference/.mayaSwatches/
+/Backup/
+/engineassets
+/Editor/ResourceCache/
+_newpreview_.mtl
+error*.*
+log.txt
+*.tmp
+
+# All other things.
+/assets_source/
+/assets/animations/editor/
+last_fbx_scene.txt
+bin/CMakeCache.txt
+bin/Chrysalis.vcxproj.user
+Editor/Tmp/
+build_scripts/temprc/
+build_scripts/client/
+.vs/
+*.ods#
+*.swatches
+*.thmb.png
+/assets/libs/environmentpresets/levels/house.xml.cryasset
+/assets/libs/environmentpresets/levels/house.xml
+/assets/chrysalis/levels/house/
+/assets/chrysalis/levels/house.level.cryasset

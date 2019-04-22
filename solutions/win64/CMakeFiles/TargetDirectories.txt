@@ -1,0 +1,9 @@
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/GameLauncher.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/Game.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/INSTALL.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/Editor.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/GameServer.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/ALL_BUILD.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/ZERO_CHECK.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CRYENGINE/CMakeFiles/INSTALL.dir
+F:/Crytek/CryEnginePrototype/solutions/win64/CRYENGINE/CMakeFiles/ALL_BUILD.dir

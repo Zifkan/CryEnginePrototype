@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Bullet.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UBER FILES">
+      <UniqueIdentifier>{958CA5D0-2AC3-3DEC-A76F-4D8B95125BE4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{68E35553-2D76-31D8-ACD0-DA8B7842B7A3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

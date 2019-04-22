@@ -39,14 +39,18 @@ _tmp/
 
 # Don't let the Solutions folder get into the repo.
 Solutions/
+solutions/
+
 
 # User folders
 /user/
+/user(1)/
 /user1/
 /user2/
 /user3/
 /user4/
 /assets/user/
+/assets/user(1)/
 /assets/user1/
 /assets/user2/
 /assets/user3/

@@ -4,7 +4,25 @@
 #include "Bullet.h"
 #include "SpawnPoint.h"
 
-#include <CryRenderer/IRenderAuxGeom.h>
+#include <CrySchematyc/Env/IEnvRegistry.h>
+#include <CrySchematyc/Env/IEnvRegistrar.h>
+#include <CrySchematyc/Env/Elements/EnvComponent.h>
+#include <CrySchematyc/Env/Elements/EnvFunction.h>
+#include <CrySchematyc/Env/Elements/EnvSignal.h>
+
+static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
+{
+    Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
+    {
+        Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CPlayerComponent));
+        // Functions
+        {
+        }
+    }
+}
+
+CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterPlayerComponent)
+
 
 void CPlayerComponent::Initialize()
 {

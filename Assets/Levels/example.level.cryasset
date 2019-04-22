@@ -19,6 +19,7 @@
   <Path>%engine%/engineassets/materials/material_terrain_default.mtl</Path>
   <Path>%engine%/engineassets/materials/water/wateroceanbottom.mtl</Path>
   <Path>%engine%/engineassets/objects/primitive_cube.cgf</Path>
+  <Path>%engine%/engineassets/objects/primitive_sphere.cgf</Path>
   <Path>%engine%/engineassets/texturemsg/defaultnouvs.dds</Path>
   <Path>%engine%/engineassets/texturemsg/defaultsolids.mtl</Path>
   <Path>%engine%/engineassets/textures/defaults/16_12.dds</Path>
@@ -84,9 +85,9 @@
   <Path>animations/motusanims/walk_fwd_3p.caf</Path>
   <Path>engineassets/materials/sky/sky.mtl</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
-  <Path>engineassets/texturemsg/defaultnouvs.dds</Path>
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>
   <Path>libs/environmentpresets/example.xml</Path>
+  <Path>materials/bullet.mtl</Path>
   <Path>objects/characters/samplecharacter/mcg_ddna.dds</Path>
   <Path>objects/characters/samplecharacter/mcg_diff.dds</Path>
   <Path>objects/characters/samplecharacter/mcg_spec.dds</Path>
@@ -96,6 +97,7 @@
   <Path>objects/characters/samplecharacter/thirdperson.cdf</Path>
   <Path>objects/weapons/sampleweapon/defaultweapon.cgf</Path>
   <Path>objects/weapons/sampleweapon/defaultweapon.mtl</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
  </Dependencies>

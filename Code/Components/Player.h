@@ -3,6 +3,7 @@
 #include <array>
 #include <numeric>
 
+#include <CryEntitySystem/IEntity.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <CryMath/Cry_Camera.h>
 

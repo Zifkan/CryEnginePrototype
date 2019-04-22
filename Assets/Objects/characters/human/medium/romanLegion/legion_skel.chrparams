@@ -1,0 +1,448 @@
+<Params>
+ <AnimationList>
+  <Animation name="$AnimEventDatabase" path="Objects/characters/human/medium/romanLegion/legion_skel.animevents"/>
+  <Animation name="$TracksDatabase" path="Animations/human/human.dba"/>
+  <Animation name="#filepath" path="animations/human/medium/romans"/>
+  <Animation name="*" path="*/*.i_caf"/>
+  <Animation name="*" path="*/*.caf"/>
+  <Animation name="*" path="*/*.bspace"/>
+  <Animation name="*" path="*/*.comb"/>
+ </AnimationList>
+ <IK_Definition>
+  <LimbIK_Definition>
+   <IK EndEffector="R_Foot" Handle="RgtLeg01" Root="R_Thigh" Solver="2BIK"/>
+   <IK EndEffector="L_Foot" Handle="LftLeg01" Root="L_Thigh" Solver="2BIK"/>
+  </LimbIK_Definition>
+  <FeetLock_Definition>
+   <RIKHandle Handle="RgtLeg01"/>
+   <LIKHandle Handle="LftLeg01"/>
+  </FeetLock_Definition>
+  <LookIK_Definition>
+   <DirectionalBlends>
+    <Joint AnimToken="LookPoses" ParameterJoint="LookIK" StartJoint="Neck" ReferenceJoint="Pelvis"/>
+   </DirectionalBlends>
+   <DefaultLookPose name="lookPoses_head"/>
+   <RotationList>
+    <Rotation Additive="1" Primary="1" JointName="Pelvis"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine01"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine02"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine03"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine04"/>
+    <Rotation Additive="0" Primary="1" JointName="Neck"/>
+    <Rotation Additive="0" Primary="1" JointName="Head"/>
+    <Rotation Additive="0" Primary="1" JointName="LookIK"/>
+   </RotationList>
+   <PositionList />
+  </LookIK_Definition>
+  <AimIK_Definition>
+   <DirectionalBlends>
+    <Joint AnimToken="AimPoses" ParameterJoint="R_Weapon" StartJoint="Spine01" ReferenceJoint="root"/>
+   </DirectionalBlends>
+   <RotationList>
+    <Rotation Additive="1" Primary="1" JointName="Pelvis"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine01"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine02"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine03"/>
+    <Rotation Additive="1" Primary="1" JointName="Spine04"/>
+    <Rotation Additive="0" Primary="0" JointName="Neck"/>
+    <Rotation Additive="0" Primary="0" JointName="Head"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Clavicle"/>
+    <Rotation Additive="0" Primary="0" JointName="L_UpperArm"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Forearm"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Hand"/>
+    <Rotation Additive="0" Primary="0" JointName="L_ForeTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="L_ForeTwist3"/>
+    <Rotation Additive="0" Primary="0" JointName="L_UpArmTwist1"/>
+    <Rotation Additive="0" Primary="0" JointName="L_UpArmTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="L_UpArmTwist3"/>
+    <Rotation Additive="0" Primary="1" JointName="R_Clavicle"/>
+    <Rotation Additive="0" Primary="1" JointName="R_UpperArm"/>
+    <Rotation Additive="0" Primary="1" JointName="R_Forearm"/>
+    <Rotation Additive="0" Primary="1" JointName="R_Hand"/>
+    <Rotation Additive="0" Primary="1" JointName="R_weapon"/>
+    <Rotation Additive="0" Primary="1" JointName="AimingIK"/>
+    <Rotation Additive="0" Primary="0" JointName="R_ForeTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="R_ForeTwist3"/>
+    <Rotation Additive="0" Primary="0" JointName="R_UpArmTwist1"/>
+    <Rotation Additive="0" Primary="0" JointName="R_UpArmTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="R_UpArmTwist3"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Thigh"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Calf"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Foot"/>
+    <Rotation Additive="0" Primary="0" JointName="L_Toe"/>
+    <Rotation Additive="0" Primary="0" JointName="L_ThighTwist1"/>
+    <Rotation Additive="0" Primary="0" JointName="L_ThighTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="L_ThighTwist3"/>
+    <Rotation Additive="0" Primary="0" JointName="R_Thigh"/>
+    <Rotation Additive="0" Primary="0" JointName="R_Calf"/>
+    <Rotation Additive="0" Primary="0" JointName="R_Foot"/>
+    <Rotation Additive="0" Primary="0" JointName="R_Toe"/>
+    <Rotation Additive="0" Primary="0" JointName="R_ThighTwist1"/>
+    <Rotation Additive="0" Primary="0" JointName="R_ThighTwist2"/>
+    <Rotation Additive="0" Primary="0" JointName="R_ThighTwist3"/>
+   </RotationList>
+  </AimIK_Definition>
+ </IK_Definition>
+ <FullPriorityJoints>
+  <Joint name="slave_01"/>
+  <Joint name="slave_02"/>
+ </FullPriorityJoints>
+ <Lod>
+  <JointList level="1">
+   <Joint name="root"/>
+   <Joint name="Pelvis"/>
+   <Joint name="Spine01"/>
+   <Joint name="Spine02"/>
+   <Joint name="Spine03"/>
+   <Joint name="Spine04"/>
+   <Joint name="Neck"/>
+   <Joint name="Head"/>
+   <Joint name="AimingIK"/>
+   <Joint name="L_Clavicle"/>
+   <Joint name="L_UpperArm"/>
+   <Joint name="L_Forearm"/>
+   <Joint name="L_Hand"/>
+   <Joint name="L_Weapon"/>
+   <Joint name="L_Finger0"/>
+   <Joint name="L_Finger0_1"/>
+   <Joint name="L_Finger0_2"/>
+   <Joint name="L_Finger1"/>
+   <Joint name="L_Finger1_1"/>
+   <Joint name="L_Finger1_2"/>
+   <Joint name="L_Finger2"/>
+   <Joint name="L_Finger2_1"/>
+   <Joint name="L_Finger2_2"/>
+   <Joint name="L_Finger3"/>
+   <Joint name="L_Finger3_1"/>
+   <Joint name="L_Finger3_2"/>
+   <Joint name="L_Finger4"/>
+   <Joint name="L_Finger4_1"/>
+   <Joint name="L_Finger4_2"/>
+   <Joint name="R_Clavicle"/>
+   <Joint name="R_UpperArm"/>
+   <Joint name="R_Forearm"/>
+   <Joint name="R_Hand"/>
+   <Joint name="R_Weapon"/>
+   <Joint name="R_Finger0"/>
+   <Joint name="R_Finger0_1"/>
+   <Joint name="R_Finger0_2"/>
+   <Joint name="R_Finger1"/>
+   <Joint name="R_Finger1_1"/>
+   <Joint name="R_Finger1_2"/>
+   <Joint name="R_Finger2"/>
+   <Joint name="R_Finger2_1"/>
+   <Joint name="R_Finger2_2"/>
+   <Joint name="R_Finger3"/>
+   <Joint name="R_Finger3_1"/>
+   <Joint name="R_Finger3_2"/>
+   <Joint name="R_Finger4"/>
+   <Joint name="R_Finger4_1"/>
+   <Joint name="R_Finger4_2"/>
+   <Joint name="L_Thigh"/>
+   <Joint name="L_Calf"/>
+   <Joint name="L_Foot"/>
+   <Joint name="L_FootContactPoint"/>
+   <Joint name="R_Thigh"/>
+   <Joint name="R_Calf"/>
+   <Joint name="R_Foot"/>
+   <Joint name="R_FootContactPoint"/>
+   <Joint name="R_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_IKtarget"/>
+   <Joint name="R_hand_IKtarget"/>
+   <Joint name="L_Foot_blendWeightGroundAlign"/>
+   <Joint name="R_Foot_blendWeightGroundAlign"/>
+   <Joint name="slave_01"/>
+   <Joint name="skirt_R_chain_04_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_sim_blendWeightCloth"/>
+   <Joint name="all_blendWeightPendulum"/>
+  </JointList>
+  <JointList level="2">
+   <Joint name="root"/>
+   <Joint name="Pelvis"/>
+   <Joint name="Spine01"/>
+   <Joint name="Spine02"/>
+   <Joint name="Spine03"/>
+   <Joint name="Neck"/>
+   <Joint name="Head"/>
+   <Joint name="AimingIK"/>
+   <Joint name="L_Clavicle"/>
+   <Joint name="L_UpperArm"/>
+   <Joint name="L_Forearm"/>
+   <Joint name="L_Hand"/>
+   <Joint name="L_Finger0"/>
+   <Joint name="L_Finger0_1"/>
+   <Joint name="L_Finger0_2"/>
+   <Joint name="L_Finger1"/>
+   <Joint name="L_Finger1_1"/>
+   <Joint name="L_Finger1_2"/>
+   <Joint name="L_Finger2"/>
+   <Joint name="L_Finger2_1"/>
+   <Joint name="L_Finger2_2"/>
+   <Joint name="L_Finger3"/>
+   <Joint name="L_Finger3_1"/>
+   <Joint name="L_Finger3_2"/>
+   <Joint name="L_Finger4"/>
+   <Joint name="L_Finger4_1"/>
+   <Joint name="L_Finger4_2"/>
+   <Joint name="L_Weapon"/>
+   <Joint name="R_Clavicle"/>
+   <Joint name="R_UpperArm"/>
+   <Joint name="R_Forearm"/>
+   <Joint name="R_Hand"/>
+   <Joint name="R_Finger0"/>
+   <Joint name="R_Finger0_1"/>
+   <Joint name="R_Finger0_2"/>
+   <Joint name="R_Finger1"/>
+   <Joint name="R_Finger1_1"/>
+   <Joint name="R_Finger1_2"/>
+   <Joint name="R_Finger2"/>
+   <Joint name="R_Finger2_1"/>
+   <Joint name="R_Finger2_2"/>
+   <Joint name="R_Finger3"/>
+   <Joint name="R_Finger3_1"/>
+   <Joint name="R_Finger3_2"/>
+   <Joint name="R_Finger4"/>
+   <Joint name="R_Finger4_1"/>
+   <Joint name="R_Finger4_2"/>
+   <Joint name="R_Weapon"/>
+   <Joint name="L_Thigh"/>
+   <Joint name="L_Calf"/>
+   <Joint name="L_Foot"/>
+   <Joint name="L_FootContactPoint"/>
+   <Joint name="R_Thigh"/>
+   <Joint name="R_Calf"/>
+   <Joint name="R_Foot"/>
+   <Joint name="R_FootContactPoint"/>
+   <Joint name="R_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_IKtarget"/>
+   <Joint name="R_hand_IKtarget"/>
+   <Joint name="L_Foot_blendWeightGroundAlign"/>
+   <Joint name="R_Foot_blendWeightGroundAlign"/>
+   <Joint name="slave_01"/>
+   <Joint name="skirt_R_chain_04_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_04_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_03_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_02_jnt_06_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_R_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_B_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_04_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_03_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_02_jnt_06_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_L_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_01_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_02_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_03_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_04_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_05_hlp"/>
+   <Joint name="skirt_F_chain_01_jnt_06_hlp"/>
+   <Joint name="skirt_sim_blendWeightCloth"/>
+   <Joint name="all_blendWeightPendulum"/>
+  </JointList>
+  <JointList level="3">
+   <Joint name="root"/>
+   <Joint name="Pelvis"/>
+   <Joint name="Spine01"/>
+   <Joint name="Spine02"/>
+   <Joint name="Spine03"/>
+   <Joint name="Neck"/>
+   <Joint name="Head"/>
+   <Joint name="AimingIK"/>
+   <Joint name="L_Clavicle"/>
+   <Joint name="L_UpperArm"/>
+   <Joint name="L_Forearm"/>
+   <Joint name="L_Hand"/>
+   <Joint name="L_Finger0"/>
+   <Joint name="L_Finger0_1"/>
+   <Joint name="L_Finger1"/>
+   <Joint name="L_Finger1_1"/>
+   <Joint name="L_Finger2"/>
+   <Joint name="L_Finger2_1"/>
+   <Joint name="L_Finger3"/>
+   <Joint name="L_Finger3_1"/>
+   <Joint name="L_Finger4"/>
+   <Joint name="L_Finger4_1"/>
+   <Joint name="R_Finger0"/>
+   <Joint name="R_Finger0_1"/>
+   <Joint name="R_Finger1"/>
+   <Joint name="R_Finger1_1"/>
+   <Joint name="R_Finger2"/>
+   <Joint name="R_Finger2_1"/>
+   <Joint name="R_Finger3"/>
+   <Joint name="R_Finger3_1"/>
+   <Joint name="R_Finger4"/>
+   <Joint name="R_Finger4_1"/>
+   <Joint name="L_Weapon"/>
+   <Joint name="R_Clavicle"/>
+   <Joint name="R_UpperArm"/>
+   <Joint name="R_Forearm"/>
+   <Joint name="R_Hand"/>
+   <Joint name="R_Weapon"/>
+   <Joint name="L_Thigh"/>
+   <Joint name="L_Calf"/>
+   <Joint name="L_Foot"/>
+   <Joint name="L_FootContactPoint"/>
+   <Joint name="R_Thigh"/>
+   <Joint name="R_Calf"/>
+   <Joint name="R_Foot"/>
+   <Joint name="R_FootContactPoint"/>
+   <Joint name="R_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_blendWeightHandIK"/>
+   <Joint name="L_hand_IKtarget"/>
+   <Joint name="R_hand_IKtarget"/>
+   <Joint name="L_Foot_blendWeightGroundAlign"/>
+   <Joint name="R_Foot_blendWeightGroundAlign"/>
+   <Joint name="slave_01"/>
+   <Joint name="all_blendWeightPendulum"/>
+  </JointList>
+  <JointList level="4">
+   <Joint name="root"/>
+   <Joint name="Pelvis"/>
+   <Joint name="Spine01"/>
+   <Joint name="Spine02"/>
+   <Joint name="Spine03"/>
+   <Joint name="Neck"/>
+   <Joint name="Head"/>
+   <Joint name="L_Clavicle"/>
+   <Joint name="L_UpperArm"/>
+   <Joint name="L_Forearm"/>
+   <Joint name="L_Hand"/>
+   <Joint name="L_Weapon"/>
+   <Joint name="R_Clavicle"/>
+   <Joint name="R_UpperArm"/>
+   <Joint name="R_Forearm"/>
+   <Joint name="R_Hand"/>
+   <Joint name="R_Weapon"/>
+   <Joint name="L_Thigh"/>
+   <Joint name="L_Calf"/>
+   <Joint name="L_Foot"/>
+   <Joint name="R_Thigh"/>
+   <Joint name="R_Calf"/>
+   <Joint name="R_Foot"/>
+   <Joint name="slave_01"/>
+   <Joint name="all_blendWeightPendulum"/>
+  </JointList>
+ </Lod>
+ <BBoxIncludeList>
+  <Joint name="L_Hand"/>
+  <Joint name="R_Hand"/>
+  <Joint name="L_Weapon"/>
+  <Joint name="R_Weapon"/>
+  <Joint name="L_Foot"/>
+  <Joint name="R_Foot"/>
+  <Joint name="Pelvis"/>
+  <Joint name="Head"/>
+ </BBoxIncludeList>
+ <BBoxExtension>
+  <Axis negX="0.3"/>
+  <Axis negY="0.3"/>
+  <Axis negZ="0.3"/>
+  <Axis posX="0.3"/>
+  <Axis posY="0.3"/>
+  <Axis posZ="0.3"/>
+ </BBoxExtension>
+</Params>

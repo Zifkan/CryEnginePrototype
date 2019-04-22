@@ -1,0 +1,45 @@
+<Material MtlFlags="524544">
+ <SubMaterials>
+  <Material Name="romn_lgnr_V1_skin" MtlFlags="524416" Shader="Humanskin" GenMask="10000080400" StringGenMask="%BUMP_MAP%GLOSS_MAP%SKIN_PASS" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Emissive="0,0,0" Shininess="255" Opacity="1" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="./romans/lgnr/textures/romn_lgnr_body_lod1_diff.tif"/>
+    <Texture Map="Specular" File="./romans/lgnr/textures/romn_lgnr_body_lod1_spec.tif"/>
+    <Texture Map="Bumpmap" File="./romans/lgnr/textures/romn_lgnr_body_lod1_ddna.tif" Filter="7"/>
+   </Textures>
+   <PublicParams Melanin="0" RimStrength="0" SSSIndex="1.4" TranslucencyMultiplier="0" IndirectColor="0.25,0.25,0.25"/>
+  </Material>
+  <Material Name="romn_lgnr_V1_armor" MtlFlags="524416" Shader="Illum" GenMask="80000080400" StringGenMask="%BUMP_MAP%GLOSS_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Emissive="0,0,0" Shininess="255" Opacity="1" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="./romans/lgnr/textures/romn_lgnr_armor_lod1_diff.tif"/>
+    <Texture Map="Specular" File="./romans/lgnr/textures/romn_lgnr_armor_lod1_spec.tif"/>
+    <Texture Map="Bumpmap" File="./romans/lgnr/textures/romn_lgnr_armor_lod1_ddna.tif"/>
+   </Textures>
+   <PublicParams SSSIndex="0" IndirectColor="0.25,0.25,0.25"/>
+  </Material>
+  <Material Name="romn_lgnr_V1_cloth" MtlFlags="524418" Shader="Illum" GenMask="80000080400" StringGenMask="%BUMP_MAP%GLOSS_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Emissive="0,0,0" Shininess="255" Opacity="1" AlphaTest="0.46000001" HeatAmountScaled="4" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="./romans/lgnr/textures/romn_lgnr_cloth_lod1_diff.tif"/>
+    <Texture Map="Specular" File="./romans/lgnr/textures/romn_lgnr_cloth_lod1_spec.tif"/>
+    <Texture Map="Bumpmap" File="./romans/lgnr/textures/romn_lgnr_cloth_lod1_ddna.tif"/>
+   </Textures>
+   <PublicParams SSSIndex="0" IndirectColor="0.25,0.25,0.25"/>
+  </Material>
+  <Material Name="romn_lgnr_V1_helmet" MtlFlags="524416" Shader="Illum" GenMask="80000080400" StringGenMask="%BUMP_MAP%GLOSS_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Emissive="0,0,0" Shininess="255" Opacity="1" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="./romans/lgnr/textures/romn_lgnr_helmet_lod1_diff.tif"/>
+    <Texture Map="Specular" File="./romans/lgnr/textures/romn_lgnr_helmet_lod1_spec.tif"/>
+    <Texture Map="Bumpmap" File="./romans/lgnr/textures/romn_lgnr_helmet_lod1_ddna.tif"/>
+   </Textures>
+   <PublicParams SSSIndex="0" IndirectColor="0.25,0.25,0.25"/>
+  </Material>
+  <Material Name="romn_lgnr_V1_deco" MtlFlags="524416" Shader="Illum" GenMask="80000080400" StringGenMask="%BUMP_MAP%GLOSS_MAP%SUBSURFACE_SCATTERING" SurfaceType="" MatTemplate="" Diffuse="1,1,1" Specular="1,1,1" Emissive="0,0,0" Shininess="255" Opacity="1" LayerAct="1">
+   <Textures>
+    <Texture Map="Diffuse" File="./romans/lgnr/textures/romn_lgnr_decos_lod1_diff.tif"/>
+    <Texture Map="Specular" File="./romans/lgnr/textures/romn_lgnr_decos_lod1_spec.tif"/>
+    <Texture Map="Bumpmap" File="./romans/lgnr/textures/romn_lgnr_decos_lod1_ddna.tif"/>
+   </Textures>
+   <PublicParams SSSIndex="0" IndirectColor="0.25,0.25,0.25"/>
+  </Material>
+ </SubMaterials>
+ <PublicParams SSSIndex="0" IndirectColor="0.25,0.25,0.25"/>
+</Material>

@@ -1,3 +1,4 @@
 <SkeletonList>
  <Skeleton name="motusTest" file="Objects/Characters/SampleCharacter/skelProxy.chr"/>
+ <Skeleton name="legionaire" file="Objects/characters/human/medium/romanLegion/legion_skel.chr"/>
 </SkeletonList>

@@ -1,0 +1,18 @@
+<Material MtlFlags="524544">
+ <SubMaterials>
+  <Material Diffuse="0.777821,0.551666,0.631526" Emissive="0,0,0" GenMask="40100" MatTemplate="" MtlFlags="524448" Name="eyeball" Opacity="1" Shader="Illum" Shininess="113" Specular="0.12474094,0.080219261,0.078056589" StringGenMask="%ALLOW_TESSELATION%GLOSS_DIFFUSEALPHA" SurfaceType="">
+   <Textures>
+    <Texture File="objects/characters/human/generic/eyes/textures/gen_eyes_diff.tif" Map="Diffuse" />
+   </Textures>
+   <PublicParams FresnelBias="0.39500001" FresnelPower="3.78" FresnelScale="19.030001" IndirectColor="0.25,0.25,0.25" />
+  </Material>
+  <Material Diffuse="0.053097,0.076945,0.131508" Emissive="0,0,0" GenMask="10100" MatTemplate="" MtlFlags="524448" Name="cornea" Opacity="0.059999999" Shader="Illum" Shininess="238" Specular="0.37867627,0.45907992,0.54179835" StringGenMask="%ALLOW_TESSELATION%ENVIRONMENT_MAP" SurfaceType="">
+   <Textures>
+    <Texture File="textures/defaults/grey.dds" Map="Diffuse" />
+    <Texture File="textures/cubemaps/eye_reflect.dds" Map="Environment" />
+   </Textures>
+   <PublicParams FresnelBias="0.74199998" FresnelPower="3.448" FresnelScale="5.8699999" GlossFromDiffuseAmount="0" GlossFromDiffuseBrightness="0.333" GlossFromDiffuseContrast="1" GlossFromDiffuseOffset="0" IndirectColor="0.25,0.25,0.25" />
+  </Material>
+ </SubMaterials>
+ <PublicParams FresnelBias="1" FresnelPower="4" FresnelScale="1" GlossFromDiffuseAmount="0" GlossFromDiffuseBrightness="0.333" GlossFromDiffuseContrast="1" GlossFromDiffuseOffset="0" IndirectColor="0.25,0.25,0.25" />
+</Material>

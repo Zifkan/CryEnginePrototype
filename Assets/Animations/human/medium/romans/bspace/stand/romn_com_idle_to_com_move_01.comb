@@ -1,0 +1,16 @@
+<CombinedBlendSpace>
+
+  <VEGPARAMS Idle2Move="1" />
+
+  <Dimensions>
+    <Param name="MoveSpeed" ChooseBlendSpace="0" />
+    <Param name="TravelAngle" ChooseBlendSpace="1" locked="1" />
+  </Dimensions>
+
+  <BlendSpaces>
+    <BlendSpace      AName="animations/human/medium/romans/bspace/stand/romn_com_idle_to_com_left_01.bspace" />
+    <BlendSpace      AName="animations/human/medium/romans/bspace/stand/romn_com_idle_to_com_right_01.bspace" />
+  </BlendSpaces>
+
+
+</CombinedBlendSpace>

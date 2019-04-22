@@ -1,0 +1,16 @@
+<ParaGroup>
+  <Dimensions>
+    <Param name="MoveSpeed" min="2.5" max="8.5" cells="9" locked="1"/>
+  </Dimensions>
+
+  <ExampleList>
+    <Example AName="romn_ready_run_fwd_03" PlaybackScale="0.5"/>
+    <Example AName="romn_ready_run_fwd_03"/>
+    <Example AName="romn_ready_run_fwd_03" PlaybackScale="2.0"/>
+  </ExampleList>
+
+  <Blendable>
+    <Face p0=" 0"   p1=" 1"/>
+    <Face p0=" 1"   p1=" 2"/>
+  </Blendable>
+</ParaGroup>

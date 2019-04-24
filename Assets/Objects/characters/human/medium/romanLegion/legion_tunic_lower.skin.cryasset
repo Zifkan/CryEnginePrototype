@@ -1,0 +1,16 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="791c7fec-1fec-67c9-c3e0-741fd91c88af">
+ <Files>
+  <File path="legion_tunic_lower.skin"/>
+  <File path="legion_tunic_lower_lod1.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">1352</Detail>
+  <Detail name="vertexCount">757</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">255</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./mat_romn_lgnr.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

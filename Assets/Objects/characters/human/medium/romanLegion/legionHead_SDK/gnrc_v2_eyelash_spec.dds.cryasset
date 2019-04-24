@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="cf7c8adf-757d-4df7-ce8f-6cf7bbf496ef">
+ <Files>
+  <File path="gnrc_v2_eyelash_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">512</Detail>
+  <Detail name="height">512</Detail>
+  <Detail name="mipCount">8</Detail>
+ </Details>
+</AssetMetadata>

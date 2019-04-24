@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="0b645b4d-76af-579b-ccc6-351f7353c59e">
+ <Files>
+  <File path="head_a.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">9</Detail>
+  <Detail name="triangleCount">18164</Detail>
+  <Detail name="vertexCount">10154</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">186</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./head_a.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

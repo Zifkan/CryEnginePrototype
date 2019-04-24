@@ -1,0 +1,39 @@
+<AssetMetadata version="0" type="Material" guid="0886e35e-8596-4440-164b-67e85939da31">
+ <Files>
+  <File path="mat_head_a.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">11</Detail>
+  <Detail name="textureCount">28</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./background_gradiant.dds</Path>
+  <Path usageCount="1">./head_a_turtleneck_diff.dds</Path>
+  <Path usageCount="1">./head_a_turtleneck_ddna.dds</Path>
+  <Path usageCount="1">./head_a_plate_diff.dds</Path>
+  <Path usageCount="1">./head_a_plate_ddn.dds</Path>
+  <Path usageCount="1">./head_a_plate_spec.dds</Path>
+  <Path usageCount="5">./nearest_cubemap.dds</Path>
+  <Path usageCount="1">./head_a_plate_dr_ddn.dds</Path>
+  <Path usageCount="1">./head_a_hair_stubble_diff.dds</Path>
+  <Path usageCount="1">./head_a_eyelash_diff.dds</Path>
+  <Path usageCount="1">./generic_eyeball_overlay_diff.dds</Path>
+  <Path usageCount="1">./generic_eyeball_overlay_spec.dds</Path>
+  <Path usageCount="1">./generic_eyeball_water_spec.dds</Path>
+  <Path usageCount="1">./generic_eyeball_iris_diff.dds</Path>
+  <Path usageCount="2">./generic_eyeball_iris_ddn.dds</Path>
+  <Path usageCount="1">./head_a_eyeball_iris_diff.dds</Path>
+  <Path usageCount="1">./generic_eyeball_iris_displ.dds</Path>
+  <Path usageCount="1">./generic_eyeball_cornea_ddn.dds</Path>
+  <Path usageCount="1">./generic_teeth_diff.dds</Path>
+  <Path usageCount="1">./generic_teeth_ddna.dds</Path>
+  <Path usageCount="1">./generic_teeth_spec.dds</Path>
+  <Path usageCount="1">./generic_teeth_dmap.dds</Path>
+  <Path usageCount="1">./head_a_diff.dds</Path>
+  <Path usageCount="1">./head_a_ddna.dds</Path>
+  <Path usageCount="1">./head_a_spec.dds</Path>
+  <Path usageCount="1">./head_a_wrinkle_atlas.dds</Path>
+  <Path usageCount="1">./head_a_wrinkle_mask_diff.dds</Path>
+  <Path usageCount="1">./head_a_sss.dds</Path>
+ </Dependencies>
+</AssetMetadata>

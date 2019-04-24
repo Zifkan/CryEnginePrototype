@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="b6368483-fe4f-5de0-dfc1-cbc8882e4717">
+ <Files>
+  <File path="legion_skin.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">6</Detail>
+  <Detail name="triangleCount">41328</Detail>
+  <Detail name="vertexCount">27649</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">256</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./mat_romn_lgnr.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="772e0f69-7e39-a88c-5b03-954974f3ed52">
+ <Files>
+  <File path="gnrc_teeth_v1_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">256</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

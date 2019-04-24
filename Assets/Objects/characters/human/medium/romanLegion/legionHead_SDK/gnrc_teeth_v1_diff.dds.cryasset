@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="df24afce-7644-5e85-b45e-a7645ef90440">
+ <Files>
+  <File path="gnrc_teeth_v1_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">512</Detail>
+  <Detail name="height">512</Detail>
+  <Detail name="mipCount">8</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="da6e933d-49c1-7229-5ac5-3794881d60e1">
+ <Files>
+  <File path="gnrc_v2_eyelash_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">512</Detail>
+  <Detail name="height">512</Detail>
+  <Detail name="mipCount">8</Detail>
+ </Details>
+</AssetMetadata>

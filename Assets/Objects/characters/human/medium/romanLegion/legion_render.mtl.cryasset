@@ -1,0 +1,59 @@
+<AssetMetadata version="0" type="Material" guid="cd02d140-2cdd-3d91-e6f2-5189da07a5cd">
+ <Files>
+  <File path="legion_render.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">17</Detail>
+  <Detail name="textureCount">48</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./romn_lgnr_main_lod4_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod3_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod3_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod3_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod3_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod3_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod3_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod3_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod3_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod3_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod2_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod2_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod2_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod2_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod2_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod2_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod2_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod2_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_main_lod2_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod1_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod1_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod1_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod1_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod1_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod1_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_armor_lod1_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_armor_lod1_ddna.dds</Path>
+  <Path usageCount="2">./romn_lgnr_armor_lod1_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod1_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod1_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod0_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod0_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_decos_lod0_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod0_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod0_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_helmet_lod0_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod0_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod0_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_cloth_lod0_spec.dds</Path>
+  <Path usageCount="1">./romn_lgnr_armor_lod0_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_armor_lod0_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod0_diff.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod0_ddna.dds</Path>
+  <Path usageCount="1">./romn_lgnr_body_lod0_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

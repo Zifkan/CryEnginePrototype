@@ -1,0 +1,17 @@
+<AssetMetadata version="0" type="Texture" guid="710f3969-175b-4474-0ff9-c46c8abd1ccf">
+ <Files>
+  <File path="head_a_eyeball_iris_diff.dds"/>
+  <File path="head_a_eyeball_iris_diff.dds.1"/>
+  <File path="head_a_eyeball_iris_diff.dds.2"/>
+  <File path="head_a_eyeball_iris_diff.dds.3"/>
+  <File path="head_a_eyeball_iris_diff.dds.4"/>
+  <File path="head_a_eyeball_iris_diff.dds.5"/>
+  <File path="head_a_eyeball_iris_diff.dds.6"/>
+  <File path="head_a_eyeball_iris_diff.dds.7"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

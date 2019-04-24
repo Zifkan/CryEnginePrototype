@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="bcf672c5-f914-a146-095f-22cfb88836e8">
+ <Files>
+  <File path="romn_lgnr_helmet_lod2_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">256</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

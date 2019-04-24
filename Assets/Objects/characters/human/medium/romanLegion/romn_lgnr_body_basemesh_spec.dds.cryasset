@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="aa34922c-37be-4938-fcbe-28b78b326c59">
+ <Files>
+  <File path="romn_lgnr_body_basemesh_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

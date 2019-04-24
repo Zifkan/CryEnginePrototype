@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="f9ccf6ed-2296-010c-14f3-6f75e3af9a78">
+ <Files>
+  <File path="romn_lgnr_armor_lod1_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="31b8ef66-76df-0335-13c1-c981ffca9fb7">
+ <Files>
+  <File path="romn_lgnr_cloth_lod1_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

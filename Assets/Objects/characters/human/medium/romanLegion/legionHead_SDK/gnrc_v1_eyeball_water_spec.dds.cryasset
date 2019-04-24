@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="7f7d75a9-13fd-b6f5-c034-ff63243a20c0">
+ <Files>
+  <File path="gnrc_v1_eyeball_water_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">128</Detail>
+  <Detail name="height">64</Detail>
+  <Detail name="mipCount">5</Detail>
+ </Details>
+</AssetMetadata>

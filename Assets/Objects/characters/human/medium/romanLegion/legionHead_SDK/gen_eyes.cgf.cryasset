@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="a84a9ae8-8118-bc3d-19d8-015f0a9ff299">
+ <Files>
+  <File path="gen_eyes.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">3920</Detail>
+  <Detail name="vertexCount">2116</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">Objects/characters/human/generic/eyes/gen_eyes.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

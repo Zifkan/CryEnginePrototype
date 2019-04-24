@@ -9,6 +9,6 @@
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>
-  <Path>./defaultWeaponMAT.mtl</Path>
+  <Path usageCount="1">./defaultWeaponMAT.mtl</Path>
  </Dependencies>
 </AssetMetadata>

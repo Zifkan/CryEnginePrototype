@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="56b771fa-c093-2ff5-8850-2dff517567ca">
+ <Files>
+  <File path="head_a_wrinkle_mask_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">512</Detail>
+  <Detail name="height">512</Detail>
+  <Detail name="mipCount">1</Detail>
+ </Details>
+</AssetMetadata>

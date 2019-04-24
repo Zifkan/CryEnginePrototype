@@ -10,6 +10,6 @@
   <Detail name="bonesCount">80</Detail>
  </Details>
  <Dependencies>
-  <Path>./motusBodyMAT.mtl</Path>
+  <Path usageCount="1">./motusBodyMAT.mtl</Path>
  </Dependencies>
 </AssetMetadata>

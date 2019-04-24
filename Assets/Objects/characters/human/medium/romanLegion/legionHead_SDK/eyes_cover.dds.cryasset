@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="753d61c3-4105-ec1b-c158-aff96d2c8396">
+ <Files>
+  <File path="eyes_cover.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">256</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="SkinnedMesh" guid="80e35a09-4ed8-bd94-e96d-66ea7db6a83e">
+ <Files>
+  <File path="legion_tunic_lower_sim.skin"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">416</Detail>
+  <Detail name="vertexCount">234</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+  <Detail name="bonesCount">255</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./mat_romn_lgnr.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

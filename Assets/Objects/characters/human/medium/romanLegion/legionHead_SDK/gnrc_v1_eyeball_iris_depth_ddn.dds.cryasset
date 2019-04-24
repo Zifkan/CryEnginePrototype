@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="fdc75971-060b-4c04-e9da-84e197a778e8">
+ <Files>
+  <File path="gnrc_v1_eyeball_iris_depth_ddn.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">256</Detail>
+  <Detail name="height">256</Detail>
+  <Detail name="mipCount">7</Detail>
+ </Details>
+</AssetMetadata>

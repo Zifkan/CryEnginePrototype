@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="5f223ecb-2d2c-50d3-fece-45819b2dca10">
+ <Files>
+  <File path="romn_lgnr_body_lod1_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

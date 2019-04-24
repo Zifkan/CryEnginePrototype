@@ -39,7 +39,7 @@ void CPlayerComponent::Initialize()
 	
 	// Set the player geometry, this also triggers physics proxy creation
 	m_pAnimationComponent->SetMannequinAnimationDatabaseFile("Animations/Mannequin/ADB/FirstPerson.adb");
-	m_pAnimationComponent->SetCharacterFile("Objects/Characters/SampleCharacter/thirdperson.cdf");
+	//m_pAnimationComponent->SetCharacterFile("Objects/Characters/SampleCharacter/thirdperson.cdf");
 
 	m_pAnimationComponent->SetControllerDefinitionFile("Animations/Mannequin/ADB/FirstPersonControllerDefinition.xml");
 	m_pAnimationComponent->SetDefaultScopeContextName("FirstPersonCharacter");
@@ -122,7 +122,7 @@ void CPlayerComponent::Initialize()
 
 uint64 CPlayerComponent::GetEventMask() const
 {
-	return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE);
+	return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
 }
 
 void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
@@ -151,6 +151,11 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 		// Update the camera component offset
 		UpdateCamera(pCtx->fFrameTime);
+	}
+    break;
+    case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
+	{
+        Initialize();
 	}
 	break;
 	}

@@ -158,7 +158,7 @@
             "foldersSplitter": "AAAA/wAAAAEAAAACAAABAAAAAwAB/////wEAAAABAA==",
             "foldersView": {
                 "selected": [
-                    "Animations"
+                    "Objects/characters/human/medium/romanLegion"
                 ]
             },
             "mainViewSplitter": "AAAA/wAAAAEAAAACAAAARAAAAQAB/////wEAAAABAA==",
@@ -181,7 +181,10 @@
             "/Objects/Characters/romanLegion",
             "/Objects/Characters/medium/romanLegion",
             "/Objects/characters/medium/romanLegion",
-            "/Objects/characters/human/medium/romanLegion"
+            "/Objects/characters/human/medium/romanLegion",
+            "/Animations",
+            "/Animations/Mannequin/ADB",
+            "/Animations/Mannequin/Preview"
         ]
     },
     "FavoritesHelper": {

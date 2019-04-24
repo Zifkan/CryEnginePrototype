@@ -1,0 +1,18 @@
+<AssetMetadata version="0" type="Texture" guid="aef85223-6c8f-4e97-fd0f-a402082b2d3c">
+ <Files>
+  <File path="head_a_sss.dds"/>
+  <File path="head_a_sss.dds.1"/>
+  <File path="head_a_sss.dds.2"/>
+  <File path="head_a_sss.dds.3"/>
+  <File path="head_a_sss.dds.4"/>
+  <File path="head_a_sss.dds.5"/>
+  <File path="head_a_sss.dds.6"/>
+  <File path="head_a_sss.dds.7"/>
+  <File path="head_a_sss.dds.8"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

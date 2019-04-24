@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="7ae51bf4-fa5e-579b-c089-eb731fb9e476">
+ <Files>
+  <File path="gen_eyes.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">2</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/defaults/grey.dds</Path>
+  <Path usageCount="1">textures/cubemaps/eye_reflect.dds</Path>
+  <Path usageCount="1">objects/characters/human/generic/eyes/textures/gen_eyes_diff.dds</Path>
+ </Dependencies>
+</AssetMetadata>

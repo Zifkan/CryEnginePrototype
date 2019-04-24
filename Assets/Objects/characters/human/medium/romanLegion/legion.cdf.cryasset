@@ -1,0 +1,20 @@
+<AssetMetadata version="0" type="Character" guid="62d438df-e719-9457-3de1-731b322d6eb9">
+ <Files>
+  <File path="legion.cdf"/>
+ </Files>
+ <Details />
+ <Dependencies>
+  <Path>objects/characters/human/medium/romanlegion/legion_skel.chr</Path>
+  <Path>objects/nodraw</Path>
+  <Path>objects/characters/human/medium/romanLegion/legion_skin.skin</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower.skin</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
+  <Path>objects/characters/human/medium/romanLegion/legion_tunic_lower_sim.skin</Path>
+  <Path>objects/nodraw</Path>
+  <Path>objects/characters/human/medium/romanLegion/legion_tunic_lower_sim_blend.skin</Path>
+  <Path>objects/nodraw</Path>
+  <Path>objects/characters/human/medium/romanlegion/legionhead_sdk/head_a.skin</Path>
+  <Path>objects/characters/human/medium/romanLegion/legionHead_SDK/mat_head_a.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

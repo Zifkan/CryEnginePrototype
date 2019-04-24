@@ -1,0 +1,26 @@
+<AssetMetadata version="0" type="Material" guid="00e306c9-f68d-dab9-bf59-7e9d81a09eec">
+ <Files>
+  <File path="legion_render_LOD1.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">5</Detail>
+  <Detail name="textureCount">15</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_decos_lod1_diff.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_decos_lod1_spec.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_decos_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_helmet_lod1_diff.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_helmet_lod1_spec.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_helmet_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_cloth_lod1_diff.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_cloth_lod1_spec.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_cloth_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_armor_lod1_diff.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_armor_lod1_spec.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_armor_lod1_ddna.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_body_lod1_diff.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_body_lod1_spec.dds</Path>
+  <Path usageCount="1">./romans/lgnr/textures/romn_lgnr_body_lod1_ddna.dds</Path>
+ </Dependencies>
+</AssetMetadata>

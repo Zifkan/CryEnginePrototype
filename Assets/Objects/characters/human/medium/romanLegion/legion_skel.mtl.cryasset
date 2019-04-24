@@ -1,0 +1,9 @@
+<AssetMetadata version="0" type="Material" guid="0285a363-36a9-6774-ed2c-853911a4ca42">
+ <Files>
+  <File path="legion_skel.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">1</Detail>
+  <Detail name="textureCount">0</Detail>
+ </Details>
+</AssetMetadata>

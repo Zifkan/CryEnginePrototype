@@ -1,0 +1,17 @@
+<AssetMetadata version="0" type="Texture" guid="625283d4-14c6-14ed-dd8d-66da24d91340">
+ <Files>
+  <File path="head_a_plate_ddn.dds"/>
+  <File path="head_a_plate_ddn.dds.1"/>
+  <File path="head_a_plate_ddn.dds.2"/>
+  <File path="head_a_plate_ddn.dds.3"/>
+  <File path="head_a_plate_ddn.dds.4"/>
+  <File path="head_a_plate_ddn.dds.5"/>
+  <File path="head_a_plate_ddn.dds.6"/>
+  <File path="head_a_plate_ddn.dds.7"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

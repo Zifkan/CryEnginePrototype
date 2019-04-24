@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="587d0d4f-3fa4-2bd8-3c4c-dda55bfdbb91">
+ <Files>
+  <File path="romn_lgnr_decos_lod3_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">128</Detail>
+  <Detail name="height">128</Detail>
+  <Detail name="mipCount">6</Detail>
+ </Details>
+</AssetMetadata>

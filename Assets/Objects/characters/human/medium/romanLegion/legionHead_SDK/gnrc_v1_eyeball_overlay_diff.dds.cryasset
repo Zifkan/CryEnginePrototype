@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="d4ad1bc3-ce77-de98-3cdb-bbe795c5734b">
+ <Files>
+  <File path="gnrc_v1_eyeball_overlay_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">256</Detail>
+  <Detail name="height">128</Detail>
+  <Detail name="mipCount">6</Detail>
+ </Details>
+</AssetMetadata>

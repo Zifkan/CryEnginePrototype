@@ -11,7 +11,7 @@
   <Walk>
    <Fragment BlendOutDuration="0.2" Tags="">
     <AnimLayer>
-     <Blend ExitTime="0.5" StartTime="0" Duration="0.2"/>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
      <Animation name="romn_ready_walk_fwd_01" flags="Loop"/>
     </AnimLayer>
    </Fragment>

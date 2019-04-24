@@ -5535,7 +5535,7 @@
 			"type": "Level",
 			"guid": "90f6f9d4-0804-283c-02dc-2d438ba572bd",
 			"name": "example",
-			"timestamp": 1556138362,
+			"timestamp": 1556143042,
 			"files": [ "Levels/example/example.level" ],
 			"source": "",
 			"metadata": "Levels/example.level.cryasset",
@@ -7761,216 +7761,10 @@
 					"usageCount": 0
 				},
 				{
-					"path": "animations/mannequin/adb/legionertags.xml",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/mannequin/adb/legionplayerfragmentids.xml",
-					"usageCount": 0
-				},
-				{
 					"path": "animations/mannequin/adb/playerfragmentids.xml",
 					"usageCount": 0
 				},
 				{ "path": "animations/mannequin/adb/playertags.xml", "usageCount": 0 },
-				{
-					"path": "animations/motusanims/ide2move/idle_to_jog_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/ide2move/idle_to_run_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/ide2move/idle_to_walk_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/ide2move/jog_to_idle_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/ide2move/run_to_idle_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/ide2move/walk_to_idle_3p.caf",
-					"usageCount": 0
-				},
-				{ "path": "animations/motusanims/idle_3p.caf", "usageCount": 0 },
-				{ "path": "animations/motusanims/jog_bck_3p.caf", "usageCount": 0 },
-				{ "path": "animations/motusanims/jog_fwd_3p.caf", "usageCount": 0 },
-				{
-					"path": "animations/motusanims/rifleanims/rifleaim_idle_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/riflewalkaim_bwd_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/riflewalkaim_fwd_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/steprifleaimrotate_lft_90_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/steprifleaimrotate_rgt_90_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkcrossrifleaim_bck_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkcrossrifleaim_bck_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkcrossrifleaim_fwd_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkcrossrifleaim_fwd_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkstraferifleaim_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/rifleanims/walkstraferifleaim_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{ "path": "animations/motusanims/run_fwd_3p.caf", "usageCount": 0 },
-				{
-					"path": "animations/motusanims/steprotate/steprotate_lft_135_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_lft_180_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_lft_45_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_lft_90_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_rgt_135_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_rgt_180_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_rgt_45_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/steprotate/steprotate_rgt_90_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogcross_bck_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogcross_bck_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogcross_fwd_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogcross_fwd_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogstrafe_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/jogstrafe_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/runcross_fwd_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/runcross_fwd_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/runstrafe_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/runstrafe_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkcross_bck_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkcross_bck_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkcross_fwd_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkcross_fwd_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkstrafe_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/strafe/walkstrafe_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/jogturn_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/jogturn_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/runturn_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/runturn_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/walkturn_lft_3p.caf",
-					"usageCount": 0
-				},
-				{
-					"path": "animations/motusanims/turns/walkturn_rgt_3p.caf",
-					"usageCount": 0
-				},
-				{ "path": "animations/motusanims/walk_bck_3p.caf", "usageCount": 0 },
-				{ "path": "animations/motusanims/walk_fwd_3p.caf", "usageCount": 0 },
 				{ "path": "engineassets/materials/sky/sky.mtl", "usageCount": 0 },
 				{
 					"path": "engineassets/materials/water/ocean_default.mtl",
@@ -8246,43 +8040,6 @@
 					"usageCount": 0
 				},
 				{
-					"path": "objects/characters/samplecharacter/mcg_ddna.dds",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/mcg_diff.dds",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/mcg_spec.dds",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/motusbody.skin",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/motusbodymat.mtl",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/skelproxy.chr",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/thirdperson.cdf",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/weapons/sampleweapon/defaultweapon.cgf",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/weapons/sampleweapon/defaultweapon.mtl",
-					"usageCount": 0
-				},
-				{ "path": "scripts/ai/factions.xml", "usageCount": 0 },
-				{
 					"path": "textures/cubemaps/example/environmentprobe1_cm.dds",
 					"usageCount": 0
 				},
@@ -8439,7 +8196,7 @@
 			"type": "Material",
 			"guid": "76452ec6-d264-9a3a-7281-6b9f58516e00",
 			"name": "bullet",
-			"timestamp": 1556052179,
+			"timestamp": 1556143042,
 			"files": [ "Materials/bullet.mtl" ],
 			"source": "",
 			"metadata": "Materials/bullet.mtl.cryasset",
@@ -8455,7 +8212,7 @@
 			"type": "Texture",
 			"guid": "a20e9ee0-f826-2f99-7797-1be563a99670",
 			"name": "gray_base",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/gray_base.dds" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/gray_base.dds.cryasset",
@@ -8470,7 +8227,7 @@
 			"type": "Character",
 			"guid": "62d438df-e719-9457-3de1-731b322d6eb9",
 			"name": "legion",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion.cdf" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion.cdf.cryasset",
@@ -8521,7 +8278,7 @@
 			"type": "Material",
 			"guid": "cd02d140-2cdd-3d91-e6f2-5189da07a5cd",
 			"name": "legion_render",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion_render.mtl" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion_render.mtl.cryasset",
@@ -8728,7 +8485,7 @@
 			"type": "Material",
 			"guid": "00e306c9-f68d-dab9-bf59-7e9d81a09eec",
 			"name": "legion_render_LOD1",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion_render_LOD1.mtl" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion_render_LOD1.mtl.cryasset",
@@ -8803,7 +8560,7 @@
 			"type": "Skeleton",
 			"guid": "3019b578-b70f-bef8-73dd-78cb62085f1b",
 			"name": "legion_skel",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion_skel.chr" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion_skel.chr.cryasset",
@@ -8814,7 +8571,7 @@
 			"type": "Material",
 			"guid": "0285a363-36a9-6774-ed2c-853911a4ca42",
 			"name": "legion_skel",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion_skel.mtl" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion_skel.mtl.cryasset",
@@ -8828,7 +8585,7 @@
 			"type": "SkinnedMesh",
 			"guid": "b6368483-fe4f-5de0-dfc1-cbc8882e4717",
 			"name": "legion_skin",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [ "Objects/characters/human/medium/romanLegion/legion_skin.skin" ],
 			"source": "",
 			"metadata": "Objects/characters/human/medium/romanLegion/legion_skin.skin.cryasset",
@@ -8850,7 +8607,7 @@
 			"type": "SkinnedMesh",
 			"guid": "791c7fec-1fec-67c9-c3e0-741fd91c88af",
 			"name": "legion_tunic_lower",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legion_tunic_lower.skin",
 				"Objects/characters/human/medium/romanLegion/legion_tunic_lower_lod1.skin"
@@ -8875,7 +8632,7 @@
 			"type": "SkinnedMesh",
 			"guid": "80e35a09-4ed8-bd94-e96d-66ea7db6a83e",
 			"name": "legion_tunic_lower_sim",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legion_tunic_lower_sim.skin"
 			],
@@ -8899,7 +8656,7 @@
 			"type": "SkinnedMesh",
 			"guid": "f028c19c-3f4d-76ca-ea60-b3f03b326021",
 			"name": "legion_tunic_lower_sim_blend",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legion_tunic_lower_sim_blend.skin"
 			],
@@ -8923,7 +8680,7 @@
 			"type": "Texture",
 			"guid": "753d61c3-4105-ec1b-c158-aff96d2c8396",
 			"name": "eyes_cover",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/eyes_cover.dds"
 			],
@@ -8940,7 +8697,7 @@
 			"type": "Mesh",
 			"guid": "a84a9ae8-8118-bc3d-19d8-015f0a9ff299",
 			"name": "gen_eyes",
-			"timestamp": 1556052175,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes.cgf"
 			],
@@ -8963,7 +8720,7 @@
 			"type": "Material",
 			"guid": "7ae51bf4-fa5e-579b-c089-eb731fb9e476",
 			"name": "gen_eyes",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes.mtl"
 			],
@@ -8986,7 +8743,7 @@
 			"type": "Texture",
 			"guid": "60f47854-c33a-e8d3-5b9d-b355297014b3",
 			"name": "gen_eyes_02_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes_02_diff.dds"
 			],
@@ -9003,7 +8760,7 @@
 			"type": "Texture",
 			"guid": "09f3cfe9-3131-17ac-ebc3-ce5f9896d49f",
 			"name": "gen_eyes_03_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes_03_diff.dds"
 			],
@@ -9020,7 +8777,7 @@
 			"type": "Texture",
 			"guid": "bf50cdb7-79da-20bb-3416-74cfd0ea2aad",
 			"name": "gen_eyes_alpha",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes_alpha.dds"
 			],
@@ -9037,7 +8794,7 @@
 			"type": "Texture",
 			"guid": "6986de41-9afa-cd8e-52da-216d2aa58094",
 			"name": "gen_eyes_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gen_eyes_diff.dds"
 			],
@@ -9054,7 +8811,7 @@
 			"type": "Texture",
 			"guid": "87693e1b-aa5b-b089-bf74-1023406493a0",
 			"name": "general_body_sss",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/general_body_sss.dds"
 			],
@@ -9071,7 +8828,7 @@
 			"type": "Texture",
 			"guid": "e4a301ee-5110-873e-b423-3e49f291b4fd",
 			"name": "generic_head_sss",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/generic_head_sss.dds"
 			],
@@ -9088,7 +8845,7 @@
 			"type": "Texture",
 			"guid": "8551c0b1-3b74-f65c-ff86-c8b6248d3ea2",
 			"name": "generic_wrinkle_mask_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/generic_wrinkle_mask_diff.dds"
 			],
@@ -9105,7 +8862,7 @@
 			"type": "Texture",
 			"guid": "8d253e36-2d3e-ab10-8ef1-704db4792a31",
 			"name": "gnrc_teeth_v1_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_teeth_v1_ddna.dds"
 			],
@@ -9122,7 +8879,7 @@
 			"type": "Texture",
 			"guid": "df24afce-7644-5e85-b45e-a7645ef90440",
 			"name": "gnrc_teeth_v1_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_teeth_v1_diff.dds"
 			],
@@ -9139,7 +8896,7 @@
 			"type": "Texture",
 			"guid": "772e0f69-7e39-a88c-5b03-954974f3ed52",
 			"name": "gnrc_teeth_v1_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_teeth_v1_spec.dds"
 			],
@@ -9156,7 +8913,7 @@
 			"type": "Texture",
 			"guid": "7cd5358b-16b9-3cc0-3264-d8e6b4ccb521",
 			"name": "gnrc_v1_eyeball_iris_ddn",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v1_eyeball_iris_ddn.dds"
 			],
@@ -9173,7 +8930,7 @@
 			"type": "Texture",
 			"guid": "fdc75971-060b-4c04-e9da-84e197a778e8",
 			"name": "gnrc_v1_eyeball_iris_depth_ddn",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v1_eyeball_iris_depth_ddn.dds"
 			],
@@ -9190,7 +8947,7 @@
 			"type": "Texture",
 			"guid": "d4ad1bc3-ce77-de98-3cdb-bbe795c5734b",
 			"name": "gnrc_v1_eyeball_overlay_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v1_eyeball_overlay_diff.dds"
 			],
@@ -9207,7 +8964,7 @@
 			"type": "Texture",
 			"guid": "68e5615b-a4b6-b865-d46f-d406ddc543fc",
 			"name": "gnrc_v1_eyeball_overlay_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v1_eyeball_overlay_spec.dds"
 			],
@@ -9224,7 +8981,7 @@
 			"type": "Texture",
 			"guid": "7f7d75a9-13fd-b6f5-c034-ff63243a20c0",
 			"name": "gnrc_v1_eyeball_water_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v1_eyeball_water_spec.dds"
 			],
@@ -9241,7 +8998,7 @@
 			"type": "Texture",
 			"guid": "da6e933d-49c1-7229-5ac5-3794881d60e1",
 			"name": "gnrc_v2_eyelash_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v2_eyelash_diff.dds"
 			],
@@ -9258,7 +9015,7 @@
 			"type": "Texture",
 			"guid": "cf7c8adf-757d-4df7-ce8f-6cf7bbf496ef",
 			"name": "gnrc_v2_eyelash_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/gnrc_v2_eyelash_spec.dds"
 			],
@@ -9275,7 +9032,7 @@
 			"type": "SkinnedMesh",
 			"guid": "0b645b4d-76af-579b-ccc6-351f7353c59e",
 			"name": "head_a",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a.skin"
 			],
@@ -9299,7 +9056,7 @@
 			"type": "Texture",
 			"guid": "d9110ff9-ad7f-f7d4-756e-bc3a7a7da3f0",
 			"name": "head_a_ddna",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_ddna.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_ddna.dds.a",
@@ -9333,7 +9090,7 @@
 			"type": "Texture",
 			"guid": "dc8ee208-9b0e-1d8d-c79e-48ac874b716e",
 			"name": "head_a_diff",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_diff.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_diff.dds.1",
@@ -9358,7 +9115,7 @@
 			"type": "Texture",
 			"guid": "710f3969-175b-4474-0ff9-c46c8abd1ccf",
 			"name": "head_a_eyeball_iris_diff",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_eyeball_iris_diff.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_eyeball_iris_diff.dds.1",
@@ -9382,7 +9139,7 @@
 			"type": "Texture",
 			"guid": "700173ed-47e6-83be-0327-ff42dc151d74",
 			"name": "head_a_eyelash_diff",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_eyelash_diff.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_eyelash_diff.dds.1",
@@ -9405,7 +9162,7 @@
 			"type": "Texture",
 			"guid": "fec067e6-94b2-408c-281e-62dadbbf2b8a",
 			"name": "head_a_hair_stubble_diff",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_hair_stubble_diff.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_hair_stubble_diff.dds.1",
@@ -9429,7 +9186,7 @@
 			"type": "Texture",
 			"guid": "625283d4-14c6-14ed-dd8d-66da24d91340",
 			"name": "head_a_plate_ddn",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_ddn.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_ddn.dds.1",
@@ -9453,7 +9210,7 @@
 			"type": "Texture",
 			"guid": "c7a8869a-d267-08a6-59b7-9881beffe8a8",
 			"name": "head_a_plate_diff",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_diff.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_diff.dds.1",
@@ -9478,7 +9235,7 @@
 			"type": "Texture",
 			"guid": "432457ad-3ae0-429f-abcf-22c288e95d95",
 			"name": "head_a_plate_dr_ddn",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_dr_ddn.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_dr_ddn.dds.1",
@@ -9502,7 +9259,7 @@
 			"type": "Texture",
 			"guid": "b13a22c0-7466-00e8-44a3-7de711542150",
 			"name": "head_a_plate_spec",
-			"timestamp": 1556052178,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_spec.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_plate_spec.dds.1",
@@ -9527,7 +9284,7 @@
 			"type": "Texture",
 			"guid": "4d8decaa-4782-ab34-a9a0-bb83f834d385",
 			"name": "head_a_spec",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_spec.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_spec.dds.1",
@@ -9552,7 +9309,7 @@
 			"type": "Texture",
 			"guid": "aef85223-6c8f-4e97-fd0f-a402082b2d3c",
 			"name": "head_a_sss",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_sss.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_sss.dds.1",
@@ -9577,7 +9334,7 @@
 			"type": "Texture",
 			"guid": "375595ff-9db5-e952-86f4-0cd483341171",
 			"name": "head_a_wrinkle_atlas",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_wrinkle_atlas.dds",
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_wrinkle_atlas.dds.1",
@@ -9600,7 +9357,7 @@
 			"type": "Texture",
 			"guid": "56b771fa-c093-2ff5-8850-2dff517567ca",
 			"name": "head_a_wrinkle_mask_diff",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/head_a_wrinkle_mask_diff.dds"
 			],
@@ -9617,7 +9374,7 @@
 			"type": "Material",
 			"guid": "0886e35e-8596-4440-164b-67e85939da31",
 			"name": "mat_head_a",
-			"timestamp": 1556052179,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/legionHead_SDK/mat_head_a.mtl"
 			],
@@ -9746,7 +9503,7 @@
 			"type": "Texture",
 			"guid": "f3d92f79-24dd-f6ff-97e6-b44d9466ecdb",
 			"name": "romn_lgnr_armor_lod0_ddna",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_armor_lod0_ddna.dds"
 			],
@@ -9763,7 +9520,7 @@
 			"type": "Texture",
 			"guid": "91779b26-ec7c-3fc1-5b6c-aa7b25928a16",
 			"name": "romn_lgnr_armor_lod0_diff",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_armor_lod0_diff.dds"
 			],
@@ -9780,7 +9537,7 @@
 			"type": "Texture",
 			"guid": "f9ccf6ed-2296-010c-14f3-6f75e3af9a78",
 			"name": "romn_lgnr_armor_lod1_spec",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_armor_lod1_spec.dds"
 			],
@@ -9797,7 +9554,7 @@
 			"type": "Texture",
 			"guid": "aa34922c-37be-4938-fcbe-28b78b326c59",
 			"name": "romn_lgnr_body_basemesh_spec",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_basemesh_spec.dds"
 			],
@@ -9814,7 +9571,7 @@
 			"type": "Texture",
 			"guid": "3dde1cab-e323-47e9-0265-fdd13f52e180",
 			"name": "romn_lgnr_body_lod0_ddna",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod0_ddna.dds"
 			],
@@ -9831,7 +9588,7 @@
 			"type": "Texture",
 			"guid": "e1be6cf8-55a6-1df7-eb0e-7fd4623f85c1",
 			"name": "romn_lgnr_body_lod0_diff",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod0_diff.dds"
 			],
@@ -9848,7 +9605,7 @@
 			"type": "Texture",
 			"guid": "f707c6bb-fe76-faf5-6ffd-39c3c095f53f",
 			"name": "romn_lgnr_body_lod0_spec",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod0_spec.dds"
 			],
@@ -9865,7 +9622,7 @@
 			"type": "Texture",
 			"guid": "d6757fdc-7a5c-e50e-d78e-1ab8f729a65f",
 			"name": "romn_lgnr_body_lod1_ddna",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod1_ddna.dds"
 			],
@@ -9882,7 +9639,7 @@
 			"type": "Texture",
 			"guid": "5f223ecb-2d2c-50d3-fece-45819b2dca10",
 			"name": "romn_lgnr_body_lod1_diff",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod1_diff.dds"
 			],
@@ -9899,7 +9656,7 @@
 			"type": "Texture",
 			"guid": "a4a3e74c-feed-ca4f-f6d0-2738ed11665e",
 			"name": "romn_lgnr_body_lod1_spec",
-			"timestamp": 1556052176,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_body_lod1_spec.dds"
 			],
@@ -9916,7 +9673,7 @@
 			"type": "Texture",
 			"guid": "8b9425d0-f19c-89a6-e712-b9a3f0fad85f",
 			"name": "romn_lgnr_cloth_lod0_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod0_ddna.dds"
 			],
@@ -9933,7 +9690,7 @@
 			"type": "Texture",
 			"guid": "c8ba9b18-61ec-590d-05bc-d51895becc95",
 			"name": "romn_lgnr_cloth_lod0_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod0_diff.dds"
 			],
@@ -9950,7 +9707,7 @@
 			"type": "Texture",
 			"guid": "75867866-a845-95a4-b2bf-5987210e2f73",
 			"name": "romn_lgnr_cloth_lod0_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod0_spec.dds"
 			],
@@ -9967,7 +9724,7 @@
 			"type": "Texture",
 			"guid": "31b8ef66-76df-0335-13c1-c981ffca9fb7",
 			"name": "romn_lgnr_cloth_lod1_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod1_ddna.dds"
 			],
@@ -9984,7 +9741,7 @@
 			"type": "Texture",
 			"guid": "6afc54ab-8722-4a6c-ccd5-e2fe970f8bbf",
 			"name": "romn_lgnr_cloth_lod1_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod1_diff.dds"
 			],
@@ -10001,7 +9758,7 @@
 			"type": "Texture",
 			"guid": "871ce626-ecf8-6acc-7cc3-29ab6e2ba2f5",
 			"name": "romn_lgnr_cloth_lod1_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_cloth_lod1_spec.dds"
 			],
@@ -10018,7 +9775,7 @@
 			"type": "Texture",
 			"guid": "f673b13b-0e18-fcfc-0f98-021173975c69",
 			"name": "romn_lgnr_decos_lod0_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod0_ddna.dds"
 			],
@@ -10035,7 +9792,7 @@
 			"type": "Texture",
 			"guid": "31010f1e-d1ea-cf24-9f89-1698d1a51eec",
 			"name": "romn_lgnr_decos_lod0_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod0_diff.dds"
 			],
@@ -10052,7 +9809,7 @@
 			"type": "Texture",
 			"guid": "612aaeb9-3e42-52fb-1d2c-2cda7eb076a3",
 			"name": "romn_lgnr_decos_lod0_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod0_spec.dds"
 			],
@@ -10069,7 +9826,7 @@
 			"type": "Texture",
 			"guid": "70f6f421-e02e-ef5f-f424-7a8935d33163",
 			"name": "romn_lgnr_decos_lod1_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod1_ddna.dds"
 			],
@@ -10086,7 +9843,7 @@
 			"type": "Texture",
 			"guid": "1d4ea3b1-53ac-3f74-7afe-c360e01e8ff5",
 			"name": "romn_lgnr_decos_lod1_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod1_diff.dds"
 			],
@@ -10103,7 +9860,7 @@
 			"type": "Texture",
 			"guid": "0566d24f-4ff8-e6c1-d558-d0a5c65a163e",
 			"name": "romn_lgnr_decos_lod1_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod1_spec.dds"
 			],
@@ -10120,7 +9877,7 @@
 			"type": "Texture",
 			"guid": "f2e29cd4-475c-2f0a-753f-bf0e964ad4a5",
 			"name": "romn_lgnr_decos_lod2_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod2_ddna.dds"
 			],
@@ -10137,7 +9894,7 @@
 			"type": "Texture",
 			"guid": "3090404d-35a1-eb02-0b78-67def06addbd",
 			"name": "romn_lgnr_decos_lod2_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod2_diff.dds"
 			],
@@ -10154,7 +9911,7 @@
 			"type": "Texture",
 			"guid": "799e50d9-0ee9-40bd-d1bd-6ff2efbf293e",
 			"name": "romn_lgnr_decos_lod2_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod2_spec.dds"
 			],
@@ -10171,7 +9928,7 @@
 			"type": "Texture",
 			"guid": "587d0d4f-3fa4-2bd8-3c4c-dda55bfdbb91",
 			"name": "romn_lgnr_decos_lod3_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod3_ddna.dds"
 			],
@@ -10188,7 +9945,7 @@
 			"type": "Texture",
 			"guid": "afd4680c-8fda-e3b3-d3b0-7ee73aefd2ba",
 			"name": "romn_lgnr_decos_lod3_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod3_diff.dds"
 			],
@@ -10205,7 +9962,7 @@
 			"type": "Texture",
 			"guid": "b5e7a243-2de3-a687-214d-6fa99906ca40",
 			"name": "romn_lgnr_decos_lod3_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_decos_lod3_spec.dds"
 			],
@@ -10222,7 +9979,7 @@
 			"type": "Texture",
 			"guid": "ff0c0751-0acf-c4d3-8319-662c76abe6d8",
 			"name": "romn_lgnr_helmet_lod0_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod0_ddna.dds"
 			],
@@ -10239,7 +9996,7 @@
 			"type": "Texture",
 			"guid": "d63657d7-23ae-4205-af0d-970c24406254",
 			"name": "romn_lgnr_helmet_lod0_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod0_diff.dds"
 			],
@@ -10256,7 +10013,7 @@
 			"type": "Texture",
 			"guid": "7e9a07f8-e9df-afda-4611-12de14b27c32",
 			"name": "romn_lgnr_helmet_lod0_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod0_spec.dds"
 			],
@@ -10273,7 +10030,7 @@
 			"type": "Texture",
 			"guid": "eb41e2c9-1dc5-7bb9-ac6a-91dc63af897a",
 			"name": "romn_lgnr_helmet_lod1_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod1_ddna.dds"
 			],
@@ -10290,7 +10047,7 @@
 			"type": "Texture",
 			"guid": "77b8706a-6f43-06eb-4845-00c90c530d71",
 			"name": "romn_lgnr_helmet_lod1_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod1_diff.dds"
 			],
@@ -10307,7 +10064,7 @@
 			"type": "Texture",
 			"guid": "47744b6c-7a6e-57f6-2057-014b5e50b53a",
 			"name": "romn_lgnr_helmet_lod1_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod1_spec.dds"
 			],
@@ -10324,7 +10081,7 @@
 			"type": "Texture",
 			"guid": "649f57b0-33b3-00b0-c490-66085ce311ed",
 			"name": "romn_lgnr_helmet_lod2_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod2_ddna.dds"
 			],
@@ -10341,7 +10098,7 @@
 			"type": "Texture",
 			"guid": "bcf672c5-f914-a146-095f-22cfb88836e8",
 			"name": "romn_lgnr_helmet_lod2_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod2_diff.dds"
 			],
@@ -10358,7 +10115,7 @@
 			"type": "Texture",
 			"guid": "30b1602d-1919-ef3a-4ca5-2e5f046984fe",
 			"name": "romn_lgnr_helmet_lod2_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod2_spec.dds"
 			],
@@ -10375,7 +10132,7 @@
 			"type": "Texture",
 			"guid": "77763613-8559-2279-1f34-75795e89184c",
 			"name": "romn_lgnr_helmet_lod3_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod3_ddna.dds"
 			],
@@ -10392,7 +10149,7 @@
 			"type": "Texture",
 			"guid": "60c2edb2-cdd8-dda2-75c8-cfcb87592a24",
 			"name": "romn_lgnr_helmet_lod3_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod3_diff.dds"
 			],
@@ -10409,7 +10166,7 @@
 			"type": "Texture",
 			"guid": "aaafa5e1-3308-072b-9b1d-e04dc2577b71",
 			"name": "romn_lgnr_helmet_lod3_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_helmet_lod3_spec.dds"
 			],
@@ -10426,7 +10183,7 @@
 			"type": "Texture",
 			"guid": "1c5b65ea-09e4-b6a4-3137-0ca5c166e6b9",
 			"name": "romn_lgnr_main_lod2_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod2_ddna.dds"
 			],
@@ -10443,7 +10200,7 @@
 			"type": "Texture",
 			"guid": "c919f9f2-f0e2-464e-ccde-989a59bc75c0",
 			"name": "romn_lgnr_main_lod2_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod2_diff.dds"
 			],
@@ -10460,7 +10217,7 @@
 			"type": "Texture",
 			"guid": "a6106f3a-4986-836a-06db-05131680fef9",
 			"name": "romn_lgnr_main_lod2_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod2_spec.dds"
 			],
@@ -10477,7 +10234,7 @@
 			"type": "Texture",
 			"guid": "3795aebe-6d05-20e2-26bb-47ad453f4966",
 			"name": "romn_lgnr_main_lod3_ddna",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod3_ddna.dds"
 			],
@@ -10494,7 +10251,7 @@
 			"type": "Texture",
 			"guid": "3cd21e1e-a253-fa29-e6b0-6751dd608ccd",
 			"name": "romn_lgnr_main_lod3_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod3_diff.dds"
 			],
@@ -10511,7 +10268,7 @@
 			"type": "Texture",
 			"guid": "3453ce6d-3a7b-1114-045a-d42df2d58fdc",
 			"name": "romn_lgnr_main_lod3_spec",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod3_spec.dds"
 			],
@@ -10528,7 +10285,7 @@
 			"type": "Texture",
 			"guid": "223f22a7-0f29-25e0-9c11-27e0c8222039",
 			"name": "romn_lgnr_main_lod4_diff",
-			"timestamp": 1556052177,
+			"timestamp": 1556142943,
 			"files": [
 				"Objects/characters/human/medium/romanLegion/romn_lgnr_main_lod4_diff.dds"
 			],
@@ -10626,7 +10383,7 @@
 			"type": "SkinnedMesh",
 			"guid": "dd30777d-1a0f-85fa-5e32-7d23f9723068",
 			"name": "motusBody",
-			"timestamp": 1556052176,
+			"timestamp": 1556143042,
 			"files": [ "Objects/characters/SampleCharacter/motusBody.skin" ],
 			"source": "",
 			"metadata": "Objects/characters/SampleCharacter/motusBody.skin.cryasset",
@@ -10648,7 +10405,7 @@
 			"type": "SkinnedMesh",
 			"guid": "5f5a38cb-8026-a80d-ad14-9f0bbd0dda3c",
 			"name": "motusBodyHeadless",
-			"timestamp": 1556052176,
+			"timestamp": 1556143042,
 			"files": [ "Objects/characters/SampleCharacter/motusBodyHeadless.skin" ],
 			"source": "",
 			"metadata": "Objects/characters/SampleCharacter/motusBodyHeadless.skin.cryasset",
@@ -10670,7 +10427,7 @@
 			"type": "Material",
 			"guid": "ce345eaf-3065-9da5-8e7e-cf414c119cf8",
 			"name": "motusBodyMAT",
-			"timestamp": 1556052179,
+			"timestamp": 1556143042,
 			"files": [ "Objects/characters/SampleCharacter/motusBodyMAT.mtl" ],
 			"source": "",
 			"metadata": "Objects/characters/SampleCharacter/motusBodyMAT.mtl.cryasset",
@@ -10744,7 +10501,7 @@
 			"type": "Mesh",
 			"guid": "3dc7e1bf-633c-a074-5b0d-e97ec02b79bd",
 			"name": "defaultweapon",
-			"timestamp": 1556052175,
+			"timestamp": 1556143042,
 			"files": [ "Objects/Weapons/SampleWeapon/defaultweapon.cgf" ],
 			"source": "",
 			"metadata": "Objects/Weapons/SampleWeapon/defaultweapon.cgf.cryasset",
@@ -10765,7 +10522,7 @@
 			"type": "Material",
 			"guid": "c46c8697-00de-a27c-73c9-5023df21dc9b",
 			"name": "defaultWeapon",
-			"timestamp": 1556052179,
+			"timestamp": 1556143042,
 			"files": [ "Objects/Weapons/SampleWeapon/defaultWeapon.mtl" ],
 			"source": "",
 			"metadata": "Objects/Weapons/SampleWeapon/defaultWeapon.mtl.cryasset",
@@ -10781,7 +10538,7 @@
 			"type": "Mesh",
 			"guid": "852bc343-8f99-0e0b-92e9-4b8bda51e8f8",
 			"name": "motusweapon",
-			"timestamp": 1556052175,
+			"timestamp": 1556143042,
 			"files": [ "Objects/Weapons/SampleWeapon/motusweapon.cgf" ],
 			"source": "",
 			"metadata": "Objects/Weapons/SampleWeapon/motusweapon.cgf.cryasset",
@@ -10802,7 +10559,7 @@
 			"type": "Material",
 			"guid": "4d3839f0-bdc7-d221-cb4a-998f62eaa620",
 			"name": "motusWeaponMAT",
-			"timestamp": 1556052179,
+			"timestamp": 1556143042,
 			"files": [ "Objects/Weapons/SampleWeapon/motusWeaponMAT.mtl" ],
 			"source": "",
 			"metadata": "Objects/Weapons/SampleWeapon/motusWeaponMAT.mtl.cryasset",

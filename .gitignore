@@ -55,11 +55,10 @@ solutions/
 /assets/user2/
 /assets/user3/
 /assets/user4/
+/user/testresults/
 
 # Assets we don't want to include for various reasons e.g. copyright
-/assets/chrysalis/audio/
-/assets/chrysalis/objects/items/compass/
-/assets/dark-vale/
+
 
 # Keep out the generated files and folders.
 /assets/_tmp/
@@ -79,7 +78,6 @@ log.txt
 /assets/animations/editor/
 last_fbx_scene.txt
 bin/CMakeCache.txt
-bin/Chrysalis.vcxproj.user
 Editor/Tmp/
 build_scripts/temprc/
 build_scripts/client/

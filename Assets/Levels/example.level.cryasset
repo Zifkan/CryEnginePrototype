@@ -560,11 +560,16 @@
   <Path>animations/human/medium/romans/stand_x_slow_death_right_01.caf</Path>
   <Path>animations/human/medium/romans/stand_x_slow_death_right_02.caf</Path>
   <Path>animations/mannequin/adb/firstpersoncontrollerdefinition.xml</Path>
+  <Path>animations/mannequin/adb/legionertags.xml</Path>
+  <Path>animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml</Path>
+  <Path>animations/mannequin/adb/legionplayerfragmentids.xml</Path>
   <Path>animations/mannequin/adb/playerfragmentids.xml</Path>
   <Path>animations/mannequin/adb/playertags.xml</Path>
+  <Path>animations/mannequin/preview/legioner.xml</Path>
   <Path>engineassets/materials/sky/sky.mtl</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>
+  <Path>f:/crytek/cryengineprototype/user/sandbox/mannequin/layout.xml</Path>
   <Path>libs/environmentpresets/example.xml</Path>
   <Path>objects/characters/human/medium/romanlegion/legion.cdf</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
@@ -632,6 +637,7 @@
   <Path>objects/characters/human/medium/romanlegion/romn_lgnr_main_lod3_diff.dds</Path>
   <Path>objects/characters/human/medium/romanlegion/romn_lgnr_main_lod3_spec.dds</Path>
   <Path>objects/characters/human/medium/romanlegion/romn_lgnr_main_lod4_diff.dds</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
  </Dependencies>

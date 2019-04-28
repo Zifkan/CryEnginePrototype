@@ -2,5 +2,6 @@
  <Tags>
   <Tag name="Idle"/>
   <Tag name="Walk" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
+  <Tag name="Attack" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
  </Tags>
 </TagDefinition>

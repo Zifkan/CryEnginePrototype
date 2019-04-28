@@ -8460,12 +8460,7 @@
   <event name="footstep" time="0.21160001" endTime="0.22660001" parameter="" bone="R_Foot" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.2287" endTime="0.25409999" parameter="movement" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/romn_com_a_to_a_atk_fhit_0_fwd_150_id0020_01.caf">
-  <event name="foley" time="0.033468559" endTime="0.033468559" parameter="heavy_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.50202841" endTime="0.50202841" parameter="light_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="footstep" time="0.77270001" endTime="0.77270001" parameter="" bone="R_Foot" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="shuffle" time="0.92290002" endTime="0.92290002" parameter="" bone="L_Foot" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/romn_com_a_to_a_atk_fhit_0_fwd_150_id0020_01.caf"/>
  <animation name="animations/human/medium/romans/romn_com_a_to_b_atk_fhit_slw_0_fwd_150_id0221_01.caf">
   <event name="foley" time="0.072008111" endTime="0.072008111" parameter="heavy_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.44209999" endTime="0.44209999" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>

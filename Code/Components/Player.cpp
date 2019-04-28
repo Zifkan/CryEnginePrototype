@@ -38,11 +38,11 @@ void CPlayerComponent::Initialize()
 	m_pAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
 	
 	// Set the player geometry, this also triggers physics proxy creation
-	m_pAnimationComponent->SetMannequinAnimationDatabaseFile("Animations/Mannequin/ADB/FirstPerson.adb");
+	m_pAnimationComponent->SetMannequinAnimationDatabaseFile("Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb");
 	//m_pAnimationComponent->SetCharacterFile("Objects/Characters/SampleCharacter/thirdperson.cdf");
 
-	m_pAnimationComponent->SetControllerDefinitionFile("Animations/Mannequin/ADB/FirstPersonControllerDefinition.xml");
-	m_pAnimationComponent->SetDefaultScopeContextName("FirstPersonCharacter");
+	m_pAnimationComponent->SetControllerDefinitionFile("Animations/Mannequin/ADB/LegionFirstPersonControllerDefinition.xml");
+	m_pAnimationComponent->SetDefaultScopeContextName("ThirdPersonCharacter");
 	// Queue the idle fragment to start playing immediately on next update
 	m_pAnimationComponent->SetDefaultFragmentName("Idle");
 
@@ -80,42 +80,32 @@ void CPlayerComponent::Initialize()
 	m_pInputComponent->RegisterAction("player", "mouse_rotatepitch", [this](int activationMode, float value) { m_mouseDeltaRotation.y -= value; });
 	m_pInputComponent->BindAction("player", "mouse_rotatepitch", eAID_KeyboardMouse, EKeyId::eKI_MouseY);
 
+    m_pInputComponent->RegisterAction("player", "sprint", [this](int activationMode, float value)
+    {
+        if (activationMode == eIS_Pressed)
+        {
+            m_isSprint = true;           
+        }
+
+        if (activationMode == eIS_Released)
+        {
+            m_isSprint = false;
+        }
+    });
+	m_pInputComponent->BindAction("player", "sprint", eAID_KeyboardMouse, EKeyId::eKI_LShift);
+
 	// Register the shoot action
-	m_pInputComponent->RegisterAction("player", "shoot", [this](int activationMode, float value)
+	m_pInputComponent->RegisterAction("player", "Attack", [this](int activationMode, float value)
 	{
 		// Only fire on press, not release
 		if (activationMode == eIS_Pressed)
 		{
-			if (ICharacterInstance *pCharacter = m_pAnimationComponent->GetCharacter())
-			{
-				auto *pBarrelOutAttachment = pCharacter->GetIAttachmentManager()->GetInterfaceByName("barrel_out");
-
-				if (pBarrelOutAttachment != nullptr)
-				{
-					QuatTS bulletOrigin = pBarrelOutAttachment->GetAttWorldAbsolute();
-
-					SEntitySpawnParams spawnParams;
-					spawnParams.pClass = gEnv->pEntitySystem->GetClassRegistry()->GetDefaultClass();
-
-					spawnParams.vPosition = bulletOrigin.t;
-					spawnParams.qRotation = bulletOrigin.q;
-
-					const float bulletScale = 0.05f;
-					spawnParams.vScale = Vec3(bulletScale);
-
-					// Spawn the entity
-					if (IEntity* pEntity = gEnv->pEntitySystem->SpawnEntity(spawnParams))
-					{
-						// See Bullet.cpp, bullet is propelled in  the rotation and position the entity was spawned with
-						pEntity->CreateComponentClass<CBulletComponent>();
-					}
-				}
-			}
+            m_pAnimationComponent->QueueFragmentWithId(m_pAnimationComponent->GetFragmentId("Attack"));
 		}
 	});
 
 	// Bind the shoot action to left mouse click
-	m_pInputComponent->BindAction("player", "shoot", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
+	m_pInputComponent->BindAction("player", "Attack", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
 
 	Revive();
 }
@@ -187,7 +177,7 @@ void CPlayerComponent::UpdateMovementRequest(float frameTime)
 	{
 		velocity.y -= moveSpeed * frameTime;
 	}
-
+    
 	m_pCharacterController->AddVelocity(GetEntity()->GetWorldRotation() * velocity);
 }
 
@@ -256,6 +246,12 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 
 	// Send updated transform to the entity, only orientation changes
 	GetEntity()->SetPosRotScale(GetEntity()->GetWorldPos(), correctedOrientation, Vec3(1, 1, 1));
+
+    float value;
+    auto s = &value;
+    m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelAngle, *s);
+  //  CryLogAlways("eMotionParamID_TravelAngle = ",std::to_string(*s));
+    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_isSprint?7.0f:1);
 }
 
 void CPlayerComponent::UpdateCamera(float frameTime)

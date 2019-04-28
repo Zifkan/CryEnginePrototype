@@ -4,6 +4,7 @@
  <FragmentDefs>
   <Idle scopes="FirstPerson+ThirdPerson"/>
   <Walk scopes="ThirdPerson"/>
+  <Attack scopes="FirstPerson+ThirdPerson"/>
  </FragmentDefs>
  <ScopeContextDefs>
   <FirstPersonCharacter />

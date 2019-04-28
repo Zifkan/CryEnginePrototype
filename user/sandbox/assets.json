@@ -4862,6 +4862,17 @@
 		},
 		{
 			"type": "Animation",
+			"guid": "df55ca30-4d79-f956-dbc7-76c97a4c7d83",
+			"name": "compression_preview_0",
+			"timestamp": 1556146072,
+			"files": [ "Animations/editor/compression_preview_0.caf" ],
+			"source": "",
+			"metadata": "Animations/editor/compression_preview_0.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
 			"guid": "2c665e1c-3eb3-84f9-4d3d-4a90a3da70fe",
 			"name": "reference_preview_0",
 			"timestamp": 1556052179,
@@ -5535,7 +5546,7 @@
 			"type": "Level",
 			"guid": "90f6f9d4-0804-283c-02dc-2d438ba572bd",
 			"name": "example",
-			"timestamp": 1556143042,
+			"timestamp": 1556311858,
 			"files": [ "Levels/example/example.level" ],
 			"source": "",
 			"metadata": "Levels/example.level.cryasset",
@@ -7761,10 +7772,26 @@
 					"usageCount": 0
 				},
 				{
+					"path": "animations/mannequin/adb/legionertags.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/mannequin/adb/legionplayerfragmentids.xml",
+					"usageCount": 0
+				},
+				{
 					"path": "animations/mannequin/adb/playerfragmentids.xml",
 					"usageCount": 0
 				},
 				{ "path": "animations/mannequin/adb/playertags.xml", "usageCount": 0 },
+				{
+					"path": "animations/mannequin/preview/legioner.xml",
+					"usageCount": 0
+				},
 				{ "path": "engineassets/materials/sky/sky.mtl", "usageCount": 0 },
 				{
 					"path": "engineassets/materials/water/ocean_default.mtl",
@@ -7772,6 +7799,10 @@
 				},
 				{
 					"path": "engineassets/textures/skys/night/half_moon.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "f:/crytek/cryengineprototype/user/sandbox/mannequin/layout.xml",
 					"usageCount": 0
 				},
 				{ "path": "libs/environmentpresets/example.xml", "usageCount": 0 },
@@ -8039,6 +8070,7 @@
 					"path": "objects/characters/human/medium/romanlegion/romn_lgnr_main_lod4_diff.dds",
 					"usageCount": 0
 				},
+				{ "path": "scripts/ai/factions.xml", "usageCount": 0 },
 				{
 					"path": "textures/cubemaps/example/environmentprobe1_cm.dds",
 					"usageCount": 0

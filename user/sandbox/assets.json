@@ -4873,12 +4873,34 @@
 		},
 		{
 			"type": "Animation",
+			"guid": "c947b3eb-d6c8-a531-df45-988ab062b3ce",
+			"name": "compression_preview_1",
+			"timestamp": 1556450692,
+			"files": [ "Animations/editor/compression_preview_1.caf" ],
+			"source": "",
+			"metadata": "Animations/editor/compression_preview_1.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
 			"guid": "2c665e1c-3eb3-84f9-4d3d-4a90a3da70fe",
 			"name": "reference_preview_0",
 			"timestamp": 1556052179,
 			"files": [ "Animations/editor/reference_preview_0.caf" ],
 			"source": "",
 			"metadata": "Animations/editor/reference_preview_0.caf.cryasset",
+			"details": [ ],
+			"dependencies": [ ]
+		},
+		{
+			"type": "Animation",
+			"guid": "8ee64a81-514d-dfd5-a3fa-6ad0e2a08960",
+			"name": "reference_preview_1",
+			"timestamp": 1556447223,
+			"files": [ "Animations/editor/reference_preview_1.caf" ],
+			"source": "",
+			"metadata": "Animations/editor/reference_preview_1.caf.cryasset",
 			"details": [ ],
 			"dependencies": [ ]
 		},

@@ -138,5 +138,7 @@ protected:
 	float m_horizontalAngularVelocity;
 	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
 
+    bool IsAnimationPlaying(FragmentID fragmentId, int animLayer);
+
     bool m_isSprint;
 };

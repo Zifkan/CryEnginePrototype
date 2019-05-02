@@ -84,6 +84,7 @@ void CPlayerComponent::Initialize()
     {
         if (activationMode == eIS_Pressed)
         {
+           
             m_isSprint = true;           
         }
 
@@ -101,6 +102,7 @@ void CPlayerComponent::Initialize()
 		if (activationMode == eIS_Pressed)
 		{
             m_pAnimationComponent->QueueFragmentWithId(m_pAnimationComponent->GetFragmentId("Attack"));
+            
 		}
 	});
 
@@ -247,10 +249,10 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 	// Send updated transform to the entity, only orientation changes
 	GetEntity()->SetPosRotScale(GetEntity()->GetWorldPos(), correctedOrientation, Vec3(1, 1, 1));
 
-    float value;
-    auto s = &value;
-    m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelAngle, *s);
-  //  CryLogAlways("eMotionParamID_TravelAngle = ",std::to_string(*s));
+    float testValue = 0.0f;
+    m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);
+   // CryLog("eMotionParamID_TravelSpeed = %f", testValue);
+    CryLog("eMotionParamID_TravelSpeed = %s", m_pAnimationComponent->GetDefaultFragmentName());
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_isSprint?7.0f:1);
 }
 
@@ -350,4 +352,42 @@ void CPlayerComponent::HandleInputFlagChange(TInputFlags flags, int activationMo
 	}
 	break;
 	}
+}
+
+bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)
+{   
+   /* ICharacterInstance* pCharacter = m_pAnimationComponent->GetCharacter();
+  //  pCharacter->fra
+    if (pCharacter && !animName.empty())
+    {       
+        ISkeletonAnim* pISkeletonAnim = pCharacter->GetISkeletonAnim();
+
+        int animID = pCharacter->GetIAnimationSet()->GetAnimIDByName(animName.c_str());
+
+        int numAnims = pISkeletonAnim->GetNumAnimsInFIFO(animLayer);
+        for (int i = 0; i < numAnims; ++i)
+        {
+            const CAnimation& anim = pISkeletonAnim->GetAnimFromFIFO(animLayer, i);
+            int32 animInLayerID = anim.GetAnimationId();
+            if (animInLayerID == animID)
+            {                
+
+                // animation is playing, but is it also the top of the stack? (FIFO - last one in)
+                // this is done this way because in theory the animation could be in the FIFO several times
+                // so DO NOT optimize this to just check whether i == numAnims - 1 please
+                const CAnimation& topAnim = pISkeletonAnim->GetAnimFromFIFO(animLayer, numAnims - 1);
+                int32 topAnimId = topAnim.GetAnimationId();
+                if (topAnimId == animID)
+                {
+                    
+                }
+
+                return true;
+            }
+        }
+
+    }
+
+    // else it's apparently all false*/
+    return false;
 }

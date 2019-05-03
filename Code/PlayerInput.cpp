@@ -1,4 +1,4 @@
-﻿#include "CPlayerInput.h"
+﻿#include "PlayerInput.h"
 
 
 void CPlayerInput::RegisterInputs()

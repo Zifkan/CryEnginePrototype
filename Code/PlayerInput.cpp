@@ -3,7 +3,7 @@
 
 void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
 {
-    characterActions = charActions;
+    //characterActions = charActions;
 
     // Register an action, and the callback that will be sent when it's triggered
     RegisterAction("player", "moveleft", [this](int activationMode, float value) {characterActions->SetMovement(Vec2(-value,0)); });

@@ -7,8 +7,8 @@
 class CPlayerInputComponent : public Cry::DefaultComponents::CInputComponent
 {
 public:
-
-    void RegisterInputs(ICharacterActions* characterActions);
+   
+    void RegisterInputs(ICharacterActions* charActions);
 
 protected:
     ICharacterActions* characterActions = nullptr;

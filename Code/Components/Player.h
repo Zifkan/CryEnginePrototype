@@ -112,7 +112,7 @@ public:
 
     void InitInput(ICharacterActions* playerCharacterActions);
     
-    friend class  CPlayerInputComponent;
+  
 protected:
 	void UpdateMovementRequest(float frameTime);
 	void UpdateLookDirectionRequest(float frameTime);
@@ -125,19 +125,15 @@ protected:
 
 	void HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type = EInputFlagType::Hold);
 
-//    ICharacterActions* characterActions;
+
 
 protected:
 	Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
 	Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
 	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
+       
 
-
-    PlayerCharacterActions* m_playerCharacterActions = new PlayerCharacterActions();
-
-    CPlayerInputComponent* m_pPlayerInput = nullptr;
-
-  
+    CPlayerInputComponent* m_pPlayerInput = nullptr;  
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;

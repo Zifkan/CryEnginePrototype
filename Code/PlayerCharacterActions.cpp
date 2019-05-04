@@ -2,7 +2,7 @@
 
 void PlayerCharacterActions::SetMovement(Vec2 movement)
 {
-    MovementSubject.get_subscriber().on_next(movement);
+   MovementSubject.get_subscriber().on_next(movement);
 }
 
 void PlayerCharacterActions::Attack(bool isAttack)

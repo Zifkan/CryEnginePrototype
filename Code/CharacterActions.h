@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "StdAfx.h"
-#include "rx.hpp"
+#include "RxCpp/rx.hpp"
 
 class  ICharacterActions
 {

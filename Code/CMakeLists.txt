@@ -31,6 +31,12 @@ add_sources("Components_uber.cpp"
 		"Components/SpawnPoint.h"
 )
 
+add_sources("Rx_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "RxCpp"
+		
+)
+
 add_sources("PlayerInput_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "PlayerInput"

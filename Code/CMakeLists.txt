@@ -16,13 +16,9 @@ sources_platform(ALL)
 add_sources("Code_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Root"
-		"CPlayerInput.cpp"
 		"GamePlugin.cpp"
-		"ICaharcetrActions.cpp"
 		"StdAfx.cpp"
-		"CPlayerInput.h"
 		"GamePlugin.h"
-		"ICharacterActions.h"
 		"StdAfx.h"
 )
 add_sources("Components_uber.cpp"
@@ -45,8 +41,9 @@ add_sources("PlayerInput_uber.cpp"
 add_sources("CharacterActions_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "CharacterActions"
-		"CharacterActions/CharacterActions.cpp"
 		"CharacterActions/CharacterActions.h"
+		"CharacterActions/PlayerCharacterActions.cpp"
+		"CharacterActions/PlayerCharacterActions.h"
 )
 
 

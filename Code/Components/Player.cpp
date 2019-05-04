@@ -58,57 +58,10 @@ void CPlayerComponent::Initialize()
 	m_rotateTagId = m_pAnimationComponent->GetTagId("Rotate");
 
 	// Get the input component, wraps access to action mapping so we can easily get callbacks when inputs are triggered
-	m_pInputComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CInputComponent>();
+    m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
 
-	// Register an action, and the callback that will be sent when it's triggered
-	m_pInputComponent->RegisterAction("player", "moveleft", [this](int activationMode, float value) { HandleInputFlagChange((TInputFlags)EInputFlag::MoveLeft, activationMode);  });
-	// Bind the 'A' key the "moveleft" action
-	m_pInputComponent->BindAction("player", "moveleft", eAID_KeyboardMouse,	EKeyId::eKI_A);
-
-	m_pInputComponent->RegisterAction("player", "moveright", [this](int activationMode, float value) { HandleInputFlagChange((TInputFlags)EInputFlag::MoveRight, activationMode);  });
-	m_pInputComponent->BindAction("player", "moveright", eAID_KeyboardMouse, EKeyId::eKI_D);
-
-	m_pInputComponent->RegisterAction("player", "moveforward", [this](int activationMode, float value) { HandleInputFlagChange((TInputFlags)EInputFlag::MoveForward, activationMode);  });
-	m_pInputComponent->BindAction("player", "moveforward", eAID_KeyboardMouse, EKeyId::eKI_W);
-
-	m_pInputComponent->RegisterAction("player", "moveback", [this](int activationMode, float value) { HandleInputFlagChange((TInputFlags)EInputFlag::MoveBack, activationMode);  });
-	m_pInputComponent->BindAction("player", "moveback", eAID_KeyboardMouse, EKeyId::eKI_S);
-
-	m_pInputComponent->RegisterAction("player", "mouse_rotateyaw", [this](int activationMode, float value) { m_mouseDeltaRotation.x -= value; });
-	m_pInputComponent->BindAction("player", "mouse_rotateyaw", eAID_KeyboardMouse, EKeyId::eKI_MouseX);
-
-	m_pInputComponent->RegisterAction("player", "mouse_rotatepitch", [this](int activationMode, float value) { m_mouseDeltaRotation.y -= value; });
-	m_pInputComponent->BindAction("player", "mouse_rotatepitch", eAID_KeyboardMouse, EKeyId::eKI_MouseY);
-
-    m_pInputComponent->RegisterAction("player", "sprint", [this](int activationMode, float value)
-    {
-        if (activationMode == eIS_Pressed)
-        {
-           
-            m_isSprint = true;           
-        }
-
-        if (activationMode == eIS_Released)
-        {
-            m_isSprint = false;
-        }
-    });
-	m_pInputComponent->BindAction("player", "sprint", eAID_KeyboardMouse, EKeyId::eKI_LShift);
-
-	// Register the shoot action
-	m_pInputComponent->RegisterAction("player", "Attack", [this](int activationMode, float value)
-	{
-		// Only fire on press, not release
-		if (activationMode == eIS_Pressed)
-		{
-            m_pAnimationComponent->QueueFragmentWithId(m_pAnimationComponent->GetFragmentId("Attack"));
-            
-		}
-	});
-
-	// Bind the shoot action to left mouse click
-	m_pInputComponent->BindAction("player", "Attack", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
-
+	
+    
 	Revive();
 }
 
@@ -154,7 +107,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 }
 
 void CPlayerComponent::UpdateMovementRequest(float frameTime)
-{
+{  
+
 	// Don't handle input if we are in air
 	if (!m_pCharacterController->IsOnGround())
 		return;
@@ -252,7 +206,7 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
     float testValue = 0.0f;
     m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);
    // CryLog("eMotionParamID_TravelSpeed = %f", testValue);
-    CryLog("eMotionParamID_TravelSpeed = %s", m_pAnimationComponent->GetDefaultFragmentName());
+   // CryLog("eMotionParamID_TravelSpeed = %s", m_pAnimationComponent->GetDefaultFragmentName());
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_isSprint?7.0f:1);
 }
 
@@ -301,6 +255,11 @@ void CPlayerComponent::Revive()
 	m_lookOrientation = IDENTITY;
 	m_horizontalAngularVelocity = 0.0f;
 	m_averagedHorizontalAngularVelocity.Reset();
+}
+
+void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
+{           
+     m_pPlayerInput->RegisterInputs(playerCharacterActions);    
 }
 
 void CPlayerComponent::SpawnAtSpawnPoint()

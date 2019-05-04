@@ -8,6 +8,9 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Code\PlayerCharacterActions.cpp">
+      <Filter>CharacterActions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
@@ -34,10 +37,10 @@
     <ClInclude Include="..\..\Code\PlayerInput.h">
       <Filter>PlayerInput</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code\CharacterActions.cpp">
+    <ClInclude Include="..\..\Code\CharacterActions.h">
       <Filter>CharacterActions</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code\CharacterActions.h">
+    <ClInclude Include="..\..\Code\PlayerCharacterActions.h">
       <Filter>CharacterActions</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,5 +68,8 @@
     <Filter Include="CharacterActions">
       <UniqueIdentifier>{fe0f4b68-8f79-46fb-8dc7-d0e843d49aa7}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

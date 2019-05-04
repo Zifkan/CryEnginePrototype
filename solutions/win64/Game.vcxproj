@@ -275,9 +275,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Code\PlayerCharacterActions.h" />
     <ClInclude Include="..\..\Code\PlayerInput.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClInclude Include="..\..\Code\CharacterActions.cpp" />
+    <ClCompile Include="..\..\Code\PlayerCharacterActions.cpp" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
     <ClInclude Include="..\..\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
@@ -293,8 +294,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\rxcpp.4.0.0\build\native\rxcpp.targets" Condition="Exists('packages\rxcpp.4.0.0\build\native\rxcpp.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\rxcpp.4.0.0\build\native\rxcpp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\rxcpp.4.0.0\build\native\rxcpp.targets'))" />
+  </Target>
 </Project>

@@ -1,14 +1,15 @@
 ﻿#pragma once
 
 #include <DefaultComponents/Input/InputComponent.h>
+#include "CharacterActions.h"
 
 
-
-class CPlayerInput : Cry::DefaultComponents::CInputComponent
+class CPlayerInputComponent : public Cry::DefaultComponents::CInputComponent
 {
 public:
 
-    void RegisterInputs();
+    void RegisterInputs(ICharacterActions* characterActions);
 
-
+protected:
+    ICharacterActions* characterActions = nullptr;
 };

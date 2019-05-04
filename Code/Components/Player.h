@@ -13,6 +13,9 @@
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include <DefaultComponents/Input/InputComponent.h>
+#include "PlayerCharacterActions.h"
+#include "PlayerInput.h"
+
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
@@ -102,10 +105,14 @@ public:
 	static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
 	{
 		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
+
 	}
 
 	void Revive();
 
+    void InitInput(ICharacterActions* playerCharacterActions);
+    
+    friend class  CPlayerInputComponent;
 protected:
 	void UpdateMovementRequest(float frameTime);
 	void UpdateLookDirectionRequest(float frameTime);
@@ -118,11 +125,19 @@ protected:
 
 	void HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type = EInputFlagType::Hold);
 
+//    ICharacterActions* characterActions;
+
 protected:
 	Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
 	Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
 	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-	Cry::DefaultComponents::CInputComponent* m_pInputComponent = nullptr;
+
+
+    PlayerCharacterActions* m_playerCharacterActions = new PlayerCharacterActions();
+
+    CPlayerInputComponent* m_pPlayerInput = nullptr;
+
+  
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;

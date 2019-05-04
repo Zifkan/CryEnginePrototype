@@ -51,7 +51,8 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 			if (!gEnv->IsEditor())
 			{
 				gEnv->pConsole->ExecuteString("map example", false, true);
-			}
+			}         
+
 		}
 		break;
 
@@ -78,6 +79,14 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 			}
 		}
 		break;
+
+        case ESYSTEM_EVENT_GAME_MODE_SWITCH_START:
+        {
+            auto pPlayerEntity = gEnv->pEntitySystem->GetEntity(LOCAL_PLAYER_ENTITY_ID);
+
+            pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
+        }
+        break;
 	}
 }
 

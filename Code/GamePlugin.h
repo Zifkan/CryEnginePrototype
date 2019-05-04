@@ -4,6 +4,8 @@
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
 #include <CryNetwork/INetwork.h>
+#include "PlayerCharacterActions.h"
+#include "PlayerInput.h"
 
 class CPlayerComponent;
 
@@ -50,4 +52,9 @@ public:
 protected:
 	// Map containing player components, key is the channel id received in OnClientConnectionReceived
 	std::unordered_map<int, EntityId> m_players;
+
+private:
+
+    PlayerCharacterActions* m_playerCharacterActions = new PlayerCharacterActions();
+
 };

@@ -16,6 +16,8 @@
 #include "PlayerCharacterActions.h"
 #include "PlayerInput.h"
 
+//#include "PlayerInput.h"
+
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
@@ -90,6 +92,8 @@ class CPlayerComponent final : public IEntityComponent
 		T m_accumulator;
 	};
 
+   
+
 public:
 	CPlayerComponent() = default;
 	virtual ~CPlayerComponent() {}
@@ -104,12 +108,11 @@ public:
 	// Reflect type to set a unique identifier for this component
 	static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
 	{
-		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
-
+		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);        
 	}
 
 	void Revive();
-
+    
     void InitInput(ICharacterActions* playerCharacterActions);
     
   
@@ -125,15 +128,18 @@ protected:
 
 	void HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type = EInputFlagType::Hold);
 
-
+    void SetupActions() const;
 
 protected:
-	Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
-	Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
-	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-       
+    ICharacterActions* m_pCharacterActions = nullptr;
 
-    CPlayerInputComponent* m_pPlayerInput = nullptr;  
+    Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
+    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
+    Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
+    CPlayerInputComponent* m_pPlayerInput = nullptr;
+
+  
+
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;

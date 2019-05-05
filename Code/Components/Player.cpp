@@ -26,6 +26,7 @@ CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterPlayerComponent)
 
 void CPlayerComponent::Initialize()
 {
+   
 	// Create the camera component, will automatically update the viewport every frame
 	m_pCameraComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCameraComponent>();
 	
@@ -57,11 +58,10 @@ void CPlayerComponent::Initialize()
 	m_walkFragmentId = m_pAnimationComponent->GetFragmentId("Walk");
 	m_rotateTagId = m_pAnimationComponent->GetTagId("Rotate");
 
-	// Get the input component, wraps access to action mapping so we can easily get callbacks when inputs are triggered
-    m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
+    m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();  
 
-	
-    
+    auto s = m_pEntity->GetName();
+
 	Revive();
 }
 
@@ -75,7 +75,7 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	switch (event.event)
 	{
 	case ENTITY_EVENT_START_GAME:
-	{
+	{      
 		// Revive the entity when gameplay starts
 		Revive();
 	}
@@ -99,9 +99,9 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	}
     break;
     case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
-	{
+    {
         Initialize();
-	}
+    }
 	break;
 	}
 }
@@ -258,8 +258,10 @@ void CPlayerComponent::Revive()
 }
 
 void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
-{           
-     m_pPlayerInput->RegisterInputs(playerCharacterActions);    
+{    
+    m_pCharacterActions = playerCharacterActions;
+    m_pPlayerInput->RegisterInputs(playerCharacterActions);
+    SetupActions();
 }
 
 void CPlayerComponent::SpawnAtSpawnPoint()
@@ -311,6 +313,11 @@ void CPlayerComponent::HandleInputFlagChange(TInputFlags flags, int activationMo
 	}
 	break;
 	}
+}
+
+void CPlayerComponent::SetupActions() const
+{
+    m_pCharacterActions->MovementSubject.get_observable().subscribe([](Vec2 Vec2) { CryLog("MovementSubject: %f", Vec2.x); });
 }
 
 bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)

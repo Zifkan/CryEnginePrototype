@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -45,7 +45,7 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros">
+  <PropertyGroup Label="UserMacros" >
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
@@ -275,128 +275,29 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code\PlayerCharacterActions.h" />
-    <ClInclude Include="..\..\Code\PlayerInput.cpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-all.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-amb.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-any.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-buffer_count.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-buffer_time.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-buffer_time_count.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-combine_latest.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-concat.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-concat_map.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-connect_forever.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-debounce.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-delay.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-distinct.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-distinct_until_changed.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-element_at.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-filter.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-finally.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-flat_map.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-group_by.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-ignore_elements.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-lift.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-map.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-merge.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-merge_delay_error.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-multicast.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-observe_on.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-on_error_resume_next.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-pairwise.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-publish.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-reduce.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-ref_count.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-repeat.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-replay.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-retry-repeat-common.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-retry.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-sample_time.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-scan.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-sequence_equal.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-skip.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-skip_last.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-skip_until.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-skip_while.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-start_with.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-subscribe.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-subscribe_on.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-switch_if_empty.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-switch_on_next.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-take.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-take_last.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-take_until.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-take_while.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-tap.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-timeout.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-timestamp.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-time_interval.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-window.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-window_time.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-window_time_count.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-window_toggle.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-with_latest_from.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\operators\rx-zip.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-composite_exception.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-connectable_observable.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-coordination.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-coroutine.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-grouped_observable.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-includes.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-lite.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-notification.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-observable.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-observer.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-operators.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-predef.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-scheduler.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-sources.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-subjects.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-subscriber.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-subscription.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-test.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-trace.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx-util.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\rx.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-currentthread.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-eventloop.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-immediate.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-newthread.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-runloop.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-sameworker.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-test.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\schedulers\rx-virtualtime.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-create.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-defer.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-empty.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-error.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-interval.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-iterate.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-never.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-range.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-scope.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\sources\rx-timer.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\subjects\rx-behavior.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\subjects\rx-replaysubject.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\subjects\rx-subject.hpp" />
-    <ClInclude Include="..\..\Code\RxCpp\subjects\rx-synchronize.hpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClCompile Include="..\..\Code\PlayerCharacterActions.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
-    <ClInclude Include="..\..\Code\PlayerInput.h" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp"  />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
-    <ClInclude Include="..\..\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Bullet.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.h" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp" />
-    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp"  />
+    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

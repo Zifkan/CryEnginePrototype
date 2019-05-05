@@ -39,17 +39,17 @@ add_sources("Rx_uber.cpp"
 
 add_sources("PlayerInput_uber.cpp"
     PROJECTS Game
-    SOURCE_GROUP "PlayerInput"
-		"PlayerInput/PlayerInput.cpp"
-		"PlayerInput/PlayerInput.h"
+    SOURCE_GROUP "Root"
+		"PlayerInput.cpp"
+		"PlayerInput.h"
 )
 
 add_sources("CharacterActions_uber.cpp"
     PROJECTS Game
-    SOURCE_GROUP "CharacterActions"
-		"CharacterActions/CharacterActions.h"
-		"CharacterActions/PlayerCharacterActions.cpp"
-		"CharacterActions/PlayerCharacterActions.h"
+    SOURCE_GROUP "Root"
+		"CharacterActions.h"
+		"PlayerCharacterActions.cpp"
+		"PlayerCharacterActions.h"
 )
 
 

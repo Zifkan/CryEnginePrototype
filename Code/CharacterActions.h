@@ -7,6 +7,8 @@ class  ICharacterActions
    
 
 public:
+    ICharacterActions() = default;
+    virtual ~ICharacterActions() {}
 
     rxcpp::subjects::subject<Vec2> MovementSubject;
     rxcpp::subjects::subject<bool> AttackSubject;

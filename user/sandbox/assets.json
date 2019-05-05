@@ -8126,6 +8126,114 @@
 			"dependencies": [ ]
 		},
 		{
+			"type": "Level",
+			"guid": "ca32398a-dc3c-68e8-57b2-51c12dac468f",
+			"name": "test",
+			"timestamp": 1557048976,
+			"files": [ "Levels/test/test.level" ],
+			"source": "",
+			"metadata": "Levels/test.level.cryasset",
+			"details": [ ],
+			"dependencies": [
+				{ "path": "%editor%/crydesigner_timeofday.xml", "usageCount": 0 },
+				{ "path": "%editor%/default_time_of_day.xml", "usageCount": 0 },
+				{ "path": "%editor%/leveltemplates.xml", "usageCount": 0 },
+				{ "path": "%editor%/mapscreenshotsettings.xml", "usageCount": 0 },
+				{ "path": "%editor%/mbttemplates.xml", "usageCount": 0 },
+				{ "path": "%editor%/modellingpanel.xml", "usageCount": 0 },
+				{ "path": "%editor%/objecttemplates.xml", "usageCount": 0 },
+				{ "path": "%editor%/propertyenumerations.xml", "usageCount": 0 },
+				{ "path": "%editor%/soundtemplates.xml", "usageCount": 0 },
+				{ "path": "%editor%/toolbox.xml", "usageCount": 0 },
+				{ "path": "%editor%/usertools.xml", "usageCount": 0 },
+				{
+					"path": "%engine%/engineassets/icons/averagememoryusage.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/icons/highmemoryusage.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/icons/livepreview.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/icons/lowmemoryusage.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/fogvolumebox.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/fogvolumeellipsoid.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/oceaninto.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/oceanintolowspec.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/oceanoutof.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/fog/oceanoutoflowspec.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/material_terrain_default.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/sky/sky.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/water/ocean_default.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/materials/water/wateroceanbottom.mtl",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/texturemsg/defaultnouvs.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/defaults/16_12.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/defaults/16_34.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/defaults/16_5.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/defaults/16_grey.dds",
+					"usageCount": 0
+				},
+				{ "path": "%engine%/engineassets/textures/grey.dds", "usageCount": 0 },
+				{
+					"path": "%engine%/engineassets/textures/skys/night/half_moon.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/mannequin/preview/legioner.xml",
+					"usageCount": 0
+				}
+			]
+		},
+		{
 			"type": "Xml",
 			"guid": "acf1acd1-3a16-3c99-fb3f-965fe6b9cc23",
 			"name": "defaultprofile",

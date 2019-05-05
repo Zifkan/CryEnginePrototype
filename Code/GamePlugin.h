@@ -7,7 +7,7 @@
 #include "PlayerCharacterActions.h"
 #include "PlayerInput.h"
 
-class CPlayerComponent;
+
 
 // The entry-point of the application
 // An instance of CGamePlugin is automatically created when the library is loaded
@@ -22,7 +22,6 @@ public:
 	CRYGENERATE_SINGLETONCLASS_GUID(CGamePlugin, "ThirdPersonShooter", "{0900F201-49F3-4B3C-81D1-0C91CF3C8FDA}"_cry_guid)
 
 	virtual ~CGamePlugin();
-	
 	// Cry::IEnginePlugin
 	virtual const char* GetCategory() const override { return "Game"; }
 	virtual bool Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams) override;
@@ -52,6 +51,7 @@ public:
 protected:
 	// Map containing player components, key is the channel id received in OnClientConnectionReceived
 	std::unordered_map<int, EntityId> m_players;
+    IEntity* pPlayerEntity = nullptr;
 
 private:
 

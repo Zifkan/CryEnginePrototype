@@ -302,6 +302,9 @@ void CPlayerComponent::SetupActions()
     m_pCharacterActions->MovementSubject.get_observable()
     .skip_while([this](Vec2 Vec2) { return !m_pCharacterController->IsOnGround(); })
         .subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
+
+    m_pCharacterActions->RotateYawSubject.get_observable().subscribe([this](float x) {  m_mouseDeltaRotation.x -= x; });
+    m_pCharacterActions->RotatePitchSubject.get_observable().subscribe([this](float y) {  m_mouseDeltaRotation.y -= y; });
 }
 
 bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)

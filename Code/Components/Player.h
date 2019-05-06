@@ -108,7 +108,12 @@ public:
 	// Reflect type to set a unique identifier for this component
 	static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
 	{
-		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);        
+		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
+
+
+     //   const char* name = "PlayerCharacter";
+   
+       // desc.AddMember(&CPlayerComponent::CharacterIntityName, 'floa', "PlayerIntityName", "PlayerIntityName", "Set Entity Name", name);
 	}
 
 	void Revive();
@@ -128,7 +133,7 @@ protected:
 
 	void HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type = EInputFlagType::Hold);
 
-    void SetupActions() const;
+    void SetupActions();
 
 protected:
     ICharacterActions* m_pCharacterActions = nullptr;
@@ -139,7 +144,7 @@ protected:
     CPlayerInputComponent* m_pPlayerInput = nullptr;
 
   
-
+    char*  CharacterIntityName;
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;
@@ -147,6 +152,7 @@ protected:
 
 	TInputFlags m_inputFlags;
 	Vec2 m_mouseDeltaRotation;
+    Vec2 m_moveDirection = ZERO;
 	MovingAverage<Vec2, 10> m_mouseDeltaSmoothingFilter;
 
 	FragmentID m_activeFragmentId;

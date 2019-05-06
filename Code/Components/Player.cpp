@@ -60,7 +60,7 @@ void CPlayerComponent::Initialize()
 
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();  
 
-    auto s = m_pEntity->GetName();
+  //  m_pEntity->SetName(CharacterIntityName);
 
 	Revive();
 }
@@ -108,31 +108,13 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerComponent::UpdateMovementRequest(float frameTime)
 {  
-
-	// Don't handle input if we are in air
-	if (!m_pCharacterController->IsOnGround())
-		return;
-
+	
 	Vec3 velocity = ZERO;
 
 	const float moveSpeed = 20.5f;
 
-	if (m_inputFlags & (TInputFlags)EInputFlag::MoveLeft)
-	{
-		velocity.x -= moveSpeed * frameTime;
-	}
-	if (m_inputFlags & (TInputFlags)EInputFlag::MoveRight)
-	{
-		velocity.x += moveSpeed * frameTime;
-	}
-	if (m_inputFlags & (TInputFlags)EInputFlag::MoveForward)
-	{
-		velocity.y += moveSpeed * frameTime;
-	}
-	if (m_inputFlags & (TInputFlags)EInputFlag::MoveBack)
-	{
-		velocity.y -= moveSpeed * frameTime;
-	}
+	velocity.x += moveSpeed * frameTime * m_moveDirection.y;	
+	velocity.y += moveSpeed * frameTime * m_moveDirection.x;
     
 	m_pCharacterController->AddVelocity(GetEntity()->GetWorldRotation() * velocity);
 }
@@ -315,9 +297,11 @@ void CPlayerComponent::HandleInputFlagChange(TInputFlags flags, int activationMo
 	}
 }
 
-void CPlayerComponent::SetupActions() const
-{
-    m_pCharacterActions->MovementSubject.get_observable().subscribe([](Vec2 Vec2) { CryLog("MovementSubject: %f", Vec2.x); });
+void CPlayerComponent::SetupActions() 
+{   
+    m_pCharacterActions->MovementSubject.get_observable()
+    .skip_while([this](Vec2 Vec2) { return !m_pCharacterController->IsOnGround(); })
+        .subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
 }
 
 bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)

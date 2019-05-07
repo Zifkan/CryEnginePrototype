@@ -109,11 +109,8 @@ public:
 	static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
 	{
 		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
-
-
-     //   const char* name = "PlayerCharacter";
-   
-       // desc.AddMember(&CPlayerComponent::CharacterIntityName, 'floa', "PlayerIntityName", "PlayerIntityName", "Set Entity Name", name);
+                     
+        desc.AddMember(&CPlayerComponent::CharacterEntityName, 'floa', "PlayerIntityName", "PlayerIntityName", "Set Entity Name", "PlayerCharacter");
 	}
 
 	void Revive();
@@ -143,8 +140,8 @@ protected:
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CPlayerInputComponent* m_pPlayerInput = nullptr;
 
-  
-    char*  CharacterIntityName;
+
+    Schematyc::CSharedString  CharacterEntityName = "";
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;

@@ -58,9 +58,9 @@ void CPlayerComponent::Initialize()
 	m_walkFragmentId = m_pAnimationComponent->GetFragmentId("Walk");
 	m_rotateTagId = m_pAnimationComponent->GetTagId("Rotate");
 
-    m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();  
-
-  //  m_pEntity->SetName(CharacterIntityName);
+    m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
+    auto name = CharacterEntityName.c_str();
+    m_pEntity->SetName(name);
 
 	Revive();
 }

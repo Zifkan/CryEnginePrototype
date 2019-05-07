@@ -82,9 +82,16 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
         case ESYSTEM_EVENT_LEVEL_GAMEPLAY_START:
         {            
-            pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Entity-12");
-            pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
-        } 
+            if (gEnv->IsEditor()) return;
+            InitPlayerInput();
+        }
+        break;
+
+        case ESYSTEM_EVENT_GAME_MODE_SWITCH_START:
+        {
+            if (!gEnv->IsEditor()) return;
+            InitPlayerInput();
+        }        
         break;
 	}
 }
@@ -122,6 +129,12 @@ void CGamePlugin::OnClientDisconnected(int channelId, EDisconnectionCause cause,
 
 		m_players.erase(it);
 	}
+}
+
+void CGamePlugin::InitPlayerInput()
+{
+    pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("PlayerCharacter");
+    pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

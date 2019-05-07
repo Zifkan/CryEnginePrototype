@@ -5568,7 +5568,7 @@
 			"type": "Level",
 			"guid": "90f6f9d4-0804-283c-02dc-2d438ba572bd",
 			"name": "example",
-			"timestamp": 1556311858,
+			"timestamp": 1557256955,
 			"files": [ "Levels/example/example.level" ],
 			"source": "",
 			"metadata": "Levels/example.level.cryasset",
@@ -6458,6 +6458,38 @@
 					"usageCount": 0
 				},
 				{
+					"path": "animations/human/medium/romans/barb_1hnd_syc_ai_atk_mst_id0151_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_atk_qk_lft_up_from_chrg_rf_300_02.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_atk_qk_lft_up_lf_to_rf_150_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_cmb_atk2_200.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_com_block_idle_lf_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_com_block_idle_rf_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_com_idle_lf_to_block_lf_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/barb_shld_fc_atk_mst_01.caf",
+					"usageCount": 0
+				},
+				{
 					"path": "animations/human/medium/romans/cent_ambient_idle_01.caf",
 					"usageCount": 0
 				},
@@ -6546,7 +6578,163 @@
 					"usageCount": 0
 				},
 				{
+					"path": "animations/human/medium/romans/evr_stand_com_shld_atk_strg_03_rf_to_lf_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_com_shld_block_idle_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_com_shld_block_walk_bwd_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_com_shld_sword_atk_push_03_0_fwd_160_lf_to_lf_04.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_atk_walk_bwd_slow_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_down_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_down_idle_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_down_loop_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_idle_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_idle_02.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_up_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_up_idle_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/evr_stand_form_com_shld_block_up_loop_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/form_atk_fast_100_a_to_a_01_r1_c1_romn.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/form_atk_fast_50_a_to_a_01_r2_c1_romn.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/form_atk_slow_100_a_to_a_01_r2_c1_romn.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/form_atk_slow_50_a_to_a_01_r2_c1_romn.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_0_fwd_150_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_0_fwd_220_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_0_fwd_stat_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_qk_rgt_up_250_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_qk_rgt_up_antic_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_atk_qk_rgt_up_stat_01.caf",
+					"usageCount": 0
+				},
+				{
 					"path": "animations/human/medium/romans/romn_awr_idle_turn_90_left_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_a_to_a_atk_fhit_0_fwd_150_id0020_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_a_to_b_atk_fhit_slw_0_fwd_150_id0221_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_block_stat_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_chrg_atk_250_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_i_to_a_swd_atk_0_fwd_stat_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_com_i_to_i_atk_fhit_0_fwd_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_fc_atk_mst_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_fc_atk_slv_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_1st_row_1st_col_1st_atk_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_1st_row_1st_col_2nd_atk_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_2nd_row_1st_col_1st_atk_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_2nd_row_1st_col_2nd_atk_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_atk_charge_loop_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_atk_charge_to_com_idle_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_atk_death_01.caf",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/human/medium/romans/romn_form_atk_death_02.caf",
 					"usageCount": 0
 				},
 				{
@@ -7790,10 +7978,6 @@
 					"usageCount": 0
 				},
 				{
-					"path": "animations/mannequin/adb/firstpersoncontrollerdefinition.xml",
-					"usageCount": 0
-				},
-				{
 					"path": "animations/mannequin/adb/legionertags.xml",
 					"usageCount": 0
 				},
@@ -7805,15 +7989,6 @@
 					"path": "animations/mannequin/adb/legionplayerfragmentids.xml",
 					"usageCount": 0
 				},
-				{
-					"path": "animations/mannequin/adb/playerfragmentids.xml",
-					"usageCount": 0
-				},
-				{ "path": "animations/mannequin/adb/playertags.xml", "usageCount": 0 },
-				{
-					"path": "animations/mannequin/preview/legioner.xml",
-					"usageCount": 0
-				},
 				{ "path": "engineassets/materials/sky/sky.mtl", "usageCount": 0 },
 				{
 					"path": "engineassets/materials/water/ocean_default.mtl",
@@ -7821,10 +7996,6 @@
 				},
 				{
 					"path": "engineassets/textures/skys/night/half_moon.dds",
-					"usageCount": 0
-				},
-				{
-					"path": "f:/crytek/cryengineprototype/user/sandbox/mannequin/layout.xml",
 					"usageCount": 0
 				},
 				{ "path": "libs/environmentpresets/example.xml", "usageCount": 0 },
@@ -8092,7 +8263,6 @@
 					"path": "objects/characters/human/medium/romanlegion/romn_lgnr_main_lod4_diff.dds",
 					"usageCount": 0
 				},
-				{ "path": "scripts/ai/factions.xml", "usageCount": 0 },
 				{
 					"path": "textures/cubemaps/example/environmentprobe1_cm.dds",
 					"usageCount": 0

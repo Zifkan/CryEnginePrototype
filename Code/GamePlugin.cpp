@@ -133,8 +133,12 @@ void CGamePlugin::OnClientDisconnected(int channelId, EDisconnectionCause cause,
 
 void CGamePlugin::InitPlayerInput()
 {
-    pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("PlayerCharacter");
-    pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
+    pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
+
+    CRY_ASSERT(pPlayerEntity != nullptr);
+
+    if (pPlayerEntity != nullptr)
+        pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

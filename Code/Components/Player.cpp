@@ -24,6 +24,10 @@ static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterPlayerComponent)
 
 
+CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintRatio(1.5f), m_sprintAnimRatio(4.0f)
+{
+}
+
 void CPlayerComponent::Initialize()
 {
    
@@ -59,10 +63,19 @@ void CPlayerComponent::Initialize()
 	m_rotateTagId = m_pAnimationComponent->GetTagId("Rotate");
 
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
-    auto name = CharacterEntityName.c_str();
-    m_pEntity->SetName(name);
+    m_pEntity->SetName(m_characterEntityName.c_str());
 
 	Revive();
+    //auto period = std::chrono::seconds(4);
+    //m_FrameTick.get_observable().buffer_with_time(period, rxcpp::observe_on_new_thread()).subscribe_on(rxcpp::observe_on_new_thread()).subscribe([](std::vector<float> v)
+    //{
+    //    for (int i = 0; i < v.size(); ++i)
+    //    {
+    //        CryLog("Frame = %f", v[i]);
+    //    }
+
+    //  //  CryLog("Frame count = %i", v.capacity());
+    //});
 }
 
 uint64 CPlayerComponent::GetEventMask() const
@@ -96,6 +109,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 		// Update the camera component offset
 		UpdateCamera(pCtx->fFrameTime);
+
+        m_FrameTick.get_subscriber().on_next(pCtx->fFrameTime);
 	}
     break;
     case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
@@ -108,13 +123,14 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerComponent::UpdateMovementRequest(float frameTime)
 {  
-	
-	Vec3 velocity = ZERO;
+    Vec3 velocity = ZERO;
+
+    if (!m_pCharacterController->IsOnGround()) return;
 
 	const float moveSpeed = 20.5f;
 
-	velocity.x += moveSpeed * frameTime * m_moveDirection.y;	
-	velocity.y += moveSpeed * frameTime * m_moveDirection.x;
+	velocity.x += (m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_moveDirection.x);
+	velocity.y += (m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_moveDirection.y);
     
 	m_pCharacterController->AddVelocity(GetEntity()->GetWorldRotation() * velocity);
 }
@@ -187,9 +203,9 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 
     float testValue = 0.0f;
     m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);
-   // CryLog("eMotionParamID_TravelSpeed = %f", testValue);
-   // CryLog("eMotionParamID_TravelSpeed = %s", m_pAnimationComponent->GetDefaultFragmentName());
-    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_isSprint?7.0f:1);
+   
+
+    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_movementType != WALK? m_sprintAnimRatio:1);
 }
 
 void CPlayerComponent::UpdateCamera(float frameTime)
@@ -214,9 +230,6 @@ void CPlayerComponent::UpdateCamera(float frameTime)
 
 void CPlayerComponent::Revive()
 {
-	// Find a spawn point and move the entity there
-	SpawnAtSpawnPoint();
-
 	// Unhide the entity in case hidden by the Editor
 	GetEntity()->Hide(false);
 
@@ -246,65 +259,46 @@ void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
     SetupActions();
 }
 
-void CPlayerComponent::SpawnAtSpawnPoint()
+void CPlayerComponent::SetupActions()
 {
-	// We only handle default spawning below for the Launcher
-	// Editor has special logic in CEditorGame
-	if (gEnv->IsEditor())
-		return;
-
-	// Spawn at first default spawner
-	IEntityItPtr pEntityIterator = gEnv->pEntitySystem->GetEntityIterator();
-	pEntityIterator->MoveFirst();
-
-	while (!pEntityIterator->IsEnd())
-	{
-		IEntity *pEntity = pEntityIterator->Next();
-
-		if (auto* pSpawner = pEntity->GetComponent<CSpawnPointComponent>())
-		{
-			pSpawner->SpawnEntity(m_pEntity);
-			break;
-		}
-	}
-}
-
-void CPlayerComponent::HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type)
-{
-	switch (type)
-	{
-	case EInputFlagType::Hold:
-	{
-		if (activationMode == eIS_Released)
-		{
-			m_inputFlags &= ~flags;
-		}
-		else
-		{
-			m_inputFlags |= flags;
-		}
-	}
-	break;
-	case EInputFlagType::Toggle:
-	{
-		if (activationMode == eIS_Released)
-		{
-			// Toggle the bit(s)
-			m_inputFlags ^= flags;
-		}
-	}
-	break;
-	}
-}
-
-void CPlayerComponent::SetupActions() 
-{   
-    m_pCharacterActions->MovementSubject.get_observable()
-    .skip_while([this](Vec2 Vec2) { return !m_pCharacterController->IsOnGround(); })
-        .subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
+    m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
 
     m_pCharacterActions->RotateYawSubject.get_observable().subscribe([this](float x) {  m_mouseDeltaRotation.x -= x; });
     m_pCharacterActions->RotatePitchSubject.get_observable().subscribe([this](float y) {  m_mouseDeltaRotation.y -= y; });
+
+   
+    m_pCharacterActions->MovementTypeSubject.get_observable()
+    .buffer_with_time(std::chrono::milliseconds(500), rxcpp::observe_on_new_thread())
+    .subscribe([this](std::vector<MovementType> v)
+    {
+        if (v.empty())
+        {
+            m_movementType = WALK;
+            CryLog("Type of Movement = Walk");
+            return;
+        }
+
+        if (!v.empty())
+        {
+            if (v[v.size() - 1] == WALK)
+            {
+                m_movementType = DODGE;
+                CryLog("Type of Movement = Dodge");
+                return;
+            }
+
+            if (v[v.size() - 1]==SPRINT)
+            {
+                m_movementType = SPRINT;
+                CryLog("Type of Movement = Sprint");
+            }
+        }
+    });
+
+
+
+    m_pCharacterActions->AttackSubject.get_observable().subscribe([this](bool isAttack) {});
+
 }
 
 bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)

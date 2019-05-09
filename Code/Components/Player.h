@@ -95,7 +95,7 @@ class CPlayerComponent final : public IEntityComponent
    
 
 public:
-	CPlayerComponent() = default;
+	CPlayerComponent();
 	virtual ~CPlayerComponent() {}
 
 	// IEntityComponent
@@ -109,8 +109,10 @@ public:
 	static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
 	{
 		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
-                     
-        desc.AddMember(&CPlayerComponent::CharacterEntityName, 'floa', "PlayerIntityName", "PlayerIntityName", "Set Entity Name", "PlayerCharacter");
+        
+        desc.AddMember(&CPlayerComponent::m_characterEntityName, 'name', "Player Entity Name", "Player Entity Name", "Set Entity Name", "Player");
+	    desc.AddMember(&CPlayerComponent::m_sprintRatio, 'spri', "Sprint Ratio", "Sprint Ratio", "Sprint Ratio multiplier", 1.5f);
+	    desc.AddMember(&CPlayerComponent::m_sprintAnimRatio, 'anim', "Sprint Anim Ratio", "Sprint Anim Ratio", "Sprint Ratio Anim multiplier", 4.0f);
 	}
 
 	void Revive();
@@ -123,12 +125,9 @@ protected:
 	void UpdateLookDirectionRequest(float frameTime);
 	void UpdateAnimation(float frameTime);
 	void UpdateCamera(float frameTime);
+	
 
-	void SpawnAtSpawnPoint();
-
-	void CreateWeapon(const char *name);
-
-	void HandleInputFlagChange(TInputFlags flags, int activationMode, EInputFlagType type = EInputFlagType::Hold);
+	void CreateWeapon(const char *name);	
 
     void SetupActions();
 
@@ -141,7 +140,9 @@ protected:
     CPlayerInputComponent* m_pPlayerInput = nullptr;
 
 
-    Schematyc::CSharedString  CharacterEntityName = "";
+    Schematyc::CSharedString  m_characterEntityName;
+    float m_sprintRatio;
+    float m_sprintAnimRatio;
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;
@@ -157,8 +158,9 @@ protected:
 	Quat m_lookOrientation; //!< Should translate to head orientation in the future
 	float m_horizontalAngularVelocity;
 	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
+    rxcpp::subjects::subject<float> m_FrameTick;
 
     bool IsAnimationPlaying(FragmentID fragmentId, int animLayer);
 
-    bool m_isSprint;
+    MovementType m_movementType;
 };

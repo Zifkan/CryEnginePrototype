@@ -2,7 +2,7 @@
 
 PlayerCharacterActions::PlayerCharacterActions()
 {
-    MovementForward.get_observable().combine_latest(MovementSide.get_observable().start_with(0.0f))
+    MovementSide.get_observable().start_with(0.0f).combine_latest(MovementForward.get_observable().start_with(0.0f))
     .subscribe([this](std::tuple<float, float> v) {MovementSubject.get_subscriber().on_next(Vec2(v._Myfirst._Val,v._Get_rest()._Myfirst._Val)); });
 }
 
@@ -17,7 +17,7 @@ void PlayerCharacterActions::SetMovementSide(float x)
 }
 
 
-void PlayerCharacterActions::Attack(bool isAttack)
+void PlayerCharacterActions::SetAttack(bool isAttack)
 {
     AttackSubject.get_subscriber().on_next(isAttack);
 }
@@ -32,7 +32,9 @@ void PlayerCharacterActions::SetRotatePitch(float y)
     RotatePitchSubject.get_subscriber().on_next(y);
 }
 
-void PlayerCharacterActions::SetSprint(bool isSprint)
+void PlayerCharacterActions::SetMoveType(MovementType movementType)
 {
-    SprintSubject.get_subscriber().on_next(isSprint);
+    MovementTypeSubject.get_subscriber().on_next(movementType);
 }
+
+

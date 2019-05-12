@@ -150,14 +150,22 @@ void CGamePlugin::InitPlayerInput()
 
 void CGamePlugin::InitGameCamera()
 {
-    SEntitySpawnParams spawnParameters;
-    spawnParameters.sName = "Game Camera";
-    if (IEntity* pEntity = gEnv->pEntitySystem->SpawnEntity(spawnParameters))
+    CCameraController* cameraComponent;
+    if (IEntity* pCamEntity = gEnv->pEntitySystem->FindEntityByName("GameCamera"))
     {
-        auto cameraComponent = pEntity->GetOrCreateComponent<CCameraController>();
-        cameraComponent->InitInput(m_playerCharacterActions);
-        cameraComponent->SetTargetEntity(pPlayerEntity);
+        cameraComponent = pCamEntity->GetOrCreateComponent<CCameraController>();
     }
+    else
+    {
+        SEntitySpawnParams spawnParameters;
+        spawnParameters.sName = "GameCamera";
+        pCamEntity = gEnv->pEntitySystem->SpawnEntity(spawnParameters);
+        cameraComponent = pCamEntity->GetOrCreateComponent<CCameraController>();
+    }
+  
+    
+    cameraComponent->InitInput(m_playerCharacterActions);
+    cameraComponent->SetTargetEntity(pPlayerEntity);
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

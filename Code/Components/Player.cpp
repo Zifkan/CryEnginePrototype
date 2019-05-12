@@ -28,6 +28,8 @@ CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintR
 
 void CPlayerComponent::Initialize()
 {   	
+   
+    gEnv->pEntitySystem->RemoveEntity(m_pEntity->GetComponent<Cry::DefaultComponents::CCameraComponent>()->GetEntity()->GetId(),true);
 	// The character controller is responsible for maintaining player physics
 	m_pCharacterController = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
 	// Offset the default character controller up by one unit
@@ -60,8 +62,8 @@ void CPlayerComponent::Initialize()
     m_forceAttackTagId = m_pAnimationComponent->GetTagId("ForceAttack");
 
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
-    m_pEntity->SetName(m_characterEntityName.c_str());
-
+  //  m_pEntity->SetName(m_characterEntityName.c_str());
+    m_pEntity->SetName("Player");
 	Revive();
 }
 
@@ -122,34 +124,11 @@ void CPlayerComponent::UpdateMovementRequest(float frameTime)
 
 void CPlayerComponent::UpdateLookDirectionRequest(float frameTime)
 {
-	const float rotationSpeed = 0.002f;
-	const float rotationLimitsMinPitch = -0.84f;
-	const float rotationLimitsMaxPitch = 1.5f;
+    if (m_moveDirection.GetLengthSquared()== 0.0) return;
 
-	// Apply smoothing filter to the mouse input
-	m_mouseDeltaRotation = m_mouseDeltaSmoothingFilter.Push(m_mouseDeltaRotation).Get();
-
-	// Update angular velocity metrics
-	m_horizontalAngularVelocity = (m_mouseDeltaRotation.x * rotationSpeed) / frameTime;
-	m_averagedHorizontalAngularVelocity.Push(m_horizontalAngularVelocity);
-
-	// Start with updating look orientation from the latest input
-	//Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
-
-	//// Yaw
-	//ypr.x += m_mouseDeltaRotation.x * rotationSpeed;
-
-	//// Pitch
-	//// TODO: Perform soft clamp here instead of hard wall, should reduce rot speed in this direction when close to limit.
-	//ypr.y = CLAMP(ypr.y + m_mouseDeltaRotation.y * rotationSpeed, rotationLimitsMinPitch, rotationLimitsMaxPitch);
-
-	//// Roll (skip)
-	//ypr.z = 0;
-
-	//m_lookOrientation = Quat(CCamera::CreateOrientationYPR(ypr));
-
-	//// Reset the mouse delta accumulator every frame
-	//m_mouseDeltaRotation = ZERO;
+    Vec3 camAngle =  gEnv->pEntitySystem->FindEntityByName("GameCamera")->GetWorldAngles();
+    camAngle.x=0;
+    m_pEntity->SetRotation(Quat(camAngle));
 }
 
 void CPlayerComponent::UpdateAnimation(float frameTime)
@@ -178,13 +157,9 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 
 	// Update entity rotation as the player turns
 	// We only want to affect Z-axis rotation, zero pitch and roll
-	/*Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
-	ypr.y = 0;
-	ypr.z = 0;
-	const Quat correctedOrientation = Quat(CCamera::CreateOrientationYPR(ypr));*/
 
-	// Send updated transform to the entity, only orientation changes
-//	GetEntity()->SetPosRotScale(GetEntity()->GetWorldPos(), correctedOrientation, Vec3(1, 1, 1));
+
+	
 
    /* float testValue = 0.0f;
     m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);

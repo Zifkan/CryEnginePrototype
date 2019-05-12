@@ -59,4 +59,6 @@ private:
 
     void InitPlayerInput();
 
+    void InitGameCamera();
+
 };

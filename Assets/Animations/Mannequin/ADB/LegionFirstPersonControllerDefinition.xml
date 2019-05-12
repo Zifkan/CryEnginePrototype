@@ -3,7 +3,7 @@
  <Fragments filename="Animations/Mannequin/ADB/LegionPlayerFragmentIds.xml"/>
  <FragmentDefs>
   <Idle scopes="FirstPerson+ThirdPerson"/>
-  <Walk scopes="ThirdPerson"/>
+  <Walk scopes="FirstPerson+ThirdPerson"/>
   <Attack scopes="FirstPerson+ThirdPerson"/>
  </FragmentDefs>
  <ScopeContextDefs>

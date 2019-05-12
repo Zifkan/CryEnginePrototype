@@ -1,14 +1,12 @@
 #include "StdAfx.h"
 #include "Player.h"
 
-#include "Bullet.h"
-#include "SpawnPoint.h"
 
-#include <CrySchematyc/Env/IEnvRegistry.h>
+#include <CryEntitySystem/IEntitySystem.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
-#include <CrySchematyc/Env/Elements/EnvSignal.h>
+#include "Camera/CameraController.h"
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 {
@@ -29,11 +27,7 @@ CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintR
 }
 
 void CPlayerComponent::Initialize()
-{
-   
-	// Create the camera component, will automatically update the viewport every frame
-	m_pCameraComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCameraComponent>();
-	
+{   	
 	// The character controller is responsible for maintaining player physics
 	m_pCharacterController = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
 	// Offset the default character controller up by one unit
@@ -53,6 +47,7 @@ void CPlayerComponent::Initialize()
 
 	// Disable movement coming from the animation (root joint offset), we control this entirely via physics
 	m_pAnimationComponent->SetAnimationDrivenMotion(false);
+    
 
 	// Load the character and Mannequin data from file
 	m_pAnimationComponent->LoadFromDisk();
@@ -61,21 +56,13 @@ void CPlayerComponent::Initialize()
 	m_idleFragmentId = m_pAnimationComponent->GetFragmentId("Idle");
 	m_walkFragmentId = m_pAnimationComponent->GetFragmentId("Walk");
 	m_rotateTagId = m_pAnimationComponent->GetTagId("Rotate");
+    m_attackFragmentId = m_pAnimationComponent->GetFragmentId("Attack");
+    m_forceAttackTagId = m_pAnimationComponent->GetTagId("ForceAttack");
 
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
     m_pEntity->SetName(m_characterEntityName.c_str());
 
 	Revive();
-    //auto period = std::chrono::seconds(4);
-    //m_FrameTick.get_observable().buffer_with_time(period, rxcpp::observe_on_new_thread()).subscribe_on(rxcpp::observe_on_new_thread()).subscribe([](std::vector<float> v)
-    //{
-    //    for (int i = 0; i < v.size(); ++i)
-    //    {
-    //        CryLog("Frame = %f", v[i]);
-    //    }
-
-    //  //  CryLog("Frame count = %i", v.capacity());
-    //});
 }
 
 uint64 CPlayerComponent::GetEventMask() const
@@ -107,13 +94,11 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		// Update the animation state of the character
 		UpdateAnimation(pCtx->fFrameTime);
 
-		// Update the camera component offset
-		UpdateCamera(pCtx->fFrameTime);
-
+	
         m_FrameTick.get_subscriber().on_next(pCtx->fFrameTime);
 	}
     break;
-    case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
+    case ENTITY_EVENT_COMPONENT_PROPERTY_CHANGED:
     {
         Initialize();
     }
@@ -149,22 +134,22 @@ void CPlayerComponent::UpdateLookDirectionRequest(float frameTime)
 	m_averagedHorizontalAngularVelocity.Push(m_horizontalAngularVelocity);
 
 	// Start with updating look orientation from the latest input
-	Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
+	//Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
 
-	// Yaw
-	ypr.x += m_mouseDeltaRotation.x * rotationSpeed;
+	//// Yaw
+	//ypr.x += m_mouseDeltaRotation.x * rotationSpeed;
 
-	// Pitch
-	// TODO: Perform soft clamp here instead of hard wall, should reduce rot speed in this direction when close to limit.
-	ypr.y = CLAMP(ypr.y + m_mouseDeltaRotation.y * rotationSpeed, rotationLimitsMinPitch, rotationLimitsMaxPitch);
+	//// Pitch
+	//// TODO: Perform soft clamp here instead of hard wall, should reduce rot speed in this direction when close to limit.
+	//ypr.y = CLAMP(ypr.y + m_mouseDeltaRotation.y * rotationSpeed, rotationLimitsMinPitch, rotationLimitsMaxPitch);
 
-	// Roll (skip)
-	ypr.z = 0;
+	//// Roll (skip)
+	//ypr.z = 0;
 
-	m_lookOrientation = Quat(CCamera::CreateOrientationYPR(ypr));
+	//m_lookOrientation = Quat(CCamera::CreateOrientationYPR(ypr));
 
-	// Reset the mouse delta accumulator every frame
-	m_mouseDeltaRotation = ZERO;
+	//// Reset the mouse delta accumulator every frame
+	//m_mouseDeltaRotation = ZERO;
 }
 
 void CPlayerComponent::UpdateAnimation(float frameTime)
@@ -193,40 +178,21 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 
 	// Update entity rotation as the player turns
 	// We only want to affect Z-axis rotation, zero pitch and roll
-	Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
+	/*Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
 	ypr.y = 0;
 	ypr.z = 0;
-	const Quat correctedOrientation = Quat(CCamera::CreateOrientationYPR(ypr));
+	const Quat correctedOrientation = Quat(CCamera::CreateOrientationYPR(ypr));*/
 
 	// Send updated transform to the entity, only orientation changes
-	GetEntity()->SetPosRotScale(GetEntity()->GetWorldPos(), correctedOrientation, Vec3(1, 1, 1));
+//	GetEntity()->SetPosRotScale(GetEntity()->GetWorldPos(), correctedOrientation, Vec3(1, 1, 1));
 
-    float testValue = 0.0f;
+   /* float testValue = 0.0f;
     m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);
    
-
+*/
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_movementType != WALK? m_sprintAnimRatio:1);
 }
 
-void CPlayerComponent::UpdateCamera(float frameTime)
-{
-	Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(m_lookOrientation));
-
-	// Ignore z-axis rotation, that's set by CPlayerAnimations
-	ypr.x = 0;
-
-	// Start with changing view rotation to the requested mouse look orientation
-	Matrix34 localTransform = IDENTITY;
-	localTransform.SetRotation33(CCamera::CreateOrientationYPR(ypr));
-
-	// Offset the player along the forward axis (normally back)
-	// Also offset upwards
-	const float viewOffsetForward = -1.5f;
-	const float viewOffsetUp = 2.f;
-	localTransform.SetTranslation(Vec3(0, viewOffsetForward, viewOffsetUp));
-
-	m_pCameraComponent->SetTransformMatrix(localTransform);
-}
 
 void CPlayerComponent::Revive()
 {
@@ -274,7 +240,7 @@ void CPlayerComponent::SetupActions()
         if (v.empty())
         {
             m_movementType = WALK;
-            CryLog("Type of Movement = Walk");
+            //CryLog("Type of Movement = Walk");
             return;
         }
 
@@ -283,22 +249,32 @@ void CPlayerComponent::SetupActions()
             if (v[v.size() - 1] == WALK)
             {
                 m_movementType = DODGE;
-                CryLog("Type of Movement = Dodge");
+                //CryLog("Type of Movement = Dodge");
                 return;
             }
 
             if (v[v.size() - 1]==SPRINT)
             {
                 m_movementType = SPRINT;
-                CryLog("Type of Movement = Sprint");
+                //CryLog("Type of Movement = Sprint");
             }
         }
     });
 
 
 
-    m_pCharacterActions->AttackSubject.get_observable().subscribe([this](bool isAttack) {});
+    m_pCharacterActions->AttackSubject.get_observable().subscribe([this](bool isAttack)
+    {          
 
+        if (!pAction || (pAction && pAction->GetActiveTime()<0.1f))
+        {
+            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
+            // pAction->SetOptionIdx(0);        
+            m_pAnimationComponent->QueueCustomFragment(*pAction);
+           
+        }      
+      
+    });
 }
 
 bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)

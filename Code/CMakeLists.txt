@@ -31,6 +31,15 @@ add_sources("Components_uber.cpp"
 		"Components/SpawnPoint.h"
 )
 
+add_sources("Camera_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Camera"
+		"Components/Camera/CameraController.cpp"
+		"Components/Camera/CameraController.h"
+)
+
+
+		
 add_sources("Rx_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "RxCpp"

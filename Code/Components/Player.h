@@ -5,18 +5,13 @@
 
 #include <CryEntitySystem/IEntity.h>
 #include <CryEntitySystem/IEntityComponent.h>
-#include <CryMath/Cry_Camera.h>
 
 #include <ICryMannequin.h>
 
-#include <DefaultComponents/Cameras/CameraComponent.h>
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include <DefaultComponents/Input/InputComponent.h>
-#include "PlayerCharacterActions.h"
 #include "PlayerInput.h"
-
-//#include "PlayerInput.h"
 
 
 ////////////////////////////////////////////////////////
@@ -124,17 +119,12 @@ protected:
 	void UpdateMovementRequest(float frameTime);
 	void UpdateLookDirectionRequest(float frameTime);
 	void UpdateAnimation(float frameTime);
-	void UpdateCamera(float frameTime);
-	
-
-	void CreateWeapon(const char *name);	
 
     void SetupActions();
 
 protected:
     ICharacterActions* m_pCharacterActions = nullptr;
-
-    Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
+        
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CPlayerInputComponent* m_pPlayerInput = nullptr;
@@ -146,7 +136,11 @@ protected:
 
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;
+    FragmentID m_attackFragmentId;
 	TagID m_rotateTagId;
+
+    TagID m_forceAttackTagId;
+
 
 	TInputFlags m_inputFlags;
 	Vec2 m_mouseDeltaRotation;
@@ -161,6 +155,7 @@ protected:
     rxcpp::subjects::subject<float> m_FrameTick;
 
     bool IsAnimationPlaying(FragmentID fragmentId, int animLayer);
-
+    bool IsAttack;
+    IAction* pAction;
     MovementType m_movementType;
 };

@@ -8,6 +8,9 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
@@ -34,6 +37,12 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.cpp">
+      <Filter>Components\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.h">
+      <Filter>Components\Camera</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
@@ -49,6 +58,9 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Components\Camera">
+      <UniqueIdentifier>{5F80C045-9A0C-363A-9F36-462157D06A84}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>
     </Filter>

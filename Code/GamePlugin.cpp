@@ -12,6 +12,7 @@
 
 // Included only once per DLL module.
 #include <CryCore/Platform/platform_impl.inl>
+#include "Components/Camera/CameraController.h"
 
 CGamePlugin::~CGamePlugin()
 {
@@ -84,6 +85,8 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         {            
             if (gEnv->IsEditor()) return;
             InitPlayerInput();
+
+            InitGameCamera();
         }
         break;
 
@@ -91,6 +94,8 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         {
             if (!gEnv->IsEditor()) return;
             InitPlayerInput();
+
+            InitGameCamera();
         }        
         break;
 	}
@@ -133,12 +138,26 @@ void CGamePlugin::OnClientDisconnected(int channelId, EDisconnectionCause cause,
 
 void CGamePlugin::InitPlayerInput()
 {
+    if (pPlayerEntity != nullptr) return;
+
     pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
 
     CRY_ASSERT(pPlayerEntity != nullptr);
 
     if (pPlayerEntity != nullptr)
         pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
+}
+
+void CGamePlugin::InitGameCamera()
+{
+    SEntitySpawnParams spawnParameters;
+    spawnParameters.sName = "Game Camera";
+    if (IEntity* pEntity = gEnv->pEntitySystem->SpawnEntity(spawnParameters))
+    {
+        auto cameraComponent = pEntity->GetOrCreateComponent<CCameraController>();
+        cameraComponent->InitInput(m_playerCharacterActions);
+        cameraComponent->SetTargetEntity(pPlayerEntity);
+    }
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

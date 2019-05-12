@@ -25,6 +25,7 @@ CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCameraController)
 void CCameraController::Initialize()
 {   
     m_pCameraComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCameraComponent>();
+ 
     SetName("GameCamera");
 }
 
@@ -88,7 +89,7 @@ void CCameraController::UpdateCamera(float frameTime)
     Vec3 position = rotation * negDistance + (m_pTargetEntity->GetWorldPos()+ Vec3(0, 0, heightOffset));  
 
     CryTransform::CTransform tr = CryTransform::CTransform(position, CryTransform::CRotation(rotation), Vec3(1, 1, 1));
-    m_pCameraComponent->SetTransformMatrix(tr.ToMatrix34());
+    m_pEntity->SetWorldTM(tr.ToMatrix34());
 }
 
 float CCameraController::ClampAngle(float angle, float min, float max)

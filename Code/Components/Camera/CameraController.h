@@ -35,6 +35,8 @@ public:
         desc.AddMember(&CCameraController::yMinLimit,'ymin', "y min", "y min", "Min Y rotation border", -80.0f);
         desc.AddMember(&CCameraController::yMaxLimit,'ymax', "y max", "y max", "Max Y rotation border", 90.0f);
         desc.AddMember(&CCameraController::heightOffset,'heig', "height", "height", "Camera height offset", 2.0f);
+
+        desc.SetComponentFlags({ EFlags::Singleton,EFlags:: Transform});
     }
 
     void InitInput(ICharacterActions* charActions);

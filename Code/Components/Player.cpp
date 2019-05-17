@@ -63,7 +63,8 @@ void CPlayerComponent::Initialize()
 
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
   //  m_pEntity->SetName(m_characterEntityName.c_str());
-    m_pEntity->SetName("Player");
+    m_pEntity->SetName("Player");  
+   
 	Revive();
 }
 
@@ -78,6 +79,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	{
 	case ENTITY_EVENT_START_GAME:
 	{      
+        m_pMainCamera = gEnv->pEntitySystem->FindEntityByName("GameCamera");
+        CRY_ASSERT(m_pMainCamera != nullptr);
 		// Revive the entity when gameplay starts
 		Revive();
 	}
@@ -90,14 +93,9 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		// This results in the physical representation of the character moving
 		UpdateMovementRequest(pCtx->fFrameTime);
 
-		// Process mouse input to update look orientation.
-		UpdateLookDirectionRequest(pCtx->fFrameTime);
-
 		// Update the animation state of the character
 		UpdateAnimation(pCtx->fFrameTime);
 
-	
-        m_FrameTick.get_subscriber().on_next(pCtx->fFrameTime);
 	}
     break;
     case ENTITY_EVENT_COMPONENT_PROPERTY_CHANGED:
@@ -112,24 +110,22 @@ void CPlayerComponent::UpdateMovementRequest(float frameTime)
 {  
     Vec3 velocity = ZERO;
 
-    if (!m_pCharacterController->IsOnGround()) return;
-
-	const float moveSpeed = 20.5f;
-
-	velocity.x += (m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_moveDirection.x);
-	velocity.y += (m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_moveDirection.y);
+    if (!m_pCharacterController->IsOnGround() || !m_pMainCamera) return;
     
-	m_pCharacterController->AddVelocity(GetEntity()->GetWorldRotation() * velocity);
+	const float moveSpeed = 20.5f;
+    Vec3 camForward = m_pMainCamera->GetForwardDir();
+    camForward.z = 0;
+
+    Vec3 m_Move = m_moveDirection.y * camForward.normalized() + m_moveDirection.x * m_pMainCamera->GetRightDir();
+       
+    m_pEntity->SetRotation(quaternion::CreateRotationVDir(m_Move));
+
+    if (m_moveDirection.GetLength2() > 0)
+    {
+        m_pCharacterController->AddVelocity((m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_pEntity->GetForwardDir()));
+    }
 }
 
-void CPlayerComponent::UpdateLookDirectionRequest(float frameTime)
-{
-    if (m_moveDirection.GetLengthSquared()== 0.0) return;
-
-    Vec3 camAngle =  gEnv->pEntitySystem->FindEntityByName("GameCamera")->GetWorldAngles();
-    camAngle.x=0;
-    m_pEntity->SetRotation(Quat(camAngle));
-}
 
 void CPlayerComponent::UpdateAnimation(float frameTime)
 {
@@ -138,14 +134,14 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 	// Update tags and motion parameters used for turning
 	const bool isTurning = std::abs(m_averagedHorizontalAngularVelocity.Get()) > angularVelocityTurningThreshold;
 	m_pAnimationComponent->SetTagWithId(m_rotateTagId, isTurning);
-	if (isTurning)
-	{
-		// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
-		// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
+	//if (isTurning)
+	//{
+	//	// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
+	//	// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
 
-		const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
-		m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
-	}
+	//	const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
+	//	m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
+	//}
 
 	// Update active fragment
 	const auto& desiredFragmentId = m_pCharacterController->IsWalking() ? m_walkFragmentId : m_idleFragmentId;
@@ -183,7 +179,6 @@ void CPlayerComponent::Revive()
 
 	// Reset input now that the player respawned
 	m_inputFlags = 0;
-	m_mouseDeltaRotation = ZERO;
 	m_mouseDeltaSmoothingFilter.Reset();
 
 	m_activeFragmentId = FRAGMENT_ID_INVALID;
@@ -204,9 +199,7 @@ void CPlayerComponent::SetupActions()
 {
     m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
 
-    m_pCharacterActions->RotateYawSubject.get_observable().subscribe([this](float x) {  m_mouseDeltaRotation.x -= x; });
-    m_pCharacterActions->RotatePitchSubject.get_observable().subscribe([this](float y) {  m_mouseDeltaRotation.y -= y; });
-
+  
    
     m_pCharacterActions->MovementTypeSubject.get_observable()
     .buffer_with_time(std::chrono::milliseconds(500), rxcpp::observe_on_new_thread())

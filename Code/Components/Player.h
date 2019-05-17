@@ -117,7 +117,6 @@ public:
   
 protected:
 	void UpdateMovementRequest(float frameTime);
-	void UpdateLookDirectionRequest(float frameTime);
 	void UpdateAnimation(float frameTime);
 
     void SetupActions();
@@ -128,7 +127,7 @@ protected:
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CPlayerInputComponent* m_pPlayerInput = nullptr;
-
+    IEntity* m_pMainCamera = nullptr;
 
     Schematyc::CSharedString  m_characterEntityName;
     float m_sprintRatio;
@@ -143,8 +142,8 @@ protected:
 
 
 	TInputFlags m_inputFlags;
-	Vec2 m_mouseDeltaRotation;
     Vec2 m_moveDirection = ZERO;
+    Vec2 m_lastRotationDirection = ZERO;
 	MovingAverage<Vec2, 10> m_mouseDeltaSmoothingFilter;
 
 	FragmentID m_activeFragmentId;
@@ -152,7 +151,6 @@ protected:
 	Quat m_lookOrientation; //!< Should translate to head orientation in the future
 	float m_horizontalAngularVelocity;
 	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
-    rxcpp::subjects::subject<float> m_FrameTick;
 
     bool IsAnimationPlaying(FragmentID fragmentId, int animLayer);
     bool IsAttack;

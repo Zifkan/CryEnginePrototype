@@ -116,12 +116,11 @@ void CPlayerComponent::UpdateMovementRequest(float frameTime)
     Vec3 camForward = m_pMainCamera->GetForwardDir();
     camForward.z = 0;
 
-    Vec3 m_Move = m_moveDirection.y * camForward.normalized() + m_moveDirection.x * m_pMainCamera->GetRightDir();
-       
-    m_pEntity->SetRotation(quaternion::CreateRotationVDir(m_Move));
-
+    Vec3 m_Move = m_moveDirection.y * camForward.normalized() + m_moveDirection.x * m_pMainCamera->GetRightDir();   
+    
     if (m_moveDirection.GetLength2() > 0)
     {
+        m_pEntity->SetRotation(quaternion::CreateRotationVDir(m_Move));
         m_pCharacterController->AddVelocity((m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_pEntity->GetForwardDir()));
     }
 }
@@ -134,14 +133,14 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
 	// Update tags and motion parameters used for turning
 	const bool isTurning = std::abs(m_averagedHorizontalAngularVelocity.Get()) > angularVelocityTurningThreshold;
 	m_pAnimationComponent->SetTagWithId(m_rotateTagId, isTurning);
-	//if (isTurning)
-	//{
-	//	// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
-	//	// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
+	if (isTurning)
+	{
+		// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
+		// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
 
-	//	const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
-	//	m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
-	//}
+		const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
+		m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
+	}
 
 	// Update active fragment
 	const auto& desiredFragmentId = m_pCharacterController->IsWalking() ? m_walkFragmentId : m_idleFragmentId;

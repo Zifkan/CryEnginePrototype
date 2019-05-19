@@ -47,9 +47,10 @@ public:
 protected:
     Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
     ICharacterActions* m_pCharacterActions = nullptr;
+    IEntity* pPlayerEntity = nullptr;
 
     void UpdateCamera(float frameTime);
-
+    void CollisionDetection(float frameTime);
 
 
     float ClampAngle(float angle, float min, float max);
@@ -63,6 +64,8 @@ protected:
     float x = 0.0f;
     float y = 0.0f;
     float radius = 2.0f;
+
+    float currentRadius = 0.0f;
 
     float xSpeed = 80.0f;
     float ySpeed = 80.0f;

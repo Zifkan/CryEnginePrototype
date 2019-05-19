@@ -24,18 +24,20 @@ add_sources("Code_uber.cpp"
 add_sources("Components_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components"
+		"Components/CollisionControl.cpp"
 		"Components/Player.cpp"
 		"Components/SpawnPoint.cpp"
 		"Components/Bullet.h"
 		"Components/Player.h"
 		"Components/SpawnPoint.h"
+		"Components/CollisionControl.h"
 )
 
 add_sources("Camera_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Camera"
 		"Components/Camera/CameraController.cpp"
-		"Components/Camera/CameraController.h"
+		"Components/Camera/CameraController.h"		
 )
 
 

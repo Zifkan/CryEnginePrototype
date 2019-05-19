@@ -6,6 +6,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "Components/Player.h"
+#include "Components/CollisionControl.h"
 
 
 static void RegisterCameraController(Schematyc::IEnvRegistrar& registrar)
@@ -27,6 +28,8 @@ void CCameraController::Initialize()
     m_pCameraComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCameraComponent>();
  
     SetName("GameCamera");
+
+    currentRadius = radius;
 }
 
 uint64 CCameraController::GetEventMask() const
@@ -40,13 +43,14 @@ void CCameraController::ProcessEvent(const SEntityEvent& event)
     {
     case ENTITY_EVENT_START_GAME:
     {
-
+        pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
     }
     break;
     case ENTITY_EVENT_UPDATE:
     {
         SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
-        UpdateCamera(pCtx->fFrameTime);
+        UpdateCamera(pCtx->fFrameTime); 
+        CollisionDetection(pCtx->fFrameTime);
     }
     break;
     }
@@ -78,19 +82,46 @@ void CCameraController::UpdateCamera(float frameTime)
 {
     if(!m_pTargetEntity) return;  
 
-    x -= m_deltaRotation.x * xSpeed * radius * frameTime;
+    x -= m_deltaRotation.x * xSpeed * currentRadius * frameTime;
     y -= m_deltaRotation.y * ySpeed * frameTime;
   
     y = ClampAngle(y, yMinLimit, yMaxLimit);
       
     Quat rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y),0, DEG2RAD(x)));
 
-    Vec3 negDistance = Vec3(0.0f, -radius, 0);
+    Vec3 negDistance = Vec3(0.0f, -currentRadius, 0);
     Vec3 position = rotation * negDistance + (m_pTargetEntity->GetWorldPos()+ Vec3(0, 0, heightOffset));  
 
     CryTransform::CTransform tr = CryTransform::CTransform(position, CryTransform::CRotation(rotation), Vec3(1, 1, 1));
     m_pEntity->SetWorldTM(tr.ToMatrix34());
 }
+
+void CCameraController::CollisionDetection(float frameTime)
+{
+
+    // Skip the target actor for this.
+    ray_hit rayhit;
+    static IPhysicalEntity* pSkipEnts[10];
+    pSkipEnts[0] = pPlayerEntity->GetPhysics();
+    auto org = pPlayerEntity->GetWorldPos() + Vec3(0, 0, heightOffset);
+    // Perform the ray cast.
+    int hits = gEnv->pPhysicalWorld->RayWorldIntersection(org,  m_pEntity->GetWorldPos()-org,
+        ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,
+        &rayhit, 1, pSkipEnts, 2);
+
+    if (hits)
+    {
+        currentRadius -= frameTime;
+     
+        CryLog("hitted: %i", rayhit.pCollider->GetType());
+    }
+    else
+    {
+        if (currentRadius<radius)
+            currentRadius += frameTime;
+    }
+}
+
 
 float CCameraController::ClampAngle(float angle, float min, float max)
 {

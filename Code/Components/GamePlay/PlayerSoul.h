@@ -3,6 +3,7 @@
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Lights/PointLightComponent.h>
 #include "RxCpp/rx.hpp"
+#include "Components/Camera/CameraController.h"
 
 
 class CPlayerSoul : public IEntityComponent
@@ -15,7 +16,9 @@ public:
         desc.SetGUID("{D4CC9077-1852-4467-B060-6C5A1EB7B671}"_cry_guid);
         desc.SetEditorCategory("Game Play");
         desc.SetLabel("Player Soul Component");
-        
+
+
+        desc.AddMember(&CPlayerSoul::m_lifeTimeLimit, 'life', "Life time", "Life time", "Determines life time", 10.f);
     }
 
 
@@ -29,6 +32,7 @@ protected:
 
     void LifeTimeReaction();
 
-    float m_lifeTimeLimit = 0.0f;
+    float m_lifeTimeLimit = 10.0f;
     rxcpp::subjects::subject<float> m_lifeTimeCycle = rxcpp::subjects::subject<float>();
+    rxcpp::composite_subscription m_lifeTimeCycleSubscription;
 };

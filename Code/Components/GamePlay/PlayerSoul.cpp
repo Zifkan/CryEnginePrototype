@@ -25,7 +25,7 @@ void CPlayerSoul::Initialize()
 
 Cry::Entity::EntityEventMask CPlayerSoul::GetEventMask() const
 {
-    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
+    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED) | ENTITY_EVENT_BIT(ENTITY_EVENT_RESET);
 }
 
 void CPlayerSoul::ProcessEvent(const SEntityEvent& event)
@@ -48,16 +48,26 @@ void CPlayerSoul::ProcessEvent(const SEntityEvent& event)
       
     }
     break;
+    case ENTITY_EVENT_RESET:
+    {
+        if (event.nParam[0]==0)
+            m_lifeTimeCycleSubscription.unsubscribe();
+    }
+    break;
     }
 }
 
 void CPlayerSoul::LifeTimeReaction()
-{
-    m_lifeTimeCycle.get_observable().scan(m_lifeTimeLimit,[](float v, float time){return v - time;})
-    .take_while([](float v) {return v > 0; })
+{   
+     m_lifeTimeCycleSubscription = m_lifeTimeCycle.get_observable().scan(m_lifeTimeLimit,[](float v, float time){return v - time;})
+    .take_while([](float v) {return v > 0.01; })
     .subscribe([this](float time)
-    {
-      /  m_pPoinLight->GetColorParameters()
+    {    
+         auto temp = static_cast<float>(m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value)/ time;
+         CryLog("Result: %f", temp);
+        m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value -= temp;
+     //   CryLog("Light diff: %f", m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value);
+        m_pPoinLight->SetOptics("");
     });
 
 }

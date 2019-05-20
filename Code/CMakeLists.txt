@@ -26,7 +26,7 @@ add_sources("Components_uber.cpp"
     SOURCE_GROUP "Components"
 		"Components/CollisionControl.cpp"
 		"Components/Player.cpp"
-		"Components/SpawnPoint.cpp"
+		"Components/SpawnPoint.cpp"		
 		"Components/Bullet.h"
 		"Components/Player.h"
 		"Components/SpawnPoint.h"
@@ -40,6 +40,12 @@ add_sources("Camera_uber.cpp"
 		"Components/Camera/CameraController.h"		
 )
 
+add_sources("GamePlay_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\GamePlay"
+		"Components/GamePlay/PlayerSoul.cpp"
+		"Components/GamePlay/PlayerSoul.h"		
+)
 
 		
 add_sources("Rx_uber.cpp"

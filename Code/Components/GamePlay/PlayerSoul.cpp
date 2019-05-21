@@ -63,10 +63,8 @@ void CPlayerSoul::LifeTimeReaction()
     .take_while([](float v) {return v > 0.01; })
     .subscribe([this](float time)
     {    
-         auto temp = static_cast<float>(m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value)/ time;
-         CryLog("Result: %f", temp);
+         auto temp = static_cast<float>(m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value)/ time;       
         m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value -= temp;
-     //   CryLog("Light diff: %f", m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value);
         m_pPoinLight->SetOptics("");
     });
 

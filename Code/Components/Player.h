@@ -19,22 +19,24 @@
 ////////////////////////////////////////////////////////
 class CPlayerComponent final : public IEntityComponent
 {
-	enum class EInputFlagType
-	{
-		Hold = 0,
-		Toggle
-	};
+    enum MovementType
+    {
+        WALK,
+        DODGE,
+        SPRINT,
+    };
 
-	typedef uint8 TInputFlags;
+    struct MovementSprintStruct
+    {
+        bool IsSignal;
+        float Time;
+        MovementType Type;
 
-	enum class EInputFlag
-		: TInputFlags
-	{
-		MoveLeft = 1 << 0,
-		MoveRight = 1 << 1,
-		MoveForward = 1 << 2,
-		MoveBack = 1 << 3
-	};
+        MovementSprintStruct(bool isSignal, float time, MovementType type) : IsSignal(isSignal), Time(time), Type(type)
+        {
+        }
+    };
+    
 
 	template<typename T, size_t SAMPLES_COUNT>
 	class MovingAverage
@@ -140,8 +142,7 @@ protected:
 
     TagID m_forceAttackTagId;
 
-
-	TInputFlags m_inputFlags;
+    
     Vec2 m_moveDirection = ZERO;
     Vec2 m_lastRotationDirection = ZERO;
 	MovingAverage<Vec2, 10> m_mouseDeltaSmoothingFilter;

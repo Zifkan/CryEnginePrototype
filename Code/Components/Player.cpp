@@ -8,6 +8,7 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "Camera/CameraController.h"
 
+
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 {
     Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
@@ -177,7 +178,6 @@ void CPlayerComponent::Revive()
 	m_pCharacterController->Physicalize();
 
 	// Reset input now that the player respawned
-	m_inputFlags = 0;
 	m_mouseDeltaSmoothingFilter.Reset();
 
 	m_activeFragmentId = FRAGMENT_ID_INVALID;
@@ -200,35 +200,33 @@ void CPlayerComponent::SetupActions()
 
   
    
-    m_pCharacterActions->MovementTypeSubject.get_observable()
-    .buffer_with_time(std::chrono::milliseconds(500), rxcpp::observe_on_new_thread())
-    .subscribe([this](std::vector<MovementType> v)
+    m_pCharacterActions->SprintSubject.get_observable()
+    .map([](bool isPressed) { return MovementSprintStruct(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
+    .scan(MovementSprintStruct(false, 0.0f,WALK),[](MovementSprintStruct last, MovementSprintStruct current)
+    {    
+        if (current.IsSignal && !last.IsSignal)
+        {
+            return MovementSprintStruct(current.IsSignal, current.Time, DODGE);
+        }
+
+        if (current.IsSignal && last.IsSignal)
+        {
+            if (current.Time - last.Time>0.25f/*|| last.Time==0*/)
+            {
+                return MovementSprintStruct(last.IsSignal, last.Time, SPRINT);
+            }
+            
+            return MovementSprintStruct(last.IsSignal, last.Time, DODGE);
+        }
+        return current;       
+    })
+    .map([](MovementSprintStruct value) {return value.Type; })
+    .distinct_until_changed()
+    .subscribe([this](MovementType value)
     {
-        if (v.empty())
-        {
-            m_movementType = WALK;
-            //CryLog("Type of Movement = Walk");
-            return;
-        }
-
-        if (!v.empty())
-        {
-            if (v[v.size() - 1] == WALK)
-            {
-                m_movementType = DODGE;
-                //CryLog("Type of Movement = Dodge");
-                return;
-            }
-
-            if (v[v.size() - 1]==SPRINT)
-            {
-                m_movementType = SPRINT;
-                //CryLog("Type of Movement = Sprint");
-            }
-        }
+        m_movementType = value;
+        CryLog("Type of Movement = %i", m_movementType);
     });
-
-
 
     m_pCharacterActions->AttackSubject.get_observable().subscribe([this](bool isAttack)
     {          

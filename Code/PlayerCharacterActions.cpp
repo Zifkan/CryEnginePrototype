@@ -32,9 +32,9 @@ void PlayerCharacterActions::SetRotatePitch(float y)
     RotatePitchSubject.get_subscriber().on_next(y);
 }
 
-void PlayerCharacterActions::SetMoveType(MovementType movementType)
+void PlayerCharacterActions::SetMoveSignal(bool signal)
 {
-    MovementTypeSubject.get_subscriber().on_next(movementType);
+    SprintSubject.get_subscriber().on_next(signal);
 }
 
 

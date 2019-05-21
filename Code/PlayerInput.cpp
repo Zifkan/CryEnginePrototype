@@ -37,26 +37,16 @@ void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
     BindAction("player", "mouse_rotatepitch", eAID_XboxPad, EKeyId::eKI_XI_ThumbRY);
 
     RegisterAction("player", "sprint", [this](int activationMode, float value)
-    {     
-        if (activationMode == eIS_Pressed)
+    {             
+        if (activationMode == eIS_Pressed || activationMode == eIS_Down)
         {
-            characterActions->SetMoveType(DODGE);
-            //CryLog("Type of Movement = Dodge");
-        }
-          
-            
+            characterActions->SetMoveSignal(true);
+        }                      
        
         if (activationMode == eIS_Released)
         {
-            characterActions->SetMoveType(WALK);
-        }
-     
-        if (activationMode == eIS_Down)
-        {
-            characterActions->SetMoveType(SPRINT);
-            //CryLog("Type of Movement = SPRINT");
-        }
-        
+            characterActions->SetMoveSignal(false);
+        }       
         
     });
     

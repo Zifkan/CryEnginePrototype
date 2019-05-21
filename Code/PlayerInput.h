@@ -18,7 +18,6 @@ public:
         desc.SetEditorCategory("Input");
         desc.SetLabel("Input");
         desc.SetDescription("Exposes support for inputs and action maps");
-        //desc.SetIcon("icons:ObjectTypes/object.ico");
         desc.SetComponentFlags({EFlags::Socket, EFlags::Attach, EFlags::HideFromInspector  });
     }
 protected:

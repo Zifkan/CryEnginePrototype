@@ -55,19 +55,12 @@ void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
 
    
     RegisterAction("player", "Attack", [this](int activationMode, float value)
-    {
-        // Only fire on press, not release
-        if (activationMode == eIS_Pressed)
+    {     
+        if (activationMode == eIS_Pressed || activationMode == eIS_Down)
         {
             characterActions->SetAttack(true);
         }
-
-
-        if (activationMode == eIS_Changed)
-        {
-            CryLog("activationMode = %f", activationMode);
-        }
-
+      
         if (activationMode == eIS_Released)
         {
             characterActions->SetAttack(false);

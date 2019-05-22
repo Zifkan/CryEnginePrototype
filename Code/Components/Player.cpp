@@ -109,8 +109,6 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerComponent::UpdateMovementRequest(float frameTime)
 {  
-    Vec3 velocity = ZERO;
-
     if (!m_pCharacterController->IsOnGround() || !m_pMainCamera) return;
     
 	const float moveSpeed = 20.5f;
@@ -201,26 +199,21 @@ void CPlayerComponent::SetupActions()
   
    
     m_pCharacterActions->SprintSubject.get_observable()
-    .map([](bool isPressed) { return MovementSprintStruct(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
-    .scan(MovementSprintStruct(false, 0.0f,WALK),[](MovementSprintStruct last, MovementSprintStruct current)
+    .map([](bool isPressed) { return HoldDetectionStruct<MovementType>(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
+    .scan(HoldDetectionStruct<MovementType>(false, 0.0f,WALK),[](HoldDetectionStruct<MovementType> last, HoldDetectionStruct<MovementType> current)
     {    
         if (current.IsSignal && !last.IsSignal)
         {
-            return MovementSprintStruct(current.IsSignal, current.Time, DODGE);
+            return HoldDetectionStruct<MovementType>(current.IsSignal, current.Time, DODGE);
         }
 
         if (current.IsSignal && last.IsSignal)
-        {
-            if (current.Time - last.Time>0.25f/*|| last.Time==0*/)
-            {
-                return MovementSprintStruct(last.IsSignal, last.Time, SPRINT);
-            }
-            
-            return MovementSprintStruct(last.IsSignal, last.Time, DODGE);
+        {          
+            return HoldDetectionStruct<MovementType>(last.IsSignal, last.Time, current.Time - last.Time > 0.25f ? SPRINT : DODGE);
         }
         return current;       
     })
-    .map([](MovementSprintStruct value) {return value.Type; })
+    .map([](HoldDetectionStruct<MovementType> value) {return value.TypeValue; })
     .distinct_until_changed()
     .subscribe([this](MovementType value)
     {
@@ -228,13 +221,37 @@ void CPlayerComponent::SetupActions()
         CryLog("Type of Movement = %i", m_movementType);
     });
 
-    m_pCharacterActions->AttackSubject.get_observable().subscribe([this](bool isAttack)
+    m_pCharacterActions->AttackSubject.get_observable()
+    .map([](bool isPressed) { return HoldDetectionStruct<std::tuple<bool,int>>(isPressed, gEnv->pTimer->GetFrameTime(), std::tuple<bool, int>(false,0)); })
+    .scan(HoldDetectionStruct<std::tuple<bool, int>>(false, 0.0f, std::tuple<bool, int>(false, 0)),[](HoldDetectionStruct< std::tuple<bool, int>> last, HoldDetectionStruct< std::tuple<bool, int>> current)
+    {
+        if (!current.IsSignal && last.IsSignal)
+        {
+            if (current.Time>0.25 && current.Time < 0.5f)
+            {
+                const auto index = current.TypeValue._Myfirst._Val + 1;
+                const auto holdAndIndex = std::tuple<bool, int>(false, index > 5 ? 0 : index);
+                return HoldDetectionStruct<std::tuple<bool, int>>(last.IsSignal, 0, holdAndIndex);
+            }
+
+            if (current.Time > 0.5f)
+                return HoldDetectionStruct<std::tuple<bool, int>>(last.IsSignal, 0, std::tuple<bool, int>(true, 0));
+        }
+             
+        return HoldDetectionStruct<std::tuple<bool, int>>(current.IsSignal, last.Time+ gEnv->pTimer->GetFrameTime(), std::tuple<bool, int>(false, 0));
+        
+    })
+    .skip_while([](HoldDetectionStruct<std::tuple<bool, int>> data) {return !data.IsSignal; })        
+    .subscribe([this](HoldDetectionStruct<std::tuple<bool, int>> attackData)
     {          
 
         if (!pAction || (pAction && pAction->GetActiveTime()<0.1f))
         {
-            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
-            // pAction->SetOptionIdx(0);        
+
+            if (attackData.TypeValue._Myfirst._Val) return;
+
+            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId); 
+            pAction->SetOptionIdx(attackData.TypeValue._Get_rest()._Myfirst._Val);
             m_pAnimationComponent->QueueCustomFragment(*pAction);
            
         }      

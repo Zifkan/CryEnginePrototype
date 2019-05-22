@@ -26,13 +26,15 @@ class CPlayerComponent final : public IEntityComponent
         SPRINT,
     };
 
-    struct MovementSprintStruct
+    template <typename T>
+    struct HoldDetectionStruct
     {
         bool IsSignal;
         float Time;
-        MovementType Type;
+        T TypeValue;
 
-        MovementSprintStruct(bool isSignal, float time, MovementType type) : IsSignal(isSignal), Time(time), Type(type)
+
+        HoldDetectionStruct(bool isSignal, float time, T typeValue) : IsSignal(isSignal), Time(time), TypeValue(typeValue)
         {
         }
     };
@@ -138,6 +140,7 @@ protected:
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;
     FragmentID m_attackFragmentId;
+
 	TagID m_rotateTagId;
 
     TagID m_forceAttackTagId;

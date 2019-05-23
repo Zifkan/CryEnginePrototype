@@ -193,10 +193,8 @@ void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
 }
 
 void CPlayerComponent::SetupActions()
-{
-    m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
-
-  
+{    
+    m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });       
    
     m_pCharacterActions->SprintSubject.get_observable()
     .map([](bool isPressed) { return HoldDetectionStruct<MovementType>(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
@@ -222,38 +220,43 @@ void CPlayerComponent::SetupActions()
     });
 
     m_pCharacterActions->AttackSubject.get_observable()
-    .map([](bool isPressed) { return HoldDetectionStruct<std::tuple<bool,int>>(isPressed, gEnv->pTimer->GetFrameTime(), std::tuple<bool, int>(false,0)); })
-    .scan(HoldDetectionStruct<std::tuple<bool, int>>(false, 0.0f, std::tuple<bool, int>(false, 0)),[](HoldDetectionStruct< std::tuple<bool, int>> last, HoldDetectionStruct< std::tuple<bool, int>> current)
-    {
-        if (!current.IsSignal && last.IsSignal)
+    .map([](bool isPressed) { return HoldDetectionStruct<bool>(isPressed, 0, false); })
+    .scan(HoldDetectionStruct<bool>(false, 0,false),[](HoldDetectionStruct<bool> last, HoldDetectionStruct<bool> current)
+    {        
+        float time = 0.0f;
+       
+        if (last.Time >= 0.25f)
         {
-            if (current.Time>0.25 && current.Time < 0.5f)
-            {
-                const auto index = current.TypeValue._Myfirst._Val + 1;
-                const auto holdAndIndex = std::tuple<bool, int>(false, index > 5 ? 0 : index);
-                return HoldDetectionStruct<std::tuple<bool, int>>(last.IsSignal, 0, holdAndIndex);
-            }
-
-            if (current.Time > 0.5f)
-                return HoldDetectionStruct<std::tuple<bool, int>>(last.IsSignal, 0, std::tuple<bool, int>(true, 0));
+            return HoldDetectionStruct<bool>(true, 0, true);
         }
-             
-        return HoldDetectionStruct<std::tuple<bool, int>>(current.IsSignal, last.Time+ gEnv->pTimer->GetFrameTime(), std::tuple<bool, int>(false, 0));
         
+        if (current.IsSignal )
+        {
+            time += last.Time + gEnv->pTimer->GetFrameTime();
+            return HoldDetectionStruct<bool>(false, time, false);
+        }
+
+        if (last.Time > 0.1f && last.Time < 0.25f)
+        {                    
+            return HoldDetectionStruct<bool>(true, 0, false);
+        }      
+
+        return HoldDetectionStruct<bool>(false, time, false);
     })
-    .skip_while([](HoldDetectionStruct<std::tuple<bool, int>> data) {return !data.IsSignal; })        
-    .subscribe([this](HoldDetectionStruct<std::tuple<bool, int>> attackData)
+   // .skip_while([](HoldDetectionStruct<std::tuple<bool, int>> data) {return !data.IsSignal; })        
+    .subscribe([this](HoldDetectionStruct<bool> attackData)
     {          
 
         if (!pAction || (pAction && pAction->GetActiveTime()<0.1f))
         {
 
-            if (attackData.TypeValue._Myfirst._Val) return;
+            if (!attackData.IsSignal) return;
 
             pAction = new TAction< SAnimationContext >(1, m_attackFragmentId); 
-            pAction->SetOptionIdx(attackData.TypeValue._Get_rest()._Myfirst._Val);
+            pAction->SetOptionIdx(0);
             m_pAnimationComponent->QueueCustomFragment(*pAction);
-           
+
+            CryLog("Is simple: %i", attackData.TypeValue);
         }      
       
     });

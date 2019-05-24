@@ -12,6 +12,8 @@
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include <DefaultComponents/Input/InputComponent.h>
 #include "PlayerInput.h"
+#include <DefaultComponents/Physics/AreaComponent.h>
+#include <DefaultComponents/Physics/AreaComponent.h>
 
 
 ////////////////////////////////////////////////////////
@@ -140,12 +142,12 @@ protected:
 	FragmentID m_idleFragmentId;
 	FragmentID m_walkFragmentId;
     FragmentID m_attackFragmentId;
-
+       
 	TagID m_rotateTagId;
-
     TagID m_forceAttackTagId;
+    int m_attackId;
 
-    
+
     Vec2 m_moveDirection = ZERO;
     Vec2 m_lastRotationDirection = ZERO;
 	MovingAverage<Vec2, 10> m_mouseDeltaSmoothingFilter;
@@ -160,4 +162,6 @@ protected:
     bool IsAttack;
     IAction* pAction;
     MovementType m_movementType;
+
+
 };

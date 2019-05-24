@@ -23,7 +23,7 @@ static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterPlayerComponent)
 
 
-CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintRatio(1.5f), m_sprintAnimRatio(4.0f)
+CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintRatio(1.5f), m_sprintAnimRatio(4.0f), m_attackId(0)
 {
 }
 
@@ -54,6 +54,7 @@ void CPlayerComponent::Initialize()
 
 	// Load the character and Mannequin data from file
 	m_pAnimationComponent->LoadFromDisk();
+  
 
 	// Acquire fragment and tag identifiers to avoid doing so each update
 	m_idleFragmentId = m_pAnimationComponent->GetFragmentId("Idle");
@@ -62,6 +63,7 @@ void CPlayerComponent::Initialize()
     m_attackFragmentId = m_pAnimationComponent->GetFragmentId("Attack");
     m_forceAttackTagId = m_pAnimationComponent->GetTagId("ForceAttack");
 
+   
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
   //  m_pEntity->SetName(m_characterEntityName.c_str());
     m_pEntity->SetName("Player");  
@@ -213,11 +215,7 @@ void CPlayerComponent::SetupActions()
     })
     .map([](HoldDetectionStruct<MovementType> value) {return value.TypeValue; })
     .distinct_until_changed()
-    .subscribe([this](MovementType value)
-    {
-        m_movementType = value;
-        CryLog("Type of Movement = %i", m_movementType);
-    });
+    .subscribe([this](MovementType value){ m_movementType = value; });
 
     m_pCharacterActions->AttackSubject.get_observable()
     .map([](bool isPressed) { return HoldDetectionStruct<bool>(isPressed, 0, false); })
@@ -243,22 +241,19 @@ void CPlayerComponent::SetupActions()
 
         return HoldDetectionStruct<bool>(false, time, false);
     })
-   // .skip_while([](HoldDetectionStruct<std::tuple<bool, int>> data) {return !data.IsSignal; })        
     .subscribe([this](HoldDetectionStruct<bool> attackData)
-    {          
-
-        if (!pAction || (pAction && pAction->GetActiveTime()<0.1f))
-        {
-
-            if (!attackData.IsSignal) return;
-
-            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId); 
-            pAction->SetOptionIdx(0);
+    {
+        if (attackData.IsSignal && (!pAction || pAction && pAction->GetActiveTime()<0.1f))
+        {         
+            
+            m_attackId = m_attackId > 5 || attackData.TypeValue ? 0 : m_attackId;
+            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
+            pAction->SetOptionIdx(m_attackId);
+            m_pAnimationComponent->SetTagWithId(m_forceAttackTagId, attackData.TypeValue);
             m_pAnimationComponent->QueueCustomFragment(*pAction);
-
-            CryLog("Is simple: %i", attackData.TypeValue);
+            m_attackId++;
         }      
-      
+        
     });
 }
 

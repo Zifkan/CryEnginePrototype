@@ -14,19 +14,25 @@
 #include "PlayerInput.h"
 #include <DefaultComponents/Physics/AreaComponent.h>
 #include <DefaultComponents/Physics/AreaComponent.h>
+#include "Camera/CameraController.h"
+#include "IBaseState.h"
+#include "Camera/CameraController.h"
 
 
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
+
+enum MovementType
+{
+    WALK,
+    DODGE,
+    SPRINT,
+};
+
 class CPlayerComponent final : public IEntityComponent
 {
-    enum MovementType
-    {
-        WALK,
-        DODGE,
-        SPRINT,
-    };
+   
 
     template <typename T>
     struct HoldDetectionStruct
@@ -127,7 +133,7 @@ protected:
 
     void SetupActions();
 
-protected:
+
     ICharacterActions* m_pCharacterActions = nullptr;
         
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
@@ -145,7 +151,7 @@ protected:
        
 	TagID m_rotateTagId;
     TagID m_forceAttackTagId;
-    int m_attackId;
+    uint8  m_attackId;
 
 
     Vec2 m_moveDirection = ZERO;
@@ -157,11 +163,21 @@ protected:
 	Quat m_lookOrientation; //!< Should translate to head orientation in the future
 	float m_horizontalAngularVelocity;
 	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
+   
 
-    bool IsAnimationPlaying(FragmentID fragmentId, int animLayer);
+    bool IsAttacking() const { return m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetAnimFromFIFO(1, 0).GetCurrentSegmentNormalizedTime() < 1; }
+
+  
     bool IsAttack;
-    IAction* pAction;
+    IAction* pAttackAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
     MovementType m_movementType;
 
+    IBaseState* currentState;
 
+private:
+    void SetCurrentState(IBaseState* state);
+
+    rxcpp::observable<HoldDetectionStruct<bool>> m_attackObservableInput;
+    rxcpp::observable<MovementType> m_sprintObservableInput;
+    rxcpp::observable<Vec2> m_moveDirectionObservableInput;
 };

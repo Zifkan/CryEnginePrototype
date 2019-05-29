@@ -7,6 +7,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "Camera/CameraController.h"
+#include "MovementState.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -23,9 +24,11 @@ static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterPlayerComponent)
 
 
-CPlayerComponent::CPlayerComponent(): m_characterEntityName("Player"), m_sprintRatio(1.5f), m_sprintAnimRatio(4.0f), m_attackId(0)
-{
-}
+CPlayerComponent::CPlayerComponent(): 
+    m_characterEntityName("Player"),
+    m_sprintRatio(1.5f),
+    m_sprintAnimRatio(4.0f),
+    m_attackId(0){}
 
 void CPlayerComponent::Initialize()
 {   	
@@ -49,7 +52,7 @@ void CPlayerComponent::Initialize()
 	m_pAnimationComponent->SetDefaultFragmentName("Idle");
 
 	// Disable movement coming from the animation (root joint offset), we control this entirely via physics
-	m_pAnimationComponent->SetAnimationDrivenMotion(false);
+	m_pAnimationComponent->SetAnimationDrivenMotion(true);
     
 
 	// Load the character and Mannequin data from file
@@ -67,7 +70,8 @@ void CPlayerComponent::Initialize()
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
   //  m_pEntity->SetName(m_characterEntityName.c_str());
     m_pEntity->SetName("Player");  
-   
+
+
 	Revive();
 }
 
@@ -86,6 +90,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
         CRY_ASSERT(m_pMainCamera != nullptr);
 		// Revive the entity when gameplay starts
 		Revive();
+
+      //  currentState = new MovementState(m_pEntity,m_sprintAnimRatio,m_sprintRatio, m_pMainCamera,&m_moveDirection,&m_movementType);
 	}
 	break;
 	case ENTITY_EVENT_UPDATE:
@@ -98,6 +104,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 
 		// Update the animation state of the character
 		UpdateAnimation(pCtx->fFrameTime);
+
+        currentState->Update(pCtx->fFrameTime);
 
 	}
     break;
@@ -113,39 +121,47 @@ void CPlayerComponent::UpdateMovementRequest(float frameTime)
 {  
     if (!m_pCharacterController->IsOnGround() || !m_pMainCamera) return;
     
-	const float moveSpeed = 20.5f;
+	float moveSpeed = 0;
     Vec3 camForward = m_pMainCamera->GetForwardDir();
     camForward.z = 0;
 
     Vec3 m_Move = m_moveDirection.y * camForward.normalized() + m_moveDirection.x * m_pMainCamera->GetRightDir();   
-    
-    if (m_moveDirection.GetLength2() > 0)
+   
+    if (m_moveDirection.GetLength2() > 0 && !IsAttacking())
     {
         m_pEntity->SetRotation(quaternion::CreateRotationVDir(m_Move));
+    }
+
+    if (m_moveDirection.GetLength2() > 0 || IsAttacking())
+    {
+        moveSpeed = 20.5f;
         m_pCharacterController->AddVelocity((m_movementType == (SPRINT | DODGE) ? m_sprintRatio : 1.0f) * (moveSpeed * frameTime * m_pEntity->GetForwardDir()));
     }
+   // CryLog("IsPlayingFragment: %i", pAttackAction->IsPlayingFragment());
+
+    CryLog("IsPlayingFragment time: %f", m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetAnimFromFIFO(1,0).GetCurrentSegmentNormalizedTime());
 }
 
 
 void CPlayerComponent::UpdateAnimation(float frameTime)
 {
-	const float angularVelocityTurningThreshold = 0.174; // [rad/s]
+	//const float angularVelocityTurningThreshold = 0.174; // [rad/s]
 
-	// Update tags and motion parameters used for turning
-	const bool isTurning = std::abs(m_averagedHorizontalAngularVelocity.Get()) > angularVelocityTurningThreshold;
-	m_pAnimationComponent->SetTagWithId(m_rotateTagId, isTurning);
-	if (isTurning)
-	{
-		// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
-		// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
+	//// Update tags and motion parameters used for turning
+	//const bool isTurning = std::abs(m_averagedHorizontalAngularVelocity.Get()) > angularVelocityTurningThreshold;
+	//m_pAnimationComponent->SetTagWithId(m_rotateTagId, isTurning);
+	////if (isTurning)
+	//{
+	//	// TODO: This is a very rough predictive estimation of eMotionParamID_TurnAngle that could easily be replaced with accurate reactive motion 
+	//	// if we introduced IK look/aim setup to the character's model and decoupled entity's orientation from the look direction derived from mouse input.
 
-		const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
-		m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
-	}
+	//	const float turnDuration = 1.0f; // Expect the turning motion to take approximately one second.
+	//	m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, m_horizontalAngularVelocity * turnDuration);
+	//}
 
-	// Update active fragment
+	//// Update active fragment
 	const auto& desiredFragmentId = m_pCharacterController->IsWalking() ? m_walkFragmentId : m_idleFragmentId;
-	if (m_activeFragmentId != desiredFragmentId)
+	if (m_activeFragmentId != desiredFragmentId && !IsAttacking())
 	{
 		m_activeFragmentId = desiredFragmentId;
 		m_pAnimationComponent->QueueFragmentWithId(m_activeFragmentId);
@@ -161,7 +177,8 @@ void CPlayerComponent::UpdateAnimation(float frameTime)
     m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetDesiredMotionParam(eMotionParamID_TravelSpeed, testValue);
    
 */
-    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_movementType != WALK? m_sprintAnimRatio:1);
+    if (!IsAttacking())
+        m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, m_movementType != WALK? m_sprintAnimRatio:1);
 }
 
 
@@ -196,9 +213,10 @@ void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
 
 void CPlayerComponent::SetupActions()
 {    
-    m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });       
+    m_moveDirectionObservableInput = m_pCharacterActions->MovementSubject.get_observable();
+    m_moveDirectionObservableInput.subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
    
-    m_pCharacterActions->SprintSubject.get_observable()
+    m_sprintObservableInput =  m_pCharacterActions->SprintSubject.get_observable()
     .map([](bool isPressed) { return HoldDetectionStruct<MovementType>(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
     .scan(HoldDetectionStruct<MovementType>(false, 0.0f,WALK),[](HoldDetectionStruct<MovementType> last, HoldDetectionStruct<MovementType> current)
     {    
@@ -214,10 +232,11 @@ void CPlayerComponent::SetupActions()
         return current;       
     })
     .map([](HoldDetectionStruct<MovementType> value) {return value.TypeValue; })
-    .distinct_until_changed()
-    .subscribe([this](MovementType value){ m_movementType = value; });
+    .distinct_until_changed();
+  // .subscribe([this](MovementType value){ m_movementType = value; });
+    
 
-    m_pCharacterActions->AttackSubject.get_observable()
+  m_attackObservableInput =  m_pCharacterActions->AttackSubject.get_observable()
     .map([](bool isPressed) { return HoldDetectionStruct<bool>(isPressed, 0, false); })
     .scan(HoldDetectionStruct<bool>(false, 0,false),[](HoldDetectionStruct<bool> last, HoldDetectionStruct<bool> current)
     {        
@@ -240,57 +259,27 @@ void CPlayerComponent::SetupActions()
         }      
 
         return HoldDetectionStruct<bool>(false, time, false);
-    })
-    .subscribe([this](HoldDetectionStruct<bool> attackData)
+  });
+  //  .skip_while([this](HoldDetectionStruct<bool> attackData) {return attackData.IsSignal && (pAttackAction == nullptr ); })
+  m_attackObservableInput.subscribe([this](HoldDetectionStruct<bool> attackData)
     {
-        if (attackData.IsSignal && (!pAction || pAction && pAction->GetActiveTime()<0.1f))
-        {         
-            
+        if (attackData.IsSignal && (!pAttackAction || pAttackAction && !IsAttacking()))
+        {          
             m_attackId = m_attackId > 5 || attackData.TypeValue ? 0 : m_attackId;
-            pAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
-            pAction->SetOptionIdx(m_attackId);
-            m_pAnimationComponent->SetTagWithId(m_forceAttackTagId, attackData.TypeValue);
-            m_pAnimationComponent->QueueCustomFragment(*pAction);
+            pAttackAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
+            pAttackAction->SetOptionIdx(m_attackId);
+         
+            m_pAnimationComponent->QueueCustomFragment(*pAttackAction);
             m_attackId++;
+            m_activeFragmentId = m_attackFragmentId;   m_pAnimationComponent->SetTagWithId(m_forceAttackTagId, attackData.TypeValue);         
         }      
         
     });
 }
 
-bool CPlayerComponent::IsAnimationPlaying(FragmentID fragmentId, int animLayer)
-{   
-   /* ICharacterInstance* pCharacter = m_pAnimationComponent->GetCharacter();
-  //  pCharacter->fra
-    if (pCharacter && !animName.empty())
-    {       
-        ISkeletonAnim* pISkeletonAnim = pCharacter->GetISkeletonAnim();
-
-        int animID = pCharacter->GetIAnimationSet()->GetAnimIDByName(animName.c_str());
-
-        int numAnims = pISkeletonAnim->GetNumAnimsInFIFO(animLayer);
-        for (int i = 0; i < numAnims; ++i)
-        {
-            const CAnimation& anim = pISkeletonAnim->GetAnimFromFIFO(animLayer, i);
-            int32 animInLayerID = anim.GetAnimationId();
-            if (animInLayerID == animID)
-            {                
-
-                // animation is playing, but is it also the top of the stack? (FIFO - last one in)
-                // this is done this way because in theory the animation could be in the FIFO several times
-                // so DO NOT optimize this to just check whether i == numAnims - 1 please
-                const CAnimation& topAnim = pISkeletonAnim->GetAnimFromFIFO(animLayer, numAnims - 1);
-                int32 topAnimId = topAnim.GetAnimationId();
-                if (topAnimId == animID)
-                {
-                    
-                }
-
-                return true;
-            }
-        }
-
-    }
-
-    // else it's apparently all false*/
-    return false;
+void CPlayerComponent::SetCurrentState(IBaseState* state)
+{
+    currentState->OnExitState();
+    currentState = state;
+    currentState->OnEnterState();
 }

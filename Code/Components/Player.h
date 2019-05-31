@@ -23,13 +23,6 @@
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
 
-enum MovementType
-{
-    WALK,
-    DODGE,
-    SPRINT,
-};
-
 class CPlayerComponent final : public IEntityComponent
 {
    
@@ -175,9 +168,5 @@ protected:
     IBaseState* currentState;
 
 private:
-    void SetCurrentState(IBaseState* state);
-
-    rxcpp::observable<HoldDetectionStruct<bool>> m_attackObservableInput;
-    rxcpp::observable<MovementType> m_sprintObservableInput;
-    rxcpp::observable<Vec2> m_moveDirectionObservableInput;
+    void SetCurrentState(IBaseState* state);    
 };

@@ -3,6 +3,7 @@
 
 
 
+
 class PlayerCharacterActions : public ICharacterActions
 {
 public:
@@ -18,4 +19,8 @@ public:
 
 private:
     Vec2 m_movement = ZERO;
+
+   
+    rxcpp::subjects::subject<bool> Attack;
+    rxcpp::subjects::subject<bool> Movement;
 };

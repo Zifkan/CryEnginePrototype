@@ -213,68 +213,7 @@ void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
 
 void CPlayerComponent::SetupActions()
 {    
-    m_moveDirectionObservableInput = m_pCharacterActions->MovementSubject.get_observable();
-    m_moveDirectionObservableInput.subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });
-   
-    m_sprintObservableInput =  m_pCharacterActions->SprintSubject.get_observable()
-    .map([](bool isPressed) { return HoldDetectionStruct<MovementType>(isPressed, gEnv->pTimer->GetCurrTime(),WALK); })
-    .scan(HoldDetectionStruct<MovementType>(false, 0.0f,WALK),[](HoldDetectionStruct<MovementType> last, HoldDetectionStruct<MovementType> current)
-    {    
-        if (current.IsSignal && !last.IsSignal)
-        {
-            return HoldDetectionStruct<MovementType>(current.IsSignal, current.Time, DODGE);
-        }
-
-        if (current.IsSignal && last.IsSignal)
-        {          
-            return HoldDetectionStruct<MovementType>(last.IsSignal, last.Time, current.Time - last.Time > 0.25f ? SPRINT : DODGE);
-        }
-        return current;       
-    })
-    .map([](HoldDetectionStruct<MovementType> value) {return value.TypeValue; })
-    .distinct_until_changed();
-  // .subscribe([this](MovementType value){ m_movementType = value; });
-    
-
-  m_attackObservableInput =  m_pCharacterActions->AttackSubject.get_observable()
-    .map([](bool isPressed) { return HoldDetectionStruct<bool>(isPressed, 0, false); })
-    .scan(HoldDetectionStruct<bool>(false, 0,false),[](HoldDetectionStruct<bool> last, HoldDetectionStruct<bool> current)
-    {        
-        float time = 0.0f;
-       
-        if (last.Time >= 0.25f)
-        {
-            return HoldDetectionStruct<bool>(true, 0, true);
-        }
-        
-        if (current.IsSignal )
-        {
-            time += last.Time + gEnv->pTimer->GetFrameTime();
-            return HoldDetectionStruct<bool>(false, time, false);
-        }
-
-        if (last.Time > 0.1f && last.Time < 0.25f)
-        {                    
-            return HoldDetectionStruct<bool>(true, 0, false);
-        }      
-
-        return HoldDetectionStruct<bool>(false, time, false);
-  });
-  //  .skip_while([this](HoldDetectionStruct<bool> attackData) {return attackData.IsSignal && (pAttackAction == nullptr ); })
-  m_attackObservableInput.subscribe([this](HoldDetectionStruct<bool> attackData)
-    {
-        if (attackData.IsSignal && (!pAttackAction || pAttackAction && !IsAttacking()))
-        {          
-            m_attackId = m_attackId > 5 || attackData.TypeValue ? 0 : m_attackId;
-            pAttackAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
-            pAttackAction->SetOptionIdx(m_attackId);
-         
-            m_pAnimationComponent->QueueCustomFragment(*pAttackAction);
-            m_attackId++;
-            m_activeFragmentId = m_attackFragmentId;   m_pAnimationComponent->SetTagWithId(m_forceAttackTagId, attackData.TypeValue);         
-        }      
-        
-    });
+    m_pCharacterActions->MovementSubject.get_observable().subscribe([this](Vec2 Vector2) {  m_moveDirection = Vector2; });  
 }
 
 void CPlayerComponent::SetCurrentState(IBaseState* state)

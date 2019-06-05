@@ -14,12 +14,13 @@ MovementAction::MovementAction(IEntity* characterEntity,Cry::DefaultComponents::
     ActionScopes scopeMask,
     uint32 userToken):
     BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
-    ,m_pMainCamera(mainCamera)
-    ,m_pAnimationComponent(animationComponent)
     ,m_pCharacterController(characterController)
-    ,m_pCharacterEntity(characterEntity)
-    ,m_sprintRatio(1.5f)
+    ,m_pAnimationComponent(animationComponent)
+    ,m_pMainCamera(mainCamera)
+    ,m_pCharacterEntity(characterEntity)   
     ,m_moveDirection(0.0)
+    ,m_sprintRatio(1.5f)
+    ,m_sprintAnimRatio(3.5)
 {
     m_movementCompositeSubscribtion = m_pCharacterAction->MovementSubject.get_observable().start_with(Vec2(0.1f,0.0f)).subscribe([this](Vec2 vec2)
     {       

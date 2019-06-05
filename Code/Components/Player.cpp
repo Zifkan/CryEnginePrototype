@@ -181,5 +181,5 @@ void CPlayerComponent::CreateStateMachine()
 
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions,0,m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
-    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_pCharacterActions, 2, m_attackFragmentId));
+    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
 }

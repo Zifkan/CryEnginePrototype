@@ -20,6 +20,7 @@ void AttackAction::Exit()
 
 IAction::EStatus AttackAction::Update(float timePassed)
 {
-   
+    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, 1);
+    m_pCharacterController->AddVelocity(10* timePassed * m_pCharacterEntity->GetForwardDir());
     return IAction::Update(timePassed);
 }

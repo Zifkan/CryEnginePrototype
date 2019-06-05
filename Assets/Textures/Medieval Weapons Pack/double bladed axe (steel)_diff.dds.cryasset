@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="6342ea57-da87-838f-ac5b-b8bd6487fc33" source="double bladed axe (steel)_diff.tif">
+ <Files>
+  <File path="double bladed axe (steel)_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="7b4f6357-c942-6339-51ae-74931fbae830" source="bush hook_diff.tif">
+ <Files>
+  <File path="bush hook_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

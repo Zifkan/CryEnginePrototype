@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="5f5fe345-f837-5e8b-e6ff-b31f32f84e3d" source="common_blade_diff.tif">
+ <Files>
+  <File path="common_blade_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

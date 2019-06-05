@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="11f84e2b-6370-f5cb-690b-7dbf662deae2" source="common_blade_spec.tif">
+ <Files>
+  <File path="common_blade_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

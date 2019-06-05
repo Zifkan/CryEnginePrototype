@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="acb1598c-c2dd-e336-a133-34a6ed53a65f" source="double bladed axe (bronze)_height.tif">
+ <Files>
+  <File path="double bladed axe (bronze)_height.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

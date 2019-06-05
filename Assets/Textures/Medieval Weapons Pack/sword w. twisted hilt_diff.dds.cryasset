@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="8ac7034b-f4e5-c358-348a-e61be8e4ffdb" source="sword w. twisted hilt_diff.tif">
+ <Files>
+  <File path="sword w. twisted hilt_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

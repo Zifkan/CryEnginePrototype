@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="65f313d5-60d5-53ac-1770-fcbbfc418521" source="common_blade_ddna.tif">
+ <Files>
+  <File path="common_blade_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

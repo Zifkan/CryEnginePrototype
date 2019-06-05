@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="a07f146c-d590-a2d5-f42a-cf0459ba6696" source="bush hook_spec.tif">
+ <Files>
+  <File path="bush hook_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

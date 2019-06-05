@@ -151,10 +151,6 @@ void CPlayerComponent::SetupActions()
         {
             m_stateMachine->SetCurrentState(typeid(MovementAction));
         }
-        else
-        {
-         //  m_stateMachine->SetCurrentState(typeid(IdleAction));
-        }
     });
 
     m_pCharacterActions->AttackSubject.get_observable().subscribe([this](AttackType type)

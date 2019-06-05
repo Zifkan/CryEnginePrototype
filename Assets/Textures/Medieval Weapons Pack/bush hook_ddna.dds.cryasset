@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="f49d180e-1f59-a870-64cc-50d257204ac2" source="bush hook_ddna.tif">
+ <Files>
+  <File path="bush hook_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

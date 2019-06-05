@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="3b972749-7bd8-9e8e-806d-4400cc1533d0" source="campestrian elite combat knife_ddna.tif">
+ <Files>
+  <File path="campestrian elite combat knife_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

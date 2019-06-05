@@ -6,6 +6,7 @@
  <Dependencies>
   <Path>objects/characters/human/medium/romanlegion/legion_skel.chr</Path>
   <Path>objects/nodraw</Path>
+  <Path>Objects/Medieval Weapons Pack/Double Bladed Axe (Steel Head).cgf</Path>
   <Path>objects/characters/human/medium/romanLegion/legion_skin.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower.skin</Path>

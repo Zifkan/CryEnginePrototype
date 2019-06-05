@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="e914df65-eea2-2304-694b-d6a2f944d2c8" source="twisted hilt dagger_spec.tif">
+ <Files>
+  <File path="twisted hilt dagger_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

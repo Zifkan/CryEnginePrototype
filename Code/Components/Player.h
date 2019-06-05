@@ -17,6 +17,7 @@
 #include "Camera/CameraController.h"
 #include "IBaseState.h"
 #include "Camera/CameraController.h"
+#include "StateMachine.h"
 
 
 ////////////////////////////////////////////////////////
@@ -121,8 +122,7 @@ public:
     
   
 protected:
-	void UpdateMovementRequest(float frameTime);
-	void UpdateAnimation(float frameTime);
+	
 
     void SetupActions();
 
@@ -144,7 +144,6 @@ protected:
        
 	TagID m_rotateTagId;
     TagID m_forceAttackTagId;
-    uint8  m_attackId;
 
 
     Vec2 m_moveDirection = ZERO;
@@ -156,17 +155,12 @@ protected:
 	Quat m_lookOrientation; //!< Should translate to head orientation in the future
 	float m_horizontalAngularVelocity;
 	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
-   
-
-    bool IsAttacking() const { return m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetAnimFromFIFO(1, 0).GetCurrentSegmentNormalizedTime() < 1; }
-
   
-    bool IsAttack;
-    IAction* pAttackAction = new TAction< SAnimationContext >(1, m_attackFragmentId);
-    MovementType m_movementType;
 
-    IBaseState* currentState;
+        
+    CStateMachine* m_stateMachine;
+
 
 private:
-    void SetCurrentState(IBaseState* state);    
+    void CreateStateMachine();
 };

@@ -47,6 +47,25 @@ add_sources("GamePlay_uber.cpp"
 		"Components/GamePlay/PlayerSoul.h"		
 )
 
+add_sources("StateActions_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "StateMachine\\\\StateAction"
+		"StateMachine/StateAction/AttackAction.cpp"
+		"StateMachine/StateAction/AttackAction.h"		
+		"StateMachine/StateAction/BaseAction.cpp"
+		"StateMachine/StateAction/BaseAction.h"	
+		"StateMachine/StateAction/MovementAction.cpp"
+		"StateMachine/StateAction/MovementAction.h"		
+		"StateMachine/StateAction/IdleAction.h"		
+		"StateMachine/StateAction/IdleAction.cpp"		
+)
+
+add_sources("StateMachine.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "StateMachine"
+		"StateMachine/StateMachine.cpp"
+		"StateMachine/StateMachine.h"		
+)
 		
 add_sources("Rx_uber.cpp"
     PROJECTS Game

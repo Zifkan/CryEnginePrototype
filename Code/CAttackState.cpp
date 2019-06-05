@@ -19,11 +19,11 @@ void CAttackState::OnEnterState()
         m_attackId = 0;
     }
 
-    m_attackId = m_attackId > 5 || attackData.TypeValue ? 0 : m_attackId;
+   /* m_attackId = m_attackId > 5 || attackData.TypeValue ? 0 : m_attackId;
     pAttackAction = new СAttackAction(this,1, m_attackFragmentId);
     pAttackAction->SetOptionIdx(m_attackId);
     m_pAnimationComponent->SetTagWithId(m_forceAttackTagId, attackData.TypeValue);
-    m_pAnimationComponent->QueueCustomFragment(*pAttackAction);
+    m_pAnimationComponent->QueueCustomFragment(*pAttackAction);*/
    
 
 }

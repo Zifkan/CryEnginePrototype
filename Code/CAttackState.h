@@ -23,7 +23,7 @@ private:
     TagID m_forceAttackTagId;
 
     uint8  m_attackId;
-    СAttackAction* pAttackAction;
+//    СAttackAction* pAttackAction;
 
     float m_lastActiontime;
 };

@@ -1,6 +1,33 @@
 ﻿#pragma once
 #include "RxCpp/rx.hpp"
 
+enum MovementType
+{
+    WALK,
+    DODGE,
+    SPRINT,
+};
+
+enum AttackType
+{
+    ATTACK,
+    FORCE_ATTACK
+};
+
+
+template <typename T>
+struct HoldDetectionStruct
+{
+    bool IsSignal;
+    float Time;
+    T TypeValue;
+
+
+    HoldDetectionStruct(bool isSignal, float time, T typeValue) : IsSignal(isSignal), Time(time), TypeValue(typeValue)
+    {
+    }
+};
+
 
 class  ICharacterActions
 {
@@ -11,10 +38,10 @@ public:
     virtual ~ICharacterActions() {}
 
     rxcpp::subjects::subject<Vec2> MovementSubject;
-    rxcpp::subjects::subject<bool>  AttackSubject;
+    rxcpp::subjects::subject<AttackType>  AttackSubject;
     rxcpp::subjects::subject<float> RotateYawSubject;
     rxcpp::subjects::subject<float> RotatePitchSubject;
-    rxcpp::subjects::subject<bool>  SprintSubject;
+    rxcpp::subjects::subject<MovementType>  MovementTypeSubject;
 
     void virtual SetMovementForward(float y) = 0;
     void virtual SetMovementSide(float x) = 0;
@@ -26,4 +53,5 @@ public:
 protected:
     rxcpp::subjects::subject<float> MovementForward;
     rxcpp::subjects::subject<float> MovementSide;
+   
 };

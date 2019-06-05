@@ -2,21 +2,27 @@
 #include <CryAnimation/ICryMannequin.h>
 #include "IBaseState.h"
 #include "CAttackState.h"
+#include "BaseAction.h"
 
-class СAttackAction : public IAction
+class AttackAction : public BaseAction
 {
 public:
-    СAttackAction(IBaseState* state, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
-        : IAction(priority, fragmentID, fragTags, flags, scopeMask, userToken)
-        , m_pState(state)
+    AttackAction(ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
+        : BaseAction(characterAction,priority, fragmentID, fragTags, flags, scopeMask, userToken)
+        , m_lastCallTime(0.0f)
+        , m_attackId(0)
     {
     }
+           
 
-    void OnActionFinished() override;
+    EStatus Update(float timePassed) override;
 
-    virtual const char* GetName() const;
-    virtual void DoDelete();
-    virtual IAction* CreateSlaveAction(FragmentID slaveFragID, const TagState& fragTags, SAnimationContext& context);
+    void Enter() override;
+    void Exit() override;
+
 private:
-    IBaseState* m_pState;
+
+    float m_lastCallTime;
+
+    uint8 m_attackId;
 };

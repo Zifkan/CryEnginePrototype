@@ -2,7 +2,6 @@
 // This file is auto generated, do not manually edit it.
 
 #include <StdAfx.h>
-#include <F:/Crytek/CryEnginePrototype/Code/Components/CollisionControl.cpp>
 #include <F:/Crytek/CryEnginePrototype/Code/Components/Player.cpp>
 #include <F:/Crytek/CryEnginePrototype/Code/Components/SpawnPoint.cpp>
 

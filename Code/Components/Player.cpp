@@ -12,7 +12,6 @@
 #include "IdleAction.h"
 
 
-class MovementAction;
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 {
@@ -126,14 +125,9 @@ void CPlayerComponent::Revive()
 	m_pAnimationComponent->ResetCharacter();
 	m_pCharacterController->Physicalize();
 
-	// Reset input now that the player respawned
-	m_mouseDeltaSmoothingFilter.Reset();
-
-	m_activeFragmentId = FRAGMENT_ID_INVALID;
 
 	m_lookOrientation = IDENTITY;
 	m_horizontalAngularVelocity = 0.0f;
-	m_averagedHorizontalAngularVelocity.Reset();
 }
 
 void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)

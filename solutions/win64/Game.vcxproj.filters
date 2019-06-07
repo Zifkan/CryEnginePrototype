@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
@@ -11,11 +11,32 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp">
       <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\MovementAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\AttackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\BaseAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\IdleAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\MeleeWeapon.cpp">
+      <Filter>Components\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -26,9 +47,6 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.cpp">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Bullet.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.h">
@@ -43,11 +61,35 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.h">
       <Filter>Components\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.cpp">
+      <Filter>Components\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.h">
+      <Filter>Components\GamePlay</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
+    <ClInclude Include="..\..\Code\MovementAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\AttackAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\BaseAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\IdleAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\MeleeWeapon.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt" />
@@ -61,6 +103,9 @@
     <Filter Include="Components\Camera">
       <UniqueIdentifier>{5F80C045-9A0C-363A-9F36-462157D06A84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\GamePlay">
+      <UniqueIdentifier>{F6065BBB-1F1E-322F-A46E-863F36380AE3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>
     </Filter>
@@ -69,6 +114,15 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{68E35553-2D76-31D8-ACD0-DA8B7842B7A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine">
+      <UniqueIdentifier>{24d60143-839d-4bf3-ac1e-df031699ac4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine\StateAction">
+      <UniqueIdentifier>{106488b6-d858-4d8d-a02d-f8598f4df1ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Weapon">
+      <UniqueIdentifier>{c277fbb1-aa56-4276-9015-c5dffef2900c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

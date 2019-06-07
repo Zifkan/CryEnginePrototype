@@ -387,11 +387,11 @@
      </Component>
     </Components>
    </Object>
-   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="07e1c84e-dae6-c683-56ba-cce9a5fc76de" Name="Entity-12" Pos="71,51,32" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
+   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="07e1c84e-dae6-c683-56ba-cce9a5fc76de" Name="Entity-12" Pos="74,51,32" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="63f4c0c6-32af-4acb-8fb0-57d45dd14725" TypeName="CPlayerComponent" GUID="4570ee1b-bce1-8015-ba50-78aa84535091" Name="" UserAdded="true">
-      <properties PlayerIntityName="PlayerCharacter"/>
+      <properties SprintRatio="1.5" SprintAnimRatio="4"/>
      </Component>
      <Component CryXmlVersion="2" TypeGUID="a4cb0508-5f07-46b4-b6d4-ab76bfd550f4" TypeName="Cry::DefaultComponents::CCameraComponent" GUID="1d7968dc-8a22-a16d-471d-80860eb97d22" Name="" UserAdded="false">
       <Transform>
@@ -466,12 +466,15 @@
         <element element="1"/>
        </scale>
       </Transform>
-      <properties Type="RenderAndCollider" Character="Objects/characters/human/medium/romanLegion/legion.cdf" DatabasePath="Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb" ControllerDefPath="Animations/Mannequin/ADB/LegionFirstPersonControllerDefinition.xml" DefaultScope="ThirdPersonCharacter" DefaultFragment="Idle" AnimDriven="false" GroundAlign="false">
+      <properties Type="RenderAndCollider" Character="Objects/characters/human/medium/romanLegion/legion.cdf" DatabasePath="Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb" ControllerDefPath="Animations/Mannequin/ADB/LegionFirstPersonControllerDefinition.xml" DefaultScope="ThirdPersonCharacter" DefaultFragment="Idle" AnimDriven="true" GroundAlign="false">
        <Render ShadowSpec="Low" IgnoreVisArea="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
        <Physics WeightType="EWeightType::Mass" Density="9.9999997e-05" Mass="10"/>
       </properties>
      </Component>
      <Component CryXmlVersion="2" TypeGUID="183e3c84-2e08-4506-95fa-b362f7e735e9" TypeName="Cry::DefaultComponents::CInputComponent" GUID="7e1f8d88-e78c-2d21-5683-91f4269af8e3" Name="" UserAdded="false">
+      <properties />
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="41c00993-f62f-4949-98f7-d98cb3cf2979" TypeName="CPlayerInputComponent" GUID="56c75a86-3789-b57e-ed7b-5e425029e9c6" Name="" UserAdded="false">
       <properties />
      </Component>
     </Components>

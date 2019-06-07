@@ -25,75 +25,7 @@
 ////////////////////////////////////////////////////////
 
 class CPlayerComponent final : public IEntityComponent
-{
-   
-
-    template <typename T>
-    struct HoldDetectionStruct
-    {
-        bool IsSignal;
-        float Time;
-        T TypeValue;
-
-
-        HoldDetectionStruct(bool isSignal, float time, T typeValue) : IsSignal(isSignal), Time(time), TypeValue(typeValue)
-        {
-        }
-    };
-    
-
-	template<typename T, size_t SAMPLES_COUNT>
-	class MovingAverage
-	{
-		static_assert(SAMPLES_COUNT > 0, "SAMPLES_COUNT shall be larger than zero!");
-
-	public:
-
-		MovingAverage()
-			: m_values()
-			, m_cursor(SAMPLES_COUNT)
-			, m_accumulator()
-		{
-		}
-
-		MovingAverage& Push(const T& value)
-		{
-			if (m_cursor == SAMPLES_COUNT)
-			{
-				m_values.fill(value);
-				m_cursor = 0;
-				m_accumulator = std::accumulate(m_values.begin(), m_values.end(), T(0));
-			}
-			else
-			{
-				m_accumulator -= m_values[m_cursor];
-				m_values[m_cursor] = value;
-				m_accumulator += m_values[m_cursor];
-				m_cursor = (m_cursor + 1) % SAMPLES_COUNT;
-			}
-
-			return *this;
-		}
-
-		T Get() const
-		{
-			return m_accumulator / T(SAMPLES_COUNT);
-		}
-
-		void Reset()
-		{
-			m_cursor = SAMPLES_COUNT;
-		}
-
-	private:
-
-		std::array<T, SAMPLES_COUNT> m_values;
-		size_t m_cursor;
-
-		T m_accumulator;
-	};
-
-   
+{  
 
 public:
 	CPlayerComponent();
@@ -111,9 +43,9 @@ public:
 	{
 		desc.SetGUID("{63F4C0C6-32AF-4ACB-8FB0-57D45DD14725}"_cry_guid);
         
-        desc.AddMember(&CPlayerComponent::m_characterEntityName, 'name', "Player Entity Name", "Player Entity Name", "Set Entity Name", "Player");
-	    desc.AddMember(&CPlayerComponent::m_sprintRatio, 'spri', "Sprint Ratio", "Sprint Ratio", "Sprint Ratio multiplier", 1.5f);
-	    desc.AddMember(&CPlayerComponent::m_sprintAnimRatio, 'anim', "Sprint Anim Ratio", "Sprint Anim Ratio", "Sprint Ratio Anim multiplier", 4.0f);
+       // desc.AddMember(&CPlayerComponent::m_characterEntityName, 'name', "Player Entity Name", "Player Entity Name", "Set Entity Name", "Player");
+	    desc.AddMember(&CPlayerComponent::m_sprintRatio, 'spri', "SprintRatio", "Sprint Ratio", "Sprint Ratio multiplier", 1.5f);
+	    desc.AddMember(&CPlayerComponent::m_sprintAnimRatio, 'anim', "SprintAnimRatio", "Sprint Anim Ratio", "Sprint Ratio Anim multiplier", 4.0f);
 	}
 
 	void Revive();
@@ -148,13 +80,9 @@ protected:
 
     Vec2 m_moveDirection = ZERO;
     Vec2 m_lastRotationDirection = ZERO;
-	MovingAverage<Vec2, 10> m_mouseDeltaSmoothingFilter;
-
-	FragmentID m_activeFragmentId;
 
 	Quat m_lookOrientation; //!< Should translate to head orientation in the future
 	float m_horizontalAngularVelocity;
-	MovingAverage<float, 10> m_averagedHorizontalAngularVelocity;
   
 
         

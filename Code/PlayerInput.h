@@ -6,7 +6,7 @@
 
 
 
-class CPlayerInputComponent : public Cry::DefaultComponents::CInputComponent
+class CPlayerInputComponent : public IEntityComponent
 {
 public:
    
@@ -14,12 +14,16 @@ public:
 
     static void ReflectType(Schematyc::CTypeDesc<CPlayerInputComponent>& desc)
     {
-        desc.SetGUID("{183E3C84-2E08-4506-95FA-B362F7E735E9}"_cry_guid);
+        desc.SetGUID("{41C00993-F62F-4949-98F7-D98CB3CF2979}"_cry_guid);
         desc.SetEditorCategory("Input");
-        desc.SetLabel("Input");
+        desc.SetLabel("Player Input");
         desc.SetDescription("Exposes support for inputs and action maps");
-        desc.SetComponentFlags({EFlags::Socket, EFlags::Attach, EFlags::HideFromInspector  });
     }
+
 protected:
+    void Initialize() override;
+
     ICharacterActions* characterActions = nullptr;
+    Cry::DefaultComponents::CInputComponent* m_pInputComponent = nullptr;
+
 };

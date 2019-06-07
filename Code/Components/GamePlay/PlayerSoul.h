@@ -18,7 +18,7 @@ public:
         desc.SetLabel("Player Soul Component");
 
 
-        desc.AddMember(&CPlayerSoul::m_lifeTimeLimit, 'life', "Life time", "Life time", "Determines life time", 10.f);
+        desc.AddMember(&CPlayerSoul::m_lifeTimeLimit, 'life', "LifeTime", "Life time", "Determines life time", 10.f);
     }
 
 

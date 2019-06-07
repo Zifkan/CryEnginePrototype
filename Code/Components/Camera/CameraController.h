@@ -30,11 +30,11 @@ public:
         desc.AddMember(&CCameraController::x,'xdel',"xDelta", "xDelta","Mouse X delta rotation",0.0);
         desc.AddMember(&CCameraController::y,'ydel',"yDelta", "yDelta","Mouse Y delta rotation",0.0);
         desc.AddMember(&CCameraController::radius, 'radi', "Radius", "Radius", "Radius from target Entity", 2.0f);
-        desc.AddMember(&CCameraController::xSpeed, 'xSpd', "x Speed", "x Speed", "Rotation camera speed by X", 80.0f);
-        desc.AddMember(&CCameraController::ySpeed, 'ySpd', "y Speed", "y Speed", "Rotation camera speed by Y", 80.0f);
-        desc.AddMember(&CCameraController::yMinLimit,'ymin', "y min", "y min", "Min Y rotation border", -80.0f);
-        desc.AddMember(&CCameraController::yMaxLimit,'ymax', "y max", "y max", "Max Y rotation border", 90.0f);
-        desc.AddMember(&CCameraController::heightOffset,'heig', "height", "height", "Camera height offset", 2.0f);
+        desc.AddMember(&CCameraController::xSpeed, 'xSpd', "xSpeed", "x Speed", "Rotation camera speed by X", 80.0f);
+        desc.AddMember(&CCameraController::ySpeed, 'ySpd', "ySpeed", "y Speed", "Rotation camera speed by Y", 80.0f);
+        desc.AddMember(&CCameraController::yMinLimit,'ymin', "yMin", "y min", "Min Y rotation border", -80.0f);
+        desc.AddMember(&CCameraController::yMaxLimit,'ymax', "yMax", "y max", "Max Y rotation border", 90.0f);
+        desc.AddMember(&CCameraController::heightOffset,'heig', "Height", "Height", "Camera height offset", 2.0f);
 
         desc.SetComponentFlags({ EFlags::Singleton,EFlags:: Transform});
     }

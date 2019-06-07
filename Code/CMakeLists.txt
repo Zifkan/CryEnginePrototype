@@ -24,13 +24,10 @@ add_sources("Code_uber.cpp"
 add_sources("Components_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components"
-		"Components/CollisionControl.cpp"
 		"Components/Player.cpp"
-		"Components/SpawnPoint.cpp"		
-		"Components/Bullet.h"
+		"Components/SpawnPoint.cpp"	
 		"Components/Player.h"
 		"Components/SpawnPoint.h"
-		"Components/CollisionControl.h"
 )
 
 add_sources("Camera_uber.cpp"
@@ -88,6 +85,13 @@ add_sources("CharacterActions_uber.cpp"
 		"PlayerCharacterActions.h"
 )
 
+
+add_sources("Weapon_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Weapon"
+		"Components/Weapon/MeleeWeapon.cpp"
+		"Components/Weapon/MeleeWeapon.h"		
+)
 
 end_sources()
 

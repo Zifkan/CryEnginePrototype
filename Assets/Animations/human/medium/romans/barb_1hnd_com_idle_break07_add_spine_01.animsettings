@@ -3,9 +3,9 @@
 		"additive": false,
 		"skeletonAlias": "legionaire",
 		"compression": {
-			"compressionValue": 100,
-			"positionEpsilon": 0.005,
-			"rotationEpsilon": 0.001,
+			"compressionValue": 10,
+			"positionEpsilon": 0.001,
+			"rotationEpsilon": 0.00001,
 			"scaleEpsilon": 0.00001,
 			"perJointSettings": [ ]
 		},

@@ -1,11 +1,14 @@
-<AnimationSettings>
- <Skeleton value="char_medium_roman"/>
- <AdditiveAnimation value="0"/>
- <CompressionSettings>
-  <Version value="0"/>
-  <Compression value="100"/>
-  <RotEpsilon value="0.001"/>
-  <PosEpsilon value="0.005"/>
-  <PerBoneCompression />
- </CompressionSettings>
-</AnimationSettings>
+{
+	"build": {
+		"additive": false,
+		"skeletonAlias": "legionaire",
+		"compression": {
+			"compressionValue": 100,
+			"positionEpsilon": 0.005,
+			"rotationEpsilon": 0.001,
+			"scaleEpsilon": 0.00001,
+			"perJointSettings": [ ]
+		},
+		"tags": [ ]
+	}
+}

@@ -1,6 +1,6 @@
 ﻿#include "StdAfx.h"
 #include "MovementAction.h"
-#include "StateMachine.h"
+#include "StateMachine/StateMachine.h"
 
 
 MovementAction::MovementAction(IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,

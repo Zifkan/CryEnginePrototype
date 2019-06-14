@@ -9,7 +9,9 @@
 class CPlayerInputComponent : public IEntityComponent
 {
 public:
-   
+    ~CPlayerInputComponent() {};
+
+
     void RegisterInputs(ICharacterActions* charActions);
 
     static void ReflectType(Schematyc::CTypeDesc<CPlayerInputComponent>& desc)

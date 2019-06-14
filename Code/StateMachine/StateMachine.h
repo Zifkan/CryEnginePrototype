@@ -2,8 +2,8 @@
 #include <CryEntitySystem/IEntity.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
-#include "IdleAction.h"
 #include <typeindex>
+#include "StateAction/BaseAction.h"
 
 
 class BaseAction;
@@ -29,7 +29,7 @@ public:
         action->RegisterStateMachine(this);
     }
 
-    void SetCurrentState(const type_info& stateId/*BaseAction* action*/)
+    void SetCurrentState(const type_info& stateId)
     {       
         BaseAction* newState = m_actionsMap[stateId];
         const auto newActionPriority = newState->GetPriority();
@@ -44,14 +44,7 @@ public:
     void SetActionFinish()
     {
         m_isLastActionPlaying = false;
-    }
-
-    void Update()
-    {
-       /* if (m_pCurrentState != nullptr)
-            CryLog("Is playing: %i", m_pCurrentState->IsPlayingFragment());*/
-    }
-   
+    } 
 
 
 private:

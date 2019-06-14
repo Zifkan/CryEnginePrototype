@@ -20,23 +20,38 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code\MovementAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\AttackAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\BaseAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\StateMachine.cpp">
-      <Filter>StateMachine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\IdleAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\Components\MeleeWeapon.cpp">
+    <ClCompile Include="..\..\Code\Components\Weapon\WeaponSystem.cpp">
       <Filter>Components\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\Weapon\MeleeWeapon.cpp">
+      <Filter>Components\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\LifeResources\LifeResourceManager.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\LifeResources\StaminaLifeResource.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\AttackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\BaseAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\IdleAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\MovementAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateMachine.cpp">
+      <Filter>StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,23 +87,41 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
-    <ClInclude Include="..\..\Code\MovementAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\AttackAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\BaseAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\StateMachine.h">
-      <Filter>StateMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\IdleAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Components\MeleeWeapon.h">
+    <ClInclude Include="..\..\Code\Components\Weapon\WeaponSystem.h">
       <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\Weapon\MeleeWeapon.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\LifeResourceManager.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\BaseLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\StaminaLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\AttackAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\BaseAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\IdleAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\MovementAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateMachine.h">
+      <Filter>StateMachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +156,9 @@
     </Filter>
     <Filter Include="Components\Weapon">
       <UniqueIdentifier>{c277fbb1-aa56-4276-9015-c5dffef2900c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\LifeResources">
+      <UniqueIdentifier>{60bbfd5a-654e-4150-b8f2-d725d5d0e49b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

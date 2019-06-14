@@ -275,19 +275,30 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code\AttackAction.h" />
-    <ClInclude Include="..\..\Code\BaseAction.h" />
-    <ClInclude Include="..\..\Code\Components\MeleeWeapon.h" />
-    <ClInclude Include="..\..\Code\IdleAction.h" />
-    <ClInclude Include="..\..\Code\MovementAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine.h" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\BaseLifeResource.h" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.h" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\LifeResourceManager.h" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.h" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\StaminaLifeResource.h" />
+    <ClInclude Include="..\..\Code\Components\Weapon\MeleeWeapon.h" />
+    <ClInclude Include="..\..\Code\Components\Weapon\WeaponSystem.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\AttackAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\BaseAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\IdleAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\MovementAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClCompile Include="..\..\Code\AttackAction.cpp" />
-    <ClCompile Include="..\..\Code\BaseAction.cpp" />
-    <ClCompile Include="..\..\Code\Components\MeleeWeapon.cpp" />
-    <ClCompile Include="..\..\Code\IdleAction.cpp" />
-    <ClCompile Include="..\..\Code\MovementAction.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine.cpp" />
+    <ClCompile Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp" />
+    <ClCompile Include="..\..\Code\Components\LifeResources\LifeResourceManager.cpp" />
+    <ClCompile Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.cpp" />
+    <ClCompile Include="..\..\Code\Components\LifeResources\StaminaLifeResource.cpp" />
+    <ClCompile Include="..\..\Code\Components\Weapon\MeleeWeapon.cpp" />
+    <ClCompile Include="..\..\Code\Components\Weapon\WeaponSystem.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\AttackAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\BaseAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\IdleAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\MovementAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateMachine.cpp" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />

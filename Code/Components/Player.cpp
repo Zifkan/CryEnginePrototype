@@ -7,11 +7,12 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "Camera/CameraController.h"
-#include "AttackAction.h"
-#include "MovementAction.h"
-#include "IdleAction.h"
-
-
+#include "LifeResources/HealthLifeResource.h"
+#include "LifeResources/StaminaLifeResource.h"
+#include "LifeResources/SoulEnergyLifeResource.h"
+#include "StateMachine/StateAction/IdleAction.h"
+#include "StateMachine/StateAction/AttackAction.h"
+#include "StateMachine/StateAction/MovementAction.h"
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 {
@@ -60,20 +61,15 @@ void CPlayerComponent::Initialize()
 
 	// Load the character and Mannequin data from file
 	m_pAnimationComponent->LoadFromDisk();
-  
+  	
 
-	// Acquire fragment and tag identifiers to avoid doing so each update
-	
-
-   
+    m_pWeaponSystem = m_pEntity->GetOrCreateComponent<CWeaponSystem>();
     m_pPlayerInput = m_pEntity->GetOrCreateComponent<CPlayerInputComponent>();
-  //  m_pEntity->SetName(m_characterEntityName.c_str());
+
     m_pEntity->SetName("Player");  
 
 
 	Revive();
-
-  
 }
 
 uint64 CPlayerComponent::GetEventMask() const
@@ -94,14 +90,21 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 		Revive();
       
         CreateStateMachine();
+
+        InitWeaponSystem();
+
+      //  m_lifeResourceManager.RegisterResource(typeid(ÑHealthResource),new ÑHealthResource(100));
+        m_lifeResourceManager.RegisterResource(typeid(CStaminaLifeResource),new CStaminaLifeResource(100,1));
+        m_lifeResourceManager.RegisterResource(typeid(CSoulEnergyLifeResource),new CSoulEnergyLifeResource(100,1));
 	}
 	break;
 	case ENTITY_EVENT_UPDATE:
 	{
 		SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
-       // CryLog("IsPlayingFragment time: %f", m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetAnimFromFIFO(1, 0).GetCurrentSegmentNormalizedTime());
-        m_stateMachine->Update();
+
         m_stateMachine->SetCurrentState(typeid(IdleAction));
+
+        m_lifeResourceManager.Update(pCtx->fFrameTime);
 	}
     break;
     case ENTITY_EVENT_COMPONENT_PROPERTY_CHANGED:
@@ -124,10 +127,6 @@ void CPlayerComponent::Revive()
 	// Apply character to the entity
 	m_pAnimationComponent->ResetCharacter();
 	m_pCharacterController->Physicalize();
-
-
-	m_lookOrientation = IDENTITY;
-	m_horizontalAngularVelocity = 0.0f;
 }
 
 void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
@@ -172,4 +171,9 @@ void CPlayerComponent::CreateStateMachine()
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions,0,m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
     m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
+}
+
+void CPlayerComponent::InitWeaponSystem()
+{
+    m_pWeaponSystem->Init(m_pCharacterActions, m_pAnimationComponent->GetCharacter()->GetIAttachmentManager());
 }

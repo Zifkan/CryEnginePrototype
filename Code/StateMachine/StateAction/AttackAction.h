@@ -1,7 +1,5 @@
 ﻿#pragma once
 #include <CryAnimation/ICryMannequin.h>
-#include "IBaseState.h"
-#include "CAttackState.h"
 #include "BaseAction.h"
 
 class AttackAction : public BaseAction

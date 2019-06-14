@@ -90,7 +90,23 @@ add_sources("Weapon_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Weapon"
 		"Components/Weapon/MeleeWeapon.cpp"
-		"Components/Weapon/MeleeWeapon.h"		
+		"Components/Weapon/MeleeWeapon.h"	
+		"Components/Weapon/WeaponSystem.cpp"
+		"Components/Weapon/WeaponSystem.h"	
+)
+
+add_sources("LifeResources_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\LifeResources"
+		"Components/LifeResources/BaseLifeResource.h"	
+		"Components/LifeResources/HealthLifeResource.cpp"
+		"Components/LifeResources/HealthLifeResource.h"	
+		"Components/LifeResources/StaminaLifeResource.cpp"
+		"Components/LifeResources/StaminaLifeResource.h"	
+		"Components/LifeResources/LifeResourceManager.h"	
+		"Components/LifeResources/LifeResourceManager.cpp"	
+		"Components/LifeResources/SoulEnergyLifeResource.h"
+		"Components/LifeResources/SoulEnergyLifeResource.cpp"
 )
 
 end_sources()

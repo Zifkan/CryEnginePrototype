@@ -1,8 +1,5 @@
 #pragma once
 
-#include <array>
-#include <numeric>
-
 #include <CryEntitySystem/IEntity.h>
 #include <CryEntitySystem/IEntityComponent.h>
 
@@ -10,14 +7,11 @@
 
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
-#include <DefaultComponents/Input/InputComponent.h>
 #include "PlayerInput.h"
-#include <DefaultComponents/Physics/AreaComponent.h>
-#include <DefaultComponents/Physics/AreaComponent.h>
 #include "Camera/CameraController.h"
-#include "IBaseState.h"
-#include "Camera/CameraController.h"
-#include "StateMachine.h"
+#include "Weapon/WeaponSystem.h"
+#include "LifeResources/LifeResourceManager.h"
+#include "StateMachine/StateMachine.h"
 
 
 ////////////////////////////////////////////////////////
@@ -51,7 +45,11 @@ public:
 	void Revive();
     
     void InitInput(ICharacterActions* playerCharacterActions);
-    
+
+    Cry::DefaultComponents::CAdvancedAnimationComponent* GetAnimationComponent()
+    {
+        return m_pAnimationComponent;
+    }
   
 protected:
 	
@@ -65,6 +63,8 @@ protected:
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CPlayerInputComponent* m_pPlayerInput = nullptr;
     IEntity* m_pMainCamera = nullptr;
+    CWeaponSystem* m_pWeaponSystem = nullptr;
+
 
     Schematyc::CSharedString  m_characterEntityName;
     float m_sprintRatio;
@@ -76,19 +76,15 @@ protected:
        
 	TagID m_rotateTagId;
     TagID m_forceAttackTagId;
-
-
-    Vec2 m_moveDirection = ZERO;
-    Vec2 m_lastRotationDirection = ZERO;
-
-	Quat m_lookOrientation; //!< Should translate to head orientation in the future
-	float m_horizontalAngularVelocity;
-  
-
-        
+    
     CStateMachine* m_stateMachine;
 
+    CLifeResourceManager m_lifeResourceManager;
 
 private:
     void CreateStateMachine();
+
+    void InitWeaponSystem();
+
+
 };

@@ -1,6 +1,6 @@
 ﻿#include "StdAfx.h"
 #include "BaseAction.h"
-#include "StateMachine.h"
+#include "StateMachine/StateMachine.h"
 
 IAction* BaseAction::CreateSlaveAction(FragmentID slaveFragID, const TagState& fragTags, SAnimationContext& context)
 {

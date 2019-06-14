@@ -3,7 +3,7 @@
   <Idle>
    <Fragment BlendOutDuration="0.2" Tags="">
     <AnimLayer>
-     <Blend ExitTime="0.10000001" StartTime="0" Duration="0.2"/>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
      <Animation name="romn_ready_idle_01" flags="Loop"/>
     </AnimLayer>
    </Fragment>

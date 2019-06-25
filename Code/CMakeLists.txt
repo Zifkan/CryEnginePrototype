@@ -24,10 +24,11 @@ add_sources("Code_uber.cpp"
 add_sources("Components_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components"
-		"Components/Player.cpp"
-		"Components/SpawnPoint.cpp"	
-		"Components/Player.h"
-		"Components/SpawnPoint.h"
+		"Components/CharacterComponent.cpp"	
+		"Components/CharacterComponent.h"
+		"Components/PlayerComponent.h"
+		"Components/PlayerComponent.cpp"
+
 )
 
 add_sources("Camera_uber.cpp"
@@ -99,14 +100,14 @@ add_sources("LifeResources_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\LifeResources"
 		"Components/LifeResources/BaseLifeResource.h"	
-		"Components/LifeResources/HealthLifeResource.cpp"
-		"Components/LifeResources/HealthLifeResource.h"	
 		"Components/LifeResources/StaminaLifeResource.cpp"
 		"Components/LifeResources/StaminaLifeResource.h"	
 		"Components/LifeResources/LifeResourceManager.h"	
 		"Components/LifeResources/LifeResourceManager.cpp"	
 		"Components/LifeResources/SoulEnergyLifeResource.h"
 		"Components/LifeResources/SoulEnergyLifeResource.cpp"
+		"Components/LifeResources/HealthLifeResource.cpp"
+		"Components/LifeResources/HealthLifeResource.h"	
 )
 
 end_sources()

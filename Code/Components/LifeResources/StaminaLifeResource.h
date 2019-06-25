@@ -11,9 +11,12 @@ public:
         : IBaseLifeResource(maxValue),
           m_regenFactor(regenFactor)
     {
-    }
-
-    void SetValue(float value) override;
+       /* Value.get_observable().subscribe([](float v)
+        {
+            if (v<100.f)
+                CryLog("Stamina: %f",v);
+        });*/
+    }  
 
     void Update(float timePassed) override;
 

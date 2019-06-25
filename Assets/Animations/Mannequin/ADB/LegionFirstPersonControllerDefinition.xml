@@ -2,16 +2,18 @@
  <Tags filename="Animations/Mannequin/ADB/legionertags.xml"/>
  <Fragments filename="Animations/Mannequin/ADB/LegionPlayerFragmentIds.xml"/>
  <FragmentDefs>
-  <Idle scopes="FirstPerson+ThirdPerson"/>
-  <Walk scopes="FirstPerson+ThirdPerson"/>
-  <Attack scopes="FirstPerson+ThirdPerson"/>
+  <Idle scopes="FullBody"/>
+  <Walk scopes="FullBody"/>
+  <Attack scopes="FullBody"/>
+  <HitReaction scopes="FullBody"/>
  </FragmentDefs>
  <ScopeContextDefs>
-  <FirstPersonCharacter />
   <ThirdPersonCharacter />
+  <WeaponContext />
  </ScopeContextDefs>
  <ScopeDefs>
-  <FirstPerson layer="0" numLayers="3" context="FirstPersonCharacter"/>
-  <ThirdPerson layer="1" numLayers="3" context="ThirdPersonCharacter"/>
+  <FullBody layer="0" numLayers="3" context="ThirdPersonCharacter"/>
+  <Torso layer="3" numLayers="3" context="ThirdPersonCharacter"/>
+  <Weapon layer="0" numLayers="2" context="WeaponContext"/>
  </ScopeDefs>
 </ControllerDef>

@@ -3,7 +3,7 @@
 #include <typeindex>
 #include "BaseLifeResource.h"
 
-class IBaseLifeResource;
+
 
 class CLifeResourceManager
 {
@@ -11,7 +11,11 @@ public:
 
     void RegisterResource(std::type_index index,IBaseLifeResource* resource);
 
-    IBaseLifeResource* GetResource(std::type_index resourceType);
+    template <class T>
+    IBaseLifeResource* GetResource()
+    {
+        return m_lifeResources[typeid(T)];
+    }
 
     void Update(float timePassed);
 

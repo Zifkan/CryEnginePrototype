@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "GamePlugin.h"
 
-#include "Components/Player.h"
+
 
 #include <CrySchematyc/Env/IEnvRegistry.h>
 #include <CrySchematyc/Env/EnvPackage.h>
@@ -13,6 +13,7 @@
 // Included only once per DLL module.
 #include <CryCore/Platform/platform_impl.inl>
 #include "Components/Camera/CameraController.h"
+#include "Components/PlayerComponent.h"
 
 CGamePlugin::~CGamePlugin()
 {

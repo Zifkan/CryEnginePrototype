@@ -1,7 +1,8 @@
 <TagDefinition version="2">
  <Tags>
   <Tag name="Idle"/>
-  <Tag name="Walk" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
+  <Tag name="Walk"/>
   <Tag name="Attack" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
+  <Tag name="HitReaction" subTagDef="Animations/Mannequin/ADB/HitReactiontags.xml"/>
  </Tags>
 </TagDefinition>

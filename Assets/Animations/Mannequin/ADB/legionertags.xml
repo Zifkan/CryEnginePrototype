@@ -1,6 +1,6 @@
 <TagDefinition version="2">
  <Tags>
-  <Tag name="Rotate"/>
-  <Tag name="ForceAttack"/>
+  <Tag name="Simple"/>
+  <Tag name="Force"/>
  </Tags>
 </TagDefinition>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -45,7 +45,7 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros">
+  <PropertyGroup Label="UserMacros" >
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
@@ -275,53 +275,57 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code\Components\LifeResources\BaseLifeResource.h" />
-    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.h" />
-    <ClInclude Include="..\..\Code\Components\LifeResources\LifeResourceManager.h" />
-    <ClInclude Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.h" />
-    <ClInclude Include="..\..\Code\Components\LifeResources\StaminaLifeResource.h" />
-    <ClInclude Include="..\..\Code\Components\Weapon\MeleeWeapon.h" />
-    <ClInclude Include="..\..\Code\Components\Weapon\WeaponSystem.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\AttackAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\BaseAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\IdleAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\MovementAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClCompile Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp" />
-    <ClCompile Include="..\..\Code\Components\LifeResources\LifeResourceManager.cpp" />
-    <ClCompile Include="..\..\Code\Components\LifeResources\SoulEnergyLifeResource.cpp" />
-    <ClCompile Include="..\..\Code\Components\LifeResources\StaminaLifeResource.cpp" />
-    <ClCompile Include="..\..\Code\Components\Weapon\MeleeWeapon.cpp" />
-    <ClCompile Include="..\..\Code\Components\Weapon\WeaponSystem.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\AttackAction.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\BaseAction.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\IdleAction.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\MovementAction.cpp" />
-    <ClCompile Include="..\..\Code\StateMachine\StateMachine.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp"  />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Player.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\SpawnPoint.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp" />
-    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\BaseLifeResource.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateActions_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp"  />
+    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 
 #include "MeleeWeapon.h"
+#include <CryPhysics/physinterface.h>
 
 static void RegisterCMeleeWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 {

@@ -1,11 +1,6 @@
 ﻿#include "StdAfx.h"
 #include "StaminaLifeResource.h"
 
-void CStaminaLifeResource::SetValue(float value)
-{
-    auto result = Value.get_value() - value;
-    Value.get_subscriber().on_next(result<=0? 0: result);
-}
 
 void CStaminaLifeResource::Update(float timePassed)
 {

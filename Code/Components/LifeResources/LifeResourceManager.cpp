@@ -6,10 +6,6 @@ void CLifeResourceManager::RegisterResource(std::type_index index,IBaseLifeResou
     m_lifeResources.insert(std::pair<std::type_index, IBaseLifeResource*>(index, resource));
 }
 
-IBaseLifeResource* CLifeResourceManager::GetResource(std::type_index resourceType)
-{
-    return m_lifeResources[resourceType];
-}
 
 void CLifeResourceManager::Update(float timePassed)
 {

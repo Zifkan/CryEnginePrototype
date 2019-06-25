@@ -2,6 +2,7 @@
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include "RxCpp/rx.hpp"
+#include <CryPhysics/physinterface.h>
 
 class CMeleeWeaponComponent :public IEntityComponent
 {

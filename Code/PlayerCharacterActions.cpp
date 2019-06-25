@@ -50,7 +50,8 @@ PlayerCharacterActions::PlayerCharacterActions()
     })
     .subscribe([this](HoldDetectionStruct<bool> attackData)
     {
-        AttackSubject.get_subscriber().on_next(attackData.TypeValue?FORCE_ATTACK:ATTACK);
+        if (attackData.IsSignal)
+            AttackSubject.get_subscriber().on_next(attackData.TypeValue?FORCE_ATTACK:ATTACK);
     });
 }
 

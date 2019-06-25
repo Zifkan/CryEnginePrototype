@@ -1,7 +1,7 @@
 <MannequinPreview>
  <controllerDef filename="Animations/Mannequin/ADB/LegionFirstPersonControllerDefinition.xml"/>
  <contexts>
-  <contextData name="LegionerThirdPerson" enabled="1" database="Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb" context="FirstPersonCharacter" model="objects/characters/human/medium/romanlegion/legion.cdf"/>
+  <contextData name="LegionerThirdPerson" enabled="1" database="Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb" context="ThirdPersonCharacter" model="objects/characters/human/medium/romanlegion/legion.cdf"/>
  </contexts>
  <History StartTime="0" EndTime="0"/>
 </MannequinPreview>

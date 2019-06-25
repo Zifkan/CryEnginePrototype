@@ -2,7 +2,6 @@
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "WeaponSystem.h"
-#include "Components/Player.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {

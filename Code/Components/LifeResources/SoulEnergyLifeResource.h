@@ -12,8 +12,7 @@ public:
     {
        
     }
-
-    void SetValue(float value) override;
+   
     void Update(float timePassed) override;
 
 private:

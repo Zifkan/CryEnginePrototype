@@ -3,7 +3,7 @@
 #include "StateMachine/StateMachine.h"
 
 
-MovementAction::MovementAction(IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
+MovementAction::MovementAction(IBaseLifeResource* lifeResource,IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
     Cry::DefaultComponents::CCharacterControllerComponent* characterController,
     IEntity* mainCamera,
     ICharacterActions* characterAction, 
@@ -14,6 +14,7 @@ MovementAction::MovementAction(IEntity* characterEntity,Cry::DefaultComponents::
     ActionScopes scopeMask,
     uint32 userToken):
     BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    ,m_pLifeResource(lifeResource)
     ,m_pCharacterController(characterController)
     ,m_pAnimationComponent(animationComponent)
     ,m_pMainCamera(mainCamera)

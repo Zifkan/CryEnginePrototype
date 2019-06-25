@@ -1,12 +1,13 @@
 ﻿#pragma once
 #include <CryAnimation/ICryMannequin.h>
 #include "BaseAction.h"
+#include "Components/LifeResources/BaseLifeResource.h"
 
 class MovementAction : public BaseAction
 {
 public:
 
-    MovementAction(IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
+    MovementAction(IBaseLifeResource* lifeResource,IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
         Cry::DefaultComponents::CCharacterControllerComponent* characterController,
         IEntity* mainCamera,
         ICharacterActions* characterAction, 
@@ -30,6 +31,7 @@ private:
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     IEntity* m_pMainCamera = nullptr;
     IEntity* m_pCharacterEntity;
+    IBaseLifeResource* m_pLifeResource;
 
     Vec2 m_moveDirection;
     MovementType m_movementType;

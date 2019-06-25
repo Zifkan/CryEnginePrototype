@@ -1,9 +1,6 @@
 ﻿#include "StdAfx.h"
 #include "SoulEnergyLifeResource.h"
 
-void CSoulEnergyLifeResource::SetValue(float value)
-{
-}
 
 void CSoulEnergyLifeResource::Update(float timePassed)
 {

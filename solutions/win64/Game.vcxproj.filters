@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
@@ -31,6 +31,15 @@
     </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp">
       <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\EnemyActor.cpp">
+      <Filter>Components\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Components\AIAction.cpp">
+      <Filter>Components\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp">
+      <Filter>StateMachine\StateAction\EnemyAction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +94,12 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp">
       <Filter>StateMachine\StateAction</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp">
       <Filter>StateMachine</Filter>
     </ClInclude>
@@ -135,6 +150,15 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Code\Components\EnemyActor.h">
+      <Filter>Components\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\AIAction.h">
+      <Filter>Components\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h">
+      <Filter>StateMachine\StateAction\EnemyAction</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt" />
@@ -171,6 +195,12 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{68E35553-2D76-31D8-ACD0-DA8B7842B7A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Enemies">
+      <UniqueIdentifier>{3a09807b-b828-470a-a5f2-e690e6585d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine\StateAction\EnemyAction">
+      <UniqueIdentifier>{5f347d60-fc96-4cef-ad43-42e8c7c2deee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

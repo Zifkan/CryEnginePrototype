@@ -5,7 +5,6 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
-#include "Components/Player.h"
 
 
 static void RegisterCameraController(Schematyc::IEnvRegistrar& registrar)

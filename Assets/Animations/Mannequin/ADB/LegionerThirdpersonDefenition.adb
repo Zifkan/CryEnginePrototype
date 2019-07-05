@@ -59,5 +59,13 @@
     <AnimLayer />
    </Fragment>
   </HitReaction>
+  <Death>
+   <Fragment BlendOutDuration="0.2" Tags="">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="barb_1hnd_death_from_front_lf"/>
+    </AnimLayer>
+   </Fragment>
+  </Death>
  </FragmentList>
 </AnimDB>

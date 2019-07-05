@@ -55,7 +55,16 @@ add_sources("StateActions_uber.cpp"
 		"StateMachine/StateAction/MovementAction.cpp"
 		"StateMachine/StateAction/MovementAction.h"		
 		"StateMachine/StateAction/IdleAction.h"		
-		"StateMachine/StateAction/IdleAction.cpp"		
+		"StateMachine/StateAction/IdleAction.cpp"	
+		"StateMachine/StateAction/DeathAction.h"		
+		"StateMachine/StateAction/DeathAction.cpp"		
+)
+
+add_sources("EnemyStateAction_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "StateMachine\\\\StateAction\\\\EnemyAction"
+		"StateMachine/StateAction/EnemyAction/EnemyMovementAction.cpp"
+		"StateMachine/StateAction/EnemyAction/EnemyMovementAction.h"		
 )
 
 add_sources("StateMachine.cpp"
@@ -95,6 +104,17 @@ add_sources("Weapon_uber.cpp"
 		"Components/Weapon/WeaponSystem.cpp"
 		"Components/Weapon/WeaponSystem.h"	
 )
+
+
+add_sources("Enemies_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Enemies"
+		"Components/Enemies/EnemyActor.cpp"
+		"Components/Enemies/EnemyActor.h"	
+		"Components/Enemies/AIActionComponent.cpp"
+		"Components/Enemies/AIActionComponent.h"	
+)
+
 
 add_sources("LifeResources_uber.cpp"
     PROJECTS Game

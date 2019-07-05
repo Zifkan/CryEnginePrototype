@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -45,7 +45,7 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" >
+  <PropertyGroup Label="UserMacros">
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
@@ -275,8 +275,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Code\Components\AIAction.h" />
+    <ClInclude Include="..\..\Code\Components\EnemyActor.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp"  />
+    <ClCompile Include="..\..\Code\Components\AIAction.cpp" />
+    <ClCompile Include="..\..\Code\Components\EnemyActor.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.cpp" />
@@ -295,6 +301,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
@@ -315,17 +323,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateActions_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp"  />
-    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateActions_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp" />
+    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

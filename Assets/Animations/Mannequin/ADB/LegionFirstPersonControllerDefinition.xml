@@ -6,6 +6,7 @@
   <Walk scopes="FullBody"/>
   <Attack scopes="FullBody"/>
   <HitReaction scopes="FullBody"/>
+  <Death scopes="FullBody"/>
  </FragmentDefs>
  <ScopeContextDefs>
   <ThirdPersonCharacter />

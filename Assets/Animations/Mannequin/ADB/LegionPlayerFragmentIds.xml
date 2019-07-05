@@ -4,5 +4,6 @@
   <Tag name="Walk"/>
   <Tag name="Attack" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
   <Tag name="HitReaction" subTagDef="Animations/Mannequin/ADB/HitReactiontags.xml"/>
+  <Tag name="Death"/>
  </Tags>
 </TagDefinition>

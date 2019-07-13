@@ -41,9 +41,6 @@
      <Animation name="barb_1hnd_atk_strg_lft_up_Lf_to_Rf_150_01"/>
     </AnimLayer>
    </Fragment>
-   <Fragment BlendOutDuration="0.2" Tags="Simple">
-    <AnimLayer />
-   </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="Force">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
@@ -67,5 +64,13 @@
     </AnimLayer>
    </Fragment>
   </Death>
+  <Block>
+   <Fragment BlendOutDuration="0.2" Tags="">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="evr_stand_com_shld_block_idle_01" flags="Loop"/>
+    </AnimLayer>
+   </Fragment>
+  </Block>
  </FragmentList>
 </AnimDB>

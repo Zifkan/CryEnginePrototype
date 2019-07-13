@@ -12,14 +12,8 @@ class CStateMachine
 {
 public:
     
-    CStateMachine(Cry::DefaultComponents::CCharacterControllerComponent* character_controller_component,
-        Cry::DefaultComponents::CAdvancedAnimationComponent* advanced_animation_component, 
-        IEntity* entity)
-        : m_pCharacterController(character_controller_component),
-          m_pAnimationComponent(advanced_animation_component),
-          m_pEntity(entity),
-          m_isLastActionPlaying(false),
-          m_lastActionPriority(-1)
+    CStateMachine(Cry::DefaultComponents::CAdvancedAnimationComponent* advanced_animation_component)
+        : m_pAnimationComponent(advanced_animation_component)
     {       
     }
 
@@ -33,31 +27,37 @@ public:
     {       
         BaseAction* newState = m_actionsMap[stateId];
         const auto newActionPriority = newState->GetPriority();
-        if (m_lastActionPriority<0 || m_isLastActionPlaying && newActionPriority > m_lastActionPriority || !m_isLastActionPlaying)
-        {       
-            m_lastActionPriority = newActionPriority;
-            m_isLastActionPlaying = true;
+        const uint8 scopeLayer = newState->ScopeLayer;
+        const auto it = m_pCurrentActionMap.find(scopeLayer);
+        if (it != m_pCurrentActionMap.end())
+        {
+            if(newActionPriority > m_pCurrentActionMap[scopeLayer]->GetPriority())
+            {
+                m_pCurrentActionMap[scopeLayer] = newState;
+                m_pAnimationComponent->QueueCustomFragment(*newState);
+            }
+        }
+        else
+        {
+            m_pCurrentActionMap.insert(std::pair<uint8, BaseAction*>(scopeLayer, newState));
             m_pAnimationComponent->QueueCustomFragment(*newState);
         }
     }
 
-    void SetActionFinish()
+    void SetActionFinish(BaseAction* action)
     {
-        m_isLastActionPlaying = false;
+        m_pCurrentActionMap.erase(action->ScopeLayer);
     } 
 
 
 private:
-    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
 
-    IEntity* m_pEntity;
+    std::map<uint8, _smart_ptr<BaseAction>> m_pCurrentActionMap;
 
     std::map<std::type_index, _smart_ptr<BaseAction>> m_actionsMap;
-    bool m_isLastActionPlaying;
-    int8 m_lastActionPriority;
 
-    _smart_ptr<BaseAction> m_pCurrentAction;
+   
 };
 
 

@@ -16,7 +16,7 @@ public:
     void SetRotateYaw(float x) override;
     void SetRotatePitch(float y) override;
     void SetMoveSignal(bool signal) override;
-
+    void SetBlockSignal(bool signal) override;
 private:
     Vec2 m_movement = ZERO;
 

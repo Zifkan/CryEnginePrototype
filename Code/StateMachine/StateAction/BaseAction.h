@@ -13,7 +13,7 @@ public:
         : IAction(priority, fragmentID, fragTags, flags, scopeMask, userToken)
         , m_pCharacterAction(characterAction)
     {
-        
+        ScopeLayer = 0;
     }
 
     DEFINE_ACTION(typeid(this).name())   
@@ -27,7 +27,12 @@ public:
     virtual void Exit() override;
 
     virtual void OnActionFinished();
+
+    uint8 ScopeLayer;
+
 protected:
     ICharacterActions* m_pCharacterAction;
     CStateMachine* m_pStateMachine;
+
+    float GetNormalizedtime();
 };

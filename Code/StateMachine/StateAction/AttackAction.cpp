@@ -29,13 +29,14 @@ AttackAction::AttackAction(IBaseLifeResource* lifeResource, IEntity* characterEn
 
 void AttackAction::Enter()
 {
-    if (m_attackId >= 5 || gEnv->pTimer->GetCurrTime() - m_lastCallTime >= 1)
+    if (m_attackId >=4 || gEnv->pTimer->GetCurrTime() - m_lastCallTime >= 1)
         m_attackId = 0;
 
    
     m_pAnimationComponent->SetAnimationDrivenMotion(false);
     m_pLifeResource->ChangeValue(-15);
     SetOptionIdx(m_attackId);
+    m_pCharacterController->SetVelocity(ZERO);
     BaseAction::Enter();
 }
 

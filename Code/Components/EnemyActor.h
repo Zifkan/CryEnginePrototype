@@ -2,8 +2,18 @@
 #include "CharacterComponent.h"
 #include <CryAISystem/Components/IEntityNavigationComponent.h>
 
+
 class СEnemyActor : public CCharacterComponent
 {
+
+    enum EnemyState
+    {
+        Idle,
+        Chase,
+        Attack,
+    };
+    
+
 public:
       
 
@@ -14,6 +24,7 @@ public:
 
         desc.AddMember(&СEnemyActor::_isSprint, 'sprt', "CharacterSprint", "Is Characetr Sprint", "Is Characetr Sprint", false);
         desc.AddMember(&СEnemyActor::_detectDistance, 'dist', "DetectionDist", "Enemy detection distance", "Enemy detection distance", 2);
+        desc.AddMember(&СEnemyActor::_attackDetectDistance, 'adis', "AttackDetectionDist", "Enemy attack detection distance", "Enemy attack detection distance", 2);
 
     }
 
@@ -32,7 +43,12 @@ protected:
     IEntityNavigationComponent* m_pNavigationComponent = nullptr;
     IEntity* pPlayerEntity;
 
+    void SetState();
+
 private:
     bool _isSprint;
     float _detectDistance;
+    float _attackDetectDistance;
+
+    EnemyState _currentState;
 };

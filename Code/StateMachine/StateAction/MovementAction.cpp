@@ -27,7 +27,7 @@ MovementAction::MovementAction(IBaseLifeResource* lifeResource,IEntity* characte
     {       
         if (vec2.GetLength2() == 0)
         {
-            m_pStateMachine->SetActionFinish();
+            m_pStateMachine->SetActionFinish(this);
             ForceFinish();
         }
         m_moveDirection = vec2;

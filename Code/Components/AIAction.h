@@ -10,7 +10,8 @@ public:
     void SetAttack(bool isAttack) override;
     void SetRotateYaw(float x) override;
     void SetRotatePitch(float y) override;
-    void SetMoveSignal(bool signal) override;
+    void SetMoveSignal(bool signal) override; public:
+    void SetBlockSignal(bool signal) override;
 
     EntityEventMask GetEventMask() const override;
 
@@ -25,5 +26,6 @@ public:
 protected:
     void ProcessEvent(const SEntityEvent& event) override;
 
-   
+
+
 };

@@ -277,10 +277,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\..\Code\Components\AIAction.h" />
     <ClInclude Include="..\..\Code\Components\EnemyActor.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\BlockAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
     <ClCompile Include="..\..\Code\Components\AIAction.cpp" />
     <ClCompile Include="..\..\Code\Components\EnemyActor.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />

@@ -25,5 +25,5 @@ void BaseAction::Exit()
 
 void BaseAction::OnActionFinished()
 {
-    m_pStateMachine->SetActionFinish();
+    m_pStateMachine->SetActionFinish(this);
 }

@@ -700,6 +700,7 @@
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>
   <Path>libs/environmentpresets/example.xml</Path>
   <Path>objects/characters/human/medium/romanlegion/legion.cdf</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_skin.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_lod1.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_sim.skin</Path>
@@ -766,6 +767,7 @@
   <Path>objects/characters/human/medium/romanlegion/romn_lgnr_main_lod4_diff.dds</Path>
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
  </Dependencies>

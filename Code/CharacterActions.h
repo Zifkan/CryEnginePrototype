@@ -42,6 +42,7 @@ public:
     rxcpp::subjects::subject<float> RotateYawSubject;
     rxcpp::subjects::subject<float> RotatePitchSubject;
     rxcpp::subjects::subject<MovementType>  MovementTypeSubject;
+    rxcpp::subjects::subject<bool>  BlockSubject;
 
     void virtual SetMovementForward(float y) = 0;
     void virtual SetMovementSide(float x) = 0;
@@ -49,6 +50,7 @@ public:
     void virtual SetRotateYaw(float x) = 0;
     void virtual SetRotatePitch(float y) = 0;
     void virtual SetMoveSignal(bool signal) = 0;
+    void virtual SetBlockSignal(bool signal) = 0;
 
 protected:
     rxcpp::subjects::subject<float> MovementForward;

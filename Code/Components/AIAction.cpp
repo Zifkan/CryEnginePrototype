@@ -41,6 +41,10 @@ void AIActionComponent::SetMoveSignal(bool signal)
 {
 }
 
+void AIActionComponent::SetBlockSignal(bool signal)
+{
+}
+
 EntityEventMask AIActionComponent::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);

@@ -10,6 +10,7 @@
 #include "StateMachine/StateAction/IdleAction.h"
 #include "LifeResources/HealthLifeResource.h"
 #include "StateMachine/StateAction/DeathAction.h"
+#include "StateMachine/StateAction/BlockAction.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -54,15 +55,15 @@ void CPlayerComponent::CreateStateMachine()
     FragmentID m_attackFragmentId = m_pAnimationComponent->GetFragmentId("Attack");
     FragmentID m_hitReactionFragmentId = m_pAnimationComponent->GetFragmentId("HitReaction");
     FragmentID m_deathFragmentId = m_pAnimationComponent->GetFragmentId("Death");
-
-
-    m_stateMachine = new CStateMachine(m_pCharacterController, m_pAnimationComponent, m_pEntity);
+    FragmentID m_blocFragmentId = m_pAnimationComponent->GetFragmentId("Block");
+    m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions, 0, m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager.GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
     m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager.GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
     m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pCharacterActions, 4, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pCharacterActions, 1, m_blocFragmentId));
 }
 
 void CPlayerComponent::InitLifeResources()
@@ -124,6 +125,12 @@ void CPlayerComponent::SetupActions()
         {
             m_stateMachine->SetCurrentState(typeid(AttackAction));
         }
+    });
+
+    m_pCharacterActions->BlockSubject.get_observable().subscribe(subscription, [this](bool isBlock)
+    {
+        if(isBlock)
+            m_stateMachine->SetCurrentState(typeid(BlockAction));
     });
 
     m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)

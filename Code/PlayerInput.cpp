@@ -89,6 +89,23 @@ void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
     m_pInputComponent->BindAction("player", "Attack", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
   //  BindAction("player", "Attack", eAID_XboxPad, EKeyId::eKI_XI_TriggerRBtn);
 
+
+    m_pInputComponent->RegisterAction("player", "Block", [this](int activationMode, float value)
+    {
+        if (activationMode == eIS_Pressed)
+        {
+            characterActions->SetBlockSignal(true);
+        }
+
+        if (activationMode == eIS_Released)
+        {
+            characterActions->SetBlockSignal(false);
+        }
+    });
+
+    // Bind the shoot action to left mouse click
+    m_pInputComponent->BindAction("player", "Block", eAID_KeyboardMouse, EKeyId::eKI_Mouse2);
+
 }
 
 void CPlayerInputComponent::Initialize()

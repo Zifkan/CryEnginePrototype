@@ -41,6 +41,12 @@
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp">
       <Filter>StateMachine\StateAction\EnemyAction</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.cpp">
+      <Filter>StateMachine\StateAction\EnemyAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
@@ -158,6 +164,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h">
       <Filter>StateMachine\StateAction\EnemyAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.h">
+      <Filter>StateMachine\StateAction\EnemyAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\BlockAction.h">
+      <Filter>StateMachine\StateAction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,7 @@ EnemyMovementAction::EnemyMovementAction(IEntity* characterEntity, Cry::DefaultC
     {
         if (vec2.GetLength2() == 0)
         {
-            m_pStateMachine->SetActionFinish();
+            m_pStateMachine->SetActionFinish(this);
             ForceFinish();
         }
         m_movePoint = vec2;

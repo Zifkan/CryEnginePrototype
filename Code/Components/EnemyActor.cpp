@@ -12,6 +12,11 @@
 #include "LifeResources/HealthLifeResource.h"
 #include "PlayerCharacterActions.h"
 #include "StateMachine/StateAction/EnemyMovementAction.h"
+#include "StateMachine/StateAction/EnemyAttackAction.h"
+
+enum EnemyState
+{};
+
 
 static void RegisterEnemyActor(Schematyc::IEnvRegistrar& registrar)
 {
@@ -61,11 +66,11 @@ void СEnemyActor::CreateStateMachine()
     FragmentID m_deathFragmentId = m_pAnimationComponent->GetFragmentId("Death");
 
 
-    m_stateMachine = new CStateMachine(m_pCharacterController, m_pAnimationComponent, m_pEntity);
+    m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions, 0, m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(EnemyMovementAction), new EnemyMovementAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 1, m_walkFragmentId));
-    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager.GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
+    m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
     m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pCharacterActions, 4, m_deathFragmentId));
 }
@@ -90,7 +95,7 @@ void СEnemyActor::SetupActions()
 
         m_pCharacterActions->AttackSubject.get_observable().subscribe(subscription, [this](AttackType type)
         {
-            m_stateMachine->SetCurrentState(typeid(AttackAction));
+            m_stateMachine->SetCurrentState(typeid(EnemyAttackAction));
         });
 
        /* m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)
@@ -112,17 +117,27 @@ void СEnemyActor::StartGame()
 {
     InitLifeResources();
     CreateStateMachine();
-    SetupActions();  
+    SetupActions();
+
+    InitWeaponSystem();
 }
 
 void СEnemyActor::GameUpdate(float fFrameTime)
 {
     CCharacterComponent::GameUpdate(fFrameTime);
+    float distance = m_pEntity->GetWorldPos().GetDistance(pPlayerEntity->GetWorldPos());
 
-    if (m_pEntity->GetWorldPos().GetDistance(pPlayerEntity->GetWorldPos()) <= _detectDistance)
+    if (distance <= _detectDistance && distance>= _attackDetectDistance)
     {
-        m_pNavigationComponent->NavigateTo(pPlayerEntity->GetWorldPos());
-    }    
+        _currentState = Chase;
+    }
+
+    if (distance < _attackDetectDistance)
+    {
+        _currentState = Attack;
+    }
+
+    SetState();
 }
 
 void СEnemyActor::PropertyChanged()
@@ -130,3 +145,26 @@ void СEnemyActor::PropertyChanged()
    
 }
 
+
+
+void СEnemyActor::SetState()
+{
+    switch (_currentState)
+    {
+    case Idle:
+    {
+        m_stateMachine->SetCurrentState(typeid(IdleAction));
+    }
+    break;
+    case Chase:
+    {
+        m_pNavigationComponent->NavigateTo(pPlayerEntity->GetWorldPos());
+    }
+    break;
+    case Attack:
+    {
+        m_pCharacterActions->AttackSubject.get_subscriber().on_next(ATTACK);
+    }
+    break;
+    }
+}

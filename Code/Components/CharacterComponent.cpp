@@ -5,9 +5,6 @@
 #include "StateMachine/StateAction/IdleAction.h"
 #include "CharacterComponent.h"
 
-
-
-
 CCharacterComponent::CCharacterComponent(): 
     m_characterEntityName("Player")
 {    
@@ -22,23 +19,9 @@ void CCharacterComponent::Initialize()
 	m_pCharacterController->SetTransformMatrix(Matrix34::Create(Vec3(1.f), IDENTITY, Vec3(0, 0, 1.f)));
 
 	// Create the advanced animation component, responsible for updating Mannequin and animating the player
-	m_pAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
-	
-	// Set the player geometry, this also triggers physics proxy creation
-	//m_pAnimationComponent->SetMannequinAnimationDatabaseFile("Animations/Mannequin/ADB/LegionerThirdpersonDefenition.adb");
-
-	//m_pAnimationComponent->SetControllerDefinitionFile("Animations/Mannequin/ADB/LegionFirstPersonControllerDefinition.xml");
-//	m_pAnimationComponent->SetDefaultScopeContextName("ThirdPersonCharacter");
-
-
-	// Disable movement coming from the animation (root joint offset), we control this entirely via physics
-	//m_pAnimationComponent->SetAnimationDrivenMotion(false);
-    
-
-	// Load the character and Mannequin data from file
-	//m_pAnimationComponent->LoadFromDisk();
+	m_pAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();	
   	
-
+    m_lifeResourceManager = m_pEntity->GetOrCreateComponent<CLifeResourceManagerComponent>();
     m_pWeaponSystem = m_pEntity->GetOrCreateComponent<CWeaponSystem>();
 
 	Revive();
@@ -98,8 +81,7 @@ void CCharacterComponent::EditorUpdate(float fFrameTime)
 }
 
 void CCharacterComponent::GameUpdate(float fFrameTime)
-{    
-    m_lifeResourceManager.Update(fFrameTime);
+{
 }
 
 void CCharacterComponent::InitWeaponSystem()

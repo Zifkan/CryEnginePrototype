@@ -43,6 +43,11 @@ void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
     
     }
     break;
+    case ENTITY_EVENT_COLLISION:
+    {
+
+    }
+    break;
     }
 }
 
@@ -53,7 +58,7 @@ void CMeleeWeaponComponent::Attack()
 
 void CMeleeWeaponComponent::Update(float fFrameTime)
 {
-  //  if (!m_isAttack ) return;
+    if (!m_isAttack ) return;
 
     ray_hit rayhit;
     static IPhysicalEntity* pSkipEnts[10];

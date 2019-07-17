@@ -307,7 +307,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />

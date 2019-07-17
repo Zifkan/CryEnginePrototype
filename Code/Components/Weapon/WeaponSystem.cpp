@@ -2,6 +2,9 @@
 
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "WeaponSystem.h"
+#include "Components/LifeResources/LifeResourceManager.h"
+#include "Components/LifeResources/HealthLifeResource.h"
+#include "Components/CharacterComponent.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {
@@ -42,6 +45,7 @@ void CWeaponSystem::Init(ICharacterActions* characterActions, IAttachmentManager
             CRY_ASSERT(m_pMeleeWeapon != nullptr);
 
             AttachToHand();
+            HitDetection();
         }
         else
         {
@@ -58,4 +62,17 @@ void CWeaponSystem::AttachToHand()
     auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_weaponSlotName.c_str());
    
     attachment->AddBinding(attachmentItem);   
+}
+
+void CWeaponSystem::HitDetection()
+{
+    m_pMeleeWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
+    {
+        IPhysicalEntity* pHitEntity = hit.pCollider;
+        IEntity* pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+        if(pEntity && pEntity!=m_pEntity)
+        {
+            pEntity->GetComponent<CLifeResourceManagerComponent>()->GetResource<CHealthResource>()->ChangeValue(-50);
+        }
+    });
 }

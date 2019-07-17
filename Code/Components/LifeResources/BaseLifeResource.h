@@ -30,6 +30,6 @@ inline void IBaseLifeResource::ChangeValue(float value)
 
     if (result >= m_maxValue)
         result = m_maxValue;
-
+ /*   CryLog("Hit Result: %f", result);*/
     Value.get_subscriber().on_next(result);
 }

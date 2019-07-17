@@ -106,9 +106,6 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp">
       <Filter>StateMachine\StateAction</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp">
-      <Filter>StateMachine</Filter>
-    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h">
       <Filter>StateMachine</Filter>
     </ClInclude>

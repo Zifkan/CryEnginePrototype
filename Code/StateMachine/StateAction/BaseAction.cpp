@@ -20,6 +20,7 @@ void BaseAction::Enter()
 
 void BaseAction::Exit()
 {
+    OnActionFinished();
     IAction::Exit();
 }
 

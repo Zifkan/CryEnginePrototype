@@ -26,7 +26,7 @@ private:
     IAttachmentManager* m_pAttachmentManager = nullptr;
     Schematyc::CSharedString m_weaponSlotName = "r_weapon";
 
-    //   rxcpp::composite_subscription m_rayHitSubjectSubscription;
-
     void AttachToHand();
+
+    void HitDetection();
 };

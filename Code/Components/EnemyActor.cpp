@@ -72,13 +72,13 @@ void СEnemyActor::CreateStateMachine()
     m_stateMachine->RegisterState(typeid(EnemyMovementAction), new EnemyMovementAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 1, m_walkFragmentId));
     m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pCharacterActions, 4, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 4, m_deathFragmentId));
 }
 
 void СEnemyActor::InitLifeResources()
 {
-    m_lifeResourceManager.RegisterResource(typeid(CHealthResource), new CHealthResource(100));
-    m_lifeResourceManager.RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100,1));
+    m_lifeResourceManager->RegisterResource(typeid(CHealthResource), new CHealthResource(100));
+    m_lifeResourceManager->RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100,1));
 }
 
 void СEnemyActor::SetupActions()

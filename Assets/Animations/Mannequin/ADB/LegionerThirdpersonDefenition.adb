@@ -57,9 +57,15 @@
    </Fragment>
   </HitReaction>
   <Death>
-   <Fragment BlendOutDuration="0.2" Tags="">
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="barb_1hnd_death_from_front_lf"/>
+    </AnimLayer>
+   </Fragment>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dead">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="1.9" Duration="0"/>
      <Animation name="barb_1hnd_death_from_front_lf"/>
     </AnimLayer>
    </Fragment>
@@ -73,4 +79,15 @@
    </Fragment>
   </Block>
  </FragmentList>
+ <FragmentBlendList>
+  <Blend from="Attack" to="Attack">
+   <Variant from="Simple" to="Force">
+    <Fragment BlendOutDuration="0.2" selectTime="0" enterTime="0">
+     <AnimLayer>
+      <Blend ExitTime="-1" StartTime="0" Duration="0.5599997" terminal="1"/>
+     </AnimLayer>
+    </Fragment>
+   </Variant>
+  </Blend>
+ </FragmentBlendList>
 </AnimDB>

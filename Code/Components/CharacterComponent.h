@@ -41,13 +41,12 @@ protected:
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CWeaponSystem* m_pWeaponSystem = nullptr;
-
+    CLifeResourceManagerComponent* m_lifeResourceManager = nullptr;
 
     Schematyc::CSharedString  m_characterEntityName;
         
     CStateMachine* m_stateMachine;
 
-    CLifeResourceManager m_lifeResourceManager;
 
     virtual void StartGame() = 0;
     virtual void CreateStateMachine() = 0;
@@ -59,4 +58,6 @@ protected:
     virtual void GameUpdate(float fFrameTime);
 
     void InitWeaponSystem();
+
+    bool IsDead;
 };

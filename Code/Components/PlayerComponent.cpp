@@ -59,17 +59,17 @@ void CPlayerComponent::CreateStateMachine()
     m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions, 0, m_idleFragmentId));
-    m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager.GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
-    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager.GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
+    m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
+    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pCharacterActions, 4, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 4, m_deathFragmentId));
     m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pCharacterActions, 1, m_blocFragmentId));
 }
 
 void CPlayerComponent::InitLifeResources()
 {
-    m_lifeResourceManager.RegisterResource(typeid(CHealthResource), new CHealthResource(100));
-    m_lifeResourceManager.RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100, 1));
+    m_lifeResourceManager->RegisterResource(typeid(CHealthResource), new CHealthResource(100));
+    m_lifeResourceManager->RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100, 1));
   //  m_lifeResourceManager.RegisterResource(typeid(CSoulEnergyLifeResource), new CSoulEnergyLifeResource(100, 1));
 }
 
@@ -99,7 +99,14 @@ void CPlayerComponent::GameUpdate(float fFrameTime)
 {
     CCharacterComponent::GameUpdate(fFrameTime);
 
-    m_stateMachine->SetCurrentState(typeid(IdleAction));
+    if (IsDead)
+    {
+        //      m_pAnimationComponent->SetTag("Dead", true);
+    }
+    else
+    {
+        m_stateMachine->SetCurrentState(typeid(IdleAction));
+    }
 }
 
 void CPlayerComponent::PropertyChanged()
@@ -110,7 +117,8 @@ void CPlayerComponent::PropertyChanged()
 void CPlayerComponent::SetupActions()
 {
     auto subscription = rxcpp::composite_subscription();
-    m_pCharacterActions->MovementSubject.get_observable().subscribe(subscription,[this](Vec2 Vector2)
+    m_pCharacterActions->MovementSubject.get_observable()
+    .subscribe(subscription,[this](Vec2 Vector2)
     {
         if (Vector2.GetLength2() > 0)
         {
@@ -118,25 +126,30 @@ void CPlayerComponent::SetupActions()
         }
     });
 
-    m_pCharacterActions->AttackSubject.get_observable().subscribe(subscription,[this](AttackType type)
+    m_pCharacterActions->AttackSubject.get_observable()
+    .subscribe(subscription,[this](AttackType type)
     {
-        IBaseLifeResource* staminaResource = m_lifeResourceManager.GetResource<CStaminaLifeResource>();
+        IBaseLifeResource* staminaResource = m_lifeResourceManager->GetResource<CStaminaLifeResource>();
         if (staminaResource->Value.get_value() - m_attackStaminaCost >= 0)
         {
             m_stateMachine->SetCurrentState(typeid(AttackAction));
         }
     });
 
-    m_pCharacterActions->BlockSubject.get_observable().subscribe(subscription, [this](bool isBlock)
+    m_pCharacterActions->BlockSubject.get_observable()
+    .subscribe(subscription, [this](bool isBlock)
     {
         if(isBlock)
             m_stateMachine->SetCurrentState(typeid(BlockAction));
     });
 
-    m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)
+    m_lifeResourceManager->GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value){ return value > 0; }).first()
+    .subscribe([subscription, this](float value)
     {
-     /*   m_stateMachine->SetCurrentState(typeid(DeathAction));
-        subscription.unsubscribe();*/
+        IsDead = true;   
+        m_pAnimationComponent->SetTag("Dead", true);
+        m_stateMachine->SetCurrentState(typeid(DeathAction));
+       // subscription.unsubscribe();
     });
 }
 

@@ -294,6 +294,7 @@
   <Path>animations/human/medium/romans/barb_shld_com_block_idle_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_com_block_idle_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_com_idle_lf_to_block_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_com_idle_rf_to_block_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_fc_atk_mst_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_foc_fhit_death_from_i_to_i_atk_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_heavy_hit_front_300_lf_to_front_rf_01.caf</Path>
@@ -348,6 +349,7 @@
   <Path>animations/human/medium/romans/formations poses/romn_form_head_add_rgt45_01.caf</Path>
   <Path>animations/human/medium/romans/formations poses/romn_form_head_add_rgt90_01.caf</Path>
   <Path>animations/human/medium/romans/lookposes/lookposes_head.caf</Path>
+  <Path>animations/human/medium/romans/med_stand_com_shld_axe_block_lf_to_lf_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_com_scorpio_aim_hit_rct_add_spine01_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_run_climb_up_2m_lf_to_lf_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_0_fwd_150_01.caf</Path>
@@ -691,10 +693,14 @@
   <Path>animations/human/medium/romans/stand_x_slow_death_left_02.caf</Path>
   <Path>animations/human/medium/romans/stand_x_slow_death_right_01.caf</Path>
   <Path>animations/human/medium/romans/stand_x_slow_death_right_02.caf</Path>
+  <Path>animations/mannequin/adb/firstpersoncontrollerdefinition.xml</Path>
   <Path>animations/mannequin/adb/hitreactiontags.xml</Path>
   <Path>animations/mannequin/adb/legionertags.xml</Path>
   <Path>animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml</Path>
   <Path>animations/mannequin/adb/legionplayerfragmentids.xml</Path>
+  <Path>animations/mannequin/adb/playerfragmentids.xml</Path>
+  <Path>animations/mannequin/adb/playertags.xml</Path>
+  <Path>animations/mannequin/preview/legioner.xml</Path>
   <Path>engineassets/materials/sky/sky.mtl</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>

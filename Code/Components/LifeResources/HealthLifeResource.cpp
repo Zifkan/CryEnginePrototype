@@ -3,5 +3,6 @@
 
 void CHealthResource::Update(float timePassed)
 {
+    //ChangeValue(-5);
 }
 

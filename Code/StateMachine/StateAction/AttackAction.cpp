@@ -20,9 +20,7 @@ AttackAction::AttackAction(IBaseLifeResource* lifeResource, IEntity* characterEn
             m_pAnimationComponent->SetTag("Simple", true);
 
         if(type==FORCE_ATTACK)
-            m_pAnimationComponent->SetTag("Force", true);
-        
-        CryLog("Attack Type: %i",type );
+            m_pAnimationComponent->SetTag("Force", true);      
     });
 }
 

@@ -1,4 +1,7 @@
 {
+    "Asset Browser": {
+        "RecentImportPath": null
+    },
     "CAssetPicker": {
         "Layout": {
             "detailsView": {
@@ -158,7 +161,7 @@
             "foldersSplitter": "AAAA/wAAAAEAAAACAAABAAAAAwAB/////wEAAAABAA==",
             "foldersView": {
                 "selected": [
-                    "Objects/characters/human/medium/romanLegion"
+                    "Animations"
                 ]
             },
             "mainViewSplitter": "AAAA/wAAAAEAAAACAAAARAAAAQAB/////wEAAAABAA==",
@@ -184,16 +187,47 @@
             "/Objects/characters/human/medium/romanLegion",
             "/Animations",
             "/Animations/Mannequin/ADB",
-            "/Animations/Mannequin/Preview"
+            "/Animations/Mannequin/Preview",
+            "/Objects/Medieval Weapons Pack",
+            "/Objects/Weapons/SampleWeapon",
+            "/Objects/Weapons"
         ]
     },
     "FavoritesHelper": {
-        "Asset Browser": null
+        "Asset Browser": null,
+        "CVarFavorites": null
+    },
+    "Import Animation": {
+        "Recent Files": null
+    },
+    "Import Mesh": {
+        "Recent Files": [
+            "Objects/Weapons/Gladius1.cgf.cryasset",
+            "Objects/Weapons/Gladius.cgf.cryasset"
+        ]
     },
     "Level Editor": {
         "Recent Files": [
             "Assets/Levels/example/example.level",
             "assets/Levels/test/test.level"
+        ]
+    },
+    "Material Editor": {
+        "Recent Files": [
+            "Objects/Weapons/gladius1.mtl.cryasset",
+            "Objects/Medieval Weapons Pack/double bladed axe bronze.mtl.cryasset"
+        ]
+    },
+    "QFilteringPanel": {
+        "AssetBrowser": null
+    },
+    "Schematyc Editor": {
+        "Recent Files": [
+            "weapon.schematyc_ent.cryasset",
+            "WeaponLib.schematyc_lib.cryasset",
+            "Weapon.schematyc_ent.cryasset",
+            "test.schematyc_ent.cryasset",
+            "New Folder/Test.schematyc_ent.cryasset"
         ]
     }
 }

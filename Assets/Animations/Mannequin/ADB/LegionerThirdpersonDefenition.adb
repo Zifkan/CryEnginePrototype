@@ -49,24 +49,32 @@
    </Fragment>
   </Attack>
   <HitReaction>
-   <Fragment BlendOutDuration="0.2" Tags="" FragTags="LeftSide">
-    <AnimLayer />
-   </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="RightSide">
-    <AnimLayer />
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="barb_1hnd_rct_left_hit_front_lf_to_front_lf_03"/>
+    </AnimLayer>
+   </Fragment>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="LeftSide">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="barb_1hnd_rct_right_hit_front_lf_to_front_rf_01"/>
+    </AnimLayer>
    </Fragment>
   </HitReaction>
   <Death>
-   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
-    <AnimLayer>
-     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="barb_1hnd_death_from_front_lf"/>
-    </AnimLayer>
-   </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dead">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="1.9" Duration="0"/>
-     <Animation name="barb_1hnd_death_from_front_lf"/>
+     <Animation name="bar_archr_fire_M_01"/>
+     <Blend ExitTime="1" StartTime="0" Duration="0.2"/>
+     <Animation name=""/>
+    </AnimLayer>
+   </Fragment>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="Bar_Shld_blk_front_lf_to_front_rf_stat_01"/>
     </AnimLayer>
    </Fragment>
   </Death>

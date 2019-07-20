@@ -49,7 +49,7 @@
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="6a946121-292f-684f-f81b-ffbb32225354" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1">
+      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="1000">
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -495,6 +495,12 @@
      <Component CryXmlVersion="2" TypeGUID="2bd3260b-366b-44ef-8638-1a3aa578e323" TypeName="CPlayerComponent" GUID="531c80b2-29b4-93f2-68bc-5f3c3544b323" Name="" UserAdded="true">
       <properties />
      </Component>
+     <Component CryXmlVersion="2" TypeGUID="9f538f51-1782-47b7-b218-63cee4b938b3" TypeName="CLifeResourceManagerComponent" GUID="07f713c3-9b29-acd1-0aa7-458faeabfd91" Name="" UserAdded="false">
+      <properties />
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="aa6d3914-86a9-4feb-b89a-ca8e589c657a" TypeName="CHitDamageComponent" GUID="fa380bd5-97a8-be02-9ef1-cebc01e48113" Name="" UserAdded="true">
+      <properties />
+     </Component>
     </Components>
     <EntityLinks>
      <Link TargetId="2a92ae43-738f-5bff-368d-594e12e6e95d" Name="Axe" Version="1"/>
@@ -504,7 +510,7 @@
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="f2871eba-700f-bae2-9b8a-dc2900c4e15d" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1">
+      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="50">
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -578,7 +584,7 @@
       </properties>
      </Component>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="d818559b-9591-ed80-4ce0-a1bdb5448499" Name="" UserAdded="true">
-      <properties WeaponRayLength="0" AttackDetectionTime="1">
+      <properties WeaponRayLength="0" AttackDetectionTime="1" WeaponDamage="50">
        <WeaponRayOffset x="nan" y="nan" z="nan"/>
        <WeaponRayRotation x="nan" y="nan" z="nan"/>
       </properties>
@@ -600,6 +606,12 @@
      </Component>
      <Component CryXmlVersion="2" TypeGUID="a1e52698-3dbe-473d-b632-2930ff84e673" TypeName="CWeaponSystem" GUID="7fe7f673-3c65-9058-52b7-800be3376a4a" Name="" UserAdded="false">
       <properties WeaponSlotName="r_weapon"/>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="9f538f51-1782-47b7-b218-63cee4b938b3" TypeName="CLifeResourceManagerComponent" GUID="f8d355bf-4850-b0b8-b7ba-cafb22b3ee42" Name="" UserAdded="false">
+      <properties />
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="aa6d3914-86a9-4feb-b89a-ca8e589c657a" TypeName="CHitDamageComponent" GUID="4395b7fd-290c-423c-8707-8da1ffa48fa8" Name="" UserAdded="true">
+      <properties />
      </Component>
     </Components>
     <EntityLinks>

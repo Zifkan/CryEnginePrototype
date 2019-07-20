@@ -277,12 +277,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\..\Code\Components\AIAction.h" />
     <ClInclude Include="..\..\Code\Components\EnemyActor.h" />
+    <ClInclude Include="..\..\Code\Components\HitDamageComponent.h" />
+    <ClInclude Include="..\..\Code\Components\WeaponHitStruct.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\BlockAction.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\HitAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
     <ClCompile Include="..\..\Code\Components\AIAction.cpp" />
     <ClCompile Include="..\..\Code\Components\EnemyActor.cpp" />
+    <ClCompile Include="..\..\Code\Components\HitDamageComponent.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp" />
@@ -324,7 +328,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp" />
+    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp" />

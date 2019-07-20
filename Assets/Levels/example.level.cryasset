@@ -254,20 +254,25 @@
   <Path>animations/human/medium/romans/barb_1hnd_death_from_back_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_death_from_front_lf.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_death_from_front_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_exc_mrus_death_slv01_frt_id0099_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_exc_t1_double_back_slv01_id9961_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_exc_t2_double_back_slv01_id9956_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_back_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_lf_to_front_lf_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_rf_to_front_lf_stat_02.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_lf_to_front_rf_stat_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_rf_to_front_lf_stat_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_pillum_death_back_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_pillum_death_front_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_pillum_death_front_rf_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_fall_down_front_lf_to_front_lf.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_back_lf_to_back_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_back_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_lf_02.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_lf_03.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_rf_03.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_rf_to_front_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_back_lf_to_front_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_back_rf_to_front_lf_01.caf</Path>
@@ -286,6 +291,7 @@
   <Path>animations/human/medium/romans/barb_form_clash_charge_01.caf</Path>
   <Path>animations/human/medium/romans/barb_form_open_to_death.caf</Path>
   <Path>animations/human/medium/romans/barb_inja_to_death_bck_1hnd_slv_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_inja_to_death_frnt_shld_slv_01.caf</Path>
   <Path>animations/human/medium/romans/barb_mass_str_to_death_slv_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_atk_qk_lft_up_from_chrg_rf_300_02.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_atk_qk_lft_up_lf_to_rf_150_01.caf</Path>
@@ -296,6 +302,7 @@
   <Path>animations/human/medium/romans/barb_shld_com_idle_lf_to_block_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_com_idle_rf_to_block_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_fc_atk_mst_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_fall_down_front_lf_to_front_lf.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_foc_fhit_death_from_i_to_i_atk_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_heavy_hit_front_300_lf_to_front_rf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_heavy_push_front_lf_to_front_lf_01.caf</Path>
@@ -358,15 +365,18 @@
   <Path>animations/human/medium/romans/romn_atk_qk_rgt_up_250_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_qk_rgt_up_antic_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_qk_rgt_up_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/romn_attack_dead_body_01.caf</Path>
   <Path>animations/human/medium/romans/romn_awr_idle_turn_90_left_01.caf</Path>
   <Path>animations/human/medium/romans/romn_awr_idle_turn_90_left_02.caf</Path>
   <Path>animations/human/medium/romans/romn_com_a_to_a_atk_fhit_0_fwd_150_id0020_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_a_to_b_atk_fhit_slw_0_fwd_150_id0221_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_block_stat_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_chrg_atk_250_01.caf</Path>
+  <Path>animations/human/medium/romans/romn_com_death_front_stab_lf_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_i_to_a_swd_atk_0_fwd_stat_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_i_to_d_shld_psh_0_fwd_stat_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_i_to_i_atk_fhit_0_fwd_01.caf</Path>
+  <Path>animations/human/medium/romans/romn_com_idle_to_kneel_dead_friendly_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_wlk_rgt_90_rf_01.caf</Path>
   <Path>animations/human/medium/romans/romn_fc_atk_mst_01.caf</Path>
   <Path>animations/human/medium/romans/romn_fc_atk_mst_02.caf</Path>
@@ -693,14 +703,11 @@
   <Path>animations/human/medium/romans/stand_x_slow_death_left_02.caf</Path>
   <Path>animations/human/medium/romans/stand_x_slow_death_right_01.caf</Path>
   <Path>animations/human/medium/romans/stand_x_slow_death_right_02.caf</Path>
-  <Path>animations/mannequin/adb/firstpersoncontrollerdefinition.xml</Path>
+  <Path>animations/mannequin/adb/deathtags.xml</Path>
   <Path>animations/mannequin/adb/hitreactiontags.xml</Path>
   <Path>animations/mannequin/adb/legionertags.xml</Path>
   <Path>animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml</Path>
   <Path>animations/mannequin/adb/legionplayerfragmentids.xml</Path>
-  <Path>animations/mannequin/adb/playerfragmentids.xml</Path>
-  <Path>animations/mannequin/adb/playertags.xml</Path>
-  <Path>animations/mannequin/preview/legioner.xml</Path>
   <Path>engineassets/materials/sky/sky.mtl</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>
@@ -773,7 +780,6 @@
   <Path>objects/characters/human/medium/romanlegion/romn_lgnr_main_lod4_diff.dds</Path>
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
-  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
  </Dependencies>

@@ -38,7 +38,6 @@ public:
             }
             m_pCurrentActionMap.clear();
             m_pCurrentActionMap.insert(std::pair<uint8, BaseAction*>(scopeLayer, newState));
-            CryLog("IsHighestPriority: %i", IsHighestPriority(newActionPriority));
             m_pAnimationComponent->QueueCustomFragment(*newState);
         }
         else

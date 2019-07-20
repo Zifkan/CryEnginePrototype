@@ -47,6 +47,9 @@
     <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp">
       <Filter>StateMachine\StateAction</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Code\Components\HitDamageComponent.cpp">
+      <Filter>Components\Damage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
@@ -147,9 +150,6 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.cpp">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp">
-      <Filter>Components\LifeResources</Filter>
-    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
@@ -168,6 +168,16 @@
     <ClInclude Include="..\..\Code\StateMachine\StateAction\BlockAction.h">
       <Filter>StateMachine\StateAction</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Code\Components\HitDamageComponent.h">
+      <Filter>Components\Damage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\WeaponHitStruct.h">
+      <Filter>Components\Damage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\HitAction.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt" />
@@ -210,6 +220,9 @@
     </Filter>
     <Filter Include="StateMachine\StateAction\EnemyAction">
       <UniqueIdentifier>{5f347d60-fc96-4cef-ad43-42e8c7c2deee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Damage">
+      <UniqueIdentifier>{3d2737ee-e2de-4fc8-bfbc-2b2b9a5e4efa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

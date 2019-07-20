@@ -4,6 +4,8 @@
 #include "CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
+#include "Components/WeaponHitStruct.h"
+
 
 class CWeaponSystem : public IEntityComponent
 {
@@ -19,7 +21,9 @@ public:
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);
-   
+
+    rxcpp::subjects::subject<SWeaponHitStruct> HitReactionSubject = rxcpp::subjects::subject<SWeaponHitStruct>();
+
 private:
     CMeleeWeaponComponent* m_pMeleeWeapon = nullptr;
     ICharacterActions* m_pCharacterActions = nullptr;

@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include "BaseLifeResource.h"
 
-class CHealthResource :public IBaseLifeResource
+class CHealthLifeResource :public IBaseLifeResource
 {
 public:
 
 
-    CHealthResource(float maxValue)
+    CHealthLifeResource(float maxValue)
         : IBaseLifeResource(maxValue)
     {
     }

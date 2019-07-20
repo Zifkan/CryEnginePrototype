@@ -48,6 +48,7 @@ add_sources("GamePlay_uber.cpp"
 add_sources("StateActions_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "StateMachine\\\\StateAction"
+		"StateMachine/StateAction/HitAction.h"
 		"StateMachine/StateAction/AttackAction.cpp"
 		"StateMachine/StateAction/AttackAction.h"		
 		"StateMachine/StateAction/BaseAction.cpp"
@@ -95,6 +96,14 @@ add_sources("CharacterActions_uber.cpp"
 		"PlayerCharacterActions.h"
 )
 
+add_sources("Damage_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Damage"
+		"Components/Damage/HitDamageComponent.cpp"
+		"Components/Damage/HitDamageComponent.h"	
+		"Components/Damage/WeaponHitStruct.h"
+)
+		
 
 add_sources("Weapon_uber.cpp"
     PROJECTS Game

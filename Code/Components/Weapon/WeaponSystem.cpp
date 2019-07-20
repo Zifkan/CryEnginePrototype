@@ -5,6 +5,7 @@
 #include "Components/LifeResources/LifeResourceManager.h"
 #include "Components/LifeResources/HealthLifeResource.h"
 #include "Components/CharacterComponent.h"
+#include "Components/HitDamageComponent.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {
@@ -69,10 +70,18 @@ void CWeaponSystem::HitDetection()
     m_pMeleeWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
     {
         IPhysicalEntity* pHitEntity = hit.pCollider;
-        IEntity* pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
-        if(pEntity && pEntity!=m_pEntity)
-        {
-            pEntity->GetComponent<CLifeResourceManagerComponent>()->GetResource<CHealthResource>()->ChangeValue(-50);
+        IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+        CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
+
+        if(pHitedEntity && pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent !=nullptr)
+        {          
+            SWeaponHitStruct hitStruct;
+            hitStruct.Damage = m_pMeleeWeapon->GetWeaponDamage();
+            hitStruct.Hitpoint = hit.pt;
+            hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pMeleeWeapon->GetEntity()->GetWorldPos();
+            hitStruct.PartId = hit.partid;
+
+            pHitDamageComponent->OnHit(hitStruct);
         }
     });
 }

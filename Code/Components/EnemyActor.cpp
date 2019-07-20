@@ -77,7 +77,7 @@ void СEnemyActor::CreateStateMachine()
 
 void СEnemyActor::InitLifeResources()
 {
-    m_lifeResourceManager->RegisterResource(typeid(CHealthResource), new CHealthResource(100));
+    m_lifeResourceManager->RegisterResource(typeid(CHealthLifeResource), new CHealthLifeResource(100));
     m_lifeResourceManager->RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100,1));
 }
 

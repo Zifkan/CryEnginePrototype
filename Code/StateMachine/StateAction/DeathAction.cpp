@@ -9,40 +9,41 @@ DeathAction::DeathAction(Cry::DefaultComponents::CAdvancedAnimationComponent* an
                          , m_pAnimationComponent(animationComponent)
 {
     IsDying = true;
+
+
 }
 
 void DeathAction::Enter()
-{
-    BaseAction::Enter();
- /*
+{  
+ 
     if (IsDying)
     {
-        m_pAnimationComponent->SetTag("Simple", true);
+        m_pAnimationComponent->SetTag("Dying", true);
     }
-    else
-    {
-        m_pAnimationComponent->SetTag("Simple", false);
-        m_pAnimationComponent->SetTag("Force", true);
-
-    }  */
-
+    BaseAction::Enter();
 }
 
 void DeathAction::Exit()
-{
-    //BaseAction::Exit();
+{   
 
-    //if (IsDying)
-    //{
-    //  
-    //    IsDying = false;
-    //}
-    //m_pStateMachine->SetCurrentState(typeid(DeathAction));
+    if (IsDying)
+    {      
+        IsDying = false;
+        m_pAnimationComponent->SetTag("Dead", true);
+    }
+
+   
+    m_pStateMachine->SetCurrentState(typeid(DeathAction)); 
+    BaseAction::Exit();
 }
 
 IAction::EStatus DeathAction::Update(float timePassed)
 {
-  //  m_pAnimationComponent->SetTag("Dying", true);
+   
 
-    return BaseAction::Update(timePassed);
+    // Update the fragments and tags if they are different.
+    if (m_rootScope->IsDifferent(m_fragmentID, m_fragTags))
+        SetFragment(m_fragmentID, m_fragTags);
+
+    return  BaseAction::Update(timePassed);
 }

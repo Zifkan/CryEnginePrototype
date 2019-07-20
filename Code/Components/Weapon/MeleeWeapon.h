@@ -21,11 +21,17 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_rayOffset, 'roff', "WeaponRayOffset", "Weapon Ray offset", "Weapon Ray offset", Vec3(0,0,0));
         desc.AddMember(&CMeleeWeaponComponent::m_rayAngleRotation, 'rrot', "WeaponRayRotation", "Weapon Ray rotation", "Weapon Ray rotation", Vec3(0, 0, 0));
         desc.AddMember(&CMeleeWeaponComponent::m_attackDetectionTimeLimit, 'tdet', "AttackDetectionTime", "Attack Time", "Weapon Detection Attack Time", 1);
+        desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
 
                       
     }
 
     void Attack();
+
+    float GetWeaponDamage()
+    {
+        return m_damage;
+    }
 
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
@@ -37,7 +43,7 @@ private:
     void Update(float fFrameTime);
     void DetectHit(const ray_hit rayhit, const int hits);
 
-
+    float m_damage = 50.0f;
     float m_attackDetectionTimer = 0.0f;
     float m_attackDetectionTimeLimit = 1;;
     bool m_isAttack = false;

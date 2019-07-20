@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "CharacterComponent.h"
+#include "HitDamageComponent.h"
 
 class CPlayerComponent final :  public CCharacterComponent
 {
@@ -20,19 +21,19 @@ public:
     }
 
     void InitInput(ICharacterActions* playerCharacterActions);
-
+    void HitReaction(float damage);
 protected:
 
     CPlayerInputComponent* m_pPlayerInput = nullptr;
     IEntity* m_pMainCamera = nullptr;
-
+    CHitDamageComponent*  m_pHitDamageComponent = nullptr;
 
     void CreateStateMachine() override;
     void InitLifeResources() override;
     void SetupActions() override;
     void StartGame() override;
 
-    void HitReaction(float damage);
+    
     virtual void GameUpdate(float fFrameTime);
 
     void PropertyChanged() override;

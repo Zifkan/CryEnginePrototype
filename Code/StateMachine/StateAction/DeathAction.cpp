@@ -25,13 +25,11 @@ void DeathAction::Enter()
 
 void DeathAction::Exit()
 {   
-
     if (IsDying)
     {      
         IsDying = false;
         m_pAnimationComponent->SetTag("Dead", true);
     }
-
    
     m_pStateMachine->SetCurrentState(typeid(DeathAction)); 
     BaseAction::Exit();

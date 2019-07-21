@@ -1,0 +1,8 @@
+<AssetMetadata version="0" type="Xml" guid="1c7a1449-d179-30bc-8f7f-9ee14dd38179">
+ <Files>
+  <File path="legionertags.xml"/>
+ </Files>
+ <Details>
+  <Detail name="rootTag">TagDefinition</Detail>
+ </Details>
+</AssetMetadata>

@@ -63,18 +63,18 @@
    </Fragment>
   </HitReaction>
   <Death>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="Bar_Shld_blk_front_lf_to_front_rf_stat_01"/>
+    </AnimLayer>
+   </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dead">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="1.9" Duration="0"/>
      <Animation name="bar_archr_fire_M_01"/>
      <Blend ExitTime="1" StartTime="0" Duration="0.2"/>
      <Animation name=""/>
-    </AnimLayer>
-   </Fragment>
-   <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
-    <AnimLayer>
-     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="Bar_Shld_blk_front_lf_to_front_rf_stat_01"/>
     </AnimLayer>
    </Fragment>
   </Death>

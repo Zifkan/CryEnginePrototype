@@ -1,0 +1,8 @@
+<AssetMetadata version="0" type="Xml" guid="a455a787-77b8-4b1f-7c10-038bb75ff24a">
+ <Files>
+  <File path="LegionFirstPersonControllerDefinition.xml"/>
+ </Files>
+ <Details>
+  <Detail name="rootTag">ControllerDef</Detail>
+ </Details>
+</AssetMetadata>

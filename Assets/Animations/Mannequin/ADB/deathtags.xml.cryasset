@@ -1,0 +1,8 @@
+<AssetMetadata version="0" type="Xml" guid="aaf6673c-e16b-c900-a9c4-4e7864847284">
+ <Files>
+  <File path="deathtags.xml"/>
+ </Files>
+ <Details>
+  <Detail name="rootTag">TagDefinition</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,8 @@
+<AssetMetadata version="0" type="Xml" guid="62fa9615-1d38-5245-6987-5084bd801042">
+ <Files>
+  <File path="hitreactiontags.xml"/>
+ </Files>
+ <Details>
+  <Detail name="rootTag">TagDefinition</Detail>
+ </Details>
+</AssetMetadata>

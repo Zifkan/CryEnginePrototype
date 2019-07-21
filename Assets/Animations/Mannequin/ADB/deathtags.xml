@@ -1,0 +1,6 @@
+<TagDefinition version="2">
+ <Tags>
+  <Tag name="Dying" priority="5"/>
+  <Tag name="Dead" priority="4"/>
+ </Tags>
+</TagDefinition>

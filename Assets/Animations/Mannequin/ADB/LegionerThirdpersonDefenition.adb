@@ -66,7 +66,7 @@
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="Bar_Shld_blk_front_lf_to_front_rf_stat_01"/>
+     <Animation name="romn_com_death_front_stab_lf_01"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dead">

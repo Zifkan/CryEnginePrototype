@@ -1,0 +1,13 @@
+<AssetMetadata version="0" type="Material" guid="17b08e54-fddc-b540-3605-2d34ac0d8593">
+ <Files>
+  <File path="gladius1.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">2</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white.dds</Path>
+  <Path usageCount="1">%ENGINE%/EngineAssets/Textures/white_ddn.dds</Path>
+ </Dependencies>
+</AssetMetadata>

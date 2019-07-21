@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="ddcbbc44-8df2-8334-ba34-2ae7ea117e29" source="Scutum_albedo.tif">
+ <Files>
+  <File path="Scutum_albedo.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

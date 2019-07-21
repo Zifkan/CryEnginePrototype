@@ -6,6 +6,8 @@
  <Dependencies>
   <Path>objects/characters/human/medium/romanlegion/legion_skel.chr</Path>
   <Path>objects/nodraw</Path>
+  <Path>Objects/Weapons/Shield.cgf</Path>
+  <Path>Materials/shield.mtl</Path>
   <Path>objects/characters/human/medium/romanLegion/legion_skin.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower.skin</Path>

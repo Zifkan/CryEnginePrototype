@@ -8,6 +8,7 @@
   <HitReaction scopes="FullBody"/>
   <Death scopes="FullBody"/>
   <Block scopes="Torso"/>
+  <PushBack scopes="FullBody"/>
  </FragmentDefs>
  <ScopeContextDefs>
   <ThirdPersonCharacter />

@@ -86,6 +86,14 @@
     </AnimLayer>
    </Fragment>
   </Block>
+  <PushBack>
+   <Fragment BlendOutDuration="0.2" Tags="">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="barb_1hnd_rct_short_push_front_Rf_to_front_Rf_01"/>
+    </AnimLayer>
+   </Fragment>
+  </PushBack>
  </FragmentList>
  <FragmentBlendList>
   <Blend from="Attack" to="Attack">

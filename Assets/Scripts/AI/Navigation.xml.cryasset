@@ -1,0 +1,8 @@
+<AssetMetadata version="0" type="Xml" guid="6901cfc1-a21d-e705-fd2e-01707e0a2dfb">
+ <Files>
+  <File path="Navigation.xml"/>
+ </Files>
+ <Details>
+  <Detail name="rootTag">Navigation</Detail>
+ </Details>
+</AssetMetadata>

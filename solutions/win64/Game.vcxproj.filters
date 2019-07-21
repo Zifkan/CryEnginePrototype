@@ -50,6 +50,9 @@
     <ClCompile Include="..\..\Code\Components\HitDamageComponent.cpp">
       <Filter>Components\Damage</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\PushBackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
@@ -178,6 +181,9 @@
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Code\StateMachine\StateAction\HitAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\PushBackAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt" />

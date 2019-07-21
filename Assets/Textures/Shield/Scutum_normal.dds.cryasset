@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="a5348211-da2f-77df-2f6c-da4e1e60773b" source="Scutum_normal.tif">
+ <Files>
+  <File path="Scutum_normal.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

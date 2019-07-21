@@ -16,10 +16,10 @@ DeathAction::DeathAction(Cry::DefaultComponents::CAdvancedAnimationComponent* an
 void DeathAction::Enter()
 {  
  
-    if (IsDying)
+   /* if (IsDying)
     {
         m_pAnimationComponent->SetTag("Dying", true);
-    }
+    }*/
     BaseAction::Enter();
 }
 
@@ -39,9 +39,9 @@ IAction::EStatus DeathAction::Update(float timePassed)
 {
    
 
-    // Update the fragments and tags if they are different.
-    if (m_rootScope->IsDifferent(m_fragmentID, m_fragTags))
-        SetFragment(m_fragmentID, m_fragTags);
+    //// Update the fragments and tags if they are different.
+    //if (m_rootScope->IsDifferent(m_fragmentID, m_fragTags))
+    //    SetFragment(m_fragmentID, m_fragTags);
 
     return  BaseAction::Update(timePassed);
 }

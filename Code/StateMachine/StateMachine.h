@@ -34,6 +34,7 @@ public:
         {
             for (auto i = m_pCurrentActionMap.begin(); i != m_pCurrentActionMap.end(); ++i)
             {
+                m_pCurrentActionMap[i->first]->Stop();
                 m_pCurrentActionMap[i->first]->ForceFinish();
             }
             m_pCurrentActionMap.clear();

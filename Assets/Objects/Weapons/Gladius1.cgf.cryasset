@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="7a488fc3-b506-a5e2-ac3d-bf468e09e6e6" source="Gladius.FBX">
+ <Files>
+  <File path="Gladius1.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">2</Detail>
+  <Detail name="triangleCount">41754</Detail>
+  <Detail name="vertexCount">23962</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">./gladius1.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

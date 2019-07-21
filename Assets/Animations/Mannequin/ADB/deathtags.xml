@@ -1,6 +1,6 @@
 <TagDefinition version="2">
  <Tags>
   <Tag name="Dying" priority="1"/>
-  <Tag name="Dead"/>
+  <Tag name="Dead" priority="1"/>
  </Tags>
 </TagDefinition>

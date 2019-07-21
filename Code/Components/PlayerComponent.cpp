@@ -95,8 +95,6 @@ void CPlayerComponent::StartGame()
     InitWeaponSystem();
 
     SetupActions();
-
-   
 }
 
 void CPlayerComponent::GameUpdate(float fFrameTime)
@@ -150,9 +148,9 @@ void CPlayerComponent::SetupActions()
     m_lifeResourceManager->GetResource<CHealthLifeResource>()->Value.get_observable().skip_while([](float value){ return value > 0; }).first()
     .subscribe([subscription, this](float value)
     {
-        IsDead = true;
+      /*  IsDead = true;
         m_pAnimationComponent->SetTag("Dying", true);
-        m_stateMachine->SetCurrentState(typeid(DeathAction));
+        m_stateMachine->SetCurrentState(typeid(DeathAction));*/
        // subscription.unsubscribe();
     });
 

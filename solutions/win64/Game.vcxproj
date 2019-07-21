@@ -283,6 +283,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h" />
     <ClInclude Include="..\..\Code\StateMachine\StateAction\HitAction.h" />
+    <ClInclude Include="..\..\Code\StateMachine\StateAction\PushBackAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
     <ClCompile Include="..\..\Code\Components\AIAction.cpp" />
     <ClCompile Include="..\..\Code\Components\EnemyActor.cpp" />
@@ -290,6 +291,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.cpp" />
     <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp" />
+    <ClCompile Include="..\..\Code\StateMachine\StateAction\PushBackAction.cpp" />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />

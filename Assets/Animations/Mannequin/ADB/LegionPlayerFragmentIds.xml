@@ -6,5 +6,6 @@
   <Tag name="HitReaction" subTagDef="Animations/Mannequin/ADB/HitReactiontags.xml"/>
   <Tag name="Death" subTagDef="Animations/Mannequin/ADB/deathtags.xml"/>
   <Tag name="Block" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
+  <Tag name="PushBack" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
  </Tags>
 </TagDefinition>

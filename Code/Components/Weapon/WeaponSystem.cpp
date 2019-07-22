@@ -89,12 +89,11 @@ void CWeaponSystemComponent::HitDetection()
                 hitStruct.PartId = hit.partid;
 
                 pHitDamageComponent->OnHit(hitStruct);
+                return;
             }
-        }            
-        else
-        {
-            m_pMeleeWeapon->StopAttack();
-            m_pEntity->GetComponent<CPlayerComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
         }
+
+        m_pMeleeWeapon->StopAttack();
+        m_pEntity->GetComponent<CPlayerComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
     });
 }

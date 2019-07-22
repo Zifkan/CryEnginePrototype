@@ -1,23 +1,24 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "MeleeWeapon.h"
 #include "CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
 #include "Components/WeaponHitStruct.h"
 
 
-class CWeaponSystem : public IEntityComponent
+class CMeleeWeaponComponent;
+
+class CWeaponSystemComponent : public IEntityComponent
 {
 public:
-    static void ReflectType(Schematyc::CTypeDesc<CWeaponSystem>& desc)
+    static void ReflectType(Schematyc::CTypeDesc<CWeaponSystemComponent>& desc)
     {
         desc.SetGUID("{A1E52698-3DBE-473D-B632-2930FF84E673}"_cry_guid);
         desc.SetEditorCategory("Weapon");
         desc.SetLabel("Weapon System");
         desc.SetDescription("Controlls weapons");
 
-        desc.AddMember(&CWeaponSystem::m_weaponSlotName, 'wslt', "WeaponSlotName", "Weapon Slot Name", "Weapon Slot Name", "r_weapon");
+        desc.AddMember(&CWeaponSystemComponent::m_weaponSlotName, 'wslt', "WeaponSlotName", "Weapon Slot Name", "Weapon Slot Name", "r_weapon");
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);

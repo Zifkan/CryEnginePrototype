@@ -8,6 +8,7 @@ enum SideHitEnum
 {
     LeftSide,
     RightSide,
+    PushBack,
 };
 
 class CHitDamageComponent final :  public IEntityComponent

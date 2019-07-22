@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
+#include "WeaponSystem.h"
 #include "RxCpp/rx.hpp"
 #include <CryPhysics/physinterface.h>
 
@@ -26,7 +27,11 @@ public:
                       
     }
 
+
+    void Init(CWeaponSystemComponent* weaponSystem);
+
     void Attack();
+    void StopAttack();
 
     float GetWeaponDamage()
     {
@@ -36,6 +41,8 @@ public:
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
 private:
+    CWeaponSystemComponent* m_pWeaponSystem = nullptr;
+
     float m_rayLength;
     Vec3 m_rayOffset;
     Vec3 m_rayAngleRotation;
@@ -47,4 +54,6 @@ private:
     float m_attackDetectionTimer = 0.0f;
     float m_attackDetectionTimeLimit = 1;;
     bool m_isAttack = false;
+
+    IPhysicalEntity* m_pSkipEnts[10] = {};
 };

@@ -9,6 +9,6 @@
   <Detail name="16BitPrecision">false</Detail>
  </Details>
  <Dependencies>
-  <Path usageCount="1">%ENGINE%/EngineAssets/Materials/material_default.mtl</Path>
+  <Path usageCount="1">%engine%/EngineAssets/Materials/material_default.mtl</Path>
  </Dependencies>
 </AssetMetadata>

@@ -6,12 +6,14 @@
 #include "Components/LifeResources/HealthLifeResource.h"
 #include "Components/CharacterComponent.h"
 #include "Components/HitDamageComponent.h"
+#include "Components/PlayerComponent.h"
+#include "StateMachine/StateAction/PushBackAction.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {
     Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
     {
-        Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CWeaponSystem));
+        Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CWeaponSystemComponent));
         // Functions
         {
         }
@@ -21,7 +23,7 @@ static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterWeaponSystem)
 
-void CWeaponSystem::Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager)
+void CWeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager)
 {
     if (m_pCharacterActions == nullptr)
         m_pCharacterActions = characterActions;
@@ -55,33 +57,44 @@ void CWeaponSystem::Init(ICharacterActions* characterActions, IAttachmentManager
     }
 }
 
-void CWeaponSystem::AttachToHand()
+void CWeaponSystemComponent::AttachToHand()
 {
     auto *attachmentItem = new CEntityAttachment();
     attachmentItem->SetEntityId(m_pMeleeWeapon->GetEntityId());
 
     auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_weaponSlotName.c_str());
    
-    attachment->AddBinding(attachmentItem);   
+    attachment->AddBinding(attachmentItem);
+
+    m_pMeleeWeapon->Init(this);
 }
 
-void CWeaponSystem::HitDetection()
+void CWeaponSystemComponent::HitDetection()
 {
     m_pMeleeWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
     {
         IPhysicalEntity* pHitEntity = hit.pCollider;
         IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
-        CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
+       
+        if (pHitedEntity!=nullptr)
+        {
+            CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
 
-        if(pHitedEntity && pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent !=nullptr)
-        {          
-            SWeaponHitStruct hitStruct;
-            hitStruct.Damage = m_pMeleeWeapon->GetWeaponDamage();
-            hitStruct.Hitpoint = hit.pt;
-            hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pMeleeWeapon->GetEntity()->GetWorldPos();
-            hitStruct.PartId = hit.partid;
+            if (pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent != nullptr)
+            {
+                SWeaponHitStruct hitStruct;
+                hitStruct.Damage = m_pMeleeWeapon->GetWeaponDamage();
+                hitStruct.Hitpoint = hit.pt;
+                hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pMeleeWeapon->GetEntity()->GetWorldPos();
+                hitStruct.PartId = hit.partid;
 
-            pHitDamageComponent->OnHit(hitStruct);
+                pHitDamageComponent->OnHit(hitStruct);
+            }
+        }            
+        else
+        {
+            m_pMeleeWeapon->StopAttack();
+            m_pEntity->GetComponent<CPlayerComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
         }
     });
 }

@@ -11,6 +11,7 @@
 #include "LifeResources/HealthLifeResource.h"
 #include "StateMachine/StateAction/DeathAction.h"
 #include "StateMachine/StateAction/BlockAction.h"
+#include "StateMachine/StateAction/PushBackAction.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -56,15 +57,15 @@ void CPlayerComponent::CreateStateMachine()
     FragmentID m_hitReactionFragmentId = m_pAnimationComponent->GetFragmentId("HitReaction");
     FragmentID m_deathFragmentId = m_pAnimationComponent->GetFragmentId("Death");
     FragmentID m_blocFragmentId = m_pAnimationComponent->GetFragmentId("Block");
+    FragmentID m_pushBackFragmentId = m_pAnimationComponent->GetFragmentId("PushBack");
     m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
     m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions, 0, m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
     m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
-  
-
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 4, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(PushBackAction), new HitAction(m_pCharacterActions, 4, m_pushBackFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
     m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pCharacterActions, 1, m_blocFragmentId));
 }
 
@@ -167,6 +168,11 @@ void CPlayerComponent::SetupActions()
         case RightSide:
         {           
             m_pAnimationComponent->SetTag("RightSide", true);
+        }
+        break;
+        case PushBack:
+        {
+            m_stateMachine->SetCurrentState(typeid(PushBackAction));
         }
         break;
         }

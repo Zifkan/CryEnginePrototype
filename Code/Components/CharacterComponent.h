@@ -33,19 +33,19 @@ public:
     {
         return m_pAnimationComponent;
     }
-  
+    CStateMachine* m_stateMachine;
 protected:
 
     ICharacterActions* m_pCharacterActions = nullptr;
         
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-    CWeaponSystem* m_pWeaponSystem = nullptr;
+    CWeaponSystemComponent* m_pWeaponSystem = nullptr;
     CLifeResourceManagerComponent* m_lifeResourceManager = nullptr;
 
     Schematyc::CSharedString  m_characterEntityName;
         
-    CStateMachine* m_stateMachine;
+    
 
 
     virtual void StartGame() = 0;

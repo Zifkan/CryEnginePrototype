@@ -56,17 +56,29 @@ void CMeleeWeaponComponent::Attack()
     m_isAttack = true;
 }
 
+void CMeleeWeaponComponent::StopAttack()
+{
+    m_isAttack = false;
+}
+
+void CMeleeWeaponComponent::Init(CWeaponSystemComponent* weaponSystem)
+{
+    m_pWeaponSystem = weaponSystem;
+    
+    m_pSkipEnts[0] = m_pWeaponSystem->GetEntity()->GetPhysicalEntity();
+    m_pSkipEnts[1] = m_pEntity->GetPhysicalEntity();
+}
+
 void CMeleeWeaponComponent::Update(float fFrameTime)
 {
     if (!m_isAttack ) return;
 
     ray_hit rayhit;
-    static IPhysicalEntity* pSkipEnts[10];
     
     // Perform the ray cast.
     int hits = gEnv->pPhysicalWorld->RayWorldIntersection(m_pEntity->GetWorldPos()+m_rayOffset,  Quat(m_rayAngleRotation)* m_pEntity->GetForwardDir()*m_rayLength,
         ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,
-        &rayhit, 1, pSkipEnts, 2);
+        &rayhit, 1, m_pSkipEnts, 2);
 
 
     //primitives::box box;

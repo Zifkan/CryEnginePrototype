@@ -1,9 +1,9 @@
 ﻿#include "StdAfx.h"
+#include <CryEntitySystem/IEntitySystem.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
-
+#include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "MeleeWeapon.h"
-#include <CryPhysics/physinterface.h>
 
 static void RegisterCMeleeWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 {

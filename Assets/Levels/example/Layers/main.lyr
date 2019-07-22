@@ -48,8 +48,8 @@
    <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="84b957aa-3a52-5d0a-c05c-1c26dbbacbc2" Name="Entity-15" Pos="77.081017,55.3255,32.579868" Rotate="0.98195696,0,0,0.18910448" Scale="0.99999893,0.99999893,1" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
-     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="6a946121-292f-684f-f81b-ffbb32225354" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="1000">
+     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CSwordWeaponComponent" GUID="6a946121-292f-684f-f81b-ffbb32225354" Name="" UserAdded="true">
+      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="1000" WeaponHandType="RightHand">
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -489,8 +489,8 @@
      <Component CryXmlVersion="2" TypeGUID="41c00993-f62f-4949-98f7-d98cb3cf2979" TypeName="CPlayerInputComponent" GUID="56c75a86-3789-b57e-ed7b-5e425029e9c6" Name="" UserAdded="false">
       <properties />
      </Component>
-     <Component CryXmlVersion="2" TypeGUID="a1e52698-3dbe-473d-b632-2930ff84e673" TypeName="CWeaponSystem" GUID="f1639a7c-3749-dbff-0150-ffbd85491e3d" Name="" UserAdded="false">
-      <properties WeaponSlotName="r_weapon"/>
+     <Component CryXmlVersion="2" TypeGUID="a1e52698-3dbe-473d-b632-2930ff84e673" TypeName="CWeaponSystemComponent" GUID="f1639a7c-3749-dbff-0150-ffbd85491e3d" Name="" UserAdded="false">
+      <properties RightWeaponSlotName="r_weapon" LeftWeaponSlotName="l_weapon"/>
      </Component>
      <Component CryXmlVersion="2" TypeGUID="2bd3260b-366b-44ef-8638-1a3aa578e323" TypeName="CPlayerComponent" GUID="531c80b2-29b4-93f2-68bc-5f3c3544b323" Name="" UserAdded="true">
       <properties />
@@ -509,8 +509,8 @@
    <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="2a92ae43-738f-5bff-368d-594e12e6e95d" Name="Entity-13" Pos="77.73156,51.209328,33.332382" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
-     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="f2871eba-700f-bae2-9b8a-dc2900c4e15d" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="50">
+     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CSwordWeaponComponent" GUID="f2871eba-700f-bae2-9b8a-dc2900c4e15d" Name="" UserAdded="true">
+      <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="50" WeaponHandType="RightHand">
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -583,8 +583,8 @@
        <Physics WeightType="EWeightType::Mass" Density="9.9999997e-05" Mass="10"/>
       </properties>
      </Component>
-     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="d818559b-9591-ed80-4ce0-a1bdb5448499" Name="" UserAdded="true">
-      <properties WeaponRayLength="0" AttackDetectionTime="1" WeaponDamage="50">
+     <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CSwordWeaponComponent" GUID="d818559b-9591-ed80-4ce0-a1bdb5448499" Name="" UserAdded="true">
+      <properties WeaponRayLength="0" AttackDetectionTime="1" WeaponDamage="50" WeaponHandType="LeftHand">
        <WeaponRayOffset x="nan" y="nan" z="nan"/>
        <WeaponRayRotation x="nan" y="nan" z="nan"/>
       </properties>
@@ -604,8 +604,8 @@
        </queryFilter>
       </properties>
      </Component>
-     <Component CryXmlVersion="2" TypeGUID="a1e52698-3dbe-473d-b632-2930ff84e673" TypeName="CWeaponSystem" GUID="7fe7f673-3c65-9058-52b7-800be3376a4a" Name="" UserAdded="false">
-      <properties WeaponSlotName="r_weapon"/>
+     <Component CryXmlVersion="2" TypeGUID="a1e52698-3dbe-473d-b632-2930ff84e673" TypeName="CWeaponSystemComponent" GUID="7fe7f673-3c65-9058-52b7-800be3376a4a" Name="" UserAdded="false">
+      <properties RightWeaponSlotName="r_weapon" LeftWeaponSlotName="l_weapon"/>
      </Component>
      <Component CryXmlVersion="2" TypeGUID="9f538f51-1782-47b7-b218-63cee4b938b3" TypeName="CLifeResourceManagerComponent" GUID="f8d355bf-4850-b0b8-b7ba-cafb22b3ee42" Name="" UserAdded="false">
       <properties />

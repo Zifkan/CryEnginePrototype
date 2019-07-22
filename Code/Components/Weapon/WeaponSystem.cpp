@@ -1,7 +1,6 @@
 ﻿#include "StdAfx.h"
-
-#include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "WeaponSystem.h"
+#include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "Components/LifeResources/LifeResourceManager.h"
 #include "Components/LifeResources/HealthLifeResource.h"
 #include "Components/CharacterComponent.h"
@@ -33,21 +32,21 @@ void CWeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachme
 
     m_pCharacterActions->AttackSubject.get_observable().subscribe([this](AttackType type)
     {
-        m_pMeleeWeapon->Attack();
+        m_pRightHandWeapon->Attack();
     });
 
-
+    
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
     if (pLink)
     {
         IEntity* pEntity = gEnv->pEntitySystem->GetEntity(pLink->entityId);
         if (pEntity)
         {
-            m_pMeleeWeapon = pEntity->GetComponent<CMeleeWeaponComponent>();
+            m_pRightHandWeapon = pEntity->GetComponent<CMeleeWeaponComponent>();
 
-            CRY_ASSERT(m_pMeleeWeapon != nullptr);
+            CRY_ASSERT(m_pRightHandWeapon != nullptr);
 
-            AttachToHand();
+            AttachToRightHand();
             HitDetection();
         }
         else
@@ -57,21 +56,21 @@ void CWeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachme
     }
 }
 
-void CWeaponSystemComponent::AttachToHand()
+void CWeaponSystemComponent::AttachToRightHand()
 {
     auto *attachmentItem = new CEntityAttachment();
-    attachmentItem->SetEntityId(m_pMeleeWeapon->GetEntityId());
+    attachmentItem->SetEntityId(m_pRightHandWeapon->GetEntityId());
 
-    auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_weaponSlotName.c_str());
+    auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_rightWeaponSlotName.c_str());
    
     attachment->AddBinding(attachmentItem);
 
-    m_pMeleeWeapon->Init(this);
+    m_pRightHandWeapon->Init(this);
 }
 
 void CWeaponSystemComponent::HitDetection()
 {
-    m_pMeleeWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
+    m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
     {
         IPhysicalEntity* pHitEntity = hit.pCollider;
         IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
@@ -83,9 +82,9 @@ void CWeaponSystemComponent::HitDetection()
             if (pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent != nullptr)
             {
                 SWeaponHitStruct hitStruct;
-                hitStruct.Damage = m_pMeleeWeapon->GetWeaponDamage();
+                hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
                 hitStruct.Hitpoint = hit.pt;
-                hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pMeleeWeapon->GetEntity()->GetWorldPos();
+                hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
                 hitStruct.PartId = hit.partid;
 
                 pHitDamageComponent->OnHit(hitStruct);
@@ -93,7 +92,7 @@ void CWeaponSystemComponent::HitDetection()
             }
         }
 
-        m_pMeleeWeapon->StopAttack();
+        m_pRightHandWeapon->StopAttack();
         m_pEntity->GetComponent<CPlayerComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
     });
 }

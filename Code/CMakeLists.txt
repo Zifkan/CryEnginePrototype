@@ -42,7 +42,7 @@ add_sources("GamePlay_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\GamePlay"
 		"Components/GamePlay/PlayerSoul.cpp"
-		"Components/GamePlay/PlayerSoul.h"		
+		"Components/GamePlay/PlayerSoul.h"		 
 )
 
 add_sources("StateActions_uber.cpp"

@@ -18,7 +18,8 @@ public:
         desc.SetLabel("Weapon System");
         desc.SetDescription("Controlls weapons");
 
-        desc.AddMember(&CWeaponSystemComponent::m_weaponSlotName, 'wslt', "WeaponSlotName", "Weapon Slot Name", "Weapon Slot Name", "r_weapon");
+        desc.AddMember(&CWeaponSystemComponent::m_rightWeaponSlotName, 'rslt', "RightWeaponSlotName", "Right hand weapon slot Name", "Right hand weapon slot Name", "r_weapon");
+        desc.AddMember(&CWeaponSystemComponent::m_leftWeaponSlotName,  'lslt', "LeftWeaponSlotName", "Left hand weapon slot Name", "Left hand weapon slot Name", "l_weapon");
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);
@@ -26,12 +27,14 @@ public:
     rxcpp::subjects::subject<SWeaponHitStruct> HitReactionSubject = rxcpp::subjects::subject<SWeaponHitStruct>();
 
 private:
-    CMeleeWeaponComponent* m_pMeleeWeapon = nullptr;
+    CMeleeWeaponComponent* m_pRightHandWeapon = nullptr; 
+    CMeleeWeaponComponent* m_pLeftHandWeapon = nullptr;
     ICharacterActions* m_pCharacterActions = nullptr;
     IAttachmentManager* m_pAttachmentManager = nullptr;
-    Schematyc::CSharedString m_weaponSlotName = "r_weapon";
+    Schematyc::CSharedString m_rightWeaponSlotName = "r_weapon";
+    Schematyc::CSharedString m_leftWeaponSlotName  = "l_weapon";
 
-    void AttachToHand();
+    void AttachToRightHand();
 
     void HitDetection();
 };

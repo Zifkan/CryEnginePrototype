@@ -18,7 +18,7 @@ void CCharacterComponent::Initialize()
 	m_pAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();	
   	
     m_lifeResourceManager = m_pEntity->GetOrCreateComponent<CLifeResourceManagerComponent>();
-    m_pWeaponSystem = m_pEntity->GetOrCreateComponent<CWeaponSystemComponent>();
+    m_pWeaponSystem = m_pEntity->GetOrCreateComponent<WeaponSystemComponent>();
 
 	Revive();
 }

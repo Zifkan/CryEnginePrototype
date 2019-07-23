@@ -38,7 +38,7 @@ protected:
         
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-    CWeaponSystemComponent* m_pWeaponSystem = nullptr;
+    WeaponSystemComponent* m_pWeaponSystem = nullptr;
     CLifeResourceManagerComponent* m_lifeResourceManager = nullptr;
 
     Schematyc::CSharedString  m_characterEntityName;

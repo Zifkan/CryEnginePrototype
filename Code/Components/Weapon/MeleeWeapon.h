@@ -1,19 +1,24 @@
 ﻿#pragma once
-#include "RxCpp/rx.hpp"
 #include <CryPhysics/physinterface.h>
+#include "RxCpp/rx.hpp"
+
+
+//
+//enum class EWeaponHandType
+//{
+//    LeftHand,
+//    RightHand,
+//    TwoHanded,
+//};
+//
+
+class WeaponSystemComponent;
 
 class CMeleeWeaponComponent :public IEntityComponent
 {    
  
 public:
-    enum class EWeaponHandType
-    {
-        LeftHand,
-        RightHand,
-        TwoHanded,
-    };
-
-
+  
     virtual uint64 GetEventMask() const override;
     virtual void ProcessEvent(const SEntityEvent& event) override;
     // ~IEntityComponent
@@ -32,24 +37,24 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_attackDetectionTimeLimit, 'tdet', "AttackDetectionTime", "Attack Time", "Weapon Detection Attack Time", 1);
         desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
 
-        desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::LeftHand);
+      //  desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::LeftHand);
 
     }
 
-   // void Init(CWeaponSystemComponent* weaponSystem);
+    void Init(WeaponSystemComponent* weaponSystem);
 
     void Attack();
     void StopAttack();
 
     float GetWeaponDamage(){ return m_damage; }
-    EWeaponHandType GetWeaponHand(){ return m_weaponHandType; }
+    //EWeaponHandType GetWeaponHand(){ return m_weaponHandType; }
 
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
 private:
-  //  CWeaponSystemComponent* m_pWeaponSystem = nullptr;
+    //CWeaponSystemComponent* m_pWeaponSystem = nullptr;
 
-    float m_rayLength;
+    float m_rayLength{};
     Vec3 m_rayOffset;
     Vec3 m_rayAngleRotation;
 
@@ -62,17 +67,17 @@ private:
     bool m_isAttack = false;
 
     IPhysicalEntity* m_pSkipEnts[10] = {};
-    EWeaponHandType m_weaponHandType;
+  //  EWeaponHandType m_weaponHandType;
 
 };
 
-static void ReflectType(Schematyc::CTypeDesc<CMeleeWeaponComponent::EWeaponHandType>& desc)
-{
-    desc.SetGUID("{C78A4852-45BF-4D94-BB4B-48D99EF18CF6}"_cry_guid);
-    desc.SetDescription("Hand for attachment");
-    desc.SetLabel("Weapon Hand Type Enum");
-
-    desc.SetDefaultValue(CMeleeWeaponComponent::EWeaponHandType::LeftHand);
-    desc.AddConstant(CMeleeWeaponComponent::EWeaponHandType::LeftHand, "LeftHand", "LeftHand");
-    desc.AddConstant(CMeleeWeaponComponent::EWeaponHandType::RightHand, "RightHand", "RightHand");
-}
+//static void ReflectType(Schematyc::CTypeDesc<EWeaponHandType>& desc)
+//{
+//    desc.SetGUID("{C78A4852-45BF-4D94-BB4B-48D99EF18CF6}"_cry_guid);
+//    desc.SetDescription("Hand for attachment");
+//    desc.SetLabel("Weapon Hand Type Enum");
+//
+//    desc.SetDefaultValue(EWeaponHandType::LeftHand);
+//    desc.AddConstant(EWeaponHandType::LeftHand, "LeftHand", "LeftHand");
+//    desc.AddConstant(EWeaponHandType::RightHand, "RightHand", "RightHand");
+//}

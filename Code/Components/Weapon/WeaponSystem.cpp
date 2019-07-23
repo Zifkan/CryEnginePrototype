@@ -8,7 +8,7 @@ static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {
     Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
     {
-        Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CWeaponSystemComponent));
+        Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(WeaponSystemComponent));
         // Functions
         {
         }
@@ -18,7 +18,7 @@ static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterWeaponSystem)
 
-void CWeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager)
+void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager)
 {
     if (m_pCharacterActions == nullptr)
         m_pCharacterActions = characterActions;
@@ -52,7 +52,7 @@ void CWeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachme
     }
 }
 
-void CWeaponSystemComponent::AttachToRightHand()
+void WeaponSystemComponent::AttachToRightHand()
 {
     auto *attachmentItem = new CEntityAttachment();
     attachmentItem->SetEntityId(m_pRightHandWeapon->GetEntityId());
@@ -61,10 +61,10 @@ void CWeaponSystemComponent::AttachToRightHand()
    
     attachment->AddBinding(attachmentItem);
 
-  // m_pRightHandWeapon->Init(this);
+    m_pRightHandWeapon->Init(this);
 }
 
-void CWeaponSystemComponent::HitDetection()
+void WeaponSystemComponent::HitDetection()
 {
     m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
     {

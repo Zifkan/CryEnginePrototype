@@ -3,22 +3,24 @@
 #include "Components/Inputs/Actions/CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
+#include "Components/Weapon/MeleeWeapon.h"
 #include "WeaponHitStruct.h"
-#include "MeleeWeapon.h"
 #include "RxCpp/rx.hpp"
 
-class CWeaponSystemComponent : public IEntityComponent
+
+
+class WeaponSystemComponent : public IEntityComponent
 {
 public:
-    static void ReflectType(Schematyc::CTypeDesc<CWeaponSystemComponent>& desc)
+    static void ReflectType(Schematyc::CTypeDesc<WeaponSystemComponent>& desc)
     {
         desc.SetGUID("{A1E52698-3DBE-473D-B632-2930FF84E673}"_cry_guid);
         desc.SetEditorCategory("Weapon");
         desc.SetLabel("Weapon System");
         desc.SetDescription("Controlls weapons");
 
-        desc.AddMember(&CWeaponSystemComponent::m_rightWeaponSlotName, 'rslt', "RightWeaponSlotName", "Right hand weapon slot Name", "Right hand weapon slot Name", "r_weapon");
-        desc.AddMember(&CWeaponSystemComponent::m_leftWeaponSlotName,  'lslt', "LeftWeaponSlotName", "Left hand weapon slot Name", "Left hand weapon slot Name", "l_weapon");
+        desc.AddMember(&WeaponSystemComponent::m_rightWeaponSlotName, 'rslt', "RightWeaponSlotName", "Right hand weapon slot Name", "Right hand weapon slot Name", "r_weapon");
+        desc.AddMember(&WeaponSystemComponent::m_leftWeaponSlotName,  'lslt', "LeftWeaponSlotName", "Left hand weapon slot Name", "Left hand weapon slot Name", "l_weapon");
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);

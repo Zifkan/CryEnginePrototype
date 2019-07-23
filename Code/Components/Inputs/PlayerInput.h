@@ -1,9 +1,7 @@
 ﻿#pragma once
 
 #include <DefaultComponents/Input/InputComponent.h>
-#include "CharacterActions.h"
-
-
+#include "Actions/CharacterActions.h"
 
 
 class CPlayerInputComponent : public IEntityComponent

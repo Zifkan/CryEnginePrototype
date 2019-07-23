@@ -1,7 +1,5 @@
 ﻿#pragma once
 #include "BaseAction.h"
-#include "CharacterActions.h"
-#include "Components/LifeResources/HealthLifeResource.h"
 
 class DeathAction : public BaseAction
 {

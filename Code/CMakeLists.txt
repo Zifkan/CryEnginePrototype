@@ -17,13 +17,8 @@ add_sources("Code_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Root"
 		"GamePlugin.cpp"
-		"PlayerCharacterActions.cpp"
-		"PlayerInput.cpp"
 		"StdAfx.cpp"
-		"CharacterActions.h"
 		"GamePlugin.h"
-		"PlayerCharacterActions.h"
-		"PlayerInput.h"
 		"StdAfx.h"
 )
 add_sources("Components_uber.cpp"
@@ -97,6 +92,21 @@ add_sources("Enemies_uber.cpp"
     SOURCE_GROUP "Components\\\\Characters\\\\Enemies"
 		"Components/Characters/Enemies/EnemyActor.cpp"
 		"Components/Characters/Enemies/EnemyActor.h"
+)
+
+add_sources("Inputs_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Inputs"
+		"Components/Inputs/PlayerInput.cpp"
+		"Components/Inputs/PlayerInput.h"
+)
+
+add_sources("InputActions_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Inputs\\\\Actions"
+		"Components/Inputs/Actions/CharacterActions.h"
+		"Components/Inputs/Actions/PlayerCharacterActions.h"
+		"Components/Inputs/Actions/PlayerCharacterActions.cpp"
 )
 
 

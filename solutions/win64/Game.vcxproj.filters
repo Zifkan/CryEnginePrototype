@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
@@ -23,27 +23,28 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Characters_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Enemies_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Inputs_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\InputActions_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Enemies_uber.cpp">
-      <Filter>UBER FILES</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Characters_uber.cpp">
-      <Filter>UBER FILES</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.cpp">
       <Filter>Components</Filter>
@@ -150,6 +151,21 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.h">
       <Filter>Components\Characters\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.cpp">
+      <Filter>Components\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.h">
+      <Filter>Components\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\CharacterActions.h">
+      <Filter>Components\Inputs\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.h">
+      <Filter>Components\Inputs\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.cpp">
+      <Filter>Components\Inputs\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp">
       <Filter>StateMachine</Filter>
     </ClInclude>
@@ -226,6 +242,15 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Components\Inputs\Actions">
+      <UniqueIdentifier>{FEAD173A-DC1D-3619-83B7-6567AF55D9AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine\StateAction">
+      <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Characters\Enemies">
+      <UniqueIdentifier>{FF991675-0C8E-3D90-B193-9C913309713A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>
     </Filter>
@@ -256,11 +281,8 @@
     <Filter Include="Components\Characters">
       <UniqueIdentifier>{6D70D898-56C2-333D-913C-2818098DA264}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Characters\Enemies">
-      <UniqueIdentifier>{FF991675-0C8E-3D90-B193-9C913309713A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="StateMachine\StateAction">
-      <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
+    <Filter Include="Components\Inputs">
+      <UniqueIdentifier>{D74C8B0E-E197-3DB5-B1A9-48719B2D4D94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

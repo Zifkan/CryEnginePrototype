@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <CryAnimation/ICryMannequin.h>
-#include "CharacterActions.h"
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
+#include "Components/Inputs/Actions/CharacterActions.h"
 
 
 class CStateMachine;

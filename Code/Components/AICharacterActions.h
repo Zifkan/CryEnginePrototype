@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "CharacterActions.h"
 #include <CryEntitySystem/IEntityComponent.h>
 
 class CAICharacterActions : public IEntityComponent,  ICharacterActions

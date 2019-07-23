@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "CharacterActions.h"
+#include "Inputs/Actions/CharacterActions.h"
 
 class AIActionComponent : public IEntityComponent , public ICharacterActions
 {

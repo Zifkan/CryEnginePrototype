@@ -4,9 +4,7 @@
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
 #include <CryNetwork/INetwork.h>
-#include "PlayerCharacterActions.h"
-#include "PlayerInput.h"
-
+#include "Components/Inputs/Actions/PlayerCharacterActions.h"
 
 
 // The entry-point of the application

@@ -8,11 +8,12 @@
 #include <StateMachine/StateAction/HitAction.h>
 #include "StateMachine/StateAction/AttackAction.h"
 #include "StateMachine/StateAction/IdleAction.h"
-#include "PlayerCharacterActions.h"
 #include "StateMachine/StateAction/EnemyMovementAction.h"
 #include "StateMachine/StateAction/EnemyAttackAction.h"
 #include "StateMachine/StateAction/PushBackAction.h"
 #include "Components/LifeResources/StaminaLifeResource.h"
+#include "Components/LifeResources/HealthLifeResource.h"
+#include "Components/Inputs/Actions/PlayerCharacterActions.h"
 
 enum EnemyState
 {};

@@ -3,11 +3,10 @@
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
-#include "PlayerInput.h"
 #include "StateMachine/StateMachine.h"
 #include "Components/LifeResources/LifeResourceManager.h"
 #include "Components/Weapon/WeaponSystem.h"
-
+#include "Components/Inputs/Actions/CharacterActions.h"
 
 class CCharacterComponent  : public IEntityComponent
 {  

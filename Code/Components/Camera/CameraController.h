@@ -3,7 +3,7 @@
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Cameras/CameraComponent.h>
-#include "CharacterActions.h"
+#include "Components/Inputs/Actions/CharacterActions.h"
 
 class CCameraController final : public IEntityComponent
 {

@@ -12,6 +12,7 @@
 #include "StateMachine/StateAction/BlockAction.h"
 #include "StateMachine/StateAction/PushBackAction.h"
 #include "Components/LifeResources/StaminaLifeResource.h"
+#include "Components/LifeResources/HealthLifeResource.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)

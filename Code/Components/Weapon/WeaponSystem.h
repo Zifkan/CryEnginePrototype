@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "CharacterActions.h"
+#include "Components/Inputs/Actions/CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
 #include "WeaponHitStruct.h"
 #include "MeleeWeapon.h"
+#include "RxCpp/rx.hpp"
 
 class CWeaponSystemComponent : public IEntityComponent
 {

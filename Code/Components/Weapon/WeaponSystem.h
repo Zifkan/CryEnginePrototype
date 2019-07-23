@@ -4,7 +4,7 @@
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
 #include "Components/Weapon/MeleeWeapon.h"
-#include "WeaponHitStruct.h"
+#include "Components/Weapon/WeaponExtensionData.h"
 #include "RxCpp/rx.hpp"
 
 

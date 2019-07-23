@@ -303,11 +303,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponHitStruct.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponHitStruct.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponExtensionData.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.h" />

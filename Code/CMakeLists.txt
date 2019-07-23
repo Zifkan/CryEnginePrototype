@@ -71,11 +71,10 @@ add_sources("Weapon_uber.cpp"
 		"Components/Weapon/MeleeWeapon.cpp"
 		"Components/Weapon/ShieldWeapon.cpp"
 		"Components/Weapon/WeaponSystem.cpp"
-		"Components/Weapon/WeaponHitStruct.cpp"
 		"Components/Weapon/MeleeWeapon.h"
 		"Components/Weapon/ShieldWeapon.h"
 		"Components/Weapon/WeaponSystem.h"
-		"Components/Weapon/WeaponHitStruct.h" 
+		"Components/Weapon/WeaponExtensionData.h" 
 )
 
 add_sources("Characters_uber.cpp"

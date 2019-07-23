@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "Components/Weapon/WeaponHitStruct.h"
+#include "Components/Weapon/WeaponExtensionData.h"
 #include "Components/LifeResources/LifeResourceManager.h"
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include "RxCpp/rx.hpp"

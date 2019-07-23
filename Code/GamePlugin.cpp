@@ -13,7 +13,7 @@
 // Included only once per DLL module.
 #include <CryCore/Platform/platform_impl.inl>
 #include "Components/Camera/CameraController.h"
-#include "Components/PlayerComponent.h"
+#include "Components/Characters/PlayerComponent.h"
 
 CGamePlugin::~CGamePlugin()
 {
@@ -109,7 +109,6 @@ bool CGamePlugin::OnClientConnectionReceived(int channelId, bool bIsReset)
 
 bool CGamePlugin::OnClientReadyForGameplay(int channelId, bool bIsReset)
 {
-	// Revive players when the network reports that the client is connected and ready for gameplay
 	auto it = m_players.find(channelId);
 	if (it != m_players.end())
 	{

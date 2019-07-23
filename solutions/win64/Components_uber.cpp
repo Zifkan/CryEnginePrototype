@@ -4,7 +4,4 @@
 #include <StdAfx.h>
 #include <F:/Crytek/CryEnginePrototype/Code/Components/AIAction.cpp>
 #include <F:/Crytek/CryEnginePrototype/Code/Components/AICharacterActions.cpp>
-#include <F:/Crytek/CryEnginePrototype/Code/Components/CharacterComponent.cpp>
-#include <F:/Crytek/CryEnginePrototype/Code/Components/EnemyActor.cpp>
-#include <F:/Crytek/CryEnginePrototype/Code/Components/PlayerComponent.cpp>
 

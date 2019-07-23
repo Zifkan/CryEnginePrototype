@@ -1,11 +1,8 @@
 ﻿#include "StdAfx.h"
 #include "WeaponSystem.h"
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
-#include "Components/LifeResources/LifeResourceManager.h"
-#include "Components/LifeResources/HealthLifeResource.h"
-#include "Components/CharacterComponent.h"
-#include "Components/PlayerComponent.h"
 #include "StateMachine/StateAction/PushBackAction.h"
+#include "Components/Characters/PlayerComponent.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {

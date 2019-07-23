@@ -31,14 +31,8 @@ add_sources("Components_uber.cpp"
     SOURCE_GROUP "Components"
 		"Components/AIAction.cpp"
 		"Components/AICharacterActions.cpp"
-		"Components/CharacterComponent.cpp"
-		"Components/EnemyActor.cpp"
-		"Components/PlayerComponent.cpp"
 		"Components/AIAction.h"
 		"Components/AICharacterActions.h"
-		"Components/CharacterComponent.h"
-		"Components/EnemyActor.h"
-		"Components/PlayerComponent.h"
 )
 
 add_sources("Damage_uber.cpp"
@@ -54,6 +48,7 @@ add_sources("Camera_uber.cpp"
 		"Components/Camera/CameraController.cpp"
 		"Components/Camera/CameraController.h"
 )
+
 add_sources("GamePlay_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\GamePlay"
@@ -88,6 +83,21 @@ add_sources("Weapon_uber.cpp"
 		"Components/Weapon/WeaponHitStruct.h" 
 )
 
+add_sources("Characters_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Characters"
+		"Components/Characters/CharacterComponent.cpp"
+		"Components/Characters/PlayerComponent.cpp"
+		"Components/Characters/CharacterComponent.h"
+		"Components/Characters/PlayerComponent.h" 
+)
+ 
+add_sources("Enemies_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Characters\\\\Enemies"
+		"Components/Characters/Enemies/EnemyActor.cpp"
+		"Components/Characters/Enemies/EnemyActor.h"
+)
 
 
 add_sources("StateMachine_uber.cpp"

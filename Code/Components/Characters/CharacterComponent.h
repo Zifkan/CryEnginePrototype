@@ -1,13 +1,12 @@
 #pragma once
-
 #include <CryEntitySystem/IEntity.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include "PlayerInput.h"
-#include "Weapon/WeaponSystem.h"
-#include "LifeResources/LifeResourceManager.h"
 #include "StateMachine/StateMachine.h"
+#include "Components/LifeResources/LifeResourceManager.h"
+#include "Components/Weapon/WeaponSystem.h"
 
 
 class CCharacterComponent  : public IEntityComponent

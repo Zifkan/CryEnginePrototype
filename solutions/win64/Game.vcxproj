@@ -286,14 +286,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\EnemyActor.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\EnemyActor.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.cpp" />
@@ -319,6 +313,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponHitStruct.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp" />
@@ -348,6 +348,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Characters_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Enemies_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp"  />
     <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />

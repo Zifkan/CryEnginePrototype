@@ -1,17 +1,17 @@
-﻿#include <CryEntitySystem/IEntitySystem.h>
+﻿#include "StdAfx.h"
+#include <CryEntitySystem/IEntitySystem.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "PlayerComponent.h"
 #include <StateMachine/StateAction/HitAction.h>
-#include "LifeResources/StaminaLifeResource.h"
 #include "StateMachine/StateAction/AttackAction.h"
 #include "StateMachine/StateAction/MovementAction.h"
 #include "StateMachine/StateAction/IdleAction.h"
-#include "LifeResources/HealthLifeResource.h"
 #include "StateMachine/StateAction/DeathAction.h"
 #include "StateMachine/StateAction/BlockAction.h"
 #include "StateMachine/StateAction/PushBackAction.h"
+#include "Components/LifeResources/StaminaLifeResource.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)

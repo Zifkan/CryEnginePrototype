@@ -1,8 +1,4 @@
 #include "StdAfx.h"
-
-
-#include "Camera/CameraController.h"
-#include "StateMachine/StateAction/IdleAction.h"
 #include "CharacterComponent.h"
 
 CCharacterComponent::CCharacterComponent(): 

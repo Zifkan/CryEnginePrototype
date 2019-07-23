@@ -3,10 +3,8 @@
 #include "CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
-#include "Components/WeaponHitStruct.h"
-
-
-class CMeleeWeaponComponent;
+#include "WeaponHitStruct.h"
+#include "MeleeWeapon.h"
 
 class CWeaponSystemComponent : public IEntityComponent
 {

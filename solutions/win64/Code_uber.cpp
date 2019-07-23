@@ -3,4 +3,6 @@
 
 #include <StdAfx.h>
 #include <F:/Crytek/CryEnginePrototype/Code/GamePlugin.cpp>
+#include <F:/Crytek/CryEnginePrototype/Code/PlayerCharacterActions.cpp>
+#include <F:/Crytek/CryEnginePrototype/Code/PlayerInput.cpp>
 

@@ -4,7 +4,6 @@
 #include "Components/LifeResources/LifeResourceManager.h"
 #include "Components/LifeResources/HealthLifeResource.h"
 #include "Components/CharacterComponent.h"
-#include "Components/HitDamageComponent.h"
 #include "Components/PlayerComponent.h"
 #include "StateMachine/StateAction/PushBackAction.h"
 
@@ -65,7 +64,7 @@ void CWeaponSystemComponent::AttachToRightHand()
    
     attachment->AddBinding(attachmentItem);
 
-    m_pRightHandWeapon->Init(this);
+  // m_pRightHandWeapon->Init(this);
 }
 
 void CWeaponSystemComponent::HitDetection()

@@ -2,7 +2,8 @@
 #include "HitDamageComponent.h"
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
-#include "LifeResources/HealthLifeResource.h"
+#include "Components/LifeResources/HealthLifeResource.h"
+#include <Components/Weapon/WeaponHitStruct.h>
 
 static void RegisterHitDamageComponent(Schematyc::IEnvRegistrar& registrar)
 {

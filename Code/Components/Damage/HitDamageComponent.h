@@ -1,8 +1,10 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "WeaponHitStruct.h"
-#include "LifeResources/LifeResourceManager.h"
-#include "CharacterComponent.h"
+#include "Components/Weapon/WeaponHitStruct.h"
+#include "Components/LifeResources/LifeResourceManager.h"
+#include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
+#include "RxCpp/rx.hpp"
+
 
 enum SideHitEnum
 {
@@ -15,7 +17,7 @@ class CHitDamageComponent final :  public IEntityComponent
 {
 public:
 
-    virtual Cry::Entity::EntityEventMask GetEventMask() const;
+    uint64 GetEventMask() const override;
 
     static void ReflectType(Schematyc::CTypeDesc<CHitDamageComponent>& desc)
     {

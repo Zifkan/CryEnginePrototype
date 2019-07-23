@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "WeaponSystem.h"
 #include "RxCpp/rx.hpp"
 #include <CryPhysics/physinterface.h>
 
@@ -37,7 +36,7 @@ public:
 
     }
 
-    void Init(CWeaponSystemComponent* weaponSystem);
+   // void Init(CWeaponSystemComponent* weaponSystem);
 
     void Attack();
     void StopAttack();
@@ -48,7 +47,7 @@ public:
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
 private:
-    CWeaponSystemComponent* m_pWeaponSystem = nullptr;
+  //  CWeaponSystemComponent* m_pWeaponSystem = nullptr;
 
     float m_rayLength;
     Vec3 m_rayOffset;

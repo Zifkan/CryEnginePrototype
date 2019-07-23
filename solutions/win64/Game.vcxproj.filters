@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp" />
@@ -8,67 +8,72 @@
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Damage_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateActions_uber.cpp">
-      <Filter>UBER FILES</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine.cpp">
-      <Filter>UBER FILES</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\PlayerInput_uber.cpp">
-      <Filter>UBER FILES</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\CharacterActions_uber.cpp">
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp">
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp">
       <Filter>UBER FILES</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code\Components\EnemyActor.cpp">
-      <Filter>Components\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\Components\AIAction.cpp">
-      <Filter>Components\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.cpp">
-      <Filter>StateMachine\StateAction\EnemyAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.cpp">
-      <Filter>StateMachine\StateAction\EnemyAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\BlockAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\Components\HitDamageComponent.cpp">
-      <Filter>Components\Damage</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code\StateMachine\StateAction\PushBackAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp">
+      <Filter>UBER FILES</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\EnemyActor.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\CharacterComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\EnemyActor.h">
+      <Filter>Components</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\PlayerComponent.cpp">
-      <Filter>Components</Filter>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.cpp">
+      <Filter>Components\Damage</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.h">
+      <Filter>Components\Damage</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.cpp">
       <Filter>Components\Camera</Filter>
@@ -82,106 +87,127 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.h">
       <Filter>Components\GamePlay</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h">
-      <Filter>StateMachine</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerInput.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\CharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\PlayerCharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.cpp">
-      <Filter>Components\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.h">
-      <Filter>Components\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.cpp">
-      <Filter>Components\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h">
-      <Filter>Components\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\BaseLifeResource.h">
-      <Filter>Components\LifeResources</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.cpp">
-      <Filter>Components\LifeResources</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.h">
-      <Filter>Components\LifeResources</Filter>
-    </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.h">
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.cpp">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.h">
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourcesManager.cpp">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.cpp">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.cpp">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\BaseLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.h">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code\Components\EnemyActor.h">
-      <Filter>Components\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Components\AIAction.h">
-      <Filter>Components\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyMovementAction.h">
-      <Filter>StateMachine\StateAction\EnemyAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\EnemyAttackAction.h">
-      <Filter>StateMachine\StateAction\EnemyAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\BlockAction.h">
-      <Filter>StateMachine\StateAction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Components\HitDamageComponent.h">
-      <Filter>Components\Damage</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Components\WeaponHitStruct.h">
-      <Filter>Components\Damage</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Components\LifeResources\HealthLifeResource.cpp">
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.h">
       <Filter>Components\LifeResources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\HitAction.h" />
-    <ClInclude Include="..\..\Code\StateMachine\StateAction\PushBackAction.h">
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourcesManager.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.h">
+      <Filter>Components\LifeResources</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.cpp">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.cpp">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.cpp">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponHitStruct.cpp">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponHitStruct.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BlockAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\EnemyAttackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\EnemyMovementAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\HitAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\PushBackAction.cpp">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BlockAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\DeathAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\EnemyAttackAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\EnemyMovementAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\HitAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.h">
+      <Filter>StateMachine\StateAction</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\PushBackAction.h">
       <Filter>StateMachine\StateAction</Filter>
     </ClInclude>
   </ItemGroup>
@@ -194,8 +220,8 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="StateMachine\StateAction">
-      <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
+    <Filter Include="Components\Damage">
+      <UniqueIdentifier>{ACB0FA03-3EB7-39DD-99E2-127729711A87}</UniqueIdentifier>
     </Filter>
     <Filter Include="Components\Camera">
       <UniqueIdentifier>{5F80C045-9A0C-363A-9F36-462157D06A84}</UniqueIdentifier>
@@ -203,11 +229,14 @@
     <Filter Include="Components\GamePlay">
       <UniqueIdentifier>{F6065BBB-1F1E-322F-A46E-863F36380AE3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\LifeResources">
+      <UniqueIdentifier>{38894D82-11F0-3648-968B-F7FFB4F2E3B6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Components\Weapon">
       <UniqueIdentifier>{68219872-445A-3705-88D1-D208A68F18D8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\LifeResources">
-      <UniqueIdentifier>{38894D82-11F0-3648-968B-F7FFB4F2E3B6}</UniqueIdentifier>
+    <Filter Include="StateMachine\StateAction">
+      <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
     </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>
@@ -220,15 +249,6 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{68E35553-2D76-31D8-ACD0-DA8B7842B7A3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\Enemies">
-      <UniqueIdentifier>{3a09807b-b828-470a-a5f2-e690e6585d1a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="StateMachine\StateAction\EnemyAction">
-      <UniqueIdentifier>{5f347d60-fc96-4cef-ad43-42e8c7c2deee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Components\Damage">
-      <UniqueIdentifier>{3d2737ee-e2de-4fc8-bfbc-2b2b9a5e4efa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

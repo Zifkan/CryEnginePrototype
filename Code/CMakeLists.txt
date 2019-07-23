@@ -17,126 +17,108 @@ add_sources("Code_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Root"
 		"GamePlugin.cpp"
+		"PlayerCharacterActions.cpp"
+		"PlayerInput.cpp"
 		"StdAfx.cpp"
+		"CharacterActions.h"
 		"GamePlugin.h"
+		"PlayerCharacterActions.h"
+		"PlayerInput.h"
 		"StdAfx.h"
 )
 add_sources("Components_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components"
-		"Components/CharacterComponent.cpp"	
-		"Components/CharacterComponent.h"
-		"Components/PlayerComponent.h"
+		"Components/AIAction.cpp"
+		"Components/AICharacterActions.cpp"
+		"Components/CharacterComponent.cpp"
+		"Components/EnemyActor.cpp"
 		"Components/PlayerComponent.cpp"
-
-)
-
-add_sources("Camera_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Camera"
-		"Components/Camera/CameraController.cpp"
-		"Components/Camera/CameraController.h"		
-)
-
-add_sources("GamePlay_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\GamePlay"
-		"Components/GamePlay/PlayerSoul.cpp"
-		"Components/GamePlay/PlayerSoul.h"		 
-)
-
-add_sources("StateActions_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "StateMachine\\\\StateAction"
-		"StateMachine/StateAction/HitAction.h"
-		"StateMachine/StateAction/AttackAction.cpp"
-		"StateMachine/StateAction/AttackAction.h"		
-		"StateMachine/StateAction/BaseAction.cpp"
-		"StateMachine/StateAction/BaseAction.h"	
-		"StateMachine/StateAction/MovementAction.cpp"
-		"StateMachine/StateAction/MovementAction.h"		
-		"StateMachine/StateAction/IdleAction.h"		
-		"StateMachine/StateAction/IdleAction.cpp"	
-		"StateMachine/StateAction/DeathAction.h"		
-		"StateMachine/StateAction/DeathAction.cpp"		
-)
-
-add_sources("EnemyStateAction_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "StateMachine\\\\StateAction\\\\EnemyAction"
-		"StateMachine/StateAction/EnemyAction/EnemyMovementAction.cpp"
-		"StateMachine/StateAction/EnemyAction/EnemyMovementAction.h"		
-)
-
-add_sources("StateMachine.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "StateMachine"
-		"StateMachine/StateMachine.cpp"
-		"StateMachine/StateMachine.h"		
-)
-		
-add_sources("Rx_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "RxCpp"
-		
-)
-
-add_sources("PlayerInput_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Root"
-		"PlayerInput.cpp"
-		"PlayerInput.h"
-)
-
-add_sources("CharacterActions_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Root"
-		"CharacterActions.h"
-		"PlayerCharacterActions.cpp"
-		"PlayerCharacterActions.h"
+		"Components/AIAction.h"
+		"Components/AICharacterActions.h"
+		"Components/CharacterComponent.h"
+		"Components/EnemyActor.h"
+		"Components/PlayerComponent.h"
 )
 
 add_sources("Damage_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Damage"
 		"Components/Damage/HitDamageComponent.cpp"
-		"Components/Damage/HitDamageComponent.h"	
-		"Components/Damage/WeaponHitStruct.h"
+		"Components/Damage/HitDamageComponent.h"
 )
-		
 
+add_sources("Camera_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Camera"
+		"Components/Camera/CameraController.cpp"
+		"Components/Camera/CameraController.h"
+)
+add_sources("GamePlay_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\GamePlay"
+		"Components/GamePlay/PlayerSoul.cpp"
+		"Components/GamePlay/PlayerSoul.h"
+)
+add_sources("LifeResources_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\LifeResources"
+		"Components/LifeResources/HealthLifeResource.cpp"
+		"Components/LifeResources/LifeResourceManager.cpp"
+		"Components/LifeResources/LifeResourcesManager.cpp"
+		"Components/LifeResources/SoulEnergyLifeResource.cpp"
+		"Components/LifeResources/StaminaLifeResource.cpp"
+		"Components/LifeResources/BaseLifeResource.h"
+		"Components/LifeResources/HealthLifeResource.h"
+		"Components/LifeResources/LifeResourceManager.h"
+		"Components/LifeResources/LifeResourcesManager.h"
+		"Components/LifeResources/SoulEnergyLifeResource.h"
+		"Components/LifeResources/StaminaLifeResource.h"
+)
 add_sources("Weapon_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Weapon"
 		"Components/Weapon/MeleeWeapon.cpp"
-		"Components/Weapon/MeleeWeapon.h"	
+		"Components/Weapon/ShieldWeapon.cpp"
 		"Components/Weapon/WeaponSystem.cpp"
-		"Components/Weapon/WeaponSystem.h"	
+		"Components/Weapon/WeaponHitStruct.cpp"
+		"Components/Weapon/MeleeWeapon.h"
+		"Components/Weapon/ShieldWeapon.h"
+		"Components/Weapon/WeaponSystem.h"
+		"Components/Weapon/WeaponHitStruct.h" 
 )
 
 
-add_sources("Enemies_uber.cpp"
+
+add_sources("StateMachine_uber.cpp"
     PROJECTS Game
-    SOURCE_GROUP "Components\\\\Enemies"
-		"Components/Enemies/EnemyActor.cpp"
-		"Components/Enemies/EnemyActor.h"	
-		"Components/Enemies/AIActionComponent.cpp"
-		"Components/Enemies/AIActionComponent.h"	
+    SOURCE_GROUP "StateMachine"
+		"StateMachine/StateMachine.cpp"
+		"StateMachine/StateMachine.h"
 )
-
-
-add_sources("LifeResources_uber.cpp"
+add_sources("StateAction_uber.cpp"
     PROJECTS Game
-    SOURCE_GROUP "Components\\\\LifeResources"
-		"Components/LifeResources/BaseLifeResource.h"	
-		"Components/LifeResources/StaminaLifeResource.cpp"
-		"Components/LifeResources/StaminaLifeResource.h"	
-		"Components/LifeResources/LifeResourceManager.h"	
-		"Components/LifeResources/LifeResourceManager.cpp"	
-		"Components/LifeResources/SoulEnergyLifeResource.h"
-		"Components/LifeResources/SoulEnergyLifeResource.cpp"
-		"Components/LifeResources/HealthLifeResource.cpp"
-		"Components/LifeResources/HealthLifeResource.h"	
+    SOURCE_GROUP "StateMachine\\\\StateAction"
+		"StateMachine/StateAction/AttackAction.cpp"
+		"StateMachine/StateAction/BaseAction.cpp"
+		"StateMachine/StateAction/BlockAction.cpp"
+		"StateMachine/StateAction/DeathAction.cpp"
+		"StateMachine/StateAction/EnemyAttackAction.cpp"
+		"StateMachine/StateAction/EnemyMovementAction.cpp"
+		"StateMachine/StateAction/HitAction.cpp"
+		"StateMachine/StateAction/IdleAction.cpp"
+		"StateMachine/StateAction/MovementAction.cpp"
+		"StateMachine/StateAction/PushBackAction.cpp"
+		"StateMachine/StateAction/AttackAction.h"
+		"StateMachine/StateAction/BaseAction.h"
+		"StateMachine/StateAction/BlockAction.h"
+		"StateMachine/StateAction/DeathAction.h"
+		"StateMachine/StateAction/EnemyAttackAction.h"
+		"StateMachine/StateAction/EnemyMovementAction.h"
+		"StateMachine/StateAction/HitAction.h"
+		"StateMachine/StateAction/IdleAction.h"
+		"StateMachine/StateAction/MovementAction.h"
+		"StateMachine/StateAction/PushBackAction.h"
 )
 
 end_sources()

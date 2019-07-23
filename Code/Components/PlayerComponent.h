@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "CharacterComponent.h"
-#include "HitDamageComponent.h"
+#include "Damage/HitDamageComponent.h"
 
 class CPlayerComponent final :  public CCharacterComponent
 {

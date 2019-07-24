@@ -62,12 +62,13 @@ void CMeleeWeaponComponent::StopAttack()
     m_isAttack = false;
 }
 
-void CMeleeWeaponComponent::Init(WeaponSystemComponent* weaponSystem)
+void CMeleeWeaponComponent::Init(WeaponSystemComponent* weaponSystem, IEntity* secondWeapon)
 {
     //m_pWeaponSystem = weaponSystem;
     
     m_pSkipEnts[0] = weaponSystem->GetEntity()->GetPhysicalEntity();
     m_pSkipEnts[1] = m_pEntity->GetPhysicalEntity();
+    m_pSkipEnts[3] = secondWeapon->GetPhysicalEntity();
 }
 
 void CMeleeWeaponComponent::Update(float fFrameTime)

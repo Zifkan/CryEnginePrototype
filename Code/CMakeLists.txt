@@ -75,6 +75,7 @@ add_sources("Weapon_uber.cpp"
 		"Components/Weapon/ShieldWeapon.h"
 		"Components/Weapon/WeaponSystem.h"
 		"Components/Weapon/WeaponExtensionData.h" 
+		"Components/Weapon/ICustomWeapon.h"
 )
 
 add_sources("Characters_uber.cpp"

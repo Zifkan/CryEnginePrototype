@@ -130,6 +130,9 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponExtensionData.h">
       <Filter>Components\Weapon</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ICustomWeapon.h">
+      <Filter>Components\Weapon</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.cpp">
       <Filter>Components\Characters</Filter>
     </ClInclude>
@@ -239,14 +242,14 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Components\Characters\Enemies">
-      <UniqueIdentifier>{FF991675-0C8E-3D90-B193-9C913309713A}</UniqueIdentifier>
+    <Filter Include="Components\Inputs\Actions">
+      <UniqueIdentifier>{FEAD173A-DC1D-3619-83B7-6567AF55D9AE}</UniqueIdentifier>
     </Filter>
     <Filter Include="StateMachine\StateAction">
       <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Inputs\Actions">
-      <UniqueIdentifier>{FEAD173A-DC1D-3619-83B7-6567AF55D9AE}</UniqueIdentifier>
+    <Filter Include="Components\Characters\Enemies">
+      <UniqueIdentifier>{FF991675-0C8E-3D90-B193-9C913309713A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{D1C9C976-FEBE-33A0-89CE-11EA748B4B15}</UniqueIdentifier>

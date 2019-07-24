@@ -4,9 +4,9 @@
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
 #include "Components/Weapon/MeleeWeapon.h"
+#include "Components/Weapon/ShieldWeapon.h"
 #include "Components/Weapon/WeaponExtensionData.h"
 #include "RxCpp/rx.hpp"
-
 
 
 class WeaponSystemComponent : public IEntityComponent
@@ -29,13 +29,13 @@ public:
 
 private:
     CMeleeWeaponComponent* m_pRightHandWeapon = nullptr; 
-    CMeleeWeaponComponent* m_pLeftHandWeapon = nullptr;
+    CShieldWeaponComponent* m_pLeftHandWeapon = nullptr;
     ICharacterActions* m_pCharacterActions = nullptr;
     IAttachmentManager* m_pAttachmentManager = nullptr;
     Schematyc::CSharedString m_rightWeaponSlotName = "r_weapon";
     Schematyc::CSharedString m_leftWeaponSlotName  = "l_weapon";
-
+    void SetAttach(IEntityLink* pLink);
     void AttachToRightHand();
-
+    void AttachToLeftHand();
     void HitDetection();
 };

@@ -31,26 +31,52 @@ void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmen
         m_pRightHandWeapon->Attack();
     });
 
-    
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
+    SetAttach(pLink);
+}
+
+
+
+void WeaponSystemComponent::SetAttach(IEntityLink* pLink)
+{    
     if (pLink)
     {
         IEntity* pEntity = gEnv->pEntitySystem->GetEntity(pLink->entityId);
         if (pEntity)
         {
-            m_pRightHandWeapon = pEntity->GetComponent<CMeleeWeaponComponent>();
+            ICustomWeapon* weaponType = pEntity->GetComponent<ICustomWeapon>();
 
-            CRY_ASSERT(m_pRightHandWeapon != nullptr);
-
-            AttachToRightHand();
-            HitDetection();
+           
+            switch (weaponType->GetWeaponHand())
+            {
+            case EWeaponHandType::LeftHand:
+            {
+                m_pLeftHandWeapon = pEntity->GetComponent <CShieldWeaponComponent>();
+                CRY_ASSERT(m_pLeftHandWeapon != nullptr);
+                AttachToLeftHand();
+                SetAttach(pLink->next);
+            }
+            break;
+            case EWeaponHandType::RightHand:
+            {
+                m_pRightHandWeapon = pEntity->GetComponent <CMeleeWeaponComponent>();
+                CRY_ASSERT(m_pRightHandWeapon != nullptr);
+                AttachToRightHand();
+                HitDetection();
+                SetAttach(pLink->next);
+            }
+            break;
+            }          
         }
         else
         {
             CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_WARNING, "There is no weapon linked to character");
         }
     }
+
+    m_pRightHandWeapon->Init(this, m_pLeftHandWeapon->GetEntity());
 }
+
 
 void WeaponSystemComponent::AttachToRightHand()
 {
@@ -59,9 +85,17 @@ void WeaponSystemComponent::AttachToRightHand()
 
     auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_rightWeaponSlotName.c_str());
    
-    attachment->AddBinding(attachmentItem);
+    attachment->AddBinding(attachmentItem);   
+}
 
-    m_pRightHandWeapon->Init(this);
+void WeaponSystemComponent::AttachToLeftHand()
+{
+    auto *attachmentItem = new CEntityAttachment();
+    attachmentItem->SetEntityId(m_pLeftHandWeapon->GetEntityId());
+
+    auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_leftWeaponSlotName.c_str());
+
+    attachment->AddBinding(attachmentItem);
 }
 
 void WeaponSystemComponent::HitDetection()

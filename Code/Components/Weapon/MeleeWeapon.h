@@ -2,10 +2,11 @@
 #include <CryPhysics/physinterface.h>
 #include "RxCpp/rx.hpp"
 #include "WeaponExtensionData.h"
+#include "ICustomWeapon.h"
 
 class WeaponSystemComponent;
 
-class CMeleeWeaponComponent :public IEntityComponent
+class CMeleeWeaponComponent :public ICustomWeapon
 {    
  
 public:
@@ -20,6 +21,8 @@ public:
     static void ReflectType(Schematyc::CTypeDesc<CMeleeWeaponComponent>& desc)
     {
         desc.SetGUID("{0BF0A12F-E727-4238-9E62-57FACA3F8231}"_cry_guid);
+        desc.AddBase<ICustomWeapon>();
+
         desc.SetEditorCategory("Weapon");
         desc.SetLabel("Melee Weapon");
         desc.AddMember(&CMeleeWeaponComponent::m_rayLength, 'rlen', "WeaponRayLength", "Weapon Ray length", "Weapon Ray length", 1.0f);
@@ -28,17 +31,16 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_attackDetectionTimeLimit, 'tdet', "AttackDetectionTime", "Attack Time", "Weapon Detection Attack Time", 1);
         desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
 
-        desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::LeftHand);
+        desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::RightHand);
 
     }
 
-    void Init(WeaponSystemComponent* weaponSystem);
+    void Init(WeaponSystemComponent* weaponSystem,IEntity* secondWeapon);
 
     void Attack();
     void StopAttack();
 
     float GetWeaponDamage(){ return m_damage; }
-    //EWeaponHandType GetWeaponHand(){ return m_weaponHandType; }
 
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
@@ -58,6 +60,5 @@ private:
     bool m_isAttack = false;
 
     IPhysicalEntity* m_pSkipEnts[10] = {};
-    EWeaponHandType m_weaponHandType;
 
 };

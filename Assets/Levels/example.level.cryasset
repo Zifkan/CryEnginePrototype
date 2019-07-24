@@ -3,8 +3,12 @@
   <File path="example/example.level"/>
  </Files>
  <Dependencies>
+  <Path>%editor%/materials/shaderlist.xml</Path>
   <Path>%editor%/objects/envcube.cgf</Path>
   <Path>%editor%/objects/envcube.mtl</Path>
+  <Path>%editor%/objects/mtlobjects.mtl</Path>
+  <Path>%editor%/objects/mtlplane.cgf</Path>
+  <Path>%editor%/objects/mtlsphere.cgf</Path>
   <Path>%engine%/engineassets/icons/averagememoryusage.dds</Path>
   <Path>%engine%/engineassets/icons/highmemoryusage.dds</Path>
   <Path>%engine%/engineassets/icons/livepreview.dds</Path>
@@ -718,6 +722,7 @@
   <Path>libs/environmentpresets/example.xml</Path>
   <Path>materials/shield.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion.cdf</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_skin.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_lod1.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_sim.skin</Path>
@@ -785,6 +790,7 @@
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
   <Path>objects/weapons/shield.cgf</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
   <Path>textures/shield/scutum_albedo.dds</Path>

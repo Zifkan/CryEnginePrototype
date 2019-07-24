@@ -103,10 +103,13 @@ void WeaponSystemComponent::HitDetection()
     m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
     {
         IPhysicalEntity* pHitEntity = hit.pCollider;
+
+      
         IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
        
         if (pHitedEntity!=nullptr)
         {
+            CryLog("hitted entity: %i", pHitedEntity->GetName());
             CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
 
             if (pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent != nullptr)
@@ -123,6 +126,6 @@ void WeaponSystemComponent::HitDetection()
         }
 
         m_pRightHandWeapon->StopAttack();
-        m_pEntity->GetComponent<CPlayerComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
+        m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
     });
 }

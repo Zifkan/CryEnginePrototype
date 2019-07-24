@@ -110,8 +110,6 @@ void CCameraController::CollisionDetection(float frameTime)
     if (hits)
     {
         currentRadius -= frameTime;
-     
-        CryLog("hitted: %i", rayhit.pCollider->GetType());
     }
     else
     {

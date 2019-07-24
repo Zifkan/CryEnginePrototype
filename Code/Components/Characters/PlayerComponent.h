@@ -15,6 +15,7 @@ public:
     static void ReflectType(Schematyc::CTypeDesc<CPlayerComponent>& desc)
     {
         desc.SetGUID("{2BD3260B-366B-44EF-8638-1A3AA578E323}"_cry_guid);
+        desc.AddBase<CCharacterComponent>();
         desc.SetEditorCategory("Player"); 
         desc.SetComponentFlags({ EFlags::Singleton });
         // desc.AddMember(&CPlayerComponent::m_characterEntityName, 'name', "PlayerEntityName", "Player Entity Name", "Set Entity Name", "Player");

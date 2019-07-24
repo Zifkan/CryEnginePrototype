@@ -15,6 +15,13 @@ public:
 	CCharacterComponent();
 	virtual ~CCharacterComponent() {}
 
+
+    static void ReflectType(Schematyc::CTypeDesc<CCharacterComponent>& desc)
+    {
+        desc.SetGUID("{4C58FF1B-60CC-4E08-95DB-824FBE9AEF81}"_cry_guid);
+    }
+
+
 	// IEntityComponent
 	virtual void Initialize() override;
 

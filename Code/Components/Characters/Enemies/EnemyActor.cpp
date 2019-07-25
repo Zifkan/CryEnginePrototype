@@ -75,7 +75,7 @@ void СEnemyActor::CreateStateMachine()
     m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
     m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pCharacterActions, 4, m_pushBackFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pWeaponSystem,m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
 }
 
 void СEnemyActor::InitLifeResources()
@@ -120,14 +120,17 @@ void СEnemyActor::StartGame()
 {
     InitLifeResources();
     CreateStateMachine();
-    SetupActions();
 
     InitWeaponSystem();
+    SetupActions();
 }
 
 void СEnemyActor::GameUpdate(float fFrameTime)
 {
     CCharacterComponent::GameUpdate(fFrameTime);
+
+    _currentState = Idle;
+
     float distance = m_pEntity->GetWorldPos().GetDistance(pPlayerEntity->GetWorldPos());
 
     if (distance <= _detectDistance && distance>= _attackDetectDistance)

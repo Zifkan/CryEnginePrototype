@@ -24,6 +24,7 @@ public:
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);
+    void DetachWeapons() const;
 
     rxcpp::subjects::subject<SWeaponHitStruct> HitReactionSubject = rxcpp::subjects::subject<SWeaponHitStruct>();
 
@@ -34,6 +35,11 @@ private:
     IAttachmentManager* m_pAttachmentManager = nullptr;
     Schematyc::CSharedString m_rightWeaponSlotName = "r_weapon";
     Schematyc::CSharedString m_leftWeaponSlotName  = "l_weapon";
+
+
+    IAttachment* m_pRightHandAttachment;
+    IAttachment* m_pLeftHandAttachment;
+
     void SetAttach(IEntityLink* pLink);
     void AttachToRightHand();
     void AttachToLeftHand();

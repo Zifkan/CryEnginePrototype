@@ -1,12 +1,14 @@
 ﻿#include "StdAfx.h"
 #include "DeathAction.h"
+#include "Components/Weapon/WeaponSystem.h"
 
-DeathAction::DeathAction(Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
+DeathAction::DeathAction(WeaponSystemComponent* weaponSystemComponent,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
                          ICharacterActions* characterAction,
                          int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags,
                          ActionScopes scopeMask,
                          uint32 userToken): BaseAction(characterAction, priority, fragmentID, fragTags, flags,scopeMask, userToken)
                          , m_pAnimationComponent(animationComponent)
+                         , m_pWeaponSystemComponent(weaponSystemComponent)
 {
     IsDying = true;
 
@@ -16,10 +18,14 @@ DeathAction::DeathAction(Cry::DefaultComponents::CAdvancedAnimationComponent* an
 void DeathAction::Enter()
 {  
  
-   /* if (IsDying)
+    if (IsDying)
     {
         m_pAnimationComponent->SetTag("Dying", true);
-    }*/
+    }
+
+    
+
+    m_pWeaponSystemComponent->DetachWeapons();
     BaseAction::Enter();
 }
 
@@ -28,10 +34,11 @@ void DeathAction::Exit()
     if (IsDying)
     {      
         IsDying = false;
+        m_pAnimationComponent->SetTag("Dying", false);
         m_pAnimationComponent->SetTag("Dead", true);
-    }
-   
-    m_pStateMachine->SetCurrentState(typeid(DeathAction)); 
+    }   
+  
+   // m_pStateMachine->SetCurrentState(typeid(DeathAction)); 
     BaseAction::Exit();
 }
 

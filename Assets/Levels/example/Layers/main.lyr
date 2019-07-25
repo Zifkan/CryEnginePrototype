@@ -50,7 +50,7 @@
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="6a946121-292f-684f-f81b-ffbb32225354" Name="" UserAdded="true">
       <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="1000" WeaponHandType="RightHand">
-       <ICustomWeapon />
+       <BaseCustomWeapon />
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -74,6 +74,11 @@
       <properties Type="RenderAndCollider" FilePath="Objects/Weapons/Gladius2.cgf" Material="Objects/Weapons/gladius1.mtl">
        <Render ShadowSpec="Low" IgnoreVisArea="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
        <Physics WeightType="EWeightType::Mass" Density="9.9999997e-05" Mass="10"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="0573299f-7991-8a41-355c-de0f94f9122a" Name="" UserAdded="false">
+      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
+       <Buoyancy Damping="1" Density="1" Resistance="0"/>
       </properties>
      </Component>
     </Components>
@@ -264,7 +269,12 @@
      </Component>
      <Component CryXmlVersion="2" TypeGUID="5fc0d1fc-6be6-4904-9f05-3c5f4ab60f25" TypeName="CShieldWeaponComponent" GUID="1f60710e-d669-1436-73f7-53eaf7ec0dad" Name="" UserAdded="true">
       <properties WeaponHandType="LeftHand">
-       <ICustomWeapon />
+       <BaseCustomWeapon />
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="c01a828d-ee76-b4e4-bfe0-cbed01b1d5f2" Name="" UserAdded="false">
+      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
+       <Buoyancy Damping="1" Density="1" Resistance="0"/>
       </properties>
      </Component>
     </Components>
@@ -562,12 +572,12 @@
      <Link TargetId="0545201e-c153-4625-1d73-349ccd4b9e43" Name="Entity-16" Version="1"/>
     </EntityLinks>
    </Object>
-   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="2a92ae43-738f-5bff-368d-594e12e6e95d" Name="Entity-13" Pos="77.73156,51.209328,33.332382" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
+   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="2a92ae43-738f-5bff-368d-594e12e6e95d" Name="Entity-13" Pos="67.73156,51.209328,33.332382" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="f2871eba-700f-bae2-9b8a-dc2900c4e15d" Name="" UserAdded="true">
       <properties WeaponRayLength="0.59999996" AttackDetectionTime="1" WeaponDamage="50" WeaponHandType="RightHand">
-       <ICustomWeapon />
+       <BaseCustomWeapon />
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
       </properties>
@@ -591,6 +601,11 @@
       <properties Type="RenderAndCollider" FilePath="Objects/Weapons/Gladius2.cgf" Material="Objects/Weapons/gladius1.mtl">
        <Render ShadowSpec="Low" IgnoreVisArea="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
        <Physics WeightType="EWeightType::Mass" Density="9.9999997e-05" Mass="10"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="761b0688-619c-8a09-2655-b9555fde2c74" Name="" UserAdded="false">
+      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
+       <Buoyancy Damping="1" Density="1" Resistance="0"/>
       </properties>
      </Component>
     </Components>
@@ -730,7 +745,12 @@
      </Component>
      <Component CryXmlVersion="2" TypeGUID="5fc0d1fc-6be6-4904-9f05-3c5f4ab60f25" TypeName="CShieldWeaponComponent" GUID="5a7eda91-829e-dad4-89d0-968b54d8941b" Name="" UserAdded="true">
       <properties WeaponHandType="LeftHand">
-       <ICustomWeapon />
+       <BaseCustomWeapon />
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="9676caf8-dab9-b5d7-a1b7-78942faefad0" Name="" UserAdded="false">
+      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
+       <Buoyancy Damping="1" Density="1" Resistance="0"/>
       </properties>
      </Component>
     </Components>

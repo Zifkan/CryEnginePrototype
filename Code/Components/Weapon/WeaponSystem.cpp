@@ -3,6 +3,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "StateMachine/StateAction/PushBackAction.h"
 #include "Components/Characters/PlayerComponent.h"
+#include "BaseCustomWeapon.h"
 
 static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 {
@@ -44,7 +45,7 @@ void WeaponSystemComponent::SetAttach(IEntityLink* pLink)
         IEntity* pEntity = gEnv->pEntitySystem->GetEntity(pLink->entityId);
         if (pEntity)
         {
-            ICustomWeapon* weaponType = pEntity->GetComponent<ICustomWeapon>();
+            BaseCustomWeapon* weaponType = pEntity->GetComponent<BaseCustomWeapon>();
 
            
             switch (weaponType->GetWeaponHand())
@@ -83,9 +84,9 @@ void WeaponSystemComponent::AttachToRightHand()
     auto *attachmentItem = new CEntityAttachment();
     attachmentItem->SetEntityId(m_pRightHandWeapon->GetEntityId());
 
-    auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_rightWeaponSlotName.c_str());
+    m_pRightHandAttachment = m_pAttachmentManager->GetInterfaceByName(m_rightWeaponSlotName.c_str());
    
-    attachment->AddBinding(attachmentItem);   
+    m_pRightHandAttachment->AddBinding(attachmentItem);
 }
 
 void WeaponSystemComponent::AttachToLeftHand()
@@ -93,9 +94,9 @@ void WeaponSystemComponent::AttachToLeftHand()
     auto *attachmentItem = new CEntityAttachment();
     attachmentItem->SetEntityId(m_pLeftHandWeapon->GetEntityId());
 
-    auto *attachment = m_pAttachmentManager->GetInterfaceByName(m_leftWeaponSlotName.c_str());
+    m_pLeftHandAttachment = m_pAttachmentManager->GetInterfaceByName(m_leftWeaponSlotName.c_str());
 
-    attachment->AddBinding(attachmentItem);
+    m_pLeftHandAttachment->AddBinding(attachmentItem);
 }
 
 void WeaponSystemComponent::HitDetection()
@@ -128,4 +129,13 @@ void WeaponSystemComponent::HitDetection()
         m_pRightHandWeapon->StopAttack();
         m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
     });
+}
+
+void WeaponSystemComponent::DetachWeapons() const
+{
+    m_pRightHandAttachment->ClearBinding();
+    m_pLeftHandAttachment->ClearBinding();
+
+    m_pRightHandWeapon->Physicalize(true);
+    m_pLeftHandWeapon->Physicalize(true);
 }

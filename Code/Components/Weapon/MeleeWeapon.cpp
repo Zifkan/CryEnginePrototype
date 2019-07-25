@@ -19,38 +19,6 @@ static void RegisterCMeleeWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCMeleeWeaponComponent)
 
-uint64 CMeleeWeaponComponent::GetEventMask() const
-{
-    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
-}
-
-void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
-{
-    switch (event.event)
-    {
-    case ENTITY_EVENT_START_GAME:
-    {
-
-    }
-    break;
-    case ENTITY_EVENT_UPDATE:
-    {
-        SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
-        Update(pCtx->fFrameTime);
-    }
-    break;
-    case ENTITY_EVENT_COMPONENT_PROPERTY_CHANGED:
-    {
-    
-    }
-    break;
-    case ENTITY_EVENT_COLLISION:
-    {
-
-    }
-    break;
-    }
-}
 
 void CMeleeWeaponComponent::Attack()
 {
@@ -63,9 +31,7 @@ void CMeleeWeaponComponent::StopAttack()
 }
 
 void CMeleeWeaponComponent::Init(WeaponSystemComponent* weaponSystem, IEntity* secondWeapon)
-{
-    //m_pWeaponSystem = weaponSystem;
-    
+{   
     m_pSkipEnts[0] = weaponSystem->GetEntity()->GetPhysicalEntity();
     m_pSkipEnts[1] = m_pEntity->GetPhysicalEntity();
     m_pSkipEnts[3] = secondWeapon->GetPhysicalEntity();

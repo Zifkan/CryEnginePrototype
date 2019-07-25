@@ -11,6 +11,7 @@ IAction* BaseAction::CreateSlaveAction(FragmentID slaveFragID, const TagState& f
 void BaseAction::RegisterStateMachine(CStateMachine* stateMachine)
 {
     m_pStateMachine = stateMachine;
+    m_pISkeletonAnim = m_pStateMachine->GetAnimationComponent()->GetCharacter()->GetISkeletonAnim();
 }
 
 void BaseAction::Enter()
@@ -27,4 +28,9 @@ void BaseAction::Exit()
 void BaseAction::OnActionFinished()
 {
     m_pStateMachine->SetActionFinish(this);
+}
+
+float BaseAction::GetNormalizedTime(uint32 layer)
+{
+    return m_pISkeletonAnim->GetLayerNormalizedTime(layer);
 }

@@ -27,7 +27,7 @@ AttackAction::AttackAction(IBaseLifeResource* lifeResource, IEntity* characterEn
 
 void AttackAction::Enter()
 {
-    if (m_attackId >=4 || gEnv->pTimer->GetCurrTime() - m_lastCallTime >= 1)
+    if (m_attackId >=4 /*|| gEnv->pTimer->GetCurrTime() - m_lastCallTime >= 1*/)
         m_attackId = 0;
 
    
@@ -50,6 +50,10 @@ void AttackAction::Exit()
 IAction::EStatus AttackAction::Update(float timePassed)
 {   
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, 1);
-    m_pCharacterController->AddVelocity(10* timePassed * m_pCharacterEntity->GetForwardDir());
+
+    if (GetNormalizedTime(0) <= 0.75f)
+        m_pCharacterController->AddVelocity(5 * timePassed * m_pCharacterEntity->GetForwardDir());
+
+
     return IAction::Update(timePassed);
 }

@@ -20,19 +20,19 @@
    <Fragment BlendOutDuration="0.2" Tags="Simple">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="comm_com_atk_combo_01"/>
+     <Animation name="barb_1hnd_atk_qk_from_rf_150_lf_01"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="Simple">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="comm_com_atk_combo_02"/>
+     <Animation name="romn_com_chrg_atk_250_01"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="Simple">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="romn_atk_0_fwd_stat_01"/>
+     <Animation name="romn_atk_qk_rgt_up_250_01"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="Simple">
@@ -66,7 +66,7 @@
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dying">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="romn_com_death_front_stab_lf_01"/>
+     <Animation name="barb_1hnd_pillum_death_front_rf_02"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="Dead">
@@ -82,7 +82,7 @@
    <Fragment BlendOutDuration="0.2" Tags="">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="evr_stand_com_shld_block_idle_01" flags="Loop"/>
+     <Animation name="barb_shld_com_block_idle_lf_01" flags="Loop"/>
     </AnimLayer>
    </Fragment>
   </Block>

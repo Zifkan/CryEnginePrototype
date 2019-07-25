@@ -2,26 +2,20 @@
 #include <CryPhysics/physinterface.h>
 #include "RxCpp/rx.hpp"
 #include "WeaponExtensionData.h"
-#include "ICustomWeapon.h"
+#include "BaseCustomWeapon.h"
 
 class WeaponSystemComponent;
 
-class CMeleeWeaponComponent :public ICustomWeapon
+class CMeleeWeaponComponent :public BaseCustomWeapon
 {    
  
-public:
-  
-    virtual uint64 GetEventMask() const override;
-    virtual void ProcessEvent(const SEntityEvent& event) override;
-    // ~IEntityComponent
-     
-
-
+public:  
+ 
     // Reflect type to set a unique identifier for this component
     static void ReflectType(Schematyc::CTypeDesc<CMeleeWeaponComponent>& desc)
     {
         desc.SetGUID("{0BF0A12F-E727-4238-9E62-57FACA3F8231}"_cry_guid);
-        desc.AddBase<ICustomWeapon>();
+        desc.AddBase<BaseCustomWeapon>();
 
         desc.SetEditorCategory("Weapon");
         desc.SetLabel("Melee Weapon");
@@ -44,6 +38,8 @@ public:
 
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
+protected:
+    void Update(float fFrameTime) override;
 private:
     //CWeaponSystemComponent* m_pWeaponSystem = nullptr;
 
@@ -51,7 +47,7 @@ private:
     Vec3 m_rayOffset;
     Vec3 m_rayAngleRotation;
 
-    void Update(float fFrameTime);
+   
     void DetectHit(const ray_hit rayhit, const int hits);
 
     float m_damage = 50.0f;

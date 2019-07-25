@@ -7212,12 +7212,7 @@
   <event name="footstep" time="0.1715" endTime="0.20000002" parameter="" bone="R_Foot" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.2096" endTime="0.23333335" parameter="movement" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/barb_shld_com_wlk_fwd_lf_01.caf">
-  <event name="footstep" time="0.65039998" endTime="0.65039998" parameter="" bone="L_Foot" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.68430001" endTime="0.69489998" parameter="movement" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="footstep" time="0.1461" endTime="0.1461" parameter="" bone="R_Foot" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.18430001" endTime="0.18430001" parameter="movement" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/barb_shld_com_wlk_fwd_lf_01.caf"/>
  <animation name="animations/human/medium/romans/barb_shld_com_wlk_lft_135_lf_01.caf">
   <event name="footstep" time="0.5783" endTime="0.60000002" parameter="" bone="L_Foot" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.61849999" endTime="0.63333344" parameter="movement" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
@@ -7916,11 +7911,7 @@
   <event name="foley" time="0.59619999" endTime="0.59619999" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.90869999" endTime="0.90869999" parameter="light_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/prtn_shld_com_idle_ovr_arms_02.caf">
-  <event name="foley" time="0.1074" endTime="0.1074" parameter="light_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.39750001" endTime="0.39750001" parameter="medium_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.7058" endTime="0.7058" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/prtn_shld_com_idle_ovr_arms_02.caf"/>
  <animation name="animations/human/medium/romans/prtn_shld_com_taunt_01.caf">
   <event name="foley" time="0.63480002" endTime="0.63480002" parameter="medium_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.31029999" endTime="0.31029999" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>

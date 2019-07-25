@@ -51,9 +51,9 @@ void EnemyAttackAction::Exit()
 IAction::EStatus EnemyAttackAction::Update(float timePassed)
 {
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, 1);
-    m_pCharacterController->AddVelocity(10 * timePassed * m_pCharacterEntity->GetForwardDir());
-   // CryLog("Time: %f", m_pAnimationComponent->GetCharacter()->GetISkeletonAnim()->GetLayerNormalizedTime(0));
 
+    if (GetNormalizedTime(0)<=0.75f)
+        m_pCharacterController->AddVelocity(5 * timePassed * m_pCharacterEntity->GetForwardDir());
 
     Quat newRotation = Quat::CreateRotationVDir(pPlayerEntity->GetWorldPos()- m_pCharacterController->GetEntity()->GetWorldPos());
 

@@ -66,7 +66,7 @@ void CPlayerComponent::CreateStateMachine()
     m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
     m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
     m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pCharacterActions, 4, m_pushBackFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pWeaponSystem,m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
     m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pCharacterActions, 1, m_blocFragmentId));
 }
 
@@ -150,10 +150,10 @@ void CPlayerComponent::SetupActions()
     m_lifeResourceManager->GetResource<CHealthLifeResource>()->Value.get_observable().skip_while([](float value){ return value > 0; }).first()
     .subscribe([subscription, this](float value)
     {
-      /*  IsDead = true;
+        IsDead = true;
         m_pAnimationComponent->SetTag("Dying", true);
-        m_stateMachine->SetCurrentState(typeid(DeathAction));*/
-       // subscription.unsubscribe();
+        m_stateMachine->SetCurrentState(typeid(DeathAction));
+     //   subscription.unsubscribe();
     });
 
     m_pHitDamageComponent->HitSubject.get_observable().subscribe([this](SideHitEnum sideHit)

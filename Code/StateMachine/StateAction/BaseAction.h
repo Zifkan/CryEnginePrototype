@@ -9,6 +9,7 @@ class CStateMachine;
 class BaseAction :public IAction
 {
 public:
+
     BaseAction(ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
         : IAction(priority, fragmentID, fragTags, flags, scopeMask, userToken)
         , m_pCharacterAction(characterAction)
@@ -31,8 +32,9 @@ public:
     uint8 ScopeLayer;
 
 protected:
+    ISkeletonAnim* m_pISkeletonAnim;
     ICharacterActions* m_pCharacterAction;
     CStateMachine* m_pStateMachine;
 
-    float GetNormalizedtime();
+    float GetNormalizedTime(uint32 layer);
 };

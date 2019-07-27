@@ -5,6 +5,8 @@
 void BaseCustomWeapon::Initialize()
 {
     m_pRigidBodyComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CRigidBodyComponent>();
+
+    Physicalize(false);
 }
 
 void BaseCustomWeapon::StartGame()
@@ -19,7 +21,10 @@ void BaseCustomWeapon::Update(float fFrameTime)
 
 uint64 BaseCustomWeapon::GetEventMask() const
 {
-    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
+    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | 
+           ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | 
+           ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED) | 
+           ENTITY_EVENT_BIT(ENTITY_EVENT_COLLISION);
 }
 
 
@@ -38,13 +43,17 @@ void BaseCustomWeapon::ProcessEvent(const SEntityEvent& event)
         Update(pCtx->fFrameTime);
     }
     break;
+    case ENTITY_EVENT_EDITOR_PROPERTY_CHANGED:
+    {
+        Physicalize(false);
+    }
     }
 }
 
 void BaseCustomWeapon::Physicalize(bool isPhysicalize)
 {
-    m_pRigidBodyComponent->Enable(isPhysicalize);
-    m_pRigidBodyComponent->ApplyImpulse(Vec3(0, 0, 20));
-
-    
+    m_pRigidBodyComponent->Enable(isPhysicalize);   
+    //SEntityPhysicalizeParams physParams;
+    //physParams.type = m_physType;
+    //m_pEntity->Physicalize(physParams);
 }

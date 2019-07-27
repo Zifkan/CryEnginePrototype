@@ -32,7 +32,7 @@ void AttackAction::Enter()
 
    
     m_pAnimationComponent->SetAnimationDrivenMotion(false);
-    m_pLifeResource->ChangeValue(-15);
+    m_pLifeResource->ChangeValue(0);
     SetOptionIdx(m_attackId);
     m_pCharacterController->SetVelocity(ZERO);
     BaseAction::Enter();

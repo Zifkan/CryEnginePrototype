@@ -28,3 +28,14 @@ static void ReflectType(Schematyc::CTypeDesc<EWeaponHandType>& desc)
     desc.AddConstant(EWeaponHandType::RightHand, "RightHand", "RightHand");
 }
 
+static void ReflectType(Schematyc::CTypeDesc<pe_type>& desc)
+{
+    desc.SetGUID("{273F3BAD-2293-4846-8612-93682853F324}"_cry_guid);
+    desc.SetDescription("Phys type");
+    desc.SetLabel("Phys Type of object");
+
+    desc.SetDefaultValue(pe_type::PE_NONE);
+    desc.AddConstant(pe_type::PE_NONE, "PE_NONE", "PE_NONE");
+    desc.AddConstant(pe_type::PE_RIGID, "PE_RIGID", "PE_RIGID");
+    desc.AddConstant(pe_type::PE_STATIC, "PE_STATIC", "PE_STATIC");
+}

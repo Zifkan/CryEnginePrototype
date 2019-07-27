@@ -7916,12 +7916,7 @@
   <event name="foley" time="0.63480002" endTime="0.63480002" parameter="medium_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.31029999" endTime="0.31029999" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/prtn_shld_com_taunt_hvy_01.caf">
-  <event name="foley" time="0.1054" endTime="0.1054" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.21690001" endTime="0.21690001" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.41159999" endTime="0.41159999" parameter="medium_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.6997" endTime="0.6997" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/prtn_shld_com_taunt_hvy_01.caf"/>
  <animation name="animations/human/medium/romans/romn_archr_scout_01.caf">
   <event name="foley" time="0.20280001" endTime="0.20280001" parameter="light_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.54759997" endTime="0.54759997" parameter="light_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>

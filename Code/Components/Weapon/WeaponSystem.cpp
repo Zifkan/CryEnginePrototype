@@ -75,7 +75,7 @@ void WeaponSystemComponent::SetAttach(IEntityLink* pLink)
         }
     }
 
-    m_pRightHandWeapon->Init(this, m_pLeftHandWeapon->GetEntity());
+    m_pRightHandWeapon->Init(this, m_pLeftHandWeapon==nullptr?nullptr: m_pLeftHandWeapon->GetEntity());
 }
 
 
@@ -110,7 +110,7 @@ void WeaponSystemComponent::HitDetection()
        
         if (pHitedEntity!=nullptr)
         {
-            CryLog("hitted entity: %i", pHitedEntity->GetName());
+           
             CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
 
             if (pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent != nullptr)
@@ -125,7 +125,7 @@ void WeaponSystemComponent::HitDetection()
                 return;
             }
         }
-
+        CryLog("hitted entity: %i", pHitedEntity->GetId());
         m_pRightHandWeapon->StopAttack();
         m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
     });

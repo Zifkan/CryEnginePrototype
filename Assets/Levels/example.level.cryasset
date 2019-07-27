@@ -363,9 +363,11 @@
   <Path>animations/human/medium/romans/formations poses/romn_form_head_add_rgt90_01.caf</Path>
   <Path>animations/human/medium/romans/lookposes/lookposes_head.caf</Path>
   <Path>animations/human/medium/romans/med_stand_com_shld_axe_block_lf_to_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/med_stand_com_shld_walk_inj_bwd_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_com_scorpio_aim_hit_rct_add_spine01_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_run_climb_up_2m_lf_to_lf_01.caf</Path>
   <Path>animations/human/medium/romans/prtn_shld_com_idle_ovr_arms_02.caf</Path>
+  <Path>animations/human/medium/romans/prtn_shld_com_taunt_hvy_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_0_fwd_150_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_0_fwd_220_01.caf</Path>
   <Path>animations/human/medium/romans/romn_atk_0_fwd_stat_01.caf</Path>
@@ -788,6 +790,7 @@
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
   <Path>objects/weapons/shield.cgf</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
   <Path>textures/shield/scutum_albedo.dds</Path>

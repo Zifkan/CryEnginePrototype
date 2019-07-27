@@ -24,7 +24,7 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_rayAngleRotation, 'rrot', "WeaponRayRotation", "Weapon Ray rotation", "Weapon Ray rotation", Vec3(0, 0, 0));
         desc.AddMember(&CMeleeWeaponComponent::m_attackDetectionTimeLimit, 'tdet', "AttackDetectionTime", "Attack Time", "Weapon Detection Attack Time", 1);
         desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
-
+        desc.AddMember(&BaseCustomWeapon::m_physType, 'phys', "PhysType", "Phys Type", "Phys Type", PE_RIGID);
         desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::RightHand);
 
     }
@@ -38,8 +38,12 @@ public:
 
     rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
 
+
+    void ProcessEvent(const SEntityEvent& event) override;
+
 protected:
     void Update(float fFrameTime) override;
+
 private:
     //CWeaponSystemComponent* m_pWeaponSystem = nullptr;
 
@@ -49,7 +53,6 @@ private:
 
    
     void DetectHit(const ray_hit rayhit, const int hits);
-
     float m_damage = 50.0f;
     float m_attackDetectionTimer = 0.0f;
     float m_attackDetectionTimeLimit = 1;;

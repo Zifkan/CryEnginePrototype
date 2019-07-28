@@ -88,8 +88,7 @@ void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
 
 void CMeleeWeaponComponent::Update(float fFrameTime)
 {
-   // return;
-   // if (!m_isAttack ) return;
+    if (!m_isAttack ) return;
 
     ray_hit rayhit;
     
@@ -108,16 +107,6 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
     //    ent_static | ent_terrain | ent_rigid | ent_sleeping_rigid,  &pContact, 0, geom_colltype_player, 0, 0, 0, pSkipEnts, 2);
 
     DetectHit(rayhit, hits);
-    
-
-
-    m_attackDetectionTimer += fFrameTime;
-
-    if(m_attackDetectionTimer>= m_attackDetectionTimeLimit)
-    {
-        m_attackDetectionTimer = 0.0f;
-        m_isAttack = false;
-    }
 }
 
 void CMeleeWeaponComponent::DetectHit(const ray_hit rayhit,const int hits)

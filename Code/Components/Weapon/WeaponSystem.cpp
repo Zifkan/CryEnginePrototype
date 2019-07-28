@@ -136,3 +136,8 @@ void WeaponSystemComponent::DetachWeapons() const
     m_pRightHandAttachment->ClearBinding();
     m_pLeftHandAttachment->ClearBinding();
 }
+
+void WeaponSystemComponent::StopAttack()
+{
+    m_pRightHandWeapon->StopAttack();
+}

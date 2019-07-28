@@ -22,7 +22,6 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_rayLength, 'rlen', "WeaponRayLength", "Weapon Ray length", "Weapon Ray length", 1.0f);
         desc.AddMember(&CMeleeWeaponComponent::m_rayOffset, 'roff', "WeaponRayOffset", "Weapon Ray offset", "Weapon Ray offset", Vec3(0,0,0));
         desc.AddMember(&CMeleeWeaponComponent::m_rayAngleRotation, 'rrot', "WeaponRayRotation", "Weapon Ray rotation", "Weapon Ray rotation", Vec3(0, 0, 0));
-        desc.AddMember(&CMeleeWeaponComponent::m_attackDetectionTimeLimit, 'tdet', "AttackDetectionTime", "Attack Time", "Weapon Detection Attack Time", 1);
         desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
         desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::RightHand);
 
@@ -44,19 +43,14 @@ protected:
     void Update(float fFrameTime) override;
 
 private:
-    //CWeaponSystemComponent* m_pWeaponSystem = nullptr;
+ 
+    void DetectHit(const ray_hit rayhit, const int hits);
 
     float m_rayLength{};
     Vec3 m_rayOffset;
-    Vec3 m_rayAngleRotation;
-
-   
-    void DetectHit(const ray_hit rayhit, const int hits);
+    Vec3 m_rayAngleRotation;  
     float m_damage = 50.0f;
-    float m_attackDetectionTimer = 0.0f;
-    float m_attackDetectionTimeLimit = 1;;
     bool m_isAttack = false;
-
     IPhysicalEntity* m_pSkipEnts[10] = {};
 
 };

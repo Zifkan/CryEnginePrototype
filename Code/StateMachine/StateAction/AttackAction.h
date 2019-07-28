@@ -2,11 +2,13 @@
 #include <CryAnimation/ICryMannequin.h>
 #include "BaseAction.h"
 #include "Components/LifeResources/BaseLifeResource.h"
+#include "Components/Weapon/WeaponSystem.h"
+
 
 class AttackAction : public BaseAction
 {
 public:
-    AttackAction(IBaseLifeResource* lifeResource, IEntity* characterEntity,
+    AttackAction(WeaponSystemComponent* weaponSystem,IBaseLifeResource* lifeResource, IEntity* characterEntity,
                  Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
                  Cry::DefaultComponents::CCharacterControllerComponent* characterController,
                  ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID,
@@ -21,11 +23,10 @@ public:
 
 private:
 
-    float m_lastCallTime;
-
     uint8 m_attackId;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent;
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;
     IEntity* m_pCharacterEntity;
     IBaseLifeResource* m_pLifeResource;
+    WeaponSystemComponent* m_pWeaponSystem;
 };

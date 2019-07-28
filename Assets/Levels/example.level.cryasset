@@ -790,7 +790,6 @@
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
   <Path>objects/weapons/shield.cgf</Path>
-  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
   <Path>textures/shield/scutum_albedo.dds</Path>

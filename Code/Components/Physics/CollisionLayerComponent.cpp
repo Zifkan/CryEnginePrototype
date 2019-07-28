@@ -47,8 +47,8 @@ void CCollisionLayerComponent::ProcessEvent(const SEntityEvent& event)
         }
         for (int i = 0; i < m_ignore.Size(); ++i)
         {
-            paramsCollision.collisionClassAND.ignore |= static_cast<uint32>(m_type.At(i));
-            paramsCollision.collisionClassOR.ignore  |= static_cast<uint32>(m_type.At(i));
+            paramsCollision.collisionClassAND.ignore |= static_cast<uint32>(m_ignore.At(i));
+            paramsCollision.collisionClassOR.ignore  |= static_cast<uint32>(m_ignore.At(i));
         }
         pPhysicalEntity->SetParams(&paramsCollision);
     }

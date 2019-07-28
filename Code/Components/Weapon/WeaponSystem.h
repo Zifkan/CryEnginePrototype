@@ -28,6 +28,8 @@ public:
 
     rxcpp::subjects::subject<SWeaponHitStruct> HitReactionSubject = rxcpp::subjects::subject<SWeaponHitStruct>();
 
+    void StopAttack();
+
 private:
     CMeleeWeaponComponent* m_pRightHandWeapon = nullptr; 
     CShieldWeaponComponent* m_pLeftHandWeapon = nullptr;

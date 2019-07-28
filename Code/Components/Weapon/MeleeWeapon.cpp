@@ -89,7 +89,7 @@ void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
 void CMeleeWeaponComponent::Update(float fFrameTime)
 {
    // return;
-    //if (!m_isAttack ) return;
+   // if (!m_isAttack ) return;
 
     ray_hit rayhit;
     
@@ -123,6 +123,13 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
 void CMeleeWeaponComponent::DetectHit(const ray_hit rayhit,const int hits)
 {
     if (hits == 0) return;
+    IPhysicalEntity* pHitEntity = rayhit.pCollider;
+
+
+    IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+
+    if (pHitedEntity!=nullptr)
+        CryLog("Entity name: %s", pHitedEntity->GetName());
 
     RayHitSubject.get_subscriber().on_next(rayhit);
 }

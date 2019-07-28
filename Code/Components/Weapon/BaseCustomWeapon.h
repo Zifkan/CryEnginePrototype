@@ -13,17 +13,12 @@ public:
         desc.SetGUID("{A61885BA-9C35-4D2C-844B-DE3036D36851}"_cry_guid);
         desc.SetEditorCategory("Weapon");
         desc.SetLabel("Weapon Interface");
-        // desc.AddMember(&BaseCustomWeapon::m_physType, 'phys', "PhysType", "Phys Type", "Phys Type", PE_RIGID);
-
     }
 
     Cry::Entity::EntityEventMask GetEventMask() const override;
     virtual void ProcessEvent(const SEntityEvent& event);
 
     EWeaponHandType GetWeaponHand() const { return m_weaponHandType; }
-
-    void DetachPhysicalize();
-    pe_type m_physType;
 
 protected:
 

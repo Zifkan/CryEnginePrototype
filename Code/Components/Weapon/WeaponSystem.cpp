@@ -135,7 +135,4 @@ void WeaponSystemComponent::DetachWeapons() const
 {
     m_pRightHandAttachment->ClearBinding();
     m_pLeftHandAttachment->ClearBinding();
-
-    m_pRightHandWeapon->DetachPhysicalize();
-    m_pLeftHandWeapon->DetachPhysicalize();
 }

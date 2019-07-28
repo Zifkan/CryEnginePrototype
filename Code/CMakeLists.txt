@@ -117,6 +117,16 @@ add_sources("StateMachine_uber.cpp"
 		"StateMachine/StateMachine.cpp"
 		"StateMachine/StateMachine.h"
 )
+
+add_sources("Physics_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Physics"
+		"Components/Physics/CollisionLayerStruct.h"
+		"Components/Physics/CollisionLayerComponent.h"
+		"Components/Physics/CollisionLayerComponent.cpp"
+)
+
+
 add_sources("StateAction_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "StateMachine\\\\StateAction"

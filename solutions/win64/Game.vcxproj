@@ -322,6 +322,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerStruct.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BlockAction.cpp" />
@@ -354,6 +357,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Inputs_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\InputActions_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Physics_uber.cpp"  />
     <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp"  />
     <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />
   </ItemGroup>

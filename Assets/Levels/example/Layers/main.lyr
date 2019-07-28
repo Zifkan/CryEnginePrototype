@@ -45,11 +45,11 @@
      </Component>
     </Components>
    </Object>
-   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="84b957aa-3a52-5d0a-c05c-1c26dbbacbc2" Name="Entity-15" Pos="75.203392,53.871086,32.579868" Rotate="0.98195696,0,0,0.18910448" Scale="0.99999893,0.99999893,1" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
+   <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="84b957aa-3a52-5d0a-c05c-1c26dbbacbc2" Name="Entity-15" Pos="74.777618,54.935547,32.579868" Rotate="0.98195696,0,0,0.18910448" Scale="0.99999893,0.99999893,1" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="6a946121-292f-684f-f81b-ffbb32225354" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.69999999" AttackDetectionTime="1" WeaponDamage="0" PhysType="PE_NONE" WeaponHandType="RightHand">
+      <properties WeaponRayLength="0.69999999" AttackDetectionTime="1" WeaponDamage="0" WeaponHandType="RightHand">
        <BaseCustomWeapon />
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
@@ -79,6 +79,17 @@
      <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="0573299f-7991-8a41-355c-de0f94f9122a" Name="" UserAdded="false">
       <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
        <Buoyancy Damping="1" Density="1" Resistance="0"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="f807eff1-aa26-5146-81ea-558be34d2c8a" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Weapon"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Enemy"/>
+        <element element="Weapon"/>
+       </CollisionIgnore>
       </properties>
      </Component>
     </Components>
@@ -272,6 +283,17 @@
      <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="c01a828d-ee76-b4e4-bfe0-cbed01b1d5f2" Name="" UserAdded="false">
       <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
        <Buoyancy Damping="1" Density="1" Resistance="0"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="fab1da11-e449-d597-f780-f16d994b63a5" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Weapon"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Player"/>
+        <element element="Weapon"/>
+       </CollisionIgnore>
       </properties>
      </Component>
     </Components>
@@ -563,6 +585,16 @@
      <Component CryXmlVersion="2" TypeGUID="aa6d3914-86a9-4feb-b89a-ca8e589c657a" TypeName="CHitDamageComponent" GUID="fa380bd5-97a8-be02-9ef1-cebc01e48113" Name="" UserAdded="true">
       <properties />
      </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="e4394816-d6ba-d5a7-33ca-3faf593da97e" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Player"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Weapon"/>
+       </CollisionIgnore>
+      </properties>
+     </Component>
     </Components>
     <EntityLinks>
      <Link TargetId="c6d6057f-3361-f80c-fd69-2b90d3320de0" Name="Entity-20" Version="1"/>
@@ -640,6 +672,17 @@
      <Component CryXmlVersion="2" TypeGUID="aa6d3914-86a9-4feb-b89a-ca8e589c657a" TypeName="CHitDamageComponent" GUID="4395b7fd-290c-423c-8707-8da1ffa48fa8" Name="" UserAdded="true">
       <properties />
      </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="2036ebbe-26e4-1b58-8fb7-3bbd47fda826" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Enemy"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Player"/>
+        <element element="Weapon"/>
+       </CollisionIgnore>
+      </properties>
+     </Component>
     </Components>
     <EntityLinks>
      <Link TargetId="84b957aa-3a52-5d0a-c05c-1c26dbbacbc2" Name="Entity-15" Version="1"/>
@@ -712,13 +755,24 @@
        <Buoyancy Damping="1" Density="1" Resistance="0"/>
       </properties>
      </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="0d8a141c-e9a1-d997-c753-f5d7adfa8bb8" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Weapon"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Enemy"/>
+        <element element="Weapon"/>
+       </CollisionIgnore>
+      </properties>
+     </Component>
     </Components>
    </Object>
    <Object Type="EmptyEntity" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="c6d6057f-3361-f80c-fd69-2b90d3320de0" Name="Entity-20" Pos="68.120605,51.338539,32.764259" Rotate="0.98195696,0,0,0.18910448" Scale="0.99999893,0.99999893,1" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
      <Component CryXmlVersion="2" TypeGUID="0bf0a12f-e727-4238-9e62-57faca3f8231" TypeName="CMeleeWeaponComponent" GUID="7490154a-f7ac-5954-fe68-5389e8819a87" Name="" UserAdded="true">
-      <properties WeaponRayLength="0.69999999" AttackDetectionTime="1" WeaponDamage="0" PhysType="PE_NONE" WeaponHandType="RightHand">
+      <properties WeaponRayLength="0.69999999" AttackDetectionTime="1" WeaponDamage="0" WeaponHandType="RightHand">
        <BaseCustomWeapon />
        <WeaponRayOffset x="0" y="0" z="0"/>
        <WeaponRayRotation x="0" y="0" z="0"/>
@@ -748,6 +802,17 @@
      <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="18f92213-51d9-5c46-3f7d-d8f32f62bc17" Name="" UserAdded="false">
       <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
        <Buoyancy Damping="1" Density="1" Resistance="0"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="389b3b0c-5189-4c22-940c-e7448549322a" TypeName="CCollisionLayerComponent" GUID="d1cd2620-c959-f050-70ca-a8cc4a09dacb" Name="" UserAdded="true">
+      <properties>
+       <CollisionType>
+        <element element="Weapon"/>
+       </CollisionType>
+       <CollisionIgnore>
+        <element element="Player"/>
+        <element element="Weapon"/>
+       </CollisionIgnore>
       </properties>
      </Component>
     </Components>

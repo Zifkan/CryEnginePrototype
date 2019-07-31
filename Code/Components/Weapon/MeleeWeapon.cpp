@@ -47,7 +47,7 @@ void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
     case ENTITY_EVENT_COLLISION:
     {
         return;
-        //if (!m_isAttack) return;
+        if (!m_isAttack) return;
 
         // Get the EventPhysCollision structure describing the collision that occurred
          const EventPhysCollision* pPhysCollision = reinterpret_cast<const EventPhysCollision*>(event.nParam[0]);
@@ -57,6 +57,7 @@ void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
         const int thisEntityIndex = static_cast<int>(event.nParam[1]);
         // Calculate the index of the other entity
         const int otherEntityIndex = (thisEntityIndex + 1) % 2;
+        if (otherEntityIndex <= 0) return;
         // Get the contact point (in world coordinates) of the two entities
         const Vec3& contactPoint = pPhysCollision->pt;
         // Get the collision normal vector
@@ -90,12 +91,12 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
 {
     if (!m_isAttack ) return;
 
-    ray_hit rayhit;
+    ray_hit rayhit[3];
     
     // Perform the ray cast.
     int hits = gEnv->pPhysicalWorld->RayWorldIntersection(m_pEntity->GetWorldPos()+m_rayOffset,  Quat(m_rayAngleRotation)* m_pEntity->GetForwardDir()*m_rayLength,
-        ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,
-        &rayhit, 1, m_pSkipEnts, 10);
+        ent_static | ent_sleeping_rigid | ent_rigid | ent_independent , rwi_max_piercing,
+        rayhit, 3, m_pSkipEnts, 10);
 
 
     //primitives::box box;
@@ -106,19 +107,27 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
     //float hitDist = gEnv->pPhysicalWorld->PrimitiveWorldIntersection(box.type, &box, Quat(m_rayAngleRotation)* m_pEntity->GetForwardDir(), 
     //    ent_static | ent_terrain | ent_rigid | ent_sleeping_rigid,  &pContact, 0, geom_colltype_player, 0, 0, 0, pSkipEnts, 2);
 
-    DetectHit(rayhit, hits);
-}
+    if (hits >1)
+    {     
 
-void CMeleeWeaponComponent::DetectHit(const ray_hit rayhit,const int hits)
-{
-    if (hits == 0) return;
-    IPhysicalEntity* pHitEntity = rayhit.pCollider;
+        for (int i = 0; i < 3; ++i)
+        {
+            auto hit = rayhit[i];
+            IPhysicalEntity* pHitEntity = hit.pCollider;
 
+            if (pHitEntity != nullptr)
+            {
+                IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+                if (pHitedEntity != nullptr)
+                {
+                    CryLog("Hitted Entity: %s", pHitedEntity->GetName());
+                }            
+            }
+        }
+        CryLog("*************************");
+    }
+       
+  //  RayHitSubject.get_subscriber().on_next(rayhit);
 
-    IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
-
-    if (pHitedEntity!=nullptr)
-        CryLog("Entity name: %s", pHitedEntity->GetName());
-
-    RayHitSubject.get_subscriber().on_next(rayhit);
+   
 }

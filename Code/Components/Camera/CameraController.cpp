@@ -5,6 +5,7 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
+#include "Components/Inputs/Actions/PlayerCharacterActions.h"
 
 
 static void RegisterCameraController(Schematyc::IEnvRegistrar& registrar)
@@ -41,7 +42,9 @@ void CCameraController::ProcessEvent(const SEntityEvent& event)
     {
     case ENTITY_EVENT_START_GAME:
     {
-        pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
+        m_pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
+        //TODO: Create select targer system
+        m_pEnemy = gEnv->pEntitySystem->FindEntityByName("Enemy");
     }
     break;
     case ENTITY_EVENT_UPDATE:
@@ -68,7 +71,16 @@ void CCameraController::InitInput(ICharacterActions* charActions)
             vec2 = Vec2(vec2.x,0);
 
         m_deltaRotation = vec2;
-    });   
+    });
+
+    m_pCharacterActions->SetFocusOnSubject.get_observable().subscribe([this](bool isHit)
+    {
+       if (isHit)
+       {
+           m_pTargetEntity = m_pTargetEntity == nullptr ? m_pEnemy : nullptr;
+       }
+    });
+
 }
 
 void CCameraController::SetTargetEntity(IEntity* entity)
@@ -76,19 +88,38 @@ void CCameraController::SetTargetEntity(IEntity* entity)
     m_pTargetEntity = entity;
 }
 
+bool CCameraController::IsCameraFocus()
+{
+    return m_pTargetEntity ? true : false;
+}
+
 void CCameraController::UpdateCamera(float frameTime)
 {
-    if(!m_pTargetEntity) return;  
+    Quat rotation = ZERO;
+    if(m_pTargetEntity)
+    {
+        Vec3 target = m_pTargetEntity->GetPos();
 
-    x -= m_deltaRotation.x * xSpeed * currentRadius * frameTime;
-    y -= m_deltaRotation.y * ySpeed * frameTime;
-  
-    y = ClampAngle(y, yMinLimit, yMaxLimit);
+        Vec3 location = m_pPlayerEntity->GetPos() + Vec3(0, 0, heightOffset);
+              
+       x = target.x - location.x;
+       y = target.y - location.y;
+
+       Vec3 lookDir = Vec3(x, y, target.z - location.z).normalize();
+
+       rotation = Quat::CreateRotationVDir(lookDir);
+    }
+    else
+    {
+        x -= m_deltaRotation.x * xSpeed * currentRadius * frameTime;
+        y -= m_deltaRotation.y * ySpeed * frameTime;
+   
+        y = ClampAngle(y, yMinLimit, yMaxLimit);
       
-    Quat rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y),0, DEG2RAD(x)));
-
+        rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y),0, DEG2RAD(x)));
+    }
     Vec3 negDistance = Vec3(0.0f, -currentRadius, 0);
-    Vec3 position = rotation * negDistance + (m_pTargetEntity->GetWorldPos()+ Vec3(0, 0, heightOffset));  
+    Vec3 position = rotation * negDistance + (m_pPlayerEntity->GetWorldPos()+ Vec3(0, 0, heightOffset));
 
     CryTransform::CTransform tr = CryTransform::CTransform(position, CryTransform::CRotation(rotation), Vec3(1, 1, 1));
     m_pEntity->SetWorldTM(tr.ToMatrix34());
@@ -100,8 +131,8 @@ void CCameraController::CollisionDetection(float frameTime)
     // Skip the target actor for this.
     ray_hit rayhit;
     static IPhysicalEntity* pSkipEnts[10];
-    pSkipEnts[0] = pPlayerEntity->GetPhysics();
-    auto org = pPlayerEntity->GetWorldPos() + Vec3(0, 0, heightOffset);
+    pSkipEnts[0] = m_pPlayerEntity->GetPhysics();
+    auto org = m_pPlayerEntity->GetWorldPos() + Vec3(0, 0, heightOffset);
     // Perform the ray cast.
     int hits = gEnv->pPhysicalWorld->RayWorldIntersection(org,  m_pEntity->GetWorldPos()-org,
         ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,

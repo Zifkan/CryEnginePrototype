@@ -164,8 +164,7 @@ void CGamePlugin::InitGameCamera()
     }
   
     
-    cameraComponent->InitInput(m_playerCharacterActions);
-    cameraComponent->SetTargetEntity(pPlayerEntity);
+    cameraComponent->InitInput(m_playerCharacterActions);  
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

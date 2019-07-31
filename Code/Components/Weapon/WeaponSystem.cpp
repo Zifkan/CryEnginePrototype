@@ -32,6 +32,11 @@ void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmen
         m_pRightHandWeapon->Attack();
     });
 
+    m_pCharacterActions->BlockSubject.get_observable().distinct_until_changed().subscribe([this](bool isBlock)
+    {
+        m_pLeftHandWeapon->EnableCollider(isBlock);
+    });
+
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
     SetAttach(pLink);
 }
@@ -101,34 +106,37 @@ void WeaponSystemComponent::AttachToLeftHand()
 
 void WeaponSystemComponent::HitDetection()
 {
-    m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hit)
+    /*m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hits)
     {
-        IPhysicalEntity* pHitEntity = hit.pCollider;
-
-      
+        auto hit = &hits;
+        IPhysicalEntity* pHitEntity = hit->pCollider;
+        
         IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+
        
+
         if (pHitedEntity!=nullptr)
         {
            
             CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
 
-            if (pHitedEntity->GetGuid() != m_pEntity->GetGuid() && pHitDamageComponent != nullptr)
+            if (pHitedEntity->GetId() != m_pEntity->GetId() && pHitDamageComponent != nullptr && !pHitDamageComponent->IsHitted())
             {
                 SWeaponHitStruct hitStruct;
                 hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
-                hitStruct.Hitpoint = hit.pt;
+                hitStruct.Hitpoint = hit->pt;
                 hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
-                hitStruct.PartId = hit.partid;
+                hitStruct.PartId = hit->partid;
 
                 pHitDamageComponent->OnHit(hitStruct);
                 return;
             }
         }
-        CryLog("hitted entity: %i", pHitedEntity->GetId());
+
+        CryLog("hitted entity: %s", pHitedEntity->GetName());
         m_pRightHandWeapon->StopAttack();
         m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
-    });
+    });*/
 }
 
 void WeaponSystemComponent::DetachWeapons() const

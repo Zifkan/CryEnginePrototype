@@ -2,6 +2,7 @@
 #include <CryAnimation/ICryMannequin.h>
 #include "BaseAction.h"
 #include "Components/LifeResources/BaseLifeResource.h"
+#include "Components/Camera/CameraController.h"
 
 class MovementAction : public BaseAction
 {
@@ -26,10 +27,14 @@ public:
     void Enter();
     void Exit();
 private:
-    
+
+    Vec3 GetLookDirNormalized(Vec3 target,Vec3 location);
+
+
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-    IEntity* m_pMainCamera = nullptr;
+    CCameraController* m_pMainCameraComponent = nullptr;
+    IEntity* m_pMainCameraEntity;
     IEntity* m_pCharacterEntity;
     IBaseLifeResource* m_pLifeResource;
 

@@ -12,6 +12,7 @@ public:
     void SetRotatePitch(float y) override;
     void SetMoveSignal(bool signal) override; public:
     void SetBlockSignal(bool signal) override;
+    void SetFocusOnSignal(bool signal) override;
 
     EntityEventMask GetEventMask() const override;
 
@@ -25,7 +26,6 @@ public:
 
 protected:
     void ProcessEvent(const SEntityEvent& event) override;
-
 
 
 };

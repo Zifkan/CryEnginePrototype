@@ -21,6 +21,7 @@ public:
 
         desc.AddMember(&WeaponSystemComponent::m_rightWeaponSlotName, 'rslt', "RightWeaponSlotName", "Right hand weapon slot Name", "Right hand weapon slot Name", "r_weapon");
         desc.AddMember(&WeaponSystemComponent::m_leftWeaponSlotName,  'lslt', "LeftWeaponSlotName", "Left hand weapon slot Name", "Left hand weapon slot Name", "l_weapon");
+       // desc.AddMember(&WeaponSystemComponent::m_explicitEntityId, 'enid', "ExplicitEntityId", "ExplicitEntityId", "ExplicitEntityId", Schematyc::ExplicitEntityId::Invalid);
     }
 
     void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);
@@ -46,4 +47,6 @@ private:
     void AttachToRightHand();
     void AttachToLeftHand();
     void HitDetection();
+
+    //Schematyc::ExplicitEntityId m_explicitEntityId;
 };

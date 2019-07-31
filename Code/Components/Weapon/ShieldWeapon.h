@@ -1,5 +1,9 @@
 ﻿#pragma once
 #include "BaseCustomWeapon.h"
+#include <DefaultComponents/Physics/BoxPrimitiveComponent.h>
+
+
+class CPlugin_CryDefaultEntities;
 
 class CShieldWeaponComponent :public BaseCustomWeapon
 {
@@ -16,4 +20,11 @@ public:
 
     }
 
+    void EnableCollider(bool isEnable);
+protected:
+    virtual void StartGame();
+
+    Vec3 ColliderSize = Vec3(1,1,1);
+    Cry::DefaultComponents::CBoxPrimitiveComponent* m_pCollider;
+    pe_params params;
 };

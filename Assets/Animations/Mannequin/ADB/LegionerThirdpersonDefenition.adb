@@ -52,13 +52,13 @@
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="RightSide">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="barb_1hnd_rct_left_hit_front_lf_to_front_lf_03"/>
+     <Animation name="barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="LeftSide">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="barb_1hnd_rct_right_hit_front_lf_to_front_rf_01"/>
+     <Animation name="barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01"/>
     </AnimLayer>
    </Fragment>
   </HitReaction>

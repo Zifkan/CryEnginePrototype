@@ -4,7 +4,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 
 #include "PlayerInput.h"
-
+#include "Actions/PlayerCharacterActions.h"
 
 
 static void RegisterCPlayerInputComponent(Schematyc::IEnvRegistrar& registrar)
@@ -87,7 +87,7 @@ void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
 
     // Bind the shoot action to left mouse click
     m_pInputComponent->BindAction("player", "Attack", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
-  //  BindAction("player", "Attack", eAID_XboxPad, EKeyId::eKI_XI_TriggerRBtn);
+    m_pInputComponent->BindAction("player", "Attack", eAID_XboxPad, EKeyId::eKI_XI_TriggerRBtn);
 
 
     m_pInputComponent->RegisterAction("player", "Block", [this](int activationMode, float value)
@@ -103,9 +103,19 @@ void CPlayerInputComponent::RegisterInputs(ICharacterActions* charActions)
         }
     });
 
-    // Bind the shoot action to left mouse click
     m_pInputComponent->BindAction("player", "Block", eAID_KeyboardMouse, EKeyId::eKI_Mouse2);
 
+
+   
+    m_pInputComponent->RegisterAction("player", "Focus", [this](int activationMode, float value)
+    {
+        if (activationMode == eIS_Pressed)
+        {
+            characterActions->SetFocusOnSubject.get_subscriber().on_next(true);
+        }
+    });
+
+    m_pInputComponent->BindAction("player", "Focus", eAID_KeyboardMouse, EKeyId::eKI_F);
 }
 
 void CPlayerInputComponent::Initialize()

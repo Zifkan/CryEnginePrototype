@@ -88,7 +88,12 @@ void PlayerCharacterActions::SetMoveSignal(bool signal)
 
 void PlayerCharacterActions::SetBlockSignal(bool signal)
 {
-    BlockSubject .get_subscriber().on_next(signal);
+    BlockSubject.get_subscriber().on_next(signal);
+}
+
+void PlayerCharacterActions::SetFocusOnSignal(bool signal)
+{
+    SetFocusOnSubject.get_subscriber().on_next(signal);
 }
 
 

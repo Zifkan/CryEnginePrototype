@@ -25,6 +25,8 @@ public:
         desc.SetLabel("Hit Damage Controller");
         desc.SetEditorCategory("Damage");
         desc.SetComponentFlags({ EFlags::Singleton });
+
+        desc.AddMember(&CHitDamageComponent::m_hittedStatusDuration, 'hsts', "HitDuration", "Hitted Status Duration", "Duration of Character been hitted", 1.5f);
     }
 
     rxcpp::subjects::subject<SideHitEnum> HitSubject = rxcpp::subjects::subject<SideHitEnum>();
@@ -32,9 +34,15 @@ public:
 
     void OnHit(SWeaponHitStruct hitStruct);
 
+    bool IsHitted();
+
 protected:
     virtual void ProcessEvent(const SEntityEvent& event);
 
     CLifeResourceManagerComponent* m_pLifeResourceManager = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAdvancedAnimationComponent = nullptr;
+
+    bool m_isHitted;
+    float m_hittedStatusDuration;
+    float m_hittedTimer;
 };

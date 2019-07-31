@@ -5,6 +5,7 @@
 #include "Components/LifeResources/HealthLifeResource.h"
 #include <Components/Weapon/WeaponExtensionData.h>
 
+
 static void RegisterHitDamageComponent(Schematyc::IEnvRegistrar& registrar)
 {
     Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
@@ -35,12 +36,27 @@ void CHitDamageComponent::ProcessEvent(const SEntityEvent& event)
         m_pAdvancedAnimationComponent = m_pEntity->GetComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
     }
     break;
+    case ENTITY_EVENT_UPDATE:
+    {
+        SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
+       
+        if (m_hittedTimer<= m_hittedStatusDuration)
+        {
+            m_hittedTimer += pCtx->fFrameTime;
+        }
+        else
+        {
+            m_isHitted = false;
+        }
+    }
+    break;
     }
 }
 
-
 void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
 {  
+    m_isHitted = true;
+    m_hittedTimer = 0;
     auto pHealthLifeResource = m_pLifeResourceManager->GetResource<CHealthLifeResource>();
     
     pHealthLifeResource->ChangeValue(-hitStruct.Damage);
@@ -89,4 +105,9 @@ void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
     }    
 
     HitSubject.get_subscriber().on_next(hitSide);
+}
+
+bool CHitDamageComponent::IsHitted()
+{
+    return m_isHitted;
 }

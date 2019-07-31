@@ -34,7 +34,7 @@ public:
 
     float GetWeaponDamage(){ return m_damage; }
 
-    rxcpp::subjects::subject<ray_hit> RayHitSubject = rxcpp::subjects::subject<ray_hit>();
+    rxcpp::subjects::subject<ray_hit[3]> RayHitSubject = rxcpp::subjects::subject<ray_hit[3]>();
 
 
     void ProcessEvent(const SEntityEvent& event) override;
@@ -43,8 +43,6 @@ protected:
     void Update(float fFrameTime) override;
 
 private:
- 
-    void DetectHit(const ray_hit rayhit, const int hits);
 
     float m_rayLength{};
     Vec3 m_rayOffset;

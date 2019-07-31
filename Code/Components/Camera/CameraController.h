@@ -42,12 +42,14 @@ public:
     void InitInput(ICharacterActions* charActions);
 
     void SetTargetEntity(IEntity* entity);
+    bool IsCameraFocus();
 
 
 protected:
     Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
     ICharacterActions* m_pCharacterActions = nullptr;
-    IEntity* pPlayerEntity = nullptr;
+    IEntity* m_pPlayerEntity = nullptr;
+    IEntity* m_pEnemy;
 
     void UpdateCamera(float frameTime);
     void CollisionDetection(float frameTime);

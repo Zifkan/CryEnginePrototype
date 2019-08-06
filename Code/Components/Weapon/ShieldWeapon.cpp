@@ -19,8 +19,14 @@ static void RegisterShieldWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterShieldWeaponComponent)
 
-void CShieldWeaponComponent::EnableCollider(bool isEnable)
+bool CShieldWeaponComponent::IsInBlock()
 {
+    return m_isInBlock;
+}
+
+void CShieldWeaponComponent::SetBlock(bool isEnable)
+{
+    m_isInBlock = isEnable;
     m_pCollider->m_size = isEnable ? ColliderSize : ZERO;
     m_pCollider->CreateGeometry();
 

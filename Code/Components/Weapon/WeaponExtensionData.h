@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+constexpr auto RAY_HIT_COUNT = 3;
+
 struct SWeaponHitStruct
 {
 

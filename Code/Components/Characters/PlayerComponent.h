@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "CharacterComponent.h"
-#include "Components/Damage/HitDamageComponent.h"
 #include "Components/Inputs/PlayerInput.h"
 #include "Components/Inputs/Actions/CharacterActions.h"
 
@@ -29,7 +28,6 @@ protected:
 
     CPlayerInputComponent* m_pPlayerInput = nullptr;
     IEntity* m_pMainCamera = nullptr;
-    CHitDamageComponent*  m_pHitDamageComponent = nullptr;
 
     void CreateStateMachine() override;
     void InitLifeResources() override;

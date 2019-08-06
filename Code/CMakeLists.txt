@@ -122,8 +122,10 @@ add_sources("Physics_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Physics"
 		"Components/Physics/CollisionLayerStruct.h"
-		"Components/Physics/CollisionLayerComponent.h"
+		"Components/Physics/CollisionLayerComponent.h"		
+		"Components/Physics/CollisionDetectorComponent.h"
 		"Components/Physics/CollisionLayerComponent.cpp"
+		"Components/Physics/CollisionDetectorComponent.cpp"
 )
 
 

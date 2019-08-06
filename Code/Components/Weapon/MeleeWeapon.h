@@ -3,6 +3,7 @@
 #include "RxCpp/rx.hpp"
 #include "WeaponExtensionData.h"
 #include "BaseCustomWeapon.h"
+#include "Components/Physics/CollisionDetectorComponent.h"
 
 class WeaponSystemComponent;
 
@@ -34,7 +35,7 @@ public:
 
     float GetWeaponDamage(){ return m_damage; }
 
-    rxcpp::subjects::subject<ray_hit[3]> RayHitSubject = rxcpp::subjects::subject<ray_hit[3]>();
+    rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>> RayHitSubject = rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>>();
 
 
     void ProcessEvent(const SEntityEvent& event) override;
@@ -42,6 +43,7 @@ public:
 protected:
     void Update(float fFrameTime) override;
 
+    virtual void Initialize();
 private:
 
     float m_rayLength{};
@@ -50,5 +52,5 @@ private:
     float m_damage = 50.0f;
     bool m_isAttack = false;
     IPhysicalEntity* m_pSkipEnts[10] = {};
-
+    CCollisionDetectorComponent* m_pCollisionDetectorComponent = nullptr;
 };

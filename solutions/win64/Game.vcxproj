@@ -324,7 +324,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerStruct.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BlockAction.cpp" />

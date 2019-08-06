@@ -3,8 +3,6 @@
 #include <DefaultComponents/Physics/BoxPrimitiveComponent.h>
 
 
-class CPlugin_CryDefaultEntities;
-
 class CShieldWeaponComponent :public BaseCustomWeapon
 {
 public:
@@ -20,11 +18,13 @@ public:
 
     }
 
-    void EnableCollider(bool isEnable);
+    bool IsInBlock();
+    void SetBlock(bool isEnable);
 protected:
     virtual void StartGame();
 
     Vec3 ColliderSize = Vec3(1,1,1);
     Cry::DefaultComponents::CBoxPrimitiveComponent* m_pCollider;
     pe_params params;
+    bool m_isInBlock;
 };

@@ -34,7 +34,7 @@ void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmen
 
     m_pCharacterActions->BlockSubject.get_observable().distinct_until_changed().subscribe([this](bool isBlock)
     {
-        m_pLeftHandWeapon->EnableCollider(isBlock);
+        m_pLeftHandWeapon->SetBlock(isBlock);
     });
 
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
@@ -106,37 +106,66 @@ void WeaponSystemComponent::AttachToLeftHand()
 
 void WeaponSystemComponent::HitDetection()
 {
-    /*m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](ray_hit hits)
+    
+
+
+    m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](std::array<ray_hit, RAY_HIT_COUNT> hits)
     {
-        auto hit = &hits;
-        IPhysicalEntity* pHitEntity = hit->pCollider;
-        
-        IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
-
-       
-
-        if (pHitedEntity!=nullptr)
+        bool isHitted = false;    
+        bool isBlocked = false;
+        SWeaponHitStruct hitStruct;
+        CHitDamageComponent* pHitDamageComponent;
+        for (auto& i : hits)
         {
-           
-            CHitDamageComponent* pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
+            ray_hit* hit = &i;
+            IPhysicalEntity* pHitEntity = hit->pCollider;
 
-            if (pHitedEntity->GetId() != m_pEntity->GetId() && pHitDamageComponent != nullptr && !pHitDamageComponent->IsHitted())
+            IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
+                       
+            if (pHitedEntity != nullptr && pHitedEntity->GetId() != m_pEntity->GetId())
             {
-                SWeaponHitStruct hitStruct;
-                hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
-                hitStruct.Hitpoint = hit->pt;
-                hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
-                hitStruct.PartId = hit->partid;
+                pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
+                              
+                if (pHitDamageComponent != nullptr)
+                {
+                    //Check is Character was already hitted by weapon - insta skip 
+                    if (pHitDamageComponent->IsHitted())
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        isHitted = true;
 
-                pHitDamageComponent->OnHit(hitStruct);
-                return;
+                        hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
+                        hitStruct.Hitpoint = hit->pt;
+                        hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
+                        hitStruct.PartId = hit->partid;
+                    }                    
+                }
+
+                CShieldWeaponComponent* pShieldComponent = pHitedEntity->GetComponent<CShieldWeaponComponent>();
+
+                if (pShieldComponent != nullptr && pShieldComponent->IsInBlock())
+                {
+                    isBlocked = true;
+                }
+
+                
             }
         }
 
-        CryLog("hitted entity: %s", pHitedEntity->GetName());
+        if (isHitted && !isBlocked)
+        {
+            pHitDamageComponent->OnHit(hitStruct);
+            return;
+        }
+
+
+      //  CryLog("hitted entity: %s", pHitedEntity->GetName());
         m_pRightHandWeapon->StopAttack();
         m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
-    });*/
+    });
 }
 
 void WeaponSystemComponent::DetachWeapons() const

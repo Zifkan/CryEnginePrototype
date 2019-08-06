@@ -184,7 +184,13 @@
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.h">
       <Filter>Components\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.h">
+      <Filter>Components\Physics</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.cpp">
+      <Filter>Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.cpp">
       <Filter>Components\Physics</Filter>
     </ClInclude>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp">
@@ -257,11 +263,11 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Components\Inputs\Actions">
-      <UniqueIdentifier>{FEAD173A-DC1D-3619-83B7-6567AF55D9AE}</UniqueIdentifier>
-    </Filter>
     <Filter Include="StateMachine\StateAction">
       <UniqueIdentifier>{78FA8D64-E752-3F03-8831-C8569FAA5727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Inputs\Actions">
+      <UniqueIdentifier>{FEAD173A-DC1D-3619-83B7-6567AF55D9AE}</UniqueIdentifier>
     </Filter>
     <Filter Include="Components\Characters\Enemies">
       <UniqueIdentifier>{FF991675-0C8E-3D90-B193-9C913309713A}</UniqueIdentifier>

@@ -5759,18 +5759,14 @@
   <event name="foley" time="0.0405" endTime="0.0405" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
  <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_03.caf"/>
- <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_07.caf">
-  <event name="foley" time="0.030400001" endTime="0.030400001" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_07.caf"/>
  <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_08.caf">
   <event name="foley" time="0.032299999" endTime="0.032299999" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
  <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_09.caf">
   <event name="foley" time="0.036400001" endTime="0.036400001" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_10.caf">
-  <event name="foley" time="0.030400001" endTime="0.030400001" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_10.caf"/>
  <animation name="animations/human/medium/romans/barb_1hnd_foc_psh_hit_stagger_800_bck_01.caf">
   <event name="foley" time="0.0405" endTime="0.0405" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="shuffle" time="0.1075" endTime="0.1075" parameter="" bone="L_Foot" offset="0,0,0" dir="0,0,0" model=""/>

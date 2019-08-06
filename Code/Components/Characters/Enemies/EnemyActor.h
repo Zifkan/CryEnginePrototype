@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <CryAISystem/Components/IEntityNavigationComponent.h>
 #include "Components/Characters/CharacterComponent.h"
+#include "Components/Damage/HitDamageComponent.h"
 
 
 class СEnemyActor : public CCharacterComponent

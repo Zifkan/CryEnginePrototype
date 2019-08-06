@@ -70,10 +70,10 @@ void СEnemyActor::CreateStateMachine()
 
     m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
-    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pCharacterActions, 0, m_idleFragmentId));
+    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pEntity,nullptr,m_pCharacterActions, 0, m_idleFragmentId));
     m_stateMachine->RegisterState(typeid(EnemyMovementAction), new EnemyMovementAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 1, m_walkFragmentId));
     m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pEntity, m_pAnimationComponent, m_pCharacterController, m_pCharacterActions, 2, m_attackFragmentId));
-    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pCharacterActions, 3, m_hitReactionFragmentId));
+    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pHitDamageComponent,m_pCharacterActions, 3, m_hitReactionFragmentId));
     m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pCharacterActions, 4, m_pushBackFragmentId));
     m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pWeaponSystem,m_pAnimationComponent,m_pCharacterActions, 5, m_deathFragmentId));
 }
@@ -86,28 +86,27 @@ void СEnemyActor::InitLifeResources()
 
 void СEnemyActor::SetupActions()
 {
-    
-        auto subscription = rxcpp::composite_subscription();
-        m_pCharacterActions->MovementSubject.get_observable().subscribe(subscription, [this](Vec2 Vector2)
+    auto subscription = rxcpp::composite_subscription();
+    m_pCharacterActions->MovementSubject.get_observable().subscribe(subscription, [this](Vec2 Vector2)
+    {
+        if (Vector2.GetLength2() > 0)
         {
-            if (Vector2.GetLength2() > 0)
-            {
-                m_stateMachine->SetCurrentState(typeid(EnemyMovementAction));
-            }
-        });
+            m_stateMachine->SetCurrentState(typeid(EnemyMovementAction));
+        }
+    });
 
-        m_pCharacterActions->AttackSubject.get_observable().subscribe(subscription, [this](AttackType type)
-        {
-            m_stateMachine->SetCurrentState(typeid(EnemyAttackAction));
-        });
+    m_pCharacterActions->AttackSubject.get_observable().subscribe(subscription, [this](AttackType type)
+    {
+        m_stateMachine->SetCurrentState(typeid(EnemyAttackAction));
+    });
 
-       /* m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)
-        {
-            m_stateMachine->SetCurrentState(typeid(DeathAction));
-            subscription.unsubscribe();
-        });*/
+    /* m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)
+     {
+         m_stateMachine->SetCurrentState(typeid(DeathAction));
+         subscription.unsubscribe();
+     });*/
 
-        SetSprint();
+    SetSprint();
 }
 
 void СEnemyActor::SetSprint()

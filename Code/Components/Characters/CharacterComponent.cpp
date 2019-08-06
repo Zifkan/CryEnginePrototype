@@ -20,6 +20,7 @@ void CCharacterComponent::Initialize()
     m_lifeResourceManager = m_pEntity->GetOrCreateComponent<CLifeResourceManagerComponent>();
     m_pWeaponSystem = m_pEntity->GetOrCreateComponent<WeaponSystemComponent>();
 
+    m_pHitDamageComponent = m_pEntity->GetOrCreateComponent<CHitDamageComponent>();
 	Revive();
 }
 
@@ -70,6 +71,16 @@ void CCharacterComponent::Revive()
 	// Apply character to the entity
 	m_pAnimationComponent->ResetCharacter();
 	m_pCharacterController->Physicalize();
+}
+
+void CCharacterComponent::SetStatus(uint32 flag)
+{
+    m_currentStatus |= flag;
+}
+
+void CCharacterComponent::UnSetStatus(uint32 flag)
+{
+    m_currentStatus &= ~flag;
 }
 
 void CCharacterComponent::EditorUpdate(float fFrameTime)

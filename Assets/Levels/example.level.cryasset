@@ -260,6 +260,8 @@
   <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_back_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_03.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_07.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_10.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_lf_to_front_lf_stat_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_rf_to_front_lf_stat_02.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01.caf</Path>
@@ -723,6 +725,7 @@
   <Path>libs/environmentpresets/example.xml</Path>
   <Path>materials/shield.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion.cdf</Path>
+  <Path>objects/characters/human/medium/romanlegion/legion_render.mtl</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_skin.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_lod1.skin</Path>
   <Path>objects/characters/human/medium/romanlegion/legion_tunic_lower_sim.skin</Path>
@@ -790,7 +793,6 @@
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
   <Path>objects/weapons/shield.cgf</Path>
-  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
   <Path>textures/shield/scutum_albedo.dds</Path>

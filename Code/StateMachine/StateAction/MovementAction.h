@@ -29,7 +29,7 @@ public:
 private:
 
     Vec3 GetLookDirNormalized(Vec3 target,Vec3 location);
-
+    void SetRotation(Vec3 moveDirection);
 
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;

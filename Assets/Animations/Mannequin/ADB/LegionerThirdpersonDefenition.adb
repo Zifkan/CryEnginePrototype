@@ -1,6 +1,12 @@
 <AnimDB FragDef="Animations/Mannequin/ADB/LegionPlayerFragmentIds.xml" TagDef="Animations/Mannequin/ADB/legionertags.xml">
  <FragmentList>
   <Idle>
+   <Fragment BlendOutDuration="0.2" Tags="Rotate">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="romn_com_idle_turn" flags="Loop"/>
+    </AnimLayer>
+   </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
@@ -52,13 +58,13 @@
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="RightSide">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01"/>
+     <Animation name="barb_1hnd_foc_hit_rct_stat_front_lf_07"/>
     </AnimLayer>
    </Fragment>
    <Fragment BlendOutDuration="0.2" Tags="" FragTags="LeftSide">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01"/>
+     <Animation name="barb_1hnd_foc_hit_rct_stat_front_lf_10"/>
     </AnimLayer>
    </Fragment>
   </HitReaction>

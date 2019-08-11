@@ -57,6 +57,9 @@ IAction::EStatus EnemyAttackAction::Update(float timePassed)
     if (GetNormalizedTime(0)<=0.75f)
         m_pCharacterController->AddVelocity(5 * timePassed * m_pCharacterEntity->GetForwardDir());
 
+    if (GetNormalizedTime(0) > 0.75f)
+        m_pWeaponSystem->StopAttack();
+
     Quat newRotation = Quat::CreateRotationVDir(pPlayerEntity->GetWorldPos()- m_pCharacterController->GetEntity()->GetWorldPos());
 
     Ang3 ypr = CCamera::CreateAnglesYPR(Matrix33(newRotation));

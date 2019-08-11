@@ -111,7 +111,7 @@ void СEnemyActor::SetupActions()
 
 void СEnemyActor::SetSprint()
 {
-    m_pCharacterActions->MovementTypeSubject.get_subscriber().on_next(_isSprint?SPRINT:WALK);
+    m_pCharacterActions->MovementTypeSubject.get_subscriber().on_next(m_isSprint?SPRINT:WALK);
 }
 
 
@@ -128,18 +128,18 @@ void СEnemyActor::GameUpdate(float fFrameTime)
 {
     CCharacterComponent::GameUpdate(fFrameTime);
 
-    _currentState = Idle;
+    m_currentState = Idle;
 
     float distance = m_pEntity->GetWorldPos().GetDistance(pPlayerEntity->GetWorldPos());
 
-    if (distance <= _detectDistance && distance>= _attackDetectDistance)
+    if (distance <= m_detectDistance && distance>= m_attackDetectDistance)
     {
-        _currentState = Chase;
+        m_currentState = Chase;
     }
 
-    if (distance < _attackDetectDistance)
+    if (distance < m_attackDetectDistance)
     {
-        _currentState = Attack;
+        m_currentState = Attack;
     }
 
     SetState();
@@ -154,7 +154,7 @@ void СEnemyActor::PropertyChanged()
 
 void СEnemyActor::SetState()
 {
-    switch (_currentState)
+    switch (m_currentState)
     {
     case Idle:
     {

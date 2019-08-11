@@ -36,6 +36,7 @@ public:
         desc.AddMember(&CCameraController::yMaxLimit,'ymax', "yMax", "y max", "Max Y rotation border", 90.0f);
         desc.AddMember(&CCameraController::heightOffset,'heig', "Height", "Height", "Camera height offset", 3.0f);
         desc.AddMember(&CCameraController::focusHeightOffset, 'fhei', "FocusHeight", "Focus Height", "Focus Camera height offset", 3.0f);
+        desc.AddMember(&CCameraController::m_pitchLimit, 'plim', "PitchLimit", "Focus Pitch Limit", "Focus Pitch Limit", -35.f);
 
 
         desc.SetComponentFlags({ EFlags::Singleton});
@@ -76,4 +77,5 @@ protected:
     float ySpeed = 80.0f;
     float yMinLimit = -90.0f;
     float yMaxLimit = 90.0f;
+    float m_pitchLimit = -35.f;
 };

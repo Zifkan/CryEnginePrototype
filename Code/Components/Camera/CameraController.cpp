@@ -49,6 +49,8 @@ void CCameraController::ProcessEvent(const SEntityEvent& event)
     break;
     case ENTITY_EVENT_UPDATE:
     {
+        if (!gEnv->IsGameOrSimulation()) return;
+
         SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
         UpdateCamera(pCtx->fFrameTime); 
         CollisionDetection(pCtx->fFrameTime);

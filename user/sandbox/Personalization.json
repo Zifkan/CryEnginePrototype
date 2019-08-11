@@ -161,7 +161,7 @@
             "foldersSplitter": "AAAA/wAAAAEAAAACAAABAAAAAwAB/////wEAAAABAA==",
             "foldersView": {
                 "selected": [
-                    "Animations"
+                    ""
                 ]
             },
             "mainViewSplitter": "AAAA/wAAAAEAAAACAAAARAAAAQAB/////wEAAAABAA==",
@@ -190,7 +190,8 @@
             "/Animations/Mannequin/Preview",
             "/Objects/Medieval Weapons Pack",
             "/Objects/Weapons/SampleWeapon",
-            "/Objects/Weapons"
+            "/Objects/Weapons",
+            "/Animations/human"
         ]
     },
     "FavoritesHelper": {
@@ -223,6 +224,8 @@
     },
     "Schematyc Editor": {
         "Recent Files": [
+            "testschem.schematyc_ent.cryasset",
+            "TestSchem.schematyc_ent.cryasset",
             "weapon.schematyc_ent.cryasset",
             "WeaponLib.schematyc_lib.cryasset",
             "Weapon.schematyc_ent.cryasset",

@@ -35,8 +35,10 @@ public:
         desc.AddMember(&CCameraController::yMinLimit,'ymin', "yMin", "y min", "Min Y rotation border", -80.0f);
         desc.AddMember(&CCameraController::yMaxLimit,'ymax', "yMax", "y max", "Max Y rotation border", 90.0f);
         desc.AddMember(&CCameraController::heightOffset,'heig', "Height", "Height", "Camera height offset", 3.0f);
+        desc.AddMember(&CCameraController::focusHeightOffset, 'fhei', "FocusHeight", "Focus Height", "Focus Camera height offset", 3.0f);
 
-        desc.SetComponentFlags({ EFlags::Singleton,EFlags:: Transform});
+
+        desc.SetComponentFlags({ EFlags::Singleton});
     }
 
     void InitInput(ICharacterActions* charActions);
@@ -62,6 +64,7 @@ protected:
     Vec2 m_deltaRotation = ZERO;
 
     float heightOffset = 3.0f;
+    float focusHeightOffset = 3.0f;
 
     float x = 0.0f;
     float y = 0.0f;

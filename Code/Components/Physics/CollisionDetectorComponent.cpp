@@ -123,7 +123,7 @@ void CCollisionDetectorComponent::ProcessEvent(const SEntityEvent& event)
 
 void CCollisionDetectorComponent::Initialize()
 {
-    OnCollisionEnter.get_observable().subscribe([this] (IEntity* entity){CryLog("OnCollisionEnter: %s",entity->GetName()); });
+   /* OnCollisionEnter.get_observable().subscribe([this] (IEntity* entity){CryLog("OnCollisionEnter: %s",entity->GetName()); });
     OnCollisionStay.get_observable().subscribe([this] (IEntity* entity){CryLog("OnCollisionStay: %s",entity->GetName()); });
-    OnCollisionExit.get_observable().subscribe([this] (IEntity* entity){CryLog("OnCollisionExit: %s",entity->GetName()); });
+    OnCollisionExit.get_observable().subscribe([this] (IEntity* entity){CryLog("OnCollisionExit: %s",entity->GetName()); });*/
 }                                                                                                   

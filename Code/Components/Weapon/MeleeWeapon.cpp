@@ -20,25 +20,6 @@ static void RegisterCMeleeWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCMeleeWeaponComponent)
 
 
-
-void CMeleeWeaponComponent::Initialize()
-{
-    m_pCollisionDetectorComponent = m_pEntity->GetOrCreateComponent<CCollisionDetectorComponent>();
-
-    //m_pCollisionDetectorComponent->OnCollisionEnter.get_observable().subscribe([this](EventPhysCollision* pPhysCollision)
-    //{
-    //    if (!m_isAttack) return;
-
-
-    //    IPhysicalEntity *pHitEntityPhysics = pPhysCollision->pEntity[0];
-    //    IEntity *pHitEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntityPhysics);
-
-    //    if (!pHitEntity || pHitEntity->GetId() == m_pEntity->GetId()) return;
-
-    //   // CryLog("Sword Collision detection: %s", pHitEntity->GetName());
-    //});
-}
-
 void CMeleeWeaponComponent::Attack()
 {
     m_isAttack = true;
@@ -55,68 +36,37 @@ void CMeleeWeaponComponent::Init(WeaponSystemComponent* weaponSystem, IEntity* s
     m_pSkipEnts[1] = m_pEntity->GetPhysicalEntity();
 
     if (secondWeapon!=nullptr)
-        m_pSkipEnts[3] = secondWeapon->GetPhysicalEntity();
+        m_pSkipEnts[2] = secondWeapon->GetPhysicalEntity();
 }
 
 void CMeleeWeaponComponent::ProcessEvent(const SEntityEvent& event)
 {
     BaseCustomWeapon::ProcessEvent(event);
-    switch (event.event)
-    {
-    case ENTITY_EVENT_COLLISION:
-    {
-        return;
-        if (!m_isAttack) return;
-
-        // Get the EventPhysCollision structure describing the collision that occurred
-         const EventPhysCollision* pPhysCollision = reinterpret_cast<const EventPhysCollision*>(event.nParam[0]);
-        // The EventPhysCollision provides information for both the source and target entities
-        // Therefore, we store the indices of this entity (and the other collider)
-        // This can for example be used to get the surface identifier (and thus the material) of the part of our entity that collided
-        const int thisEntityIndex = static_cast<int>(event.nParam[1]);
-        // Calculate the index of the other entity
-        const int otherEntityIndex = (thisEntityIndex + 1) % 2;
-        if (otherEntityIndex <= 0) return;
-        // Get the contact point (in world coordinates) of the two entities
-        const Vec3& contactPoint = pPhysCollision->pt;
-        // Get the collision normal vector
-        const Vec3& contactNormal = pPhysCollision->n;
-        // Get properties for our entity, starting with the local velocity of our entity at the contact point
-        const Vec3& relativeContactVelocity = pPhysCollision->vloc[thisEntityIndex];
-        // Get the mass of our entity
-        const float contactMass = pPhysCollision->mass[thisEntityIndex];
-        // Get the identifier of the part of our entity that collided
-        // This is the same identifier that is added with IPhysicalEntity::AddGeometry
-        const int contactPartId = pPhysCollision->partid[thisEntityIndex];
-        // Get the surface on our entity that collided
-        const int contactSurfaceId = pPhysCollision->idmat[thisEntityIndex];
-
-        const int primId = pPhysCollision->iPrim[otherEntityIndex];
-        // Get the ISurfaceType representation of the surface that collided
-        if (const ISurfaceType* pContactSurface = gEnv->p3DEngine->GetMaterialManager()->GetSurfaceType(contactSurfaceId))
-        {
-            /* Interact with pContactSurface here*/
-        }
-        auto physEntity = gEnv->pPhysicalWorld->GetPhysicalEntityById(contactPartId);
-        auto temp = gEnv->pEntitySystem->GetEntity(primId);
-        if (temp!=nullptr)
-            CryLog("Sword Collision detection: %s", temp->GetName());
-    }
-    break;
-    }
+   
 }
 
 void CMeleeWeaponComponent::Update(float fFrameTime)
-{
-    return;
-    if (!m_isAttack ) return;
-
+{    
+   
+    if (!m_isAttack) return;
     ray_hit rayhit[RAY_HIT_COUNT];
     
     // Perform the ray cast.
     int hits = gEnv->pPhysicalWorld->RayWorldIntersection(m_pEntity->GetWorldPos()+m_rayOffset,  Quat(m_rayAngleRotation)* m_pEntity->GetForwardDir()*m_rayLength,
         ent_static | ent_sleeping_rigid | ent_rigid | ent_independent , rwi_max_piercing,
         rayhit, 3, m_pSkipEnts, 10);  
+
+
+ /* 
+    primitives::box box;
+    box.center = GetEntity()->GetWorldPos();
+    box.size = Vec3(1.f, 1.f, 1.f);
+    box.Basis.SetRotationXYZ(GetEntity()->GetWorldAngles());
+
+    geom_contact *pContact = 0;
+    float hitDist = gEnv->pPhysicalWorld->PrimitiveWorldIntersection(box.type, &box, (Vec3(.0f, .0f, -1.f) * 10.f), ent_all, &pContact, 0, rwi_colltype_any | rwi_stop_at_pierceable, 0, 0, 0, m_pSkipEnts,0);
+
+*/
 
     if (hits > 1)
     {
@@ -125,4 +75,72 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
 
         RayHitSubject.get_subscriber().on_next(sendRayHit);
     }
+
+
+    return;
+
+    auto center = GetEntity()->GetWorldPos() + m_boxOffset.x* GetEntity()->GetRightDir() + m_boxOffset.y* GetEntity()->GetForwardDir() + m_boxOffset.z* GetEntity()->GetUpDir();
+    primitives::box box;
+    box.size = m_boxSize;
+    box.Basis.SetRotationVDir(GetEntity()->GetWorldPos()- center);
+    box.bOriented = 1;
+    box.center = center;
+
+    float n = 0.0f;
+    geom_contact *contacts;
+    intersection_params params;
+    WriteLockCond lockContacts;
+    params.bStopAtFirstTri = false;
+    params.bNoBorder = true;
+    params.bNoAreaContacts = true;
+    n = gEnv->pPhysicalWorld->PrimitiveWorldIntersection(primitives::box::type, &box, Vec3(ZERO),
+        ent_rigid | ent_sleeping_rigid | ent_independent | ent_static | ent_terrain | ent_water, &contacts, 0,
+        geom_colltype0 | geom_colltype_foliage | geom_colltype_player, &params, 0, 0, m_pSkipEnts, 3, &lockContacts);
+
+    if (!m_isAttack) return;
+
+    int ret = (int)n;
+    CryLog("hit count: %i", ret);
+    float closestdSq = 9999.0f;
+    geom_contact *closestc = 0;
+    geom_contact *currentc = contacts;
+    for (int i = 0; i < ret; i++)
+    {
+        geom_contact *contact = currentc;
+        if (contact)
+        {
+            IPhysicalEntity *pCollider = gEnv->pPhysicalWorld->GetPhysicalEntityById(contact->iPrim[0]);
+            if (pCollider)
+            {
+                IEntity *pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pCollider);
+                if (pEntity)
+                {
+                    if (pEntity == GetEntity())
+                    {
+                        ++currentc;
+                        continue;
+                    }
+                }
+
+                float distSq = (GetEntity()->GetWorldPos() - currentc->pt).len2();
+                if (distSq < closestdSq)
+                {
+                    closestdSq = distSq;
+                    closestc = contact;
+                }
+            }
+        }
+        ++currentc;
+    }
+
+    if (closestc)
+    {
+        IPhysicalEntity *pCollider = gEnv->pPhysicalWorld->GetPhysicalEntityById(closestc->iPrim[0]);
+        IEntity *pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pCollider);
+        if (pEntity)
+        {
+     //       CryLog("EntityName: %s", pEntity->GetName());
+        }
+    }
+
 }

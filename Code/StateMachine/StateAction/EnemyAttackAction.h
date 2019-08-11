@@ -4,7 +4,7 @@
 class EnemyAttackAction : public BaseAction
 {
 public:
-    EnemyAttackAction(IEntity* characterEntity,
+    EnemyAttackAction(WeaponSystemComponent* weaponSystem, IEntity* characterEntity,
         Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
         Cry::DefaultComponents::CCharacterControllerComponent* characterController,
         ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID,
@@ -26,4 +26,5 @@ private:
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;
     IEntity* m_pCharacterEntity;
     IEntity* pPlayerEntity;
+    WeaponSystemComponent* m_pWeaponSystem;
 };

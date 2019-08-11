@@ -34,7 +34,7 @@ public:
 
     void OnHit(SWeaponHitStruct hitStruct);
 
-    bool IsHitted();
+
 
 protected:
     virtual void ProcessEvent(const SEntityEvent& event);
@@ -42,7 +42,7 @@ protected:
     CLifeResourceManagerComponent* m_pLifeResourceManager = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAdvancedAnimationComponent = nullptr;
 
-    bool m_isHitted;
+  
     float m_hittedStatusDuration;
     float m_hittedTimer;
 };

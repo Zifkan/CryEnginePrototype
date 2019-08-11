@@ -14,7 +14,7 @@ enum class CharecterStatusFlag
     Normal = 1 << 0,
     Hit = 1 << 1,
     AlreadyHitted = 1 << 2,
-    Block = 1 << 3,
+    Dodge = 1 << 3,
 };
 
 class CCharacterComponent  : public IEntityComponent
@@ -44,8 +44,10 @@ public:
     }
     CStateMachine* m_stateMachine;
 
-    void SetStatus(uint32 flag);
-    void UnSetStatus(uint32 flag);
+    void SetStatus(CharecterStatusFlag flag);
+    void UnSetStatus(CharecterStatusFlag flag);
+
+    uint32 GetStatus() { return m_currentStatus; }
 protected:
 
     ICharacterActions* m_pCharacterActions = nullptr;
@@ -55,8 +57,6 @@ protected:
     WeaponSystemComponent* m_pWeaponSystem = nullptr;
     CLifeResourceManagerComponent* m_lifeResourceManager = nullptr;
     CHitDamageComponent*  m_pHitDamageComponent = nullptr;
-
-    Schematyc::CSharedString  m_characterEntityName;
 
     virtual void StartGame() = 0;
     virtual void CreateStateMachine() = 0;

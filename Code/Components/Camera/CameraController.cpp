@@ -105,8 +105,8 @@ void CCameraController::UpdateCamera(float frameTime)
        x = target.x - location.x;
        y = target.y - location.y;
 
-       Vec3 lookDir = Vec3(x, y, target.z - location.z).normalize();
-
+       Vec3 lookDir = Vec3(x, y, 0).normalize();
+       
        rotation = Quat::CreateRotationVDir(lookDir);
     }
     else

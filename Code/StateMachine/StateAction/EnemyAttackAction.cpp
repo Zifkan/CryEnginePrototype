@@ -1,7 +1,7 @@
 ﻿#include "StdAfx.h"
 #include "EnemyAttackAction.h"
 
-EnemyAttackAction::EnemyAttackAction(IEntity* characterEntity,
+EnemyAttackAction::EnemyAttackAction(WeaponSystemComponent* weaponSystem, IEntity* characterEntity,
     Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
     Cry::DefaultComponents::CCharacterControllerComponent* characterController,
     ICharacterActions* characterAction,
@@ -12,6 +12,7 @@ EnemyAttackAction::EnemyAttackAction(IEntity* characterEntity,
     , m_pAnimationComponent(animationComponent)
     , m_pCharacterController(characterController)
     , m_pCharacterEntity(characterEntity)
+    , m_pWeaponSystem(weaponSystem)
 {
     characterAction->AttackSubject.get_observable().distinct_until_changed().subscribe([this](AttackType type)
     {
@@ -42,6 +43,7 @@ void EnemyAttackAction::Enter()
 void EnemyAttackAction::Exit()
 {
     m_attackId++;
+    m_pWeaponSystem->StopAttack();
     m_lastCallTime = gEnv->pTimer->GetCurrTime();
     BaseAction::Exit();
 }

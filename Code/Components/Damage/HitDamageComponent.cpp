@@ -4,6 +4,7 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include "Components/LifeResources/HealthLifeResource.h"
 #include <Components/Weapon/WeaponExtensionData.h>
+#include "Components/Characters/CharacterComponent.h"
 
 
 static void RegisterHitDamageComponent(Schematyc::IEnvRegistrar& registrar)
@@ -46,7 +47,7 @@ void CHitDamageComponent::ProcessEvent(const SEntityEvent& event)
         }
         else
         {
-            m_isHitted = false;
+              m_pEntity->GetComponent<CCharacterComponent>()->UnSetStatus(CharecterStatusFlag::Hit);
         }
     }
     break;
@@ -55,7 +56,7 @@ void CHitDamageComponent::ProcessEvent(const SEntityEvent& event)
 
 void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
 {  
-    m_isHitted = true;
+    auto charComponent = m_pEntity->GetComponent<CCharacterComponent>();
     m_hittedTimer = 0;
     auto pHealthLifeResource = m_pLifeResourceManager->GetResource<CHealthLifeResource>();
     
@@ -105,9 +106,4 @@ void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
     }    
 
     HitSubject.get_subscriber().on_next(hitSide);
-}
-
-bool CHitDamageComponent::IsHitted()
-{
-    return m_isHitted;
 }

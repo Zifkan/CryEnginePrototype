@@ -35,6 +35,11 @@ void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmen
     m_pCharacterActions->BlockSubject.get_observable().distinct_until_changed().subscribe([this](bool isBlock)
     {
         m_pLeftHandWeapon->SetBlock(isBlock);
+
+        if (isBlock)
+            m_pEntity->GetComponent<CCharacterComponent>()->SetStatus(CharecterStatusFlag::Dodge);
+        else
+            m_pEntity->GetComponent<CCharacterComponent>()->UnSetStatus(CharecterStatusFlag::Dodge);
     });
 
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
@@ -110,61 +115,64 @@ void WeaponSystemComponent::HitDetection()
 
 
     m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](std::array<ray_hit, RAY_HIT_COUNT> hits)
-    {
-        bool isHitted = false;    
-        bool isBlocked = false;
+    {        
         SWeaponHitStruct hitStruct;
-        CHitDamageComponent* pHitDamageComponent;
+        CHitDamageComponent* pHitDamageComponent = nullptr;
+        CCharacterComponent* mEnemyCharacter = nullptr;
+        CShieldWeaponComponent* pShieldComponent = nullptr;
+
         for (auto& i : hits)
         {
             ray_hit* hit = &i;
             IPhysicalEntity* pHitEntity = hit->pCollider;
 
             IEntity* pHitedEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pHitEntity);
-                       
+
             if (pHitedEntity != nullptr && pHitedEntity->GetId() != m_pEntity->GetId())
             {
-                pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
-                              
-                if (pHitDamageComponent != nullptr)
+                if (mEnemyCharacter == nullptr)
                 {
-                    //Check is Character was already hitted by weapon - insta skip 
-                    if (pHitDamageComponent->IsHitted())
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        isHitted = true;
-
-                        hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
-                        hitStruct.Hitpoint = hit->pt;
-                        hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
-                        hitStruct.PartId = hit->partid;
-                    }                    
+                    mEnemyCharacter = pHitedEntity->GetComponent<CCharacterComponent>();
+                    pHitDamageComponent = pHitedEntity->GetComponent<CHitDamageComponent>();
+                    hitStruct.Damage = m_pRightHandWeapon->GetWeaponDamage();
+                    hitStruct.Hitpoint = hit->pt;
+                    hitStruct.HitDirection = pHitedEntity->GetWorldPos() - m_pRightHandWeapon->GetEntity()->GetWorldPos();
+                    hitStruct.PartId = hit->partid;
                 }
 
-                CShieldWeaponComponent* pShieldComponent = pHitedEntity->GetComponent<CShieldWeaponComponent>();
-
-                if (pShieldComponent != nullptr && pShieldComponent->IsInBlock())
+                if (pShieldComponent == nullptr)
                 {
-                    isBlocked = true;
+                    pShieldComponent = pHitedEntity->GetComponent<CShieldWeaponComponent>();
                 }
-
-                
             }
         }
 
-        if (isHitted && !isBlocked)
+        if (mEnemyCharacter != nullptr)
         {
-            pHitDamageComponent->OnHit(hitStruct);
-            return;
+            if (!(mEnemyCharacter->GetStatus() & (uint32)CharecterStatusFlag::Hit))
+            {
+                mEnemyCharacter->SetStatus(CharecterStatusFlag::Hit);
+                if (!(mEnemyCharacter->GetStatus() & (uint32)CharecterStatusFlag::Dodge))
+                {
+                    pHitDamageComponent->OnHit(hitStruct);
+                    return;
+                }
+
+                if (pShieldComponent != nullptr)
+                {
+                    m_pRightHandWeapon->StopAttack();
+                    m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
+                }
+            }
         }
-
-
-      //  CryLog("hitted entity: %s", pHitedEntity->GetName());
-        m_pRightHandWeapon->StopAttack();
-        m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
+        else
+        {
+            if (hits.size() > 0)
+            {
+                m_pRightHandWeapon->StopAttack();
+                m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
+            }
+        } 
     });
 }
 

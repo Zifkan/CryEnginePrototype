@@ -1,8 +1,7 @@
 #include "StdAfx.h"
 #include "CharacterComponent.h"
 
-CCharacterComponent::CCharacterComponent(): 
-    m_characterEntityName("Player")
+CCharacterComponent::CCharacterComponent()
 {    
 }
 
@@ -73,14 +72,14 @@ void CCharacterComponent::Revive()
 	m_pCharacterController->Physicalize();
 }
 
-void CCharacterComponent::SetStatus(uint32 flag)
+void CCharacterComponent::SetStatus(CharecterStatusFlag flag)
 {
-    m_currentStatus |= flag;
+    m_currentStatus |= (uint32)flag;
 }
 
-void CCharacterComponent::UnSetStatus(uint32 flag)
+void CCharacterComponent::UnSetStatus(CharecterStatusFlag flag)
 {
-    m_currentStatus &= ~flag;
+    m_currentStatus &= ~(uint32)flag;
 }
 
 void CCharacterComponent::EditorUpdate(float fFrameTime)

@@ -25,6 +25,8 @@ public:
         desc.AddMember(&CMeleeWeaponComponent::m_rayAngleRotation, 'rrot', "WeaponRayRotation", "Weapon Ray rotation", "Weapon Ray rotation", Vec3(0, 0, 0));
         desc.AddMember(&CMeleeWeaponComponent::m_damage, 'dama', "WeaponDamage", "Weapon Damage", "Weapon Damage", 10);
         desc.AddMember(&CMeleeWeaponComponent::m_weaponHandType, 'whnd', "WeaponHandType", "Weapon Hand Type", "Weapon Hand Type", EWeaponHandType::RightHand);
+        desc.AddMember(&CMeleeWeaponComponent::m_boxOffset, 'offs', "RayBoxOffset", "Ray Box Offset", "Ray Box Offset", Vec3(0, 0, 0));
+        desc.AddMember(&CMeleeWeaponComponent::m_boxSize, 'bsiz', "RayBoxSize", "Ray Box Size", "Ray Box Size", Vec3(0.5, 0.5, 0.5));
 
     }
 
@@ -36,6 +38,7 @@ public:
     float GetWeaponDamage(){ return m_damage; }
 
     rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>> RayHitSubject = rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>>();
+    IEntity* m_pPlayer;
 
 
     void ProcessEvent(const SEntityEvent& event) override;
@@ -43,7 +46,6 @@ public:
 protected:
     void Update(float fFrameTime) override;
 
-    virtual void Initialize();
 private:
 
     float m_rayLength{};
@@ -52,5 +54,6 @@ private:
     float m_damage = 50.0f;
     bool m_isAttack = false;
     IPhysicalEntity* m_pSkipEnts[10] = {};
-    CCollisionDetectorComponent* m_pCollisionDetectorComponent = nullptr;
+    Vec3 m_boxOffset;
+    Vec3 m_boxSize;
 };

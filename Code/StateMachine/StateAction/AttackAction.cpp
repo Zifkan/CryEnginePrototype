@@ -56,8 +56,10 @@ IAction::EStatus AttackAction::Update(float timePassed)
     if (timeLeft <= 0.75f)
     {
         m_pCharacterController->AddVelocity(5 * timePassed * m_pCharacterEntity->GetForwardDir());
-      //  m_pWeaponSystem->StopAttack();
     }
+
+    if (timeLeft >= 0.75f)
+        m_pWeaponSystem->StopAttack();
 
     return IAction::Update(timePassed);
 }

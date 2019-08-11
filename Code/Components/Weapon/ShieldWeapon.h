@@ -18,7 +18,7 @@ public:
 
     }
 
-    bool IsInBlock();
+   
     void SetBlock(bool isEnable);
 protected:
     virtual void StartGame();
@@ -26,5 +26,4 @@ protected:
     Vec3 ColliderSize = Vec3(1,1,1);
     Cry::DefaultComponents::CBoxPrimitiveComponent* m_pCollider;
     pe_params params;
-    bool m_isInBlock;
 };

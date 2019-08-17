@@ -10,6 +10,7 @@ enum MovementType
 
 enum AttackType
 {
+    NONE,
     ATTACK,
     FORCE_ATTACK
 };

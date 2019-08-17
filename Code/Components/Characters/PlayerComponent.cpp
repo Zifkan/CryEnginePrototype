@@ -133,7 +133,7 @@ void CPlayerComponent::SetupActions()
     .subscribe(subscription,[this](AttackType type)
     {
         IBaseLifeResource* staminaResource = m_lifeResourceManager->GetResource<CStaminaLifeResource>();
-        if (staminaResource->Value.get_value() - m_attackStaminaCost >= 0)
+      //  if (staminaResource->Value.get_value() - m_attackStaminaCost >= 0)
         {
             m_stateMachine->SetCurrentState(typeid(AttackAction));
         }

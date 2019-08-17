@@ -59,13 +59,28 @@ void CPlayerSoul::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerSoul::LifeTimeReaction()
 {   
-     m_lifeTimeCycleSubscription = m_lifeTimeCycle.get_observable().scan(m_lifeTimeLimit,[](float v, float time){return v - time;})
+    float diffuseMultiplier = m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value;
+
+     m_lifeTimeCycleSubscription = m_lifeTimeCycle.get_observable()
+    .scan(m_lifeTimeLimit,[](float timeLimit, float frameTime){return timeLimit - frameTime;})
     .take_while([](float v) {return v > 0.01; })
-    .subscribe([this](float time)
-    {    
-         auto temp = static_cast<float>(m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value)/ time;       
-        m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value -= temp;
-        m_pPoinLight->SetOptics("");
+    .subscribe([this, diffuseMultiplier](float time)
+    { 
+         CryLog("Result: %f", diffuseMultiplier * (time / m_lifeTimeLimit));
+         m_pPoinLight->GetColorParameters().m_diffuseMultiplier.value = diffuseMultiplier * (time / m_lifeTimeLimit);
+         
+
+        /* SRenderLight light;
+
+      
+
+         light.SetPosition(ZERO);
+         light.m_Flags = DLF_DEFERRED_LIGHT | DLF_POINT;
+
+         light.SetLightColor(m_pPoinLight->GetColorParameters().m_color * diffuseMultiplier * (time / m_lifeTimeLimit));
+         light.SetSpecularMult(diffuseMultiplier * (time / m_lifeTimeLimit));
+
+         const int slot = m_pEntity->LoadLight(GetOrMakeEntitySlotId(), &light);*/
     });
 
 }

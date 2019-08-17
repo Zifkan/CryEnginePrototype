@@ -1,5 +1,7 @@
 ﻿#include "StdAfx.h"
 #include "AttackAction.h"
+#include "StateMachine/StateMachine.h"
+
 
 AttackAction::AttackAction(WeaponSystemComponent* weaponSystem,IBaseLifeResource* lifeResource, IEntity* characterEntity,
     Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
@@ -14,34 +16,53 @@ AttackAction::AttackAction(WeaponSystemComponent* weaponSystem,IBaseLifeResource
     , m_pCharacterEntity(characterEntity)
     , m_pWeaponSystem(weaponSystem)
 {
-    characterAction->AttackSubject.get_observable().distinct_until_changed().subscribe([this](AttackType type)
-    {
-        if (type == ATTACK)
-            m_pAnimationComponent->SetTag("Simple", true);
 
-        if(type==FORCE_ATTACK)
-            m_pAnimationComponent->SetTag("Force", true);      
+    timeLeft = 0.0f;
+    characterAction->AttackSubject.get_observable().subscribe([this](AttackType type)
+    {
+        if(timeLeft==0.0f)
+        {
+            m_attackType = type;
+           // CryLog("m_attackType %i", m_attackType);
+        }
+      
     });
 }
 
 
 void AttackAction::Enter()
 {
+    CryLog("Id: %i", GetOptionIdx());
+
+    if (m_simpleTagId == TAG_ID_INVALID)
+        m_simpleTagId = m_pStateMachine->GetAnimationComponent()->GetTagId("Simple");
+
+    if (m_forceTagId == TAG_ID_INVALID)
+        m_forceTagId = m_pStateMachine->GetAnimationComponent()->GetTagId("Force");
+
+
+
     if (m_attackId >=4)
-        m_attackId = 0;
+        m_attackId = 0;  
 
    
     m_pAnimationComponent->SetAnimationDrivenMotion(false);
     m_pLifeResource->ChangeValue(0);
-    SetOptionIdx(m_attackId);
-    m_pCharacterController->SetVelocity(ZERO);
+    m_pCharacterController->SetVelocity(ZERO);    
+
+    m_attackId++;
     BaseAction::Enter();
 }
 
 void AttackAction::Exit()
 {
-    m_attackId++;
+  
     m_pWeaponSystem->StopAttack();
+
+    auto animComponent = m_pStateMachine->GetAnimationComponent();
+    animComponent->SetTagWithId(m_simpleTagId, false);
+    animComponent->SetTagWithId(m_forceTagId, false);
+    timeLeft = 0.0f;
     BaseAction::Exit();
 }
 
@@ -49,9 +70,21 @@ void AttackAction::Exit()
 
 IAction::EStatus AttackAction::Update(float timePassed)
 {   
-    m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, 1);
+ 
+    auto animComponent = m_pStateMachine->GetAnimationComponent();
 
-    auto timeLeft = GetNormalizedTime(0);
+    if (m_attackType == ATTACK)
+    {
+        animComponent->SetTagWithId(m_simpleTagId, true);
+    }
+
+
+    if (m_attackType == FORCE_ATTACK)
+    {       
+        animComponent->SetTagWithId(m_forceTagId, true);
+    }
+       
+    timeLeft = GetNormalizedTime(0);
 
     if (timeLeft <= 0.75f)
     {
@@ -61,5 +94,14 @@ IAction::EStatus AttackAction::Update(float timePassed)
     if (timeLeft >= 0.75f)
         m_pWeaponSystem->StopAttack();
 
-    return IAction::Update(timePassed);
+
+   
+    if (m_rootScope->IsDifferent(m_fragmentID, m_fragTags))
+        SetFragment(m_fragmentID, m_fragTags);
+
+  
+   
+
+
+    return m_eStatus;
 }

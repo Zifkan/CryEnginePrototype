@@ -126,7 +126,7 @@ void CCameraController::UpdateCamera(float frameTime)
         rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y),0, DEG2RAD(x)));
     }
 
-    CryLog("rotation: x = %f, y = %f, z = %f", rotation.v.x, rotation.v.y, rotation.v.z);
+  //  CryLog("rotation: x = %f, y = %f, z = %f", rotation.v.x, rotation.v.y, rotation.v.z);
 
     Vec3 negDistance = Vec3(0.0f, -currentRadius, 0);
     Vec3 position = rotation * negDistance + (m_pPlayerEntity->GetWorldPos()+ Vec3(0, 0, heightOffset));

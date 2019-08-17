@@ -4,7 +4,6 @@
 #include "Components/LifeResources/BaseLifeResource.h"
 #include "Components/Weapon/WeaponSystem.h"
 
-
 class AttackAction : public BaseAction
 {
 public:
@@ -23,10 +22,15 @@ public:
 
 private:
 
-    uint8 m_attackId;
+ 
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent;
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;
     IEntity* m_pCharacterEntity;
     IBaseLifeResource* m_pLifeResource;
     WeaponSystemComponent* m_pWeaponSystem;
+    TagID m_simpleTagId = TAG_ID_INVALID;
+    TagID m_forceTagId = TAG_ID_INVALID;
+    AttackType m_attackType;
+    float timeLeft;
+    int m_attackId;
 };

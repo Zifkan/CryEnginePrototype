@@ -34,15 +34,15 @@ void EnemyAttackAction::Enter()
 
     
     m_pAnimationComponent->SetAnimationDrivenMotion(false);
-    SetOptionIdx(m_attackId);
-    m_pCharacterController->SetVelocity(ZERO);
    
+    m_pCharacterController->SetVelocity(ZERO);
+    m_attackId++;
     BaseAction::Enter();
 }
 
 void EnemyAttackAction::Exit()
 {
-    m_attackId++;
+   
     m_pWeaponSystem->StopAttack();
     m_lastCallTime = gEnv->pTimer->GetCurrTime();
     BaseAction::Exit();

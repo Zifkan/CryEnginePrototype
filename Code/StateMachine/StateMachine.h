@@ -64,11 +64,6 @@ public:
         m_pCurrentActionMap.erase(action->ScopeLayer);
     }
 
-    Cry::DefaultComponents::CAdvancedAnimationComponent* GetAnimationComponent() const
-    {
-        return m_pAnimationComponent;
-    }
-
 private:
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
 

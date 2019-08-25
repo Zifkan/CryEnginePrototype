@@ -10,11 +10,15 @@ class BaseAction :public IAction
 {
 public:
 
-    BaseAction(ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
+    BaseAction(IEntity* pCharacterEntity,ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
         : IAction(priority, fragmentID, fragTags, flags, scopeMask, userToken)
-        , m_pCharacterAction(characterAction)
+        ,m_pCharacterEntity(pCharacterEntity)
+        ,m_pCharacterAction(characterAction)
     {        
         ScopeLayer = 0;
+        m_pCharacterController = pCharacterEntity->GetComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
+        m_pAnimationComponent = pCharacterEntity->GetComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
+        m_pISkeletonAnim = m_pAnimationComponent->GetCharacter()->GetISkeletonAnim();
     }
 
     DEFINE_ACTION(typeid(this).name())   
@@ -35,6 +39,12 @@ protected:
     ISkeletonAnim* m_pISkeletonAnim;
     ICharacterActions* m_pCharacterAction;
     CStateMachine* m_pStateMachine;
+    IEntity* m_pCharacterEntity;
+    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;
+    Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent;
+
 
     float GetNormalizedTime(uint32 layer);
+
+    void SetAnimationControlMovement();
 };

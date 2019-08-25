@@ -3,9 +3,9 @@
 #include "StateMachine/StateMachine.h"
 
 
-BlockAction::BlockAction(ICharacterActions* characterAction,
+BlockAction::BlockAction(IEntity* pCharacterEntity, ICharacterActions* characterAction,
     int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags, ActionScopes scopeMask,
-    uint32 userToken) : BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    uint32 userToken) : BaseAction(pCharacterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
 {
     ScopeLayer = 1;
 

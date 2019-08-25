@@ -219,6 +219,10 @@
   <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_135_02.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_144_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_45_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_72_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_45_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_45_02.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_com_t1_exc_back_slv01_id0042_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_com_taunt_01.caf</Path>
   <Path>animations/human/medium/romans/barb_1hnd_com_taunt_04.caf</Path>
@@ -310,6 +314,7 @@
   <Path>animations/human/medium/romans/barb_shld_com_wlk_fwd_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_fc_atk_mst_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_fc_exec_mst_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_dash_hit_back_lf_to_front_lf_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_fall_down_front_lf_to_front_lf.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_foc_fhit_death_from_i_to_i_atk_01.caf</Path>
   <Path>animations/human/medium/romans/barb_shld_rct_heavy_hit_front_300_lf_to_front_rf_01.caf</Path>
@@ -344,6 +349,7 @@
   <Path>animations/human/medium/romans/evr_stand_com_shld_death_front_slash_lf_01.caf</Path>
   <Path>animations/human/medium/romans/evr_stand_com_shld_sword_atk_push_03_0_fwd_160_lf_to_lf_04.caf</Path>
   <Path>animations/human/medium/romans/evr_stand_form_com_shld_atk_walk_bwd_slow_01.caf</Path>
+  <Path>animations/human/medium/romans/evr_stand_form_com_shld_atk_walk_bwd_slow_02.caf</Path>
   <Path>animations/human/medium/romans/evr_stand_form_com_shld_block_down_01.caf</Path>
   <Path>animations/human/medium/romans/evr_stand_form_com_shld_block_down_idle_01.caf</Path>
   <Path>animations/human/medium/romans/evr_stand_form_com_shld_block_down_loop_01.caf</Path>
@@ -365,8 +371,11 @@
   <Path>animations/human/medium/romans/formations poses/romn_form_head_add_rgt90_01.caf</Path>
   <Path>animations/human/medium/romans/lookposes/lookposes_head.caf</Path>
   <Path>animations/human/medium/romans/med_stand_com_shld_axe_block_lf_to_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/med_stand_com_shld_idle_taunt_01.caf</Path>
   <Path>animations/human/medium/romans/med_stand_com_shld_walk_inj_bwd_01.caf</Path>
+  <Path>animations/human/medium/romans/mrus_add_breathing_lgt_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_com_scorpio_aim_hit_rct_add_spine01_01.caf</Path>
+  <Path>animations/human/medium/romans/mrus_com_scorpio_aim_up_down_add_01.caf</Path>
   <Path>animations/human/medium/romans/mrus_run_climb_up_2m_lf_to_lf_01.caf</Path>
   <Path>animations/human/medium/romans/prtn_shld_com_idle_ovr_arms_02.caf</Path>
   <Path>animations/human/medium/romans/prtn_shld_com_taunt_hvy_01.caf</Path>
@@ -381,6 +390,7 @@
   <Path>animations/human/medium/romans/romn_awr_idle_turn_90_left_02.caf</Path>
   <Path>animations/human/medium/romans/romn_com_a_to_a_atk_fhit_0_fwd_150_id0020_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_a_to_b_atk_fhit_slw_0_fwd_150_id0221_01.caf</Path>
+  <Path>animations/human/medium/romans/romn_com_blk_030_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_block_stat_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_chrg_atk_250_01.caf</Path>
   <Path>animations/human/medium/romans/romn_com_death_front_stab_lf_01.caf</Path>
@@ -719,6 +729,8 @@
   <Path>animations/mannequin/adb/legionertags.xml</Path>
   <Path>animations/mannequin/adb/legionfirstpersoncontrollerdefinition.xml</Path>
   <Path>animations/mannequin/adb/legionplayerfragmentids.xml</Path>
+  <Path>animations/ryse/human/medium/marius/aimposes/aimposes_pilum_hips.caf</Path>
+  <Path>animations/ryse/human/medium/marius/aimposes/aimposes_pilum_spine1.caf</Path>
   <Path>engineassets/materials/sky/sky.mtl</Path>
   <Path>engineassets/materials/water/ocean_default.mtl</Path>
   <Path>engineassets/textures/skys/night/half_moon.dds</Path>

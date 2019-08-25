@@ -3,8 +3,8 @@
 #include "StateMachine/StateMachine.h"
 
 
-MovementAction::MovementAction(IBaseLifeResource* lifeResource,IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-    Cry::DefaultComponents::CCharacterControllerComponent* characterController,
+MovementAction::MovementAction(IBaseLifeResource* lifeResource,
+    IEntity* characterEntity,
     IEntity* mainCamera,
     ICharacterActions* characterAction, 
     int priority, 
@@ -13,10 +13,8 @@ MovementAction::MovementAction(IBaseLifeResource* lifeResource,IEntity* characte
     uint32 flags,
     ActionScopes scopeMask,
     uint32 userToken):
-    BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    BaseAction(characterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
     ,m_pLifeResource(lifeResource)
-    ,m_pCharacterController(characterController)
-    ,m_pAnimationComponent(animationComponent)
     ,m_pMainCameraEntity(mainCamera)
     ,m_pCharacterEntity(characterEntity)   
     ,m_moveDirection(0.0)

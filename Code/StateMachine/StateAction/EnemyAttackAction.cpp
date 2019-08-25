@@ -1,26 +1,27 @@
 ﻿#include "StdAfx.h"
 #include "EnemyAttackAction.h"
 
-EnemyAttackAction::EnemyAttackAction(WeaponSystemComponent* weaponSystem, IEntity* characterEntity,
-    Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-    Cry::DefaultComponents::CCharacterControllerComponent* characterController,
+EnemyAttackAction::EnemyAttackAction(WeaponSystemComponent* weaponSystem, 
+    IEntity* characterEntity,
     ICharacterActions* characterAction,
     int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags,
-    ActionScopes scopeMask, uint32 userToken) : BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    ActionScopes scopeMask, uint32 userToken) : BaseAction(characterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
     , m_lastCallTime(0.0f)
     , m_attackId(0)
-    , m_pAnimationComponent(animationComponent)
-    , m_pCharacterController(characterController)
-    , m_pCharacterEntity(characterEntity)
     , m_pWeaponSystem(weaponSystem)
 {
+    m_simpleTagId = m_pAnimationComponent->GetTagId("Simple");
+    m_forceTagId = m_pAnimationComponent->GetTagId("Force");
+
+
     characterAction->AttackSubject.get_observable().distinct_until_changed().subscribe([this](AttackType type)
-    {
+    { 
         if (type == ATTACK)
-            m_pAnimationComponent->SetTag("Simple", true);
+            m_pAnimationComponent->SetTagWithId(m_simpleTagId, true);
 
         if (type == FORCE_ATTACK)
-            m_pAnimationComponent->SetTag("Force", true);
+            m_pAnimationComponent->SetTagWithId(m_forceTagId, true);
+
     });
 }
 
@@ -54,9 +55,7 @@ IAction::EStatus EnemyAttackAction::Update(float timePassed)
 {
     m_pAnimationComponent->SetMotionParameter(eMotionParamID_TravelSpeed, 1);
 
-    if (GetNormalizedTime(0)<=0.75f)
-        m_pCharacterController->AddVelocity(5 * timePassed * m_pCharacterEntity->GetForwardDir());
-
+    
     if (GetNormalizedTime(0) > 0.75f)
         m_pWeaponSystem->StopAttack();
 
@@ -67,6 +66,7 @@ IAction::EStatus EnemyAttackAction::Update(float timePassed)
     ypr.z = 0;
     newRotation = Quat(CCamera::CreateOrientationYPR(ypr));
     m_pCharacterEntity->SetRotation(newRotation);
+    SetAnimationControlMovement();
 
     return IAction::Update(timePassed);
 }

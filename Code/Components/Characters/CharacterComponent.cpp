@@ -20,6 +20,9 @@ void CCharacterComponent::Initialize()
     m_pWeaponSystem = m_pEntity->GetOrCreateComponent<WeaponSystemComponent>();
 
     m_pHitDamageComponent = m_pEntity->GetOrCreateComponent<CHitDamageComponent>();
+
+    m_pAnimationComponent->SetAnimationDrivenMotion(false);
+    m_pAnimationComponent->LoadFromDisk();
 	Revive();
 }
 
@@ -67,6 +70,7 @@ void CCharacterComponent::Revive()
 	// Make sure that the player spawns upright
 	GetEntity()->SetWorldTM(Matrix34::Create(Vec3(1, 1, 1), IDENTITY, GetEntity()->GetWorldPos()));
 
+ 
 	// Apply character to the entity
 	m_pAnimationComponent->ResetCharacter();
 	m_pCharacterController->Physicalize();

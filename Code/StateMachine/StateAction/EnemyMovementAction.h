@@ -7,8 +7,7 @@ class EnemyMovementAction : public BaseAction
 {
 public:
 
-    EnemyMovementAction(IEntity* characterEntity, Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-        Cry::DefaultComponents::CCharacterControllerComponent* characterController,      
+    EnemyMovementAction(IEntity* characterEntity,   
         ICharacterActions* characterAction,
         int priority,
         FragmentID fragmentID = FRAGMENT_ID_INVALID,
@@ -20,11 +19,7 @@ public:
     ~EnemyMovementAction();
 
     EStatus Update(float timePassed) override;
-private:
-
-    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
-    Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
-    IEntity* m_pCharacterEntity;
+private:    
 
     Vec2 m_movePoint;
     MovementType m_movementType;

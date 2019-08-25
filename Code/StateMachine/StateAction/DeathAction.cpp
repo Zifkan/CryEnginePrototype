@@ -2,12 +2,12 @@
 #include "DeathAction.h"
 #include "Components/Weapon/WeaponSystem.h"
 
-DeathAction::DeathAction(WeaponSystemComponent* weaponSystemComponent,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
+DeathAction::DeathAction(IEntity* pCharacterEntity, 
+                         WeaponSystemComponent* weaponSystemComponent,
                          ICharacterActions* characterAction,
                          int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags,
                          ActionScopes scopeMask,
-                         uint32 userToken): BaseAction(characterAction, priority, fragmentID, fragTags, flags,scopeMask, userToken)
-                         , m_pAnimationComponent(animationComponent)
+                         uint32 userToken): BaseAction(pCharacterEntity,characterAction, priority, fragmentID, fragTags, flags,scopeMask, userToken)                        
                          , m_pWeaponSystemComponent(weaponSystemComponent)
 {
     IsDying = true;

@@ -8,8 +8,8 @@ class MovementAction : public BaseAction
 {
 public:
 
-    MovementAction(IBaseLifeResource* lifeResource,IEntity* characterEntity,Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-        Cry::DefaultComponents::CCharacterControllerComponent* characterController,
+    MovementAction(IBaseLifeResource* lifeResource,
+        IEntity* characterEntity,
         IEntity* mainCamera,
         ICharacterActions* characterAction, 
         int priority, 
@@ -31,8 +31,6 @@ private:
     Vec3 GetLookDirNormalized(Vec3 target,Vec3 location);
     void SetRotation(Vec3 moveDirection);
 
-    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
-    Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     CCameraController* m_pMainCameraComponent = nullptr;
     IEntity* m_pMainCameraEntity;
     IEntity* m_pCharacterEntity;

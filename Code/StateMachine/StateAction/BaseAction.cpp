@@ -11,7 +11,6 @@ IAction* BaseAction::CreateSlaveAction(FragmentID slaveFragID, const TagState& f
 void BaseAction::RegisterStateMachine(CStateMachine* stateMachine)
 {
     m_pStateMachine = stateMachine;
-    m_pISkeletonAnim = m_pStateMachine->GetAnimationComponent()->GetCharacter()->GetISkeletonAnim();
 }
 
 void BaseAction::Enter()
@@ -33,4 +32,12 @@ void BaseAction::OnActionFinished()
 float BaseAction::GetNormalizedTime(uint32 layer)
 {
     return m_pISkeletonAnim->GetLayerNormalizedTime(layer);
+}
+
+void BaseAction::SetAnimationControlMovement()
+{   
+    QuatT relMove = m_pISkeletonAnim->GetRelMovement();
+    Vec3 vel = m_pISkeletonAnim->GetCurrentVelocity();
+
+    m_pCharacterController->SetVelocity(vel.len() * m_pCharacterEntity->GetForwardDir().normalize());
 }

@@ -2,8 +2,7 @@
 #include "EnemyMovementAction.h"
 #include "StateMachine/StateMachine.h"
 
-EnemyMovementAction::EnemyMovementAction(IEntity* characterEntity, Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-    Cry::DefaultComponents::CCharacterControllerComponent* characterController,   
+EnemyMovementAction::EnemyMovementAction(IEntity* characterEntity,    
     ICharacterActions* characterAction,
     int priority,
     FragmentID fragmentID,
@@ -11,10 +10,7 @@ EnemyMovementAction::EnemyMovementAction(IEntity* characterEntity, Cry::DefaultC
     uint32 flags,
     ActionScopes scopeMask,
     uint32 userToken) :
-    BaseAction(characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
-    , m_pCharacterController(characterController)
-    , m_pAnimationComponent(animationComponent)
-    , m_pCharacterEntity(characterEntity)
+    BaseAction(characterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
     , m_movePoint(0.0)
     , m_sprintRatio(1.5f)
     , m_sprintAnimRatio(3.5)

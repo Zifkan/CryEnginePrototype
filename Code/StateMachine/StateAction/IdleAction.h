@@ -15,13 +15,10 @@ private:
     Vec3 GetLookDirNormalized(Vec3 target, Vec3 location);
     void SetRotation();
 
-
-    virtual void Enter();
-
     CCameraController* m_pMainCameraComponent = nullptr;
     IEntity* m_pMainCameraEntity = nullptr;
-    IEntity* m_pCharacterEntity = nullptr;
 
     float timer;
     TagID m_rotateTagId = TAG_ID_INVALID;
+    Vec3 m_lastDirection;
 };

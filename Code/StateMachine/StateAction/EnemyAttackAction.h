@@ -4,9 +4,8 @@
 class EnemyAttackAction : public BaseAction
 {
 public:
-    EnemyAttackAction(WeaponSystemComponent* weaponSystem, IEntity* characterEntity,
-        Cry::DefaultComponents::CAdvancedAnimationComponent* animationComponent,
-        Cry::DefaultComponents::CCharacterControllerComponent* characterController,
+    EnemyAttackAction(WeaponSystemComponent* weaponSystem,
+        IEntity* characterEntity,
         ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID,
         const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0,
         uint32 userToken = 0);
@@ -22,9 +21,8 @@ private:
     float m_lastCallTime;
 
     uint8 m_attackId;
-    Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent;
-    Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;
-    IEntity* m_pCharacterEntity;
     IEntity* pPlayerEntity;
     WeaponSystemComponent* m_pWeaponSystem;
+    TagID m_simpleTagId;
+    TagID m_forceTagId;
 };

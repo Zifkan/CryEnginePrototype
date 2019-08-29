@@ -5,6 +5,7 @@
 
 #include "PlayerInput.h"
 #include "Actions/PlayerCharacterActions.h"
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterCPlayerInputComponent(Schematyc::IEnvRegistrar& registrar)

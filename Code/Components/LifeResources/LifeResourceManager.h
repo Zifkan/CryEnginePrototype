@@ -16,6 +16,7 @@ public:
         desc.SetComponentFlags({ EFlags::Singleton });
     }
 
+    virtual Cry::Entity::EventFlags GetEventMask() const;
 
     void RegisterResource(std::type_index index,IBaseLifeResource* resource);
 
@@ -25,12 +26,12 @@ public:
         return m_lifeResources[typeid(T)];
     }
 
-    virtual Cry::Entity::EntityEventMask GetEventMask() const;
+   
 
 protected:
     virtual void ProcessEvent(const SEntityEvent& event);
 
-    void Update(float timePassed);   
+    void Update(float timePassed);
 
     std::map<std::type_index, IBaseLifeResource*> m_lifeResources;
 };

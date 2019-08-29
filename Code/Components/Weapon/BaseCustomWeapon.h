@@ -15,7 +15,7 @@ public:
         desc.SetLabel("Weapon Interface");
     }
 
-    Cry::Entity::EntityEventMask GetEventMask() const override;
+    Cry::Entity::EventFlags GetEventMask() const override;
     virtual void ProcessEvent(const SEntityEvent& event);
 
     EWeaponHandType GetWeaponHand() const { return m_weaponHandType; }

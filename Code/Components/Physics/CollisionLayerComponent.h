@@ -16,7 +16,7 @@ public:
     }
     
    
-    Cry::Entity::EntityEventMask GetEventMask() const override;
+    Cry::Entity::EventFlags GetEventMask() const override;
     void ProcessEvent(const SEntityEvent& event) override;
 
 private:   

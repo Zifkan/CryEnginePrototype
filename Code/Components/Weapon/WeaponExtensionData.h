@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <CryPhysics/physinterface.h>
 
 constexpr auto RAY_HIT_COUNT = 3;
 

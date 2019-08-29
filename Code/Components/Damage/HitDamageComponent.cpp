@@ -5,6 +5,7 @@
 #include "Components/LifeResources/HealthLifeResource.h"
 #include <Components/Weapon/WeaponExtensionData.h>
 #include "Components/Characters/CharacterComponent.h"
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterHitDamageComponent(Schematyc::IEnvRegistrar& registrar)
@@ -21,9 +22,9 @@ static void RegisterHitDamageComponent(Schematyc::IEnvRegistrar& registrar)
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterHitDamageComponent)
 
 
-uint64 CHitDamageComponent::GetEventMask() const
+Cry::Entity::EventFlags  CHitDamageComponent::GetEventMask() const
 {
-    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE);
+    return ENTITY_EVENT_START_GAME | ENTITY_EVENT_UPDATE;
 }
 
 
@@ -56,7 +57,7 @@ void CHitDamageComponent::ProcessEvent(const SEntityEvent& event)
 
 void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
 {  
-    auto charComponent = m_pEntity->GetComponent<CCharacterComponent>();
+   // auto charComponent = m_pEntity->GetComponent<CCharacterComponent>();
     m_hittedTimer = 0;
     auto pHealthLifeResource = m_pLifeResourceManager->GetResource<CHealthLifeResource>();
     
@@ -66,9 +67,9 @@ void CHitDamageComponent::OnHit(SWeaponHitStruct hitStruct)
 
     const auto dotProduct = hitStruct.HitDirection.dot(m_pEntity->GetForwardDir());
 
-    auto pCharacter = m_pAdvancedAnimationComponent->GetCharacter();
-    ISkeletonPose* pSkelPose = pCharacter->GetISkeletonPose();
-    IDefaultSkeleton& rIDefaultSkeleton = pCharacter->GetIDefaultSkeleton();
+   // auto pCharacter = m_pAdvancedAnimationComponent->GetCharacter();
+//    ISkeletonPose* pSkelPose = pCharacter->GetISkeletonPose();
+//    IDefaultSkeleton& rIDefaultSkeleton = pCharacter->GetIDefaultSkeleton();
    // CryLog("Bone: %s", rIDefaultSkeleton.GetJointNameByID(hitStruct.PartId));
    // pSkelPose->GetAbsJointByID(hitStruct.PartId);
 

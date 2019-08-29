@@ -3,6 +3,7 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "PlayerSoul.h"
+#include <CryCore/StaticInstanceList.h>
 
 static void RegisterCPlayerSoul(Schematyc::IEnvRegistrar& registrar)
 {
@@ -23,7 +24,7 @@ void CPlayerSoul::Initialize()
     m_pPoinLight = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CPointLightComponent>();
 }
 
-Cry::Entity::EntityEventMask CPlayerSoul::GetEventMask() const
+Cry::Entity::EventFlags CPlayerSoul::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED) | ENTITY_EVENT_BIT(ENTITY_EVENT_RESET);
 }

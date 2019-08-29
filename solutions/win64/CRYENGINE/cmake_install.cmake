@@ -1,4 +1,4 @@
-# Install script for directory: F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5
+# Install script for directory: F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SDKs/boost" TYPE DIRECTORY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/SDKs/boost/boost")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SDKs/boost" TYPE DIRECTORY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/SDKs/boost/boost")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Tools/CMake/modules/BoostConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/modules/BoostConfig.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE MESSAGE_LAZY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Tools/CMake/modules/CryCommonConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE MESSAGE_LAZY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/modules/CryCommonConfig.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE MESSAGE_LAZY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Tools/CMake/modules/CryActionConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake" TYPE FILE MESSAGE_LAZY FILES "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/modules/CryActionConfig.cmake")
 endif()
 

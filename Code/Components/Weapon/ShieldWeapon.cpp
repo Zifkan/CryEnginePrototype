@@ -4,6 +4,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include "ShieldWeapon.h"
 #include "DefaultComponents/Physics/BoxPrimitiveComponent.h"
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterShieldWeaponComponent(Schematyc::IEnvRegistrar& registrar)

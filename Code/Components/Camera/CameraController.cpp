@@ -4,6 +4,8 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "Components/Inputs/Actions/PlayerCharacterActions.h"
+#include <CryCore/StaticInstanceList.h>
+#include <CryPhysics/physinterface.h>
 
 
 static void RegisterCameraController(Schematyc::IEnvRegistrar& registrar)
@@ -29,9 +31,9 @@ void CCameraController::Initialize()
     currentRadius = radius;
 }
 
-uint64 CCameraController::GetEventMask() const
+Cry::Entity::EventFlags CCameraController::GetEventMask() const
 {
-    return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
+    return ENTITY_EVENT_START_GAME | ENTITY_EVENT_UPDATE | ENTITY_EVENT_EDITOR_PROPERTY_CHANGED;
 }
 
 void CCameraController::ProcessEvent(const SEntityEvent& event)

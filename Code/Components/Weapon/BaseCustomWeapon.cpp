@@ -17,7 +17,7 @@ void BaseCustomWeapon::Update(float fFrameTime)
 }
 
 
-uint64 BaseCustomWeapon::GetEventMask() const
+Cry::Entity::EventFlags BaseCustomWeapon::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | 
            ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | 

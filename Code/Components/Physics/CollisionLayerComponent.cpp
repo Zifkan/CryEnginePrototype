@@ -6,6 +6,7 @@
 
 #include <CryPhysics/physinterface.h>
 #include "CollisionLayerComponent.h"
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterCollisionLayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -21,7 +22,7 @@ static void RegisterCollisionLayerComponent(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCollisionLayerComponent)
 
-Cry::Entity::EntityEventMask CCollisionLayerComponent::GetEventMask() const
+Cry::Entity::EventFlags CCollisionLayerComponent::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME);
 }

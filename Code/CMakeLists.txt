@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.6.2)
-set(CRYENGINE_DIR "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5")
+set(CRYENGINE_DIR "F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6" CACHE STRING "CRYENGINE root directory.")
 set(TOOLS_CMAKE_DIR "${CRYENGINE_DIR}/Tools/CMake")
 
 set(PROJECT_BUILD 1)
@@ -17,8 +17,10 @@ add_sources("Code_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Root"
 		"GamePlugin.cpp"
+		"MathExtension.cpp"
 		"StdAfx.cpp"
 		"GamePlugin.h"
+		"MathExtension.h"
 		"StdAfx.h"
 )
 add_sources("Components_uber.cpp"
@@ -29,26 +31,50 @@ add_sources("Components_uber.cpp"
 		"Components/AIAction.h"
 		"Components/AICharacterActions.h"
 )
-
-add_sources("Damage_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Damage"
-		"Components/Damage/HitDamageComponent.cpp"
-		"Components/Damage/HitDamageComponent.h"
-)
-
 add_sources("Camera_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Camera"
 		"Components/Camera/CameraController.cpp"
 		"Components/Camera/CameraController.h"
 )
-
+add_sources("Characters_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Characters"
+		"Components/Characters/CharacterComponent.cpp"
+		"Components/Characters/PlayerComponent.cpp"
+		"Components/Characters/CharacterComponent.h"
+		"Components/Characters/PlayerComponent.h"
+)
+add_sources("Enemies_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Characters\\\\Enemies"
+		"Components/Characters/Enemies/EnemyActor.cpp"
+		"Components/Characters/Enemies/EnemyActor.h"
+)
+add_sources("Damage_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Damage"
+		"Components/Damage/HitDamageComponent.cpp"
+		"Components/Damage/HitDamageComponent.h"
+)
 add_sources("GamePlay_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\GamePlay"
 		"Components/GamePlay/PlayerSoul.cpp"
 		"Components/GamePlay/PlayerSoul.h"
+)
+add_sources("Inputs_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Inputs"
+		"Components/Inputs/PlayerInput.cpp"
+		"Components/Inputs/PlayerInput.h"
+)
+add_sources("Actions_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Inputs\\\\Actions"
+		"Components/Inputs/Actions/PlayerCharacterActions.cpp"
+		"Components/Inputs/Actions/CharacterActions.h"
+		"Components/Inputs/Actions/PlayerCharacterActions.h"
 )
 add_sources("LifeResources_uber.cpp"
     PROJECTS Game
@@ -65,70 +91,34 @@ add_sources("LifeResources_uber.cpp"
 		"Components/LifeResources/SoulEnergyLifeResource.h"
 		"Components/LifeResources/StaminaLifeResource.h"
 )
+add_sources("Physics_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "Components\\\\Physics"
+		"Components/Physics/CollisionDetectorComponent.cpp"
+		"Components/Physics/CollisionLayerComponent.cpp"
+		"Components/Physics/CollisionDetectorComponent.h"
+		"Components/Physics/CollisionLayerComponent.h"
+		"Components/Physics/CollisionLayerStruct.h"
+)
 add_sources("Weapon_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Weapon"
+		"Components/Weapon/BaseCustomWeapon.cpp"
 		"Components/Weapon/MeleeWeapon.cpp"
 		"Components/Weapon/ShieldWeapon.cpp"
-		"Components/Weapon/BaseCustomWeapon.cpp"
 		"Components/Weapon/WeaponSystem.cpp"
+		"Components/Weapon/BaseCustomWeapon.h"
 		"Components/Weapon/MeleeWeapon.h"
 		"Components/Weapon/ShieldWeapon.h"
+		"Components/Weapon/WeaponExtensionData.h"
 		"Components/Weapon/WeaponSystem.h"
-		"Components/Weapon/WeaponExtensionData.h" 
-		"Components/Weapon/BaseCustomWeapon.h"
 )
-
-add_sources("Characters_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Characters"
-		"Components/Characters/CharacterComponent.cpp"
-		"Components/Characters/PlayerComponent.cpp"
-		"Components/Characters/CharacterComponent.h"
-		"Components/Characters/PlayerComponent.h" 
-)
- 
-add_sources("Enemies_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Characters\\\\Enemies"
-		"Components/Characters/Enemies/EnemyActor.cpp"
-		"Components/Characters/Enemies/EnemyActor.h"
-)
-
-add_sources("Inputs_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Inputs"
-		"Components/Inputs/PlayerInput.cpp"
-		"Components/Inputs/PlayerInput.h"
-)
-
-add_sources("InputActions_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Inputs\\\\Actions"
-		"Components/Inputs/Actions/CharacterActions.h"
-		"Components/Inputs/Actions/PlayerCharacterActions.h"
-		"Components/Inputs/Actions/PlayerCharacterActions.cpp"
-)
-
-
 add_sources("StateMachine_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "StateMachine"
 		"StateMachine/StateMachine.cpp"
 		"StateMachine/StateMachine.h"
 )
-
-add_sources("Physics_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Physics"
-		"Components/Physics/CollisionLayerStruct.h"
-		"Components/Physics/CollisionLayerComponent.h"		
-		"Components/Physics/CollisionDetectorComponent.h"
-		"Components/Physics/CollisionLayerComponent.cpp"
-		"Components/Physics/CollisionDetectorComponent.cpp"
-)
-
-
 add_sources("StateAction_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "StateMachine\\\\StateAction"
@@ -154,9 +144,24 @@ add_sources("StateAction_uber.cpp"
 		"StateMachine/StateAction/PushBackAction.h"
 )
 
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/CVarOverrides.h")
+    add_sources("NoUberFile"
+        PROJECTS Game
+        SOURCE_GROUP "Root"
+            "CVarOverrides.h"
+    )
+endif()
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/EngineDefineOverrides.h")
+    add_sources("NoUberFile"
+        PROJECTS Game
+        SOURCE_GROUP "Root"
+            "EngineDefineOverrides.h"
+    )
+endif()
 end_sources()
 
-CryEngineModule(Game FORCE_SHARED PCH "StdAfx.cpp" SOLUTION_FOLDER "Project")
+CryGameModule(Game FORCE_SHARED PCH "StdAfx.cpp" SOLUTION_FOLDER "Project")
 
 target_include_directories(${THIS_PROJECT}
 PRIVATE
@@ -166,21 +171,67 @@ PRIVATE
     "${CRYENGINE_DIR}/Code/CryPlugins/CryDefaultEntities/Module"
 )
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "[Cc]lang")
+    target_compile_options(${THIS_PROJECT} PRIVATE
+        -Wno-unused-variable
+        -Wno-reorder
+        -Wno-unknown-pragmas
+        -Wno-parentheses
+        -Wno-switch
+        -Wno-format
+        -Wno-dynamic-class-memaccess
+        -Wno-unused-private-field
+        -Wno-unused-value
+        -Wno-invalid-offsetof
+        -Wno-multichar
+        -Wno-char-subscripts
+        -Wno-null-conversion
+        -Wno-empty-body
+        -Wno-unused-lambda-capture
+        -Wno-unused-function
+        -Wno-tautological-constant-out-of-range-compare
+    )
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(${THIS_PROJECT} PRIVATE
+        -Wno-unused-function
+        -Wno-unused-value
+        -Wno-unused-variable
+        -Wno-aligned-new
+        -Wno-int-in-bool-context
+        -Wno-invalid-offsetof
+        -Wno-comment
+        -Wno-sign-compare
+        -Wno-unused-but-set-variable
+        -Wno-maybe-uninitialized
+        -Wno-misleading-indentation
+        -Wno-unused-result
+        -Wno-unknown-pragmas
+        -Wno-multichar
+        -Wno-strict-aliasing
+        -Wno-char-subscripts
+        -Wno-conversion-null
+        -Wno-reorder
+        -Wno-parentheses
+        -Wno-format
+        -Wno-switch
+    )
+endif()
+
 
 if(OPTION_ENGINE)
     if(NOT EXISTS "${CRYENGINE_DIR}/Code/Sandbox/EditorQt")
-		add_library(Editor STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
-		set_target_properties(Editor PROPERTIES LINKER_LANGUAGE CXX)
-		if (WIN32)
-			set_visual_studio_debugger_command(Editor "${CRYENGINE_DIR}/bin/win_x64/Sandbox.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
-		endif()
-	endif()
+        add_library(Editor STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
+        set_target_properties(Editor PROPERTIES LINKER_LANGUAGE CXX)
+        if (WIN32)
+            set_visual_studio_debugger_command(Editor "${CRYENGINE_DIR}/bin/win_x64/Sandbox.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
+        endif()
+    endif()
 else()
-	add_library(GameLauncher STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
-	set_target_properties(GameLauncher PROPERTIES LINKER_LANGUAGE CXX)
-	if (WIN32)
-		set_visual_studio_debugger_command(GameLauncher "${CRYENGINE_DIR}/bin/win_x64/GameLauncher.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
-	endif()
+    add_library(GameLauncher STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
+    set_target_properties(GameLauncher PROPERTIES LINKER_LANGUAGE CXX)
+    if (WIN32)
+        set_visual_studio_debugger_command(GameLauncher "${CRYENGINE_DIR}/bin/win_x64/GameLauncher.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
+    endif()
 
     add_library(Editor STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
     set_target_properties(Editor PROPERTIES LINKER_LANGUAGE CXX)
@@ -188,11 +239,11 @@ else()
         set_visual_studio_debugger_command(Editor "${CRYENGINE_DIR}/bin/win_x64/Sandbox.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
     endif()
 
-	add_library(GameServer STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
-	set_target_properties(GameServer PROPERTIES LINKER_LANGUAGE CXX)
-	if (WIN32)
-		set_visual_studio_debugger_command(GameServer "${CRYENGINE_DIR}/bin/win_x64/Game_Server.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
-	endif()
+    add_library(GameServer STATIC "${CRYENGINE_DIR}/Code/CryEngine/CryCommon/CryCore/Platform/platform.h")
+    set_target_properties(GameServer PROPERTIES LINKER_LANGUAGE CXX)
+    if (WIN32)
+        set_visual_studio_debugger_command(GameServer "${CRYENGINE_DIR}/bin/win_x64/Game_Server.exe" "-project \"${PROJECT_DIR}Game.cryproject\"")
+    endif()
 endif()
 
 # Set StartUp project in Visual Studio

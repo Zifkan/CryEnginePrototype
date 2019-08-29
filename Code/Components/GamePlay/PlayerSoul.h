@@ -22,7 +22,7 @@ public:
     }
 
 
-    Cry::Entity::EntityEventMask GetEventMask() const override;
+    Cry::Entity::EventFlags GetEventMask() const override;
 
 protected:
     void Initialize() override;

@@ -17,7 +17,7 @@ class CHitDamageComponent final :  public IEntityComponent
 {
 public:
 
-    uint64 GetEventMask() const override;
+    virtual Cry::Entity::EventFlags GetEventMask() const;
 
     static void ReflectType(Schematyc::CTypeDesc<CHitDamageComponent>& desc)
     {

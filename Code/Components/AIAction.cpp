@@ -2,6 +2,7 @@
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include "AIAction.h"
+#include <CryCore/StaticInstanceList.h>
 
 static void RegisterAIActionComponent(Schematyc::IEnvRegistrar& registrar)
 {

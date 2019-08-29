@@ -14,7 +14,9 @@ public:
     // IEntityComponent
     virtual void Initialize() override;
 
-    virtual uint64 GetEventMask() const override;
+
+    Cry::Entity::EventFlags GetEventMask() const override;
+
     virtual void ProcessEvent(const SEntityEvent& event) override;
    
     // ~IEntityComponent
@@ -59,6 +61,7 @@ protected:
 
 
     float ClampAngle(float angle, float min, float max);
+
 
     IEntity* m_pTargetEntity = nullptr;
 

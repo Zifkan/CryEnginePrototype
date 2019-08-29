@@ -5,6 +5,8 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 
 #include "CollisionDetectorComponent.h"
+#include <CryCore/StaticInstanceList.h>
+#include <CryPhysics/physinterface.h>
 
 
 static void RegisterCollisionDetectorComponent(Schematyc::IEnvRegistrar& registrar)
@@ -20,7 +22,7 @@ static void RegisterCollisionDetectorComponent(Schematyc::IEnvRegistrar& registr
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCollisionDetectorComponent)
 
-Cry::Entity::EntityEventMask CCollisionDetectorComponent::GetEventMask() const
+Cry::Entity::EventFlags CCollisionDetectorComponent::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_COLLISION) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE);
 }

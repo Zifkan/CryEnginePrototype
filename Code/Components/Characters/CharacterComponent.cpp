@@ -26,7 +26,7 @@ void CCharacterComponent::Initialize()
 	Revive();
 }
 
-uint64 CCharacterComponent::GetEventMask() const
+Cry::Entity::EventFlags CCharacterComponent::GetEventMask() const
 {
 	return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
 }

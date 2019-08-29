@@ -5,6 +5,7 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include "MeleeWeapon.h"
 #include "WeaponSystem.h"
+#include <CryCore/StaticInstanceList.h>
 
 static void RegisterCMeleeWeaponComponent(Schematyc::IEnvRegistrar& registrar)
 {

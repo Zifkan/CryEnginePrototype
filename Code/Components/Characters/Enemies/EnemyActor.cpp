@@ -14,6 +14,7 @@
 #include "Components/LifeResources/StaminaLifeResource.h"
 #include "Components/LifeResources/HealthLifeResource.h"
 #include "Components/Inputs/Actions/PlayerCharacterActions.h"
+#include <CryCore/StaticInstanceList.h>
 
 enum EnemyState
 {};

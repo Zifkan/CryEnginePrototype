@@ -13,6 +13,7 @@
 #include "StateMachine/StateAction/PushBackAction.h"
 #include "Components/LifeResources/StaminaLifeResource.h"
 #include "Components/LifeResources/HealthLifeResource.h"
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -132,7 +133,7 @@ void CPlayerComponent::SetupActions()
     m_pCharacterActions->AttackSubject.get_observable()
     .subscribe(subscription,[this](AttackType type)
     {
-        IBaseLifeResource* staminaResource = m_lifeResourceManager->GetResource<CStaminaLifeResource>();
+      //  IBaseLifeResource* staminaResource = m_lifeResourceManager->GetResource<CStaminaLifeResource>();
       //  if (staminaResource->Value.get_value() - m_attackStaminaCost >= 0)
         {
             m_stateMachine->SetCurrentState(typeid(AttackAction));

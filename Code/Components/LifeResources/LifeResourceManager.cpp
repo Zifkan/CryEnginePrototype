@@ -3,6 +3,7 @@
 #include <CryEntitySystem/IEntity.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
+#include <CryCore/StaticInstanceList.h>
 
 
 static void RegisterCLifeResourceManager(Schematyc::IEnvRegistrar& registrar)
@@ -23,7 +24,7 @@ void CLifeResourceManagerComponent::RegisterResource(std::type_index index,IBase
     m_lifeResources.insert(std::pair<std::type_index, IBaseLifeResource*>(index, resource));
 }
 
-Cry::Entity::EntityEventMask CLifeResourceManagerComponent::GetEventMask() const
+Cry::Entity::EventFlags CLifeResourceManagerComponent::GetEventMask() const
 {
     return ENTITY_EVENT_BIT(ENTITY_EVENT_START_GAME) | ENTITY_EVENT_BIT(ENTITY_EVENT_UPDATE) | ENTITY_EVENT_BIT(ENTITY_EVENT_EDITOR_PROPERTY_CHANGED);
 }

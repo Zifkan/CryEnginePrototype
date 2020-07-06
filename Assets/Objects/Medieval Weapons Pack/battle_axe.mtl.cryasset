@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="0a4e76d0-292c-4e55-0e04-6d44df67dd83">
+ <Files>
+  <File path="battle_axe.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Battle_Axe_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Battle_Axe_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Battle_Axe_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

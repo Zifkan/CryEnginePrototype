@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="165c8ed1-1d3b-4d61-e3d7-f1547752edef">
+ <Files>
+  <File path="throwing knife.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Throwing Knife_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/throwing knife2_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/throwing knife_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

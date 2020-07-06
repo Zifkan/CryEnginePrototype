@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="Material" guid="0d8d20d5-a7fa-a477-c272-a367190548eb">
+ <Files>
+  <File path="double bladed axe steel.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">4</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (steel)_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze)_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (steel)_spec.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze)_height.dds</Path>
+ </Dependencies>
+</AssetMetadata>

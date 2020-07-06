@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="def2021f-74ef-b8b8-38ba-6358b0a2e15d">
+ <Files>
+  <File path="sword_w._twisted_hilt_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

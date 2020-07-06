@@ -2,8 +2,13 @@
  <AnimationList>
   <Animation name="$AnimEventDatabase" path="Objects/characters/human/medium/romanLegion/legion_skel.animevents"/>
   <Animation name="$TracksDatabase" path="Animations/human/human.dba"/>
+  <Animation name="$TracksDatabase" path="Animations/Ryse/human/human.dba"/>
   <Animation name="#filepath" path="animations/human/medium/romans"/>
   <Animation name="*" path="*/*.i_caf"/>
+  <Animation name="*" path="*/*.caf"/>
+  <Animation name="*" path="*/*.bspace"/>
+  <Animation name="*" path="*/*.comb"/>
+  <Animation name="#filepath" path="Animations/Ryse/human/medium/marius/aimposes"/>
   <Animation name="*" path="*/*.caf"/>
   <Animation name="*" path="*/*.bspace"/>
   <Animation name="*" path="*/*.comb"/>

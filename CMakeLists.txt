@@ -1,0 +1,229 @@
+cmake_minimum_required(VERSION 3.16)
+project(CryEnginePrototype)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(Code)
+include_directories(Code/Components)
+include_directories(Code/Components/Camera)
+include_directories(Code/Components/Characters)
+include_directories(Code/Components/Characters/Enemies)
+include_directories(Code/Components/Damage)
+include_directories(Code/Components/GamePlay)
+include_directories(Code/Components/Inputs)
+include_directories(Code/Components/Inputs/Actions)
+include_directories(Code/Components/LifeResources)
+include_directories(Code/Components/Physics)
+include_directories(Code/Components/Weapon)
+include_directories(Code/RxCpp)
+include_directories(Code/RxCpp/operators)
+include_directories(Code/RxCpp/schedulers)
+include_directories(Code/RxCpp/sources)
+include_directories(Code/RxCpp/subjects)
+include_directories(Code/StateMachine)
+include_directories(Code/StateMachine/StateAction)
+include_directories(solutions/win64)
+include_directories(solutions/win64/Game.dir)
+include_directories(solutions/win64/Game.dir/Debug)
+
+add_executable(CryEnginePrototype
+        Code/Components/Camera/CameraController.cpp
+        Code/Components/Camera/CameraController.h
+        Code/Components/Characters/Enemies/EnemyActor.cpp
+        Code/Components/Characters/Enemies/EnemyActor.h
+        Code/Components/Characters/CharacterComponent.cpp
+        Code/Components/Characters/CharacterComponent.h
+        Code/Components/Characters/PlayerComponent.cpp
+        Code/Components/Characters/PlayerComponent.h
+        Code/Components/Damage/HitDamageComponent.cpp
+        Code/Components/Damage/HitDamageComponent.h
+        Code/Components/GamePlay/PlayerSoul.cpp
+        Code/Components/GamePlay/PlayerSoul.h
+        Code/Components/Inputs/Actions/CharacterActions.h
+        Code/Components/Inputs/Actions/PlayerCharacterActions.cpp
+        Code/Components/Inputs/Actions/PlayerCharacterActions.h
+        Code/Components/Inputs/PlayerInput.cpp
+        Code/Components/Inputs/PlayerInput.h
+        Code/Components/LifeResources/BaseLifeResource.h
+        Code/Components/LifeResources/HealthLifeResource.cpp
+        Code/Components/LifeResources/HealthLifeResource.h
+        Code/Components/LifeResources/LifeResourceManager.cpp
+        Code/Components/LifeResources/LifeResourceManager.h
+        Code/Components/LifeResources/LifeResourcesManager.cpp
+        Code/Components/LifeResources/LifeResourcesManager.h
+        Code/Components/LifeResources/SoulEnergyLifeResource.cpp
+        Code/Components/LifeResources/SoulEnergyLifeResource.h
+        Code/Components/LifeResources/StaminaLifeResource.cpp
+        Code/Components/LifeResources/StaminaLifeResource.h
+        Code/Components/Physics/CollisionDetectorComponent.cpp
+        Code/Components/Physics/CollisionDetectorComponent.h
+        Code/Components/Physics/CollisionLayerComponent.cpp
+        Code/Components/Physics/CollisionLayerComponent.h
+        Code/Components/Physics/CollisionLayerStruct.h
+        Code/Components/Weapon/BaseCustomWeapon.cpp
+        Code/Components/Weapon/BaseCustomWeapon.h
+        Code/Components/Weapon/ICustomWeapon.cpp
+        Code/Components/Weapon/MeleeWeapon.cpp
+        Code/Components/Weapon/MeleeWeapon.h
+        Code/Components/Weapon/ShieldWeapon.cpp
+        Code/Components/Weapon/ShieldWeapon.h
+        Code/Components/Weapon/WeaponExtensionData.h
+        Code/Components/Weapon/WeaponSystem.cpp
+        Code/Components/Weapon/WeaponSystem.h
+        Code/Components/AIAction.cpp
+        Code/Components/AIAction.h
+        Code/Components/AICharacterActions.cpp
+        Code/Components/AICharacterActions.h
+        Code/RxCpp/operators/rx-all.hpp
+        Code/RxCpp/operators/rx-amb.hpp
+        Code/RxCpp/operators/rx-any.hpp
+        Code/RxCpp/operators/rx-buffer_count.hpp
+        Code/RxCpp/operators/rx-buffer_time.hpp
+        Code/RxCpp/operators/rx-buffer_time_count.hpp
+        Code/RxCpp/operators/rx-combine_latest.hpp
+        Code/RxCpp/operators/rx-concat.hpp
+        Code/RxCpp/operators/rx-concat_map.hpp
+        Code/RxCpp/operators/rx-connect_forever.hpp
+        Code/RxCpp/operators/rx-debounce.hpp
+        Code/RxCpp/operators/rx-delay.hpp
+        Code/RxCpp/operators/rx-distinct.hpp
+        Code/RxCpp/operators/rx-distinct_until_changed.hpp
+        Code/RxCpp/operators/rx-element_at.hpp
+        Code/RxCpp/operators/rx-filter.hpp
+        Code/RxCpp/operators/rx-finally.hpp
+        Code/RxCpp/operators/rx-flat_map.hpp
+        Code/RxCpp/operators/rx-group_by.hpp
+        Code/RxCpp/operators/rx-ignore_elements.hpp
+        Code/RxCpp/operators/rx-lift.hpp
+        Code/RxCpp/operators/rx-map.hpp
+        Code/RxCpp/operators/rx-merge.hpp
+        Code/RxCpp/operators/rx-merge_delay_error.hpp
+        Code/RxCpp/operators/rx-multicast.hpp
+        Code/RxCpp/operators/rx-observe_on.hpp
+        Code/RxCpp/operators/rx-on_error_resume_next.hpp
+        Code/RxCpp/operators/rx-pairwise.hpp
+        Code/RxCpp/operators/rx-publish.hpp
+        Code/RxCpp/operators/rx-reduce.hpp
+        Code/RxCpp/operators/rx-ref_count.hpp
+        Code/RxCpp/operators/rx-repeat.hpp
+        Code/RxCpp/operators/rx-replay.hpp
+        Code/RxCpp/operators/rx-retry-repeat-common.hpp
+        Code/RxCpp/operators/rx-retry.hpp
+        Code/RxCpp/operators/rx-sample_time.hpp
+        Code/RxCpp/operators/rx-scan.hpp
+        Code/RxCpp/operators/rx-sequence_equal.hpp
+        Code/RxCpp/operators/rx-skip.hpp
+        Code/RxCpp/operators/rx-skip_last.hpp
+        Code/RxCpp/operators/rx-skip_until.hpp
+        Code/RxCpp/operators/rx-skip_while.hpp
+        Code/RxCpp/operators/rx-start_with.hpp
+        Code/RxCpp/operators/rx-subscribe.hpp
+        Code/RxCpp/operators/rx-subscribe_on.hpp
+        Code/RxCpp/operators/rx-switch_if_empty.hpp
+        Code/RxCpp/operators/rx-switch_on_next.hpp
+        Code/RxCpp/operators/rx-take.hpp
+        Code/RxCpp/operators/rx-take_last.hpp
+        Code/RxCpp/operators/rx-take_until.hpp
+        Code/RxCpp/operators/rx-take_while.hpp
+        Code/RxCpp/operators/rx-tap.hpp
+        Code/RxCpp/operators/rx-time_interval.hpp
+        Code/RxCpp/operators/rx-timeout.hpp
+        Code/RxCpp/operators/rx-timestamp.hpp
+        Code/RxCpp/operators/rx-window.hpp
+        Code/RxCpp/operators/rx-window_time.hpp
+        Code/RxCpp/operators/rx-window_time_count.hpp
+        Code/RxCpp/operators/rx-window_toggle.hpp
+        Code/RxCpp/operators/rx-with_latest_from.hpp
+        Code/RxCpp/operators/rx-zip.hpp
+        Code/RxCpp/schedulers/rx-currentthread.hpp
+        Code/RxCpp/schedulers/rx-eventloop.hpp
+        Code/RxCpp/schedulers/rx-immediate.hpp
+        Code/RxCpp/schedulers/rx-newthread.hpp
+        Code/RxCpp/schedulers/rx-runloop.hpp
+        Code/RxCpp/schedulers/rx-sameworker.hpp
+        Code/RxCpp/schedulers/rx-test.hpp
+        Code/RxCpp/schedulers/rx-virtualtime.hpp
+        Code/RxCpp/sources/rx-create.hpp
+        Code/RxCpp/sources/rx-defer.hpp
+        Code/RxCpp/sources/rx-empty.hpp
+        Code/RxCpp/sources/rx-error.hpp
+        Code/RxCpp/sources/rx-interval.hpp
+        Code/RxCpp/sources/rx-iterate.hpp
+        Code/RxCpp/sources/rx-never.hpp
+        Code/RxCpp/sources/rx-range.hpp
+        Code/RxCpp/sources/rx-scope.hpp
+        Code/RxCpp/sources/rx-timer.hpp
+        Code/RxCpp/subjects/rx-behavior.hpp
+        Code/RxCpp/subjects/rx-replaysubject.hpp
+        Code/RxCpp/subjects/rx-subject.hpp
+        Code/RxCpp/subjects/rx-synchronize.hpp
+        Code/RxCpp/rx-composite_exception.hpp
+        Code/RxCpp/rx-connectable_observable.hpp
+        Code/RxCpp/rx-coordination.hpp
+        Code/RxCpp/rx-coroutine.hpp
+        Code/RxCpp/rx-grouped_observable.hpp
+        Code/RxCpp/rx-includes.hpp
+        Code/RxCpp/rx-lite.hpp
+        Code/RxCpp/rx-notification.hpp
+        Code/RxCpp/rx-observable.hpp
+        Code/RxCpp/rx-observer.hpp
+        Code/RxCpp/rx-operators.hpp
+        Code/RxCpp/rx-predef.hpp
+        Code/RxCpp/rx-scheduler.hpp
+        Code/RxCpp/rx-sources.hpp
+        Code/RxCpp/rx-subjects.hpp
+        Code/RxCpp/rx-subscriber.hpp
+        Code/RxCpp/rx-subscription.hpp
+        Code/RxCpp/rx-test.hpp
+        Code/RxCpp/rx-trace.hpp
+        Code/RxCpp/rx-util.hpp
+        Code/RxCpp/rx.hpp
+        Code/StateMachine/StateAction/AttackAction.cpp
+        Code/StateMachine/StateAction/AttackAction.h
+        Code/StateMachine/StateAction/BaseAction.cpp
+        Code/StateMachine/StateAction/BaseAction.h
+        Code/StateMachine/StateAction/BlockAction.cpp
+        Code/StateMachine/StateAction/BlockAction.h
+        Code/StateMachine/StateAction/DeathAction.cpp
+        Code/StateMachine/StateAction/DeathAction.h
+        Code/StateMachine/StateAction/EnemyAttackAction.cpp
+        Code/StateMachine/StateAction/EnemyAttackAction.h
+        Code/StateMachine/StateAction/EnemyMovementAction.cpp
+        Code/StateMachine/StateAction/EnemyMovementAction.h
+        Code/StateMachine/StateAction/HitAction.cpp
+        Code/StateMachine/StateAction/HitAction.h
+        Code/StateMachine/StateAction/IdleAction.cpp
+        Code/StateMachine/StateAction/IdleAction.h
+        Code/StateMachine/StateAction/MovementAction.cpp
+        Code/StateMachine/StateAction/MovementAction.h
+        Code/StateMachine/StateAction/PushBackAction.cpp
+        Code/StateMachine/StateAction/PushBackAction.h
+        Code/StateMachine/StateMachine.cpp
+        Code/StateMachine/StateMachine.h
+        Code/GamePlugin.cpp
+        Code/GamePlugin.h
+        Code/MathExtension.cpp
+        Code/MathExtension.h
+        Code/StdAfx.cpp
+        Code/StdAfx.h
+        solutions/win64/Game.dir/Debug/Game.pch
+        solutions/win64/Actions_uber.cpp
+        solutions/win64/Camera_uber.cpp
+        solutions/win64/CharacterActions_uber.cpp
+        solutions/win64/Characters_uber.cpp
+        solutions/win64/Code_uber.cpp
+        solutions/win64/Components_uber.cpp
+        solutions/win64/Damage_uber.cpp
+        solutions/win64/Enemies_uber.cpp
+        solutions/win64/GamePlay_uber.cpp
+        solutions/win64/InputActions_uber.cpp
+        solutions/win64/Inputs_uber.cpp
+        solutions/win64/LifeResources_uber.cpp
+        solutions/win64/Physics_uber.cpp
+        solutions/win64/ProjectCVarOverrides.h
+        solutions/win64/ProjectCVarWhitelist.h
+        solutions/win64/ProjectEngineDefineOverrides.h
+        solutions/win64/SpecialComponents_uber.cpp
+        solutions/win64/StateAction_uber.cpp
+        solutions/win64/StateMachine_uber.cpp
+        solutions/win64/Weapon_uber.cpp)

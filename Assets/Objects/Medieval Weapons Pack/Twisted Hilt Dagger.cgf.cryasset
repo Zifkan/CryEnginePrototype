@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="6590d76e-0241-5faf-86a2-6197f18385f9">
+ <Files>
+  <File path="Twisted Hilt Dagger.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">7240</Detail>
+  <Detail name="vertexCount">5253</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/twisted_hilt_dagger.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

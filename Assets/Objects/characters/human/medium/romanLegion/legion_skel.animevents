@@ -7830,11 +7830,7 @@
   <event name="foley" time="0.85589999" endTime="0.85589999" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.64090002" endTime="0.64090002" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
  </animation>
- <animation name="animations/human/medium/romans/med_stand_com_shld_idle_taunt_01.caf">
-  <event name="foley" time="0.089249492" endTime="0.089249492" parameter="heavy_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.40162271" endTime="0.40162271" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
-  <event name="foley" time="0.70779997" endTime="0.70779997" parameter="medium_long" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
- </animation>
+ <animation name="animations/human/medium/romans/med_stand_com_shld_idle_taunt_01.caf"/>
  <animation name="animations/human/medium/romans/med_stand_com_shld_open_from_push_00_into_link1_lf_to_rf_01.caf">
   <event name="foley" time="0.1155" endTime="0.1155" parameter="medium_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>
   <event name="foley" time="0.2615" endTime="0.2615" parameter="heavy_short" bone="Spine02" offset="0,0,0" dir="0,0,0" model=""/>

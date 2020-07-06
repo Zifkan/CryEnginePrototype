@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="32646df5-ea7d-5c04-cce7-945ffc05e688">
+ <Files>
+  <File path="bush hook.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/bush hook_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Bush Hook_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Bush Hook_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

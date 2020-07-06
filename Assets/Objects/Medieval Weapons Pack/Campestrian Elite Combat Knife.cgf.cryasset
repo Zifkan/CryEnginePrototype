@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="df0a2b84-dc73-af40-646e-7968f45502ee">
+ <Files>
+  <File path="Campestrian Elite Combat Knife.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">2543</Detail>
+  <Detail name="vertexCount">2261</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack 2/Campestrian Elite Combat Knife.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

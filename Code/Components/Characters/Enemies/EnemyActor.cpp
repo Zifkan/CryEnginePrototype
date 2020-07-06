@@ -16,6 +16,7 @@
 #include "Components/Inputs/Actions/PlayerCharacterActions.h"
 #include <CryCore/StaticInstanceList.h>
 
+
 enum EnemyState
 {};
 
@@ -55,7 +56,13 @@ void СEnemyActor::Initialize()
         m_pCharacterActions->MovementSubject.get_subscriber().on_next(Vec2(recommendedVelocity));
     });
 
-    
+    m_pBehaviorTreeComponent = m_pEntity->GetOrCreateComponent<IEntityBehaviorTreeComponent>();
+    if (IEntityBehaviorTreeComponent* pBehaviorTreeComponent = static_cast<IEntityBehaviorTreeComponent*>(m_pBehaviorTreeComponent))
+    {
+        const bool variableSetSuccessfully = pBehaviorTreeComponent->SetBBKeyValue("Health", 100.0f);
+       
+        CryLog("IS set: %i", variableSetSuccessfully);
+    }
 }
 
 

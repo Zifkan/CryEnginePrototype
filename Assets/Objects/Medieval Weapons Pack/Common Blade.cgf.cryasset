@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="20c5eb1c-032f-6c62-3aac-1be9280a4f1f">
+ <Files>
+  <File path="Common Blade.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">4</Detail>
+  <Detail name="triangleCount">10947</Detail>
+  <Detail name="vertexCount">11637</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/common blade.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

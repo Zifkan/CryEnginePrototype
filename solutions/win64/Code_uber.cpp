@@ -3,4 +3,5 @@
 
 #include <StdAfx.h>
 #include <F:/Crytek/CryEnginePrototype/Code/GamePlugin.cpp>
+#include <F:/Crytek/CryEnginePrototype/Code/MathExtension.cpp>
 

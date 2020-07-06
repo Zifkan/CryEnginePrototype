@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -16,7 +16,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FDF6550D-ED9E-3E31-8C65-F51AC156DF6E}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>Game</ProjectName>
@@ -45,22 +45,27 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" >
-  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <LocalDebuggerCommand Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/bin/win_x64/GameLauncher.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">-project "F:/Crytek/CryEnginePrototype/Code/../Game.cryproject"</LocalDebuggerCommandArguments>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Crytek\CryEnginePrototype\bin\win_x64\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Game.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Game</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <LocalDebuggerCommand Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/bin/win_x64/GameLauncher.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">-project "F:/Crytek/CryEnginePrototype/Code/../Game.cryproject"</LocalDebuggerCommandArguments>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\Crytek\CryEnginePrototype\bin\win_x64\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Game.dir\Profile\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Game</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</GenerateManifest>
+    <LocalDebuggerCommand Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/bin/win_x64/GameLauncher.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Release|x64'">-project "F:/Crytek/CryEnginePrototype/Code/../Game.cryproject"</LocalDebuggerCommandArguments>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Crytek\CryEnginePrototype\bin\win_x64_release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Game.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Game</TargetName>
@@ -70,14 +75,15 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj /Zo</AdditionalOptions>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <CompileAs>CompileAsCpp</CompileAs>
+      <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4653</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4653;4275;4961;4068</DisableSpecificWarnings>
       <ExceptionHandling>
       </ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -88,22 +94,23 @@
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <WarningVersion>18</WarningVersion>
-      <PreprocessorDefinitions>DEBUG;_DEBUG;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR="Debug";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG;_DEBUG;USE_PCH;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h";CRY_CVAR_WHITELIST_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h";CRY_ENGINE_DEFINE_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR="Debug";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/\";_WINDOWS;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR=\"Debug\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;USE_PCH;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/\";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h\";CRY_CVAR_WHITELIST_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h\";CRY_ENGINE_DEFINE_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h\";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR=\"Debug\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -126,13 +133,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj /Zo</AdditionalOptions>
       <AssemblerListingLocation>Profile/</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <CompileAs>CompileAsCpp</CompileAs>
+      <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4653</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4653;4275;4961;4068</DisableSpecificWarnings>
       <ExceptionHandling>
       </ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -142,22 +150,23 @@
       <Optimization>Full</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <WarningVersion>18</WarningVersion>
-      <PreprocessorDefinitions>NDEBUG;_PROFILE;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR="Profile";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_PROFILE;USE_PCH;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h";CRY_CVAR_WHITELIST_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h";CRY_ENGINE_DEFINE_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR="Profile";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_PROFILE;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/\";_WINDOWS;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR=\"Profile\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_PROFILE;USE_PCH;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/\";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h\";CRY_CVAR_WHITELIST_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h\";CRY_ENGINE_DEFINE_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h\";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR=\"Profile\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,13 +189,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj /Zo</AdditionalOptions>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <CompileAs>CompileAsCpp</CompileAs>
+      <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4653</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4653;4275;4961;4068</DisableSpecificWarnings>
       <ExceptionHandling>
       </ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -195,22 +205,23 @@
       <Optimization>Full</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <WarningVersion>18</WarningVersion>
-      <PreprocessorDefinitions>NDEBUG;_RELEASE;PURE_CLIENT;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR="Release";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_RELEASE;USE_PCH;PURE_CLIENT;CODE_BASE_FOLDER="F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h";CRY_CVAR_WHITELIST_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h";CRY_ENGINE_DEFINE_OVERRIDE_FILE="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;RELEASE_LOGGING;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR="Release";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_RELEASE;PURE_CLIENT;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.5/Code/\";_WINDOWS;_WIN32;_WIN64;CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;CMAKE_INTDIR=\"Release\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_RELEASE;USE_PCH;PURE_CLIENT;CODE_BASE_FOLDER=\"F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Code/\";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h\";CRY_CVAR_WHITELIST_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h\";CRY_ENGINE_DEFINE_OVERRIDE_FILE=\"F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h\";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;RELEASE_LOGGING;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR=\"Release\";Game_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Crytek\CryEnginePrototype\Code;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryCommon;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CryAction;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryEngine\CrySchematyc\Core\Interface;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Code\CryPlugins\CryDefaultEntities\Module;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -235,7 +246,7 @@
     <CustomBuild Include="F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\bin\cmake.exe" -HF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
+"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\bin\cmake.exe" -SF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -243,12 +254,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCXXCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeRCCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Bootstrap.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeDependentOption.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\ncurses.cmake;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Build.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\WinPixEventRuntime.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCXXCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeRCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\bin\cmake.exe" -HF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
+"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\bin\cmake.exe" -SF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -256,12 +267,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCXXCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeRCCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Bootstrap.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeDependentOption.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\ncurses.cmake;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Build.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\WinPixEventRuntime.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCXXCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeRCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\bin\cmake.exe" -HF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
+"F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\bin\cmake.exe" -SF:/Crytek/CryEnginePrototype/Code -BF:/Crytek/CryEnginePrototype/solutions/win64 --check-stamp-file F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -269,26 +280,49 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeCXXCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.10.1\CMakeRCCompiler.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Bootstrap.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CMakeDependentOption.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Win32\share\cmake-3.10\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.5\Tools\CMake\modules\ncurses.cmake;F:\Crytek\CryEnginePrototype\Code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Build.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CRYENGINE-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CommonOptions.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Configure.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\ConfigureChecks.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\CopyFilesToBin.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Recode.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeRCInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\CheckFunctionExists.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\Windows.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\Win32\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\Boost.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\modules\WinPixEventRuntime.cmake;F:\Crytek\CRYENGINE Launcher\Crytek\CRYENGINE_5.6\Tools\CMake\toolchain\windows\WindowsPC-MSVC.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeCXXCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeRCCompiler.cmake;F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\3.14.5\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Crytek\CryEnginePrototype\solutions\win64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.cpp" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp"  />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\MathExtension.cpp" />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\GamePlugin.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\MathExtension.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StdAfx.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AIAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\AICharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Camera\CameraController.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Damage\HitDamageComponent.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\GamePlay\PlayerSoul.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\CharacterActions.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\HealthLifeResource.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourceManager.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourcesManager.cpp" />
@@ -300,33 +334,22 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\LifeResourcesManager.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\SoulEnergyLifeResource.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\LifeResources\StaminaLifeResource.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerStruct.h" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\BaseCustomWeapon.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\BaseCustomWeapon.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\BaseCustomWeapon.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\MeleeWeapon.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\ShieldWeapon.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponExtensionData.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\BaseCustomWeapon.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\CharacterComponent.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\PlayerComponent.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Characters\Enemies\EnemyActor.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\PlayerInput.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\CharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Inputs\Actions\PlayerCharacterActions.cpp" />
+    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Weapon\WeaponSystem.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateMachine.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerStruct.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.h" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionLayerComponent.cpp" />
-    <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\Components\Physics\CollisionDetectorComponent.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\AttackAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BaseAction.cpp" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\BlockAction.cpp" />
@@ -347,23 +370,169 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\IdleAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\MovementAction.h" />
     <ClInclude Include="F:\Crytek\CryEnginePrototype\Code\StateMachine\StateAction\PushBackAction.h" />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Damage_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Characters_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Enemies_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Inputs_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\InputActions_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Physics_uber.cpp"  />
-    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp"  />
-    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc"  />
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Code_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Components_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Camera_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Characters_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Enemies_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Damage_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\GamePlay_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Inputs_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Actions_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\LifeResources_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Physics_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Weapon_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateMachine_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\StateAction_uber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ResourceCompile Include="F:\Crytek\CryEnginePrototype\solutions\win64\Game.autogen.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="F:\Crytek\CryEnginePrototype\solutions\win64\ZERO_CHECK.vcxproj">
+      <Project>{E56DAFBA-90A9-3860-9AB3-97BF9C129C8F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

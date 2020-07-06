@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="c91c08f6-1241-aca3-a5b6-37b3986c4065">
+ <Files>
+  <File path="metal_bronze_plain_a_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

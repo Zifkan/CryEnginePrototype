@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="36237882-7210-cc80-07b8-9eb1f2a6a199" source="recurved sword_spec.tif">
+ <Files>
+  <File path="recurved sword_spec.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

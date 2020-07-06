@@ -32,6 +32,7 @@ __pycache__/*
 _tmp/
 *.fbm/
 *.bck/
+/*.log
 
 # Build files we can do without.
 *.ilk
@@ -89,3 +90,8 @@ build_scripts/client/
 /assets/libs/environmentpresets/levels/house.xml
 /assets/chrysalis/levels/house/
 /assets/chrysalis/levels/house.level.cryasset
+
+# Temporary directories.
+/solutions/*
+/bin/*
+/SDKs/*

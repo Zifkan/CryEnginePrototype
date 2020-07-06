@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="CryEnginePrototype" targetName="CryEnginePrototype" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2002956-414c-401f-ae32-d833e5159093" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/example.level.cryasset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/example.level.cryasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/example/Layers/main.lyr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/example/Layers/main.lyr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/example/example.level" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/example/example.level" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/example/leveldata/Environment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/example/leveldata/Environment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/example/leveldata/TimeOfDay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/example/leveldata/TimeOfDay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/characters/human/medium/romanLegion/legion_skel.animevents" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/characters/human/medium/romanLegion/legion_skel.animevents" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/characters/human/medium/romanLegion/legion_skel.chrparams" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/characters/human/medium/romanLegion/legion_skel.chrparams" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_ddna.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_ddna.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_spec.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/battle_axe_spec.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/campestrian elite combat knife(vanilla)_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/campestrian elite combat knife(vanilla)_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_ddna.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_ddna.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_height.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_height.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_spec.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_spec.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze)_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze)_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze)_spec.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/double bladed axe (bronze)_spec.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved sword_ddna.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved sword_ddna.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved sword_spec.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved sword_spec.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved_sword_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/recurved_sword_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/throwing knife2_ddna.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/throwing knife2_ddna.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/throwing knife_diff.dds" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Medieval Weapons Pack/throwing knife_diff.dds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/cubemaps/example/environmentprobe1_cm.dds.cryasset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/cubemaps/example/environmentprobe1_cm.dds.cryasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Components/Characters/Enemies/EnemyActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Components/Characters/Enemies/EnemyActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Components/Characters/Enemies/EnemyActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Components/Characters/Enemies/EnemyActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/win_x64/Game.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/win_x64/Game.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/ALL_BUILD.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/ALL_BUILD.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/ALL_BUILD.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/ALL_BUILD.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/CMakeFiles/generate.stamp.depend" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/CMakeFiles/generate.stamp.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/CRYENGINE/ALL_BUILD.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/CRYENGINE/ALL_BUILD.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/CRYENGINE/CMakeFiles/generate.stamp.depend" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/CRYENGINE/CMakeFiles/generate.stamp.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/Code_uber.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/Code_uber.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/Editor.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/Editor.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/Editor.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/Editor.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/Game.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/Game.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/Game.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/Game.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/GameLauncher.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/GameLauncher.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/GameLauncher.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/GameLauncher.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/GameServer.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/GameServer.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/ZERO_CHECK.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/ZERO_CHECK.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/win64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/win64/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/sandbox/CharacterTool/State.json" beforeDir="false" afterPath="$PROJECT_DIR$/user/sandbox/CharacterTool/State.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/sandbox/Personalization.json" beforeDir="false" afterPath="$PROJECT_DIR$/user/sandbox/Personalization.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/sandbox/assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/user/sandbox/assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@motionblurps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@motionblurps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@packvelocitiesps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@packvelocitiesps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@velocitytilegenps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@velocitytilegenps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@velocitytileneighborhoodps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/motionblur@velocitytileneighborhoodps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@blendweightsmaa_ps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@blendweightsmaa_ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@lumaedgedetectionsmaa_ps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@lumaedgedetectionsmaa_ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@neighborhoodblendingsmaa_ps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@neighborhoodblendingsmaa_ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@postaacomposites_ps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/postaa@postaacomposites_ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@anisotropicverticalblurps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@anisotropicverticalblurps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@downsampledepthps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@downsampledepthps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@downsamplestableps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@downsamplestableps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@gaussblurbilinearps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@gaussblurbilinearps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@linearizedepthps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@linearizedepthps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@selectionsilhouetteps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@selectionsilhouetteps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@textotexps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@textotexps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@textotexsampledps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@textotexsampledps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@transpdepthfixupmergeps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffects@transpdepthfixupmergeps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffectsgame@combinecolorgradingwithcolorchartps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffectsgame@combinecolorgradingwithcolorchartps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffectsgame@watervolumesnormalgenps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/posteffectsgame@watervolumesnormalgenps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/shadowmaskgen@deferredshadowps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/shadowmaskgen@deferredshadowps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/stars@skypassps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/stars@skypassps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/stars@starsps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/stars@starsps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/sunshafts@sunshaftsgenps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/sunshafts@sunshaftsgenps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/sunshafts@sunshaftsmaskgenps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/sunshafts@sunshaftsmaskgenps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_debugpassps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_debugpassps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_sg_ps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_sg_ps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_zprepassps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@common_zprepassps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terraingbufferps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terraingbufferps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terrainlayerps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terrainlayerps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terrainps" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgpshaders/terrain@terrainps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/illum@illuminationvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/illum@illuminationvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/motionblur@basewposvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/motionblur@basewposvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/motionblur@fullscreentrivs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/motionblur@fullscreentrivs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/postaa@fullscreentrivs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/postaa@fullscreentrivs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@fullscreentrivs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@fullscreentrivs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@gaussblurbilinearvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@gaussblurbilinearvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@selectionsilhouettevs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@selectionsilhouettevs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@textotexregvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@textotexregvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@textotexvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffects@textotexvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffectsgame@combinecolorgradingwithcolorchartvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffectsgame@combinecolorgradingwithcolorchartvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffectsgame@fullscreentrivs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/posteffectsgame@fullscreentrivs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/shadowmaskgen@shadowmaskvolumevs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/shadowmaskgen@shadowmaskvolumevs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/stars@skypassvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/stars@skypassvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/stars@starsvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/stars@starsvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/sunshafts@basevs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/sunshafts@basevs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/sunshafts@sunshaftsgenvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/sunshafts@sunshaftsgenvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_debugpassvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_debugpassvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_sg_vs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_sg_vs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_zprepassvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@common_zprepassvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@terrainvs" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/cgvshaders/terrain@terrainvs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/d3d11/lookupdata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/d3d11/lookupdata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/cache/globals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/cache/globals.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/shaders/shaderlist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user/shaders/shaderlist.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1e7yuJAFDbQDkIMhCGFO4vSQudn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CryEnginePrototype" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CryEnginePrototype" TARGET_NAME="CryEnginePrototype" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CryEnginePrototype" RUN_TARGET_NAME="CryEnginePrototype">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2002956-414c-401f-ae32-d833e5159093" name="Default Changelist" comment="" />
+      <created>1593687146871</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593687146871</updated>
+      <workItem from="1593687148156" duration="62000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<BehaviorTree>
+ <MetaExtensions />
+ <Variables>
+  <Variable name="Health"/>
+ </Variables>
+ <Events>
+  <GameEvents>
+   <Event name="TestEvent"/>
+  </GameEvents>
+ </Events>
+ <Root>
+  <Sequence>
+   <WaitForEvent name="OnNewAttentionTarget"/>
+   <Loop>
+    <Selector>
+     <Move stopWithinDistance="0" stopDistanceVariation="0" speed="Run" stance="Stand" bodyOrientation="Halfway Towards Aim Or Look" moveToCover="0" turnTowardsMovementDirectionBeforeMoving="0" strafe="0" glanceInMovementDirection="0" to="Target" fireMode="Off" avoidDangers="1" avoidGroupMates="0" considerActorsAsPathObstacles="0"/>
+     <Animate name="IA_Salute_01" playMode="PlayOnce" urgent="1" setBodyDirectionTowardsAttentionTarget="0"/>
+    </Selector>
+   </Loop>
+  </Sequence>
+ </Root>
+</BehaviorTree>

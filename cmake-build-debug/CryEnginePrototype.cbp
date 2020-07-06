@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CryEnginePrototype"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/Crytek/CryEnginePrototype/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CryEnginePrototype">
+				<Option output="F:/Crytek/CryEnginePrototype/cmake-build-debug/CryEnginePrototype.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Crytek/CryEnginePrototype/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Camera"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Characters"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Characters/Enemies"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Damage"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/GamePlay"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Inputs"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/Actions"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Physics"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Weapon"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/StateMachine"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64/Game.dir"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64/Game.dir/Debug"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 CryEnginePrototype"/>
+					<CompileFile command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CryEnginePrototype/fast">
+				<Option output="F:/Crytek/CryEnginePrototype/cmake-build-debug/CryEnginePrototype.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Crytek/CryEnginePrototype/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Camera"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Characters"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Characters/Enemies"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Damage"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/GamePlay"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Inputs"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/Actions"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Physics"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/Components/Weapon"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/StateMachine"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64/Game.dir"/>
+					<Add directory="F:/Crytek/CryEnginePrototype/solutions/win64/Game.dir/Debug"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 CryEnginePrototype/fast"/>
+					<CompileFile command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/Crytek/CryEnginePrototype/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/Crytek/CryEnginePrototype/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\Crytek\CryEnginePrototype\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/AIAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/AIAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/AICharacterActions.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/AICharacterActions.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Camera/CameraController.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Camera/CameraController.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/CharacterComponent.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/CharacterComponent.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/Enemies/EnemyActor.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/Enemies/EnemyActor.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/PlayerComponent.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Characters/PlayerComponent.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Damage/HitDamageComponent.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Damage/HitDamageComponent.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/GamePlay/PlayerSoul.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/GamePlay/PlayerSoul.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/Actions/CharacterActions.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/Actions/PlayerCharacterActions.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/Actions/PlayerCharacterActions.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/PlayerInput.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Inputs/PlayerInput.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/BaseLifeResource.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/HealthLifeResource.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/HealthLifeResource.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/LifeResourceManager.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/LifeResourceManager.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/LifeResourcesManager.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/LifeResourcesManager.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/SoulEnergyLifeResource.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/SoulEnergyLifeResource.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/StaminaLifeResource.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/LifeResources/StaminaLifeResource.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Physics/CollisionDetectorComponent.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Physics/CollisionDetectorComponent.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Physics/CollisionLayerComponent.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Physics/CollisionLayerComponent.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Physics/CollisionLayerStruct.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/BaseCustomWeapon.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/BaseCustomWeapon.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/ICustomWeapon.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/MeleeWeapon.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/MeleeWeapon.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/ShieldWeapon.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/ShieldWeapon.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/WeaponExtensionData.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/WeaponSystem.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/Components/Weapon/WeaponSystem.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/GamePlugin.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/GamePlugin.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/MathExtension.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/MathExtension.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-all.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-amb.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-any.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-buffer_count.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-buffer_time.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-buffer_time_count.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-combine_latest.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-concat.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-concat_map.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-connect_forever.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-debounce.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-delay.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-distinct.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-distinct_until_changed.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-element_at.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-filter.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-finally.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-flat_map.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-group_by.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-ignore_elements.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-lift.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-map.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-merge.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-merge_delay_error.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-multicast.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-observe_on.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-on_error_resume_next.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-pairwise.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-publish.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-reduce.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-ref_count.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-repeat.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-replay.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-retry-repeat-common.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-retry.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-sample_time.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-scan.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-sequence_equal.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-skip.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-skip_last.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-skip_until.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-skip_while.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-start_with.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-subscribe.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-subscribe_on.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-switch_if_empty.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-switch_on_next.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-take.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-take_last.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-take_until.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-take_while.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-tap.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-time_interval.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-timeout.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-timestamp.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-window.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-window_time.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-window_time_count.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-window_toggle.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-with_latest_from.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/operators/rx-zip.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-composite_exception.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-connectable_observable.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-coordination.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-coroutine.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-grouped_observable.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-includes.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-lite.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-notification.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-observable.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-observer.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-operators.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-predef.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-scheduler.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-sources.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-subjects.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-subscriber.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-subscription.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-test.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-trace.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx-util.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/rx.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-currentthread.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-eventloop.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-immediate.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-newthread.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-runloop.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-sameworker.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-test.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/schedulers/rx-virtualtime.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-create.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-defer.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-empty.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-error.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-interval.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-iterate.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-never.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-range.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-scope.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/sources/rx-timer.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects/rx-behavior.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects/rx-replaysubject.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects/rx-subject.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/RxCpp/subjects/rx-synchronize.hpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/AttackAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/AttackAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/BaseAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/BaseAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/BlockAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/BlockAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/DeathAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/DeathAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/EnemyAttackAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/EnemyAttackAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/EnemyMovementAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/EnemyMovementAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/HitAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/HitAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/IdleAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/IdleAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/MovementAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/MovementAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/PushBackAction.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateAction/PushBackAction.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateMachine.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StateMachine/StateMachine.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StdAfx.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/Code/StdAfx.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Actions_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Camera_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/CharacterActions_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Characters_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Code_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Components_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Damage_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Enemies_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Game.dir/Debug/Game.pch">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/GamePlay_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/InputActions_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Inputs_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/LifeResources_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Physics_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarOverrides.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectCVarWhitelist.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/ProjectEngineDefineOverrides.h">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/SpecialComponents_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/StateAction_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/StateMachine_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/solutions/win64/Weapon_uber.cpp">
+			<Option target="CryEnginePrototype"/>
+		</Unit>
+		<Unit filename="F:/Crytek/CryEnginePrototype/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="3b0a62d0-178b-4268-38d7-f5bd8321d002" source="throwing knife_diff.tif">
+ <Files>
+  <File path="throwing knife_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

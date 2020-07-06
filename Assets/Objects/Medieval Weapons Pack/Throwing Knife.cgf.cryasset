@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="7eaf22d1-ec6c-d967-b84e-2cffe987ac00">
+ <Files>
+  <File path="Throwing Knife.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">988</Detail>
+  <Detail name="vertexCount">1104</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/throwing knife.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

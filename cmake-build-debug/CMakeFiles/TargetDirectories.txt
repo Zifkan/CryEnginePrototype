@@ -1,0 +1,3 @@
+F:/Crytek/CryEnginePrototype/cmake-build-debug/CMakeFiles/CryEnginePrototype.dir
+F:/Crytek/CryEnginePrototype/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/Crytek/CryEnginePrototype/cmake-build-debug/CMakeFiles/rebuild_cache.dir

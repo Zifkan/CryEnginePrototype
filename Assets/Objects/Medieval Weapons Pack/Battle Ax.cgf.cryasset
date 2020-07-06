@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="5b53c72d-edda-c735-f917-a6d0b34d2e9e">
+ <Files>
+  <File path="Battle Ax.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">1265</Detail>
+  <Detail name="vertexCount">1085</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/bush hook.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="e10fb852-5844-8d80-52e3-fcaae7bea52e">
+ <Files>
+  <File path="Double Bladed Axe (Bronze Head).cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">1132</Detail>
+  <Detail name="vertexCount">1238</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/double bladed axe bronze.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

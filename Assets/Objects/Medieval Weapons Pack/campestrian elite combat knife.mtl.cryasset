@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="32ca0020-8b3c-c7c7-c851-f447317bf05e">
+ <Files>
+  <File path="campestrian elite combat knife.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/campestrian elite combat knife_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/campestrian elite combat knife_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/campestrian elite combat knife_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

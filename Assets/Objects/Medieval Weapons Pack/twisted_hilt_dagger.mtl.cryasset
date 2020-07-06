@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="c4dcaaef-ad21-4b9c-8b20-a6a78bc4da60">
+ <Files>
+  <File path="twisted_hilt_dagger.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/twisted hilt dagger_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/Throwing Knife_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/twisted hilt dagger_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

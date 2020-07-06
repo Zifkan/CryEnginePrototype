@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="65184424-7315-7133-2423-a1435351ad44">
+ <Files>
+  <File path="battle_axe_head_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

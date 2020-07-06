@@ -1,0 +1,17 @@
+<AssetMetadata version="0" type="Material" guid="e4542e72-696d-88a0-f21a-51112ae7d4d9">
+ <Files>
+  <File path="common blade.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">2</Detail>
+  <Detail name="textureCount">6</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/common_blade_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/common_blade_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/common_blade_spec.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/metal_bronze_plain_a_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/metal_bronze_plain_a_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/metal_bronze_plain_a_spec.dds</Path>
+ </Dependencies>
+</AssetMetadata>

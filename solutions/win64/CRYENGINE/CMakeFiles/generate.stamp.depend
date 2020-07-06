@@ -9,7 +9,7 @@ F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CommonOptions.cmak
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Configure.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/ConfigureChecks.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CopyFilesToBin.cmake
-F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CrossPlatformSetup.cmake
+F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/InitialSetup.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Recode.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeDependentOption.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CheckFunctionExists.cmake

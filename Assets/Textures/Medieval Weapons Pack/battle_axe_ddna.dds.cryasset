@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="f65e756d-e8a5-9de1-46d6-e463915e18f5" source="battle_axe_ddna.tif">
+ <Files>
+  <File path="battle_axe_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">4096</Detail>
+  <Detail name="height">4096</Detail>
+  <Detail name="mipCount">11</Detail>
+ </Details>
+</AssetMetadata>

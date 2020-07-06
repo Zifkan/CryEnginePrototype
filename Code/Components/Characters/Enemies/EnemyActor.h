@@ -2,6 +2,7 @@
 #include <CryAISystem/Components/IEntityNavigationComponent.h>
 #include "Components/Characters/CharacterComponent.h"
 #include "Components/Damage/HitDamageComponent.h"
+#include "CryAISystem/Components/IEntityBehaviorTreeComponent.h"
 
 
 class СEnemyActor : public CCharacterComponent
@@ -42,8 +43,8 @@ protected:
     void PropertyChanged() override;
 
     IEntityNavigationComponent* m_pNavigationComponent = nullptr;
-    IEntity* pPlayerEntity;
-
+    IEntity* pPlayerEntity = nullptr;
+    IEntityBehaviorTreeComponent* m_pBehaviorTreeComponent = nullptr;
     void SetState();
 
 private:

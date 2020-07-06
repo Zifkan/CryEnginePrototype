@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="b3f18adc-b139-f3bd-ca6f-944f9d3edb67" source="double bladed axe (bronze) w. leather handle_ddna.tif">
+ <Files>
+  <File path="double bladed axe (bronze) w. leather handle_ddna.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

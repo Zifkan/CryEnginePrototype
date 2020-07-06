@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="86154cee-c6a6-fb68-8fe5-601203963f28" source="recurved_sword_diff.tif">
+ <Files>
+  <File path="recurved_sword_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

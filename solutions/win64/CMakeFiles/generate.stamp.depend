@@ -1,5 +1,4 @@
 # CMake generation dependency list for this directory.
-F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Bootstrap.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Build.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CRYENGINE-MSVC.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CommonMacros.cmake
@@ -7,12 +6,10 @@ F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CommonOptions.cmak
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Configure.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/ConfigureChecks.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CopyFilesToBin.cmake
-F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/CrossPlatformSetup.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Recode.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeCInformation.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeCXXInformation.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeCommonLanguageInclude.cmake
-F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeDependentOption.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeGenericSystem.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeInitializeConfigs.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/CMakeLanguageInformation.cmake
@@ -29,6 +26,7 @@ F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/Platform/Windows.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/Win32/share/cmake-3.14/Modules/Platform/WindowsPaths.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/modules/Boost.cmake
+F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/modules/WinPixEventRuntime.cmake
 F:/Crytek/CRYENGINE Launcher/Crytek/CRYENGINE_5.6/Tools/CMake/toolchain/windows/WindowsPC-MSVC.cmake
 F:/Crytek/CryEnginePrototype/Code/CMakeLists.txt
 F:/Crytek/CryEnginePrototype/solutions/win64/CMakeFiles/3.14.5/CMakeCCompiler.cmake

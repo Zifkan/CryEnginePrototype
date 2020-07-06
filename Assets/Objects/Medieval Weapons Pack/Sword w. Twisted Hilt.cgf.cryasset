@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="b75be01a-5930-f459-24e7-b2daca83879f">
+ <Files>
+  <File path="Sword w. Twisted Hilt.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">3</Detail>
+  <Detail name="triangleCount">3962</Detail>
+  <Detail name="vertexCount">3798</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">objects/Medieval Weapons Pack/sword_w.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

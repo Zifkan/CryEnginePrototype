@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="578015e5-f69a-04d2-de29-88d3c43d307a">
+ <Files>
+  <File path="metal_bronze_plain_a_diff.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">1024</Detail>
+  <Detail name="height">1024</Detail>
+  <Detail name="mipCount">9</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,15 @@
+<AssetMetadata version="0" type="Material" guid="a32e1762-f470-0b61-3e2e-59790090a3d5">
+ <Files>
+  <File path="double bladed axe w.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">0</Detail>
+  <Detail name="textureCount">4</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_diff.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_ddna.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_spec.dds</Path>
+  <Path usageCount="1">textures/Medieval Weapons Pack/double bladed axe (bronze) w. leather handle_height.dds</Path>
+ </Dependencies>
+</AssetMetadata>

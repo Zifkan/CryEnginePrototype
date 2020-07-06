@@ -1,4 +1,4 @@
-<AssetMetadata version="0" type="Level" guid="90f6f9d4-0804-283c-02dc-2d438ba572bd" source="" timestamp="1567682168">
+<AssetMetadata version="0" type="Level" guid="90f6f9d4-0804-283c-02dc-2d438ba572bd" source="" timestamp="1594030793">
  <Files>
   <File path="example/example.level"/>
  </Files>
@@ -24,6 +24,59 @@
   <Path>%engine%/engineassets/texturemsg/defaultsolids.mtl</Path>
   <Path>%engine%/engineassets/textures/skys/night/half_moon.dds</Path>
   <Path>%engine%/engineassets/textures/white.dds</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_135_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_144_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_45_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_lft_72_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_45_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_com_shuffle_rgt_45_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_death_from_back_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_death_from_front_lf.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_death_from_front_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_exc_mrus_death_slv01_frt_id0099_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_back_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_03.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_07.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_foc_hit_rct_stat_front_lf_10.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_lf_to_front_lf_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_back_rf_to_front_lf_stat_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_lf_to_front_lf_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_lf_to_front_rf_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_hit_rct_front_rf_to_front_lf_stat_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_pillum_death_back_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_pillum_death_front_rf_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_fall_down_front_lf_to_front_lf.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_heavy_push_back_rf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_back_lf_to_back_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_back_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_lf_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_lf_03.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_lf_to_front_rf_03.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_left_hit_front_rf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_back_lf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_back_rf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_front_lf_to_back_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_right_hit_front_lf_to_front_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_rct_short_push_front_rf_to_front_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_scorpio_death_from_back_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_scorpio_death_from_back_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_1hnd_to_shld_awr_add_spine_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_com_hit_from_wve_02.caf</Path>
+  <Path>animations/human/medium/romans/barb_form_open_to_death.caf</Path>
+  <Path>animations/human/medium/romans/barb_inja_to_death_bck_1hnd_slv_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_inja_to_death_frnt_shld_slv_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_mass_str_to_death_slv_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_com_idle_rf_to_block_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_com_wlk_fwd_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_fc_exec_mst_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_dash_hit_back_lf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_fall_down_front_lf_to_front_lf.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_foc_fhit_death_from_i_to_i_atk_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_heavy_hit_front_300_lf_to_front_rf_01.caf</Path>
+  <Path>animations/human/medium/romans/barb_shld_rct_right_hit_back_rf_to_front_lf_01.caf</Path>
+  <Path>animations/human/medium/romans/evr_stand_com_shld_death_front_slash_lf_01.caf</Path>
   <Path>animations/mannequin/adb/deathtags.xml</Path>
   <Path>animations/mannequin/adb/hitreactiontags.xml</Path>
   <Path>animations/mannequin/adb/legionertags.xml</Path>
@@ -104,6 +157,8 @@
   <Path>objects/weapons/gladius1.mtl</Path>
   <Path>objects/weapons/gladius2.cgf</Path>
   <Path>objects/weapons/shield.cgf</Path>
+  <Path>scripts/ai/behaviortrees/test.xml</Path>
+  <Path>scripts/ai/factions.xml</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm.dds</Path>
   <Path>textures/cubemaps/example/environmentprobe1_cm_diff.dds</Path>
   <Path>textures/shield/scutum_albedo.dds</Path>

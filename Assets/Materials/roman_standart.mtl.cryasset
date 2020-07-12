@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Material" guid="fee6a2c2-3e90-52ec-968e-d77c379fd426" source="" timestamp="1594558696">
+ <Files>
+  <File path="Roman_Standart.mtl"/>
+ </Files>
+ <Details>
+  <Detail name="subMaterialCount">8</Detail>
+  <Detail name="textureCount">3</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">Textures/RomanStandart/Main_Flag_albedo.dds</Path>
+  <Path usageCount="7">%ENGINE%/EngineAssets/Textures/white.dds</Path>
+  <Path usageCount="7">%ENGINE%/EngineAssets/Textures/white_ddn.dds</Path>
+ </Dependencies>
+</AssetMetadata>

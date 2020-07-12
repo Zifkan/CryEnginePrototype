@@ -1,0 +1,14 @@
+<AssetMetadata version="0" type="Mesh" guid="5107c2ca-56dd-35fa-32f2-3ca652f1dd64" source="Roman_Standart.FBX">
+ <Files>
+  <File path="RomanStandart.cgf"/>
+ </Files>
+ <Details>
+  <Detail name="materialCount">9</Detail>
+  <Detail name="triangleCount">3380</Detail>
+  <Detail name="vertexCount">2175</Detail>
+  <Detail name="16BitPrecision">false</Detail>
+ </Details>
+ <Dependencies>
+  <Path usageCount="1">Materials/Roman_Standart.mtl</Path>
+ </Dependencies>
+</AssetMetadata>

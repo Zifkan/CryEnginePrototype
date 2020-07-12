@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="9f737ab0-e446-dcdc-b5e2-102b648be69d" source="Main_Flag_albedo.tif">
+ <Files>
+  <File path="Main_Flag_albedo.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

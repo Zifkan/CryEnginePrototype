@@ -7,5 +7,6 @@
   <Tag name="Death" subTagDef="Animations/Mannequin/ADB/deathtags.xml"/>
   <Tag name="Block" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
   <Tag name="PushBack" subTagDef="Animations/Mannequin/ADB/legionertags.xml"/>
+  <Tag name="ThrowStandart" subTagDef="Animations/Mannequin/ADB/StandartTags.xml"/>
  </Tags>
 </TagDefinition>

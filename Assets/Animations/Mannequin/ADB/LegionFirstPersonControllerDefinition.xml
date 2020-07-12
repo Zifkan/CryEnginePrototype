@@ -9,6 +9,7 @@
   <Death scopes="FullBody"/>
   <Block scopes="Torso"/>
   <PushBack scopes="FullBody"/>
+  <ThrowStandart scopes="FullBody+Torso+Weapon"/>
  </FragmentDefs>
  <ScopeContextDefs>
   <ThirdPersonCharacter />

@@ -18,7 +18,7 @@
    <Fragment BlendOutDuration="0.2" Tags="">
     <AnimLayer>
      <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
-     <Animation name="romn_com_move_01" flags="Loop"/>
+     <Animation name="barb_1hnd_com_idle_to_com_walk_fwd_rf_01" flags="Loop"/>
     </AnimLayer>
    </Fragment>
   </Walk>
@@ -100,6 +100,26 @@
     </AnimLayer>
    </Fragment>
   </PushBack>
+  <ThrowStandart>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="BackswingStart">
+    <AnimLayer>
+     <Blend ExitTime="0.10000002" StartTime="0" Duration="0.16000009"/>
+     <Animation name="evr_com_shld_javelin_throw_into_01"/>
+    </AnimLayer>
+   </Fragment>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="BackswingHold">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="evr_com_shld_javelin_throw_loop_01" flags="Loop"/>
+    </AnimLayer>
+   </Fragment>
+   <Fragment BlendOutDuration="0.2" Tags="" FragTags="BackswingEnd">
+    <AnimLayer>
+     <Blend ExitTime="0" StartTime="0" Duration="0.2"/>
+     <Animation name="evr_com_shld_javelin_throw_outof_01"/>
+    </AnimLayer>
+   </Fragment>
+  </ThrowStandart>
  </FragmentList>
  <FragmentBlendList>
   <Blend from="Attack" to="Attack">

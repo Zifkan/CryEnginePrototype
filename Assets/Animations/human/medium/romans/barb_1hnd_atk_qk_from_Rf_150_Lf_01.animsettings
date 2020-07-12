@@ -1,7 +1,6 @@
 {
 	"build": {
 		"additive": false,
-		"skeletonAlias": "legionaire",
 		"compression": {
 			"compressionValue": 10,
 			"positionEpsilon": 0.001,

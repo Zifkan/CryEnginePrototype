@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="d9130b8d-57e7-0966-1a81-c5309353837b" source="Top_Metal_normal.tif">
+ <Files>
+  <File path="Top_Metal_normal.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

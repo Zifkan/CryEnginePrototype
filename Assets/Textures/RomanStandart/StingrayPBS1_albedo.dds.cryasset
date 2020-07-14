@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="80943f32-cf4c-298f-86c1-a4a3b130f5d4" source="StingrayPBS1_albedo.tif">
+ <Files>
+  <File path="StingrayPBS1_albedo.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

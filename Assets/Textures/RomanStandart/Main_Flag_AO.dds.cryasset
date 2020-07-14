@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="fa3a5437-3279-fbda-ba8d-155d5a45a3c0" source="Main_Flag_AO.tif">
+ <Files>
+  <File path="Main_Flag_AO.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

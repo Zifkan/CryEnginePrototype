@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="748d7d53-bfe3-d388-a744-59105fd0fc8c" source="Wood2_metallic.tif">
+ <Files>
+  <File path="Wood2_metallic.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="baa239e4-eee9-b540-1477-5362692e18da" source="Red_Flag_Right_roughness.tif">
+ <Files>
+  <File path="Red_Flag_Right_roughness.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="14a8ca2f-af6c-9072-8822-414176ed1aa5" source="Red_Flag_Left_metallic.tif">
+ <Files>
+  <File path="Red_Flag_Left_metallic.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

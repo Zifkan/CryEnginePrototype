@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="b4ff099b-e53e-c9c7-4e07-346d18fa6fde" source="StingrayPBS1_metallic.tif">
+ <Files>
+  <File path="StingrayPBS1_metallic.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="45fe5de6-78e0-8b5c-c3c6-e576a1d016b9" source="Top_Metal_roughness.tif">
+ <Files>
+  <File path="Top_Metal_roughness.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

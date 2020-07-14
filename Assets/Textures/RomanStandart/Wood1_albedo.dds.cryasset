@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="7bf24489-d978-0f14-6726-077cfe84b405" source="Wood1_albedo.tif">
+ <Files>
+  <File path="Wood1_albedo.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

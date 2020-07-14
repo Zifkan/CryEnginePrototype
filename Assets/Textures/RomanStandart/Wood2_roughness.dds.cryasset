@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="a4a35776-14b4-fd2e-982a-fd7725f115dd" source="Wood2_roughness.tif">
+ <Files>
+  <File path="Wood2_roughness.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

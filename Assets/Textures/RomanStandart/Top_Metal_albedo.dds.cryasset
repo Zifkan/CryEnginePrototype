@@ -1,0 +1,10 @@
+<AssetMetadata version="0" type="Texture" guid="a56bd3ca-e424-1438-7e65-8832b243b2a1" source="Top_Metal_albedo.tif">
+ <Files>
+  <File path="Top_Metal_albedo.dds"/>
+ </Files>
+ <Details>
+  <Detail name="width">2048</Detail>
+  <Detail name="height">2048</Detail>
+  <Detail name="mipCount">10</Detail>
+ </Details>
+</AssetMetadata>

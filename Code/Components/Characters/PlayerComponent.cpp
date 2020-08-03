@@ -11,8 +11,6 @@
 #include "StateMachine/StateAction/DeathAction.h"
 #include "StateMachine/StateAction/BlockAction.h"
 #include "StateMachine/StateAction/PushBackAction.h"
-#include "Components/LifeResources/StaminaLifeResource.h"
-#include "Components/LifeResources/HealthLifeResource.h"
 #include <CryCore/StaticInstanceList.h>
 
 
@@ -45,37 +43,31 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 }
 
 
-void CPlayerComponent::InitInput(ICharacterActions* playerCharacterActions)
-{
-    m_pCharacterActions = playerCharacterActions;
-    m_pPlayerInput->RegisterInputs(playerCharacterActions);
-}
+
 
 void CPlayerComponent::CreateStateMachine()
 {
     FragmentID m_idleFragmentId = m_pAnimationComponent->GetFragmentId("Idle");
-    FragmentID m_walkFragmentId = m_pAnimationComponent->GetFragmentId("Walk");
-    FragmentID m_attackFragmentId = m_pAnimationComponent->GetFragmentId("Attack");
+  //  FragmentID m_walkFragmentId = m_pAnimationComponent->GetFragmentId("Walk");
+ //   FragmentID m_attackFragmentId = m_pAnimationComponent->GetFragmentId("Attack");
     FragmentID m_hitReactionFragmentId = m_pAnimationComponent->GetFragmentId("HitReaction");
     FragmentID m_deathFragmentId = m_pAnimationComponent->GetFragmentId("Death");
     FragmentID m_blocFragmentId = m_pAnimationComponent->GetFragmentId("Block");
     FragmentID m_pushBackFragmentId = m_pAnimationComponent->GetFragmentId("PushBack");
     m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
-    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pEntity,m_pMainCamera ,m_pCharacterActions, 0, m_idleFragmentId));
-    m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity,   m_pMainCamera, m_pCharacterActions, 1, m_walkFragmentId));
-    m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_pEntity, m_pWeaponSystem,m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pCharacterActions, 2, m_attackFragmentId));
-    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pEntity,m_pHitDamageComponent,m_pCharacterActions, 3, m_hitReactionFragmentId));
-    m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pEntity, m_pCharacterActions, 4, m_pushBackFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pEntity, m_pWeaponSystem,m_pCharacterActions, 5, m_deathFragmentId));
-    m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pEntity, m_pCharacterActions, 1, m_blocFragmentId));
+    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pEntity,m_pMainCamera , 0, m_idleFragmentId));
+   // m_stateMachine->RegisterState(typeid(MovementAction), new MovementAction(m_lifeResourceManager->GetResource<CStaminaLifeResource>(), m_pEntity,   m_pMainCamera,  1, m_walkFragmentId));
+  //  m_stateMachine->RegisterState(typeid(AttackAction), new AttackAction(m_pEntity, m_pWeaponSystem,m_lifeResourceManager->GetResource<CStaminaLifeResource>(),  2, m_attackFragmentId));
+    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pEntity,m_pHitDamageComponent, 3, m_hitReactionFragmentId));
+    m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pEntity,  4, m_pushBackFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pEntity, m_pWeaponSystem, 5, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(BlockAction), new BlockAction(m_pEntity,  1, m_blocFragmentId));
 }
 
 void CPlayerComponent::InitLifeResources()
 {
-    m_lifeResourceManager->RegisterResource(typeid(CHealthLifeResource), new CHealthLifeResource(100));
-    m_lifeResourceManager->RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100, 1));
-  //  m_lifeResourceManager.RegisterResource(typeid(CSoulEnergyLifeResource), new CSoulEnergyLifeResource(100, 1));
+  
 }
 
 void CPlayerComponent::HitReaction(float damage)
@@ -116,59 +108,3 @@ void CPlayerComponent::GameUpdate(float fFrameTime)
 void CPlayerComponent::PropertyChanged()
 {
 }
-
-
-void CPlayerComponent::SetupActions()
-{
-    auto subscription = rxcpp::composite_subscription();
-    m_pCharacterActions->MovementSubject.get_observable()
-    .subscribe(subscription,[this](Vec2 Vector2)
-    {
-        if (Vector2.GetLength2() > 0)
-        {
-            m_stateMachine->SetCurrentState(typeid(MovementAction));
-        }
-    });
-
-    m_pCharacterActions->AttackSubject.get_observable()
-    .subscribe(subscription,[this](AttackType type)
-    {
-      //  IBaseLifeResource* staminaResource = m_lifeResourceManager->GetResource<CStaminaLifeResource>();
-      //  if (staminaResource->Value.get_value() - m_attackStaminaCost >= 0)
-        {
-            m_stateMachine->SetCurrentState(typeid(AttackAction));
-        }
-    });
-
-    m_pCharacterActions->BlockSubject.get_observable()
-    .subscribe(subscription, [this](bool isBlock)
-    {
-        if(isBlock)
-            m_stateMachine->SetCurrentState(typeid(BlockAction));
-    });
-
-    m_lifeResourceManager->GetResource<CHealthLifeResource>()->Value.get_observable().skip_while([](float value){ return value > 0; }).first()
-    .subscribe([subscription, this](float value)
-    {
-        IsDead = true;
-        m_pAnimationComponent->SetTag("Dying", true);
-        m_stateMachine->SetCurrentState(typeid(DeathAction));
-     //   subscription.unsubscribe();
-    });
-
-    m_pHitDamageComponent->HitSubject.get_observable().subscribe([this](SideHitEnum sideHit)
-    {       
-        switch (sideHit)
-        {        
-        case PushBack:
-        {
-            m_stateMachine->SetCurrentState(typeid(PushBackAction));
-        }
-        break;
-        }
-
-        m_stateMachine->SetCurrentState(typeid(HitAction));
-    });
-}
-
-

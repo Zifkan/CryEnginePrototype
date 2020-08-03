@@ -3,7 +3,6 @@
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Cameras/CameraComponent.h>
-#include "Components/Inputs/Actions/CharacterActions.h"
 
 class CCameraController final : public IEntityComponent
 {
@@ -44,15 +43,13 @@ public:
         desc.SetComponentFlags({ EFlags::Singleton});
     }
 
-    void InitInput(ICharacterActions* charActions);
 
     void SetTargetEntity(IEntity* entity);
     bool IsCameraFocus();
 
 
 protected:
-    Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
-    ICharacterActions* m_pCharacterActions = nullptr;
+    Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;   
     IEntity* m_pPlayerEntity = nullptr;
     IEntity* m_pEnemy;
 

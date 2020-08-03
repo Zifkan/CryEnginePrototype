@@ -1,8 +1,15 @@
 ﻿#pragma once
 
 #include <DefaultComponents/Input/InputComponent.h>
-#include "Actions/CharacterActions.h"
 
+#include "ECS/Components/InputComponent.h"
+
+
+class CEntityManager;
+
+namespace flecs {
+    class entity;
+}
 
 class CPlayerInputComponent : public IEntityComponent
 {
@@ -10,7 +17,7 @@ public:
     ~CPlayerInputComponent() {};
 
 
-    void RegisterInputs(ICharacterActions* charActions);
+    void RegisterInputs();
 
     static void ReflectType(Schematyc::CTypeDesc<CPlayerInputComponent>& desc)
     {
@@ -19,11 +26,22 @@ public:
         desc.SetLabel("Player Input");
         desc.SetDescription("Exposes support for inputs and action maps");
     }
+    
+
+    Cry::Entity::EventFlags GetEventMask() const override;
+
+    virtual void ProcessEvent(const SEntityEvent& event) override;
 
 protected:
     void Initialize() override;
-
-    ICharacterActions* characterActions = nullptr;
+  
     Cry::DefaultComponents::CInputComponent* m_pInputComponent = nullptr;
 
+    InputComponent  inputComponent;
+    CEntityManager* entityManager = nullptr;
+
+    flecs::entity* inputEntity = nullptr;;
+
+private:
+    void SetInput(InputComponent  inputComponent) const;
 };

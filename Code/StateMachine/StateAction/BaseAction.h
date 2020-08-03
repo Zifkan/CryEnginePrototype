@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <CryAnimation/ICryMannequin.h>
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
-#include "Components/Inputs/Actions/CharacterActions.h"
 
 
 class CStateMachine;
@@ -10,10 +9,9 @@ class BaseAction :public IAction
 {
 public:
 
-    BaseAction(IEntity* pCharacterEntity,ICharacterActions* characterAction, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
+    BaseAction(IEntity* pCharacterEntity, int priority, FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY, uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0)
         : IAction(priority, fragmentID, fragTags, flags, scopeMask, userToken)
         ,m_pCharacterEntity(pCharacterEntity)
-        ,m_pCharacterAction(characterAction)
     {        
         ScopeLayer = 0;
         m_pCharacterController = pCharacterEntity->GetComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
@@ -37,7 +35,6 @@ public:
 
 protected:
     ISkeletonAnim* m_pISkeletonAnim;
-    ICharacterActions* m_pCharacterAction;
     CStateMachine* m_pStateMachine;
     IEntity* m_pCharacterEntity;
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController;

@@ -74,7 +74,7 @@ void CMeleeWeaponComponent::Update(float fFrameTime)
         std::array<ray_hit, RAY_HIT_COUNT> sendRayHit;
         std::copy(std::begin(rayhit), std::end(rayhit), std::begin(sendRayHit));
 
-        RayHitSubject.get_subscriber().on_next(sendRayHit);
+    //    RayHitSubject.get_subscriber().on_next(sendRayHit);
     }
 
 

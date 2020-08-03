@@ -11,9 +11,6 @@
 #include "StateMachine/StateAction/EnemyMovementAction.h"
 #include "StateMachine/StateAction/EnemyAttackAction.h"
 #include "StateMachine/StateAction/PushBackAction.h"
-#include "Components/LifeResources/StaminaLifeResource.h"
-#include "Components/LifeResources/HealthLifeResource.h"
-#include "Components/Inputs/Actions/PlayerCharacterActions.h"
 #include <CryCore/StaticInstanceList.h>
 
 
@@ -40,7 +37,7 @@ void СEnemyActor::Initialize()
     CCharacterComponent::Initialize();
     pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
 
-    m_pCharacterActions = new PlayerCharacterActions();
+ 
     m_pNavigationComponent = m_pEntity->GetOrCreateComponent<IEntityNavigationComponent>();
     const float m_movementSpeed = 5.0f;
     IEntityNavigationComponent::SMovementProperties movementProperties;
@@ -53,7 +50,7 @@ void СEnemyActor::Initialize()
     
     m_pNavigationComponent->SetStateUpdatedCallback([this](const Vec3& recommendedVelocity)
     {
-        m_pCharacterActions->MovementSubject.get_subscriber().on_next(Vec2(recommendedVelocity));
+    
     });
 
     m_pBehaviorTreeComponent = m_pEntity->GetOrCreateComponent<IEntityBehaviorTreeComponent>();
@@ -78,48 +75,29 @@ void СEnemyActor::CreateStateMachine()
 
     m_stateMachine = new CStateMachine(m_pAnimationComponent);
 
-    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pEntity,nullptr,m_pCharacterActions, 0, m_idleFragmentId));
-    m_stateMachine->RegisterState(typeid(EnemyMovementAction), new EnemyMovementAction(m_pEntity, m_pCharacterActions, 1, m_walkFragmentId));
-    m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pWeaponSystem,m_pEntity, m_pCharacterActions, 2, m_attackFragmentId));
-    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pEntity,m_pHitDamageComponent,m_pCharacterActions, 3, m_hitReactionFragmentId));
-    m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pEntity, m_pCharacterActions, 4, m_pushBackFragmentId));
-    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pEntity, m_pWeaponSystem,m_pCharacterActions, 5, m_deathFragmentId));
+    m_stateMachine->RegisterState(typeid(IdleAction), new IdleAction(m_pEntity,nullptr, 0, m_idleFragmentId));
+    m_stateMachine->RegisterState(typeid(EnemyMovementAction), new EnemyMovementAction(m_pEntity,  1, m_walkFragmentId));
+    m_stateMachine->RegisterState(typeid(EnemyAttackAction), new EnemyAttackAction(m_pWeaponSystem,m_pEntity,  2, m_attackFragmentId));
+    m_stateMachine->RegisterState(typeid(HitAction), new HitAction(m_pEntity,m_pHitDamageComponent, 3, m_hitReactionFragmentId));
+    m_stateMachine->RegisterState(typeid(PushBackAction), new PushBackAction(m_pEntity,  4, m_pushBackFragmentId));
+    m_stateMachine->RegisterState(typeid(DeathAction), new DeathAction(m_pEntity, m_pWeaponSystem, 5, m_deathFragmentId));
 }
 
 void СEnemyActor::InitLifeResources()
 {
-    m_lifeResourceManager->RegisterResource(typeid(CHealthLifeResource), new CHealthLifeResource(100));
-    m_lifeResourceManager->RegisterResource(typeid(CStaminaLifeResource), new CStaminaLifeResource(100,1));
+  
 }
 
 void СEnemyActor::SetupActions()
 {
-    auto subscription = rxcpp::composite_subscription();
-    m_pCharacterActions->MovementSubject.get_observable().subscribe(subscription, [this](Vec2 Vector2)
-    {
-        if (Vector2.GetLength2() > 0)
-        {
-            m_stateMachine->SetCurrentState(typeid(EnemyMovementAction));
-        }
-    });
-
-    m_pCharacterActions->AttackSubject.get_observable().subscribe(subscription, [this](AttackType type)
-    {
-        m_stateMachine->SetCurrentState(typeid(EnemyAttackAction));
-    });
-
-    /* m_lifeResourceManager.GetResource<CHealthResource>()->Value.get_observable().skip_while([](float value) {return value <= 0; }).first().subscribe([subscription, this](float value)
-     {
-         m_stateMachine->SetCurrentState(typeid(DeathAction));
-         subscription.unsubscribe();
-     });*/
+  
 
     SetSprint();
 }
 
 void СEnemyActor::SetSprint()
 {
-    m_pCharacterActions->MovementTypeSubject.get_subscriber().on_next(m_isSprint?SPRINT:WALK);
+  
 }
 
 
@@ -176,7 +154,7 @@ void СEnemyActor::SetState()
     break;
     case Attack:
     {
-        m_pCharacterActions->AttackSubject.get_subscriber().on_next(ATTACK);
+      
     }
     break;
     }

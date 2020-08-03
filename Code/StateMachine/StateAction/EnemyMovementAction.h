@@ -8,7 +8,7 @@ class EnemyMovementAction : public BaseAction
 public:
 
     EnemyMovementAction(IEntity* characterEntity,   
-        ICharacterActions* characterAction,
+        
         int priority,
         FragmentID fragmentID = FRAGMENT_ID_INVALID,
         const TagState& fragTags = TAG_STATE_EMPTY,
@@ -22,10 +22,8 @@ public:
 private:    
 
     Vec2 m_movePoint;
-    MovementType m_movementType;
+   
 
     float m_sprintRatio;
     float m_sprintAnimRatio;
-    rxcpp::composite_subscription m_movementCompositeSubscribtion;
-    rxcpp::composite_subscription m_movementTypeSubscribtion;
 };

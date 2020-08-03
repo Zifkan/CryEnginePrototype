@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include <CryPhysics/physinterface.h>
-#include "RxCpp/rx.hpp"
 #include "WeaponExtensionData.h"
 #include "BaseCustomWeapon.h"
 #include "Components/Physics/CollisionDetectorComponent.h"
@@ -37,7 +36,7 @@ public:
 
     float GetWeaponDamage(){ return m_damage; }
 
-    rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>> RayHitSubject = rxcpp::subjects::subject<std::array<ray_hit, RAY_HIT_COUNT>>();
+  
     IEntity* m_pPlayer;
 
 

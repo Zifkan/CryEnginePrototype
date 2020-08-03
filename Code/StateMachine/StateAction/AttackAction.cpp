@@ -6,9 +6,9 @@
 AttackAction::AttackAction(IEntity* pCharacterEntity,
     WeaponSystemComponent* weaponSystem,
     IBaseLifeResource* lifeResource,
-    ICharacterActions* characterAction,
+    
     int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags,
-    ActionScopes scopeMask, uint32 userToken) : BaseAction(pCharacterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    ActionScopes scopeMask, uint32 userToken) : BaseAction(pCharacterEntity,priority, fragmentID, fragTags, flags, scopeMask, userToken)
     , m_pLifeResource(lifeResource)
     , m_attackId(0)
     , m_pWeaponSystem(weaponSystem)
@@ -18,15 +18,7 @@ AttackAction::AttackAction(IEntity* pCharacterEntity,
 
 
     timeLeft = 0.0f;
-    characterAction->AttackSubject.get_observable().subscribe([this](AttackType type)
-    {
-        if(timeLeft==0.0f)
-        {
-            m_attackType = type;
-           // CryLog("m_attackType %i", m_attackType);
-        }
-      
-    });
+   
 }
 
 
@@ -40,7 +32,7 @@ void AttackAction::Enter()
 
    
   //  m_pAnimationComponent->SetAnimationDrivenMotion(false);
-    m_pLifeResource->ChangeValue(0);
+  
     m_pCharacterController->SetVelocity(ZERO);    
 
     m_attackId++;
@@ -65,7 +57,7 @@ void AttackAction::Exit()
 
 IAction::EStatus AttackAction::Update(float timePassed)
 {
-    if (m_attackType == ATTACK)
+   /* if (m_attackType == ATTACK)
     {
         m_pAnimationComponent->SetTagWithId(m_simpleTagId, true);
     }
@@ -87,7 +79,7 @@ IAction::EStatus AttackAction::Update(float timePassed)
 
 
 
-    SetAnimationControlMovement();
+    SetAnimationControlMovement();*/
 
     return m_eStatus;
 }

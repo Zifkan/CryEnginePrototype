@@ -16,12 +16,12 @@ void CCharacterComponent::Initialize()
 	// Create the advanced animation component, responsible for updating Mannequin and animating the player
 	m_pAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();	
   	
-    m_lifeResourceManager = m_pEntity->GetOrCreateComponent<CLifeResourceManagerComponent>();
+ 
     m_pWeaponSystem = m_pEntity->GetOrCreateComponent<WeaponSystemComponent>();
 
     m_pHitDamageComponent = m_pEntity->GetOrCreateComponent<CHitDamageComponent>();
 
-    m_pAnimationComponent->SetAnimationDrivenMotion(false);
+    m_pAnimationComponent->SetAnimationDrivenMotion(true);
     m_pAnimationComponent->LoadFromDisk();
 	Revive();
 }
@@ -96,5 +96,5 @@ void CCharacterComponent::GameUpdate(float fFrameTime)
 
 void CCharacterComponent::InitWeaponSystem()
 {
-    m_pWeaponSystem->Init(m_pCharacterActions, m_pAnimationComponent->GetCharacter()->GetIAttachmentManager());
+   
 }

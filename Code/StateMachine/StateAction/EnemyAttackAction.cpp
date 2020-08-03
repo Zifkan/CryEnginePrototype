@@ -2,10 +2,9 @@
 #include "EnemyAttackAction.h"
 
 EnemyAttackAction::EnemyAttackAction(WeaponSystemComponent* weaponSystem, 
-    IEntity* characterEntity,
-    ICharacterActions* characterAction,
+    IEntity* characterEntity,    
     int priority, FragmentID fragmentID, const TagState& fragTags, uint32 flags,
-    ActionScopes scopeMask, uint32 userToken) : BaseAction(characterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask, userToken)
+    ActionScopes scopeMask, uint32 userToken) : BaseAction(characterEntity, priority, fragmentID, fragTags, flags, scopeMask, userToken)
     , m_lastCallTime(0.0f)
     , m_attackId(0)
     , m_pWeaponSystem(weaponSystem)
@@ -14,15 +13,7 @@ EnemyAttackAction::EnemyAttackAction(WeaponSystemComponent* weaponSystem,
     m_forceTagId = m_pAnimationComponent->GetTagId("Force");
 
 
-    characterAction->AttackSubject.get_observable().distinct_until_changed().subscribe([this](AttackType type)
-    { 
-        if (type == ATTACK)
-            m_pAnimationComponent->SetTagWithId(m_simpleTagId, true);
-
-        if (type == FORCE_ATTACK)
-            m_pAnimationComponent->SetTagWithId(m_forceTagId, true);
-
-    });
+  
 }
 
 

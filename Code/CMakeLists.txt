@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.14)
-set(CRYENGINE_DIR "F:/Crytek/CRYENGINE_Source" CACHE STRING "CRYENGINE root directory.")
+set(CRYENGINE_DIR "G:/Crytek/Community_Source_Engine" CACHE STRING "CRYENGINE root directory.")
 set(TOOLS_CMAKE_DIR "${CRYENGINE_DIR}/Tools/CMake")
 
 set(PROJECT_BUILD 1)
@@ -24,14 +24,23 @@ add_sources("Code_uber.cpp"
 		"MathExtension.h"
 		"StdAfx.h"
 )
-add_sources("Components_uber.cpp"
+
+add_sources("ECS_Components_uber.cpp"
     PROJECTS Game
-    SOURCE_GROUP "Components"
-		"Components/AIAction.cpp"
-		"Components/AICharacterActions.cpp"
-		"Components/AIAction.h"
-		"Components/AICharacterActions.h"
+    SOURCE_GROUP "ECS\\\\Components"
+		"ECS/Components/InputComponent.h"
+		"ECS/Components/PlayerComponents.h"
 )
+
+add_sources("ECS_Systems_uber.cpp"
+    PROJECTS Game
+    SOURCE_GROUP "ECS\\\\Systems\\\\Input"	
+		"ECS/Systems/Input/InputMoveProcessingSystem .cpp"
+		"ECS/Systems/Input/InputFireProcessingSystem.cpp"
+		"ECS/Systems/Input/InputFireProcessingSystem.h"
+		"ECS/Systems/Input/InputMoveProcessingSystem.h"
+)
+
 add_sources("Camera_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Camera"
@@ -42,9 +51,7 @@ add_sources("Characters_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Characters"
 		"Components/Characters/CharacterComponent.cpp"
-		"Components/Characters/PlayerComponent.cpp"
 		"Components/Characters/CharacterComponent.h"
-		"Components/Characters/PlayerComponent.h"
 )
 add_sources("Enemies_uber.cpp"
     PROJECTS Game
@@ -52,45 +59,11 @@ add_sources("Enemies_uber.cpp"
 		"Components/Characters/Enemies/EnemyActor.cpp"
 		"Components/Characters/Enemies/EnemyActor.h"
 )
-add_sources("Damage_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Damage"
-		"Components/Damage/HitDamageComponent.cpp"
-		"Components/Damage/HitDamageComponent.h"
-)
-add_sources("GamePlay_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\GamePlay"
-		"Components/GamePlay/PlayerSoul.cpp"
-		"Components/GamePlay/PlayerSoul.h"
-)
 add_sources("Inputs_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Inputs"
 		"Components/Inputs/PlayerInput.cpp"
 		"Components/Inputs/PlayerInput.h"
-)
-add_sources("Actions_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\Inputs\\\\Actions"
-		"Components/Inputs/Actions/PlayerCharacterActions.cpp"
-		"Components/Inputs/Actions/CharacterActions.h"
-		"Components/Inputs/Actions/PlayerCharacterActions.h"
-)
-add_sources("LifeResources_uber.cpp"
-    PROJECTS Game
-    SOURCE_GROUP "Components\\\\LifeResources"
-		"Components/LifeResources/HealthLifeResource.cpp"
-		"Components/LifeResources/LifeResourceManager.cpp"
-		"Components/LifeResources/LifeResourcesManager.cpp"
-		"Components/LifeResources/SoulEnergyLifeResource.cpp"
-		"Components/LifeResources/StaminaLifeResource.cpp"
-		"Components/LifeResources/BaseLifeResource.h"
-		"Components/LifeResources/HealthLifeResource.h"
-		"Components/LifeResources/LifeResourceManager.h"
-		"Components/LifeResources/LifeResourcesManager.h"
-		"Components/LifeResources/SoulEnergyLifeResource.h"
-		"Components/LifeResources/StaminaLifeResource.h"
 )
 add_sources("Physics_uber.cpp"
     PROJECTS Game
@@ -105,7 +78,6 @@ add_sources("Weapon_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Weapon"
 		"Components/Weapon/BaseCustomWeapon.cpp"
-		"Components/Weapon/ICustomWeapon.cpp"
 		"Components/Weapon/MeleeWeapon.cpp"
 		"Components/Weapon/ShieldWeapon.cpp"
 		"Components/Weapon/WeaponSystem.cpp"
@@ -145,6 +117,15 @@ add_sources("StateAction_uber.cpp"
 		"StateMachine/StateAction/MovementAction.h"
 		"StateMachine/StateAction/PushBackAction.h"
 )
+
+add_sources("NoUberFile"
+    PROJECTS Game
+    SOURCE_GROUP "Root"
+		"${CryFlecs_DIR}/Code/SourceFlecs/flecs.c"
+		"${CryFlecs_DIR}/Code/SourceFlecs/flecs.h"  
+)
+
+
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/CVarOverrides.h")
     add_sources("NoUberFile"
@@ -257,4 +238,11 @@ endif()
 
 #BEGIN-CUSTOM
 # Make any custom changes here, modifications outside of the block will be discarded on regeneration.
+
+set(CryFlecs_DIR "${CryFlecs_DIR}")
+
+target_include_directories(${THIS_PROJECT}
+PRIVATE
+    "${CryFlecs_DIR}/Code"    
+)
 #END-CUSTOM

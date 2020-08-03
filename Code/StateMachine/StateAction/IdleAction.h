@@ -5,7 +5,7 @@
 class IdleAction :public BaseAction
 {
 public:
-    IdleAction(IEntity* characterEntity, IEntity* mainCamera, ICharacterActions* characterAction, int priority,
+    IdleAction(IEntity* characterEntity, IEntity* mainCamera, int priority,
                FragmentID fragmentID = FRAGMENT_ID_INVALID, const TagState& fragTags = TAG_STATE_EMPTY,
                uint32 flags = 0, ActionScopes scopeMask = 0, uint32 userToken = 0);
 

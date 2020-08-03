@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "RxCpp/rx.hpp"
 
 class CCollisionDetectorComponent :public IEntityComponent
 {
@@ -21,9 +20,7 @@ public:
 protected:
     virtual void Initialize();
 public:
-    rxcpp::subjects::subject<IEntity*> OnCollisionEnter;
-    rxcpp::subjects::subject<IEntity*> OnCollisionStay;
-    rxcpp::subjects::subject<IEntity*> OnCollisionExit;
+    
     uint32 lastFrame;
 
 

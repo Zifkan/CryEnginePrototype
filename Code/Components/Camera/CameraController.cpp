@@ -3,7 +3,6 @@
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 #include <CrySchematyc/Env/Elements/EnvComponent.h>
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
-#include "Components/Inputs/Actions/PlayerCharacterActions.h"
 #include <CryCore/StaticInstanceList.h>
 #include <CryPhysics/physinterface.h>
 
@@ -58,10 +57,9 @@ void CCameraController::ProcessEvent(const SEntityEvent& event)
     break;
     }
 }
-
-void CCameraController::InitInput(ICharacterActions* charActions)
-{
-    m_pCharacterActions = charActions;
+/*
+void CCameraController::InitInput()
+{   
 
     m_pCharacterActions->RotateYawSubject.get_observable().start_with(0.0f).combine_latest(m_pCharacterActions->RotatePitchSubject.get_observable().start_with(0.0f))
     .map([](std::tuple<float, float> v){ return Vec2(CLAMP(v._Myfirst._Val,-1,1), CLAMP(v._Get_rest()._Myfirst._Val, -1, 1));})  
@@ -84,7 +82,7 @@ void CCameraController::InitInput(ICharacterActions* charActions)
     });
 
 }
-
+*/
 void CCameraController::SetTargetEntity(IEntity* entity)
 {
     m_pTargetEntity = entity;

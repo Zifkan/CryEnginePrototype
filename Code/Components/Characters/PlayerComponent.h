@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "CharacterComponent.h"
 #include "Components/Inputs/PlayerInput.h"
-#include "Components/Inputs/Actions/CharacterActions.h"
 
 class CPlayerComponent final :  public CCharacterComponent
 {
@@ -22,7 +21,7 @@ public:
          desc.AddMember(&CPlayerComponent::m_sprintAnimRatio, 'anim', "SprintAnimRatio", "Sprint Anim Ratio", "Sprint Ratio Anim multiplier", 4.0f);*/
     }
 
-    void InitInput(ICharacterActions* playerCharacterActions);
+  
     void HitReaction(float damage);
 protected:
 
@@ -31,7 +30,6 @@ protected:
 
     void CreateStateMachine() override;
     void InitLifeResources() override;
-    void SetupActions() override;
     void StartGame() override;
 
     

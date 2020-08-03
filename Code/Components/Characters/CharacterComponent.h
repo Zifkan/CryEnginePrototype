@@ -4,9 +4,7 @@
 #include <DefaultComponents/Physics/CharacterControllerComponent.h>
 #include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
 #include "StateMachine/StateMachine.h"
-#include "Components/LifeResources/LifeResourceManager.h"
 #include "Components/Weapon/WeaponSystem.h"
-#include "Components/Inputs/Actions/CharacterActions.h"
 #include "Components/Damage/HitDamageComponent.h"
 
 enum class CharecterStatusFlag
@@ -48,14 +46,12 @@ public:
     void UnSetStatus(CharecterStatusFlag flag);
 
     uint32 GetStatus() { return m_currentStatus; }
-protected:
-
-    ICharacterActions* m_pCharacterActions = nullptr;
+protected:  
         
     Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
     Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
     WeaponSystemComponent* m_pWeaponSystem = nullptr;
-    CLifeResourceManagerComponent* m_lifeResourceManager = nullptr;
+  
     CHitDamageComponent*  m_pHitDamageComponent = nullptr;
 
     virtual void StartGame() = 0;

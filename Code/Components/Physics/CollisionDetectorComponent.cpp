@@ -50,7 +50,7 @@ void CCollisionDetectorComponent::ProcessEvent(const SEntityEvent& event)
                 if (std::find(m_lastHitEntities.begin(), m_lastHitEntities.end(), pHitEntity) == m_lastHitEntities.end())
                 {
                     m_lastHitEntities.push_back(pHitEntity);
-                    OnCollisionEnter.get_subscriber().on_next(pHitEntity);
+                 //   OnCollisionEnter.get_subscriber().on_next(pHitEntity);
 
                   /*  CryLog("Frame: %i", lastFrame);
                     for (int i = 0; i < m_lastHitEntities.size(); ++i)
@@ -104,7 +104,7 @@ void CCollisionDetectorComponent::ProcessEvent(const SEntityEvent& event)
 
                for (int i = 0; i < diffResult.size(); ++i)
                {
-                   OnCollisionExit.get_subscriber().on_next(diffResult[i]);
+                 //  OnCollisionExit.get_subscriber().on_next(diffResult[i]);
                }
                m_lastHitEntities = sameResult;
            }
@@ -114,7 +114,7 @@ void CCollisionDetectorComponent::ProcessEvent(const SEntityEvent& event)
 
        for (int i = 0; i < m_lastHitEntities.size(); ++i)
        {
-           OnCollisionStay.get_subscriber().on_next(m_lastHitEntities[i]);
+         //  OnCollisionStay.get_subscriber().on_next(m_lastHitEntities[i]);
        }
 
        m_newHitEntities.clear();

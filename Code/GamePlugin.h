@@ -4,7 +4,8 @@
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
 #include <CryNetwork/INetwork.h>
-#include "Components/Inputs/Actions/PlayerCharacterActions.h"
+
+#include "ECS/Systems/Input/InputMoveProcessingSystem.h"
 
 
 // The entry-point of the application
@@ -49,14 +50,15 @@ public:
 protected:
 	// Map containing player components, key is the channel id received in OnClientConnectionReceived
 	std::unordered_map<int, EntityId> m_players;
-    IEntity* pPlayerEntity = nullptr;
        
 private:
 
-    PlayerCharacterActions* m_playerCharacterActions = new PlayerCharacterActions();
-
+   
+    InputMoveProcessingSystem s;
     void InitPlayerInput();
 
     void InitGameCamera();
 
+public:
+    virtual void MainUpdate(float frameTime);
 };

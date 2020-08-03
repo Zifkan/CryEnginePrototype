@@ -1,12 +1,10 @@
 ﻿#pragma once
 #include <CryEntitySystem/IEntityComponent.h>
-#include "Components/Inputs/Actions/CharacterActions.h"
 #include <CryAnimation/IAttachment.h>
 #include <CrySchematyc/Utils/SharedString.h>
 #include "Components/Weapon/MeleeWeapon.h"
 #include "Components/Weapon/ShieldWeapon.h"
 #include "Components/Weapon/WeaponExtensionData.h"
-#include "RxCpp/rx.hpp"
 
 
 class WeaponSystemComponent : public IEntityComponent
@@ -24,17 +22,17 @@ public:
        // desc.AddMember(&WeaponSystemComponent::m_explicitEntityId, 'enid', "ExplicitEntityId", "ExplicitEntityId", "ExplicitEntityId", Schematyc::ExplicitEntityId::Invalid);
     }
 
-    void Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager);
+    void Init(IAttachmentManager* attachmentManager);
     void DetachWeapons() const;
 
-    rxcpp::subjects::subject<SWeaponHitStruct> HitReactionSubject = rxcpp::subjects::subject<SWeaponHitStruct>();
+  
 
     void StopAttack();
 
 private:
     CMeleeWeaponComponent* m_pRightHandWeapon = nullptr; 
     CShieldWeaponComponent* m_pLeftHandWeapon = nullptr;
-    ICharacterActions* m_pCharacterActions = nullptr;
+  
     IAttachmentManager* m_pAttachmentManager = nullptr;
     Schematyc::CSharedString m_rightWeaponSlotName = "r_weapon";
     Schematyc::CSharedString m_leftWeaponSlotName  = "l_weapon";

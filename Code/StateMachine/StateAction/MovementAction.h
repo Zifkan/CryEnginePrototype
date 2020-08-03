@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <CryAnimation/ICryMannequin.h>
 #include "BaseAction.h"
-#include "Components/LifeResources/BaseLifeResource.h"
 #include "Components/Camera/CameraController.h"
 
 class MovementAction : public BaseAction
@@ -10,8 +9,7 @@ public:
 
     MovementAction(IBaseLifeResource* lifeResource,
         IEntity* characterEntity,
-        IEntity* mainCamera,
-        ICharacterActions* characterAction, 
+        IEntity* mainCamera,       
         int priority, 
         FragmentID fragmentID = FRAGMENT_ID_INVALID,
         const TagState& fragTags = TAG_STATE_EMPTY, 
@@ -37,10 +35,9 @@ private:
     IBaseLifeResource* m_pLifeResource;
 
     Vec2 m_moveDirection;
-    MovementType m_movementType;
+   
 
     float m_sprintRatio;
     float m_sprintAnimRatio;
-    rxcpp::composite_subscription m_movementCompositeSubscribtion;
-    rxcpp::composite_subscription m_movementTypeSubscribtion;
+ 
 };

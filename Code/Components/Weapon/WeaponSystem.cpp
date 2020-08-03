@@ -19,29 +19,16 @@ static void RegisterWeaponSystem(Schematyc::IEnvRegistrar& registrar)
 
 CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterWeaponSystem)
 
-void WeaponSystemComponent::Init(ICharacterActions* characterActions, IAttachmentManager* attachmentManager)
+void WeaponSystemComponent::Init(IAttachmentManager* attachmentManager)
 {
-    if (m_pCharacterActions == nullptr)
-        m_pCharacterActions = characterActions;
+   
 
     if (m_pAttachmentManager == nullptr)
         m_pAttachmentManager = attachmentManager;
 
-    m_pCharacterActions->AttackSubject.get_observable().subscribe([this](AttackType type)
-    {
-        m_pRightHandWeapon->Attack();
-    });
+  
 
-    m_pCharacterActions->BlockSubject.get_observable().distinct_until_changed().subscribe([this](bool isBlock)
-    {
-        m_pLeftHandWeapon->SetBlock(isBlock);
-
-        if (isBlock)
-            m_pEntity->GetComponent<CCharacterComponent>()->SetStatus(CharecterStatusFlag::Dodge);
-        else
-            m_pEntity->GetComponent<CCharacterComponent>()->UnSetStatus(CharecterStatusFlag::Dodge);
-    });
-
+  
     IEntityLink* pLink = m_pEntity->GetEntityLinks();
     SetAttach(pLink);
 }
@@ -112,7 +99,7 @@ void WeaponSystemComponent::AttachToLeftHand()
 void WeaponSystemComponent::HitDetection()
 {
     
-
+/*
 
     m_pRightHandWeapon->RayHitSubject.get_observable().subscribe([this](std::array<ray_hit, RAY_HIT_COUNT> hits)
     {        
@@ -173,7 +160,7 @@ void WeaponSystemComponent::HitDetection()
                 m_pEntity->GetComponent<CCharacterComponent>()->m_stateMachine->SetCurrentState(typeid(PushBackAction));
             }
         } 
-    });
+    });*/
 }
 
 void WeaponSystemComponent::DetachWeapons() const

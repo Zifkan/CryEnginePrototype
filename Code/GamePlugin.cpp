@@ -14,6 +14,7 @@
 #include <CryCore/Platform/platform_impl.inl>
 #include "Components/Camera/CameraController.h"
 #include "Components/Characters/PlayerComponent.h"
+#include "Core/CryWorld.h"
 
 CGamePlugin::~CGamePlugin()
 {
@@ -87,7 +88,7 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
             if (gEnv->IsEditor()) return;
             InitPlayerInput();
 
-            InitGameCamera();
+            EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
         }
         break;
 
@@ -96,7 +97,13 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
             if (!gEnv->IsEditor()) return;
             InitPlayerInput();
 
-            InitGameCamera();
+            auto w = CCryWorld::instance()->DefaultWorld;
+           
+            flecs::component<InputComponent>(*w, "InputComponent");
+
+            s.OnCreate();
+
+            EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
         }        
         break;
 	}
@@ -109,17 +116,7 @@ bool CGamePlugin::OnClientConnectionReceived(int channelId, bool bIsReset)
 
 bool CGamePlugin::OnClientReadyForGameplay(int channelId, bool bIsReset)
 {
-	auto it = m_players.find(channelId);
-	if (it != m_players.end())
-	{
-		if (IEntity* pPlayerEntity = gEnv->pEntitySystem->GetEntity(it->second))
-		{
-			if (CPlayerComponent* pPlayer = pPlayerEntity->GetComponent<CPlayerComponent>())
-			{
-				pPlayer->Revive();
-			}
-		}
-	}
+	
 
 	return true;
 }
@@ -138,14 +135,7 @@ void CGamePlugin::OnClientDisconnected(int channelId, EDisconnectionCause cause,
 
 void CGamePlugin::InitPlayerInput()
 {
-    if (pPlayerEntity != nullptr) return;
-
-    pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
-
-    CRY_ASSERT(pPlayerEntity != nullptr);
-
-    if (pPlayerEntity != nullptr)
-        pPlayerEntity->GetComponent<CPlayerComponent>()->InitInput(m_playerCharacterActions);
+   
 }
 
 void CGamePlugin::InitGameCamera()
@@ -163,8 +153,12 @@ void CGamePlugin::InitGameCamera()
         cameraComponent = pCamEntity->GetOrCreateComponent<CCameraController>();
     }
   
-    
-    cameraComponent->InitInput(m_playerCharacterActions);  
+ 
+}
+
+void CGamePlugin::MainUpdate(float frameTime)
+{  
+    CCryWorld::instance()->DefaultWorld->progress(frameTime);
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)

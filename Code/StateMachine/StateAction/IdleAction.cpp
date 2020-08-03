@@ -4,14 +4,13 @@
 
 IdleAction::IdleAction(IEntity* characterEntity, 
     IEntity* mainCamera, 
-    ICharacterActions* characterAction, 
     int priority,
     FragmentID fragmentID, 
     const TagState& fragTags,
     uint32 flags,
     ActionScopes scopeMask,
     uint32 userToken)
-: BaseAction(characterEntity,characterAction, priority, fragmentID, fragTags, flags, scopeMask,userToken)
+: BaseAction(characterEntity,priority, fragmentID, fragTags, flags, scopeMask,userToken)
 , m_pMainCameraEntity(mainCamera)
 {
     m_pMainCameraComponent = m_pMainCameraEntity? m_pMainCameraEntity->GetComponent<CCameraController>():nullptr;

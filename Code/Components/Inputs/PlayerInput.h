@@ -2,14 +2,11 @@
 
 #include <DefaultComponents/Input/InputComponent.h>
 
+
+#include "Core/EntityManager.h"
 #include "ECS/Components/InputComponent.h"
 
 
-class CEntityManager;
-
-namespace flecs {
-    class entity;
-}
 
 class CPlayerInputComponent : public IEntityComponent
 {
@@ -40,8 +37,8 @@ protected:
     InputComponent  inputComponent;
     CEntityManager* entityManager = nullptr;
 
-    flecs::entity* inputEntity = nullptr;;
+    flecs::entity inputEntity;
 
 private:
-    void SetInput(InputComponent  inputComponent) const;
+    void SetInput() const;
 };

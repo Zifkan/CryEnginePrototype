@@ -46,15 +46,14 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 void CPlayerInputComponent::RegisterInputs()
 {
     entityManager = CCryWorld::instance()->EntityManager;
-    auto e = entityManager->CreateEntity();
-    inputEntity = &e;
- 
+    inputEntity = entityManager->CreateEntity();
+    
 
     // Register an action, and the callback that will be sent when it's triggered
     m_pInputComponent->RegisterAction("player", "moveleft", [this](int activationMode, float value)
     {
         inputComponent.MovementAxis = Vec2(-value, 0);
-        SetInput(inputComponent);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "moveleft", eAID_KeyboardMouse, EKeyId::eKI_A);
     m_pInputComponent->BindAction("player", "moveleft", eAID_XboxPad, EKeyId::eKI_XI_ThumbLX);
@@ -175,9 +174,9 @@ void CPlayerInputComponent::Initialize()
     m_pInputComponent = m_pEntity->GetOrCreateComponent< Cry::DefaultComponents::CInputComponent>();
 }
 
-void CPlayerInputComponent::SetInput(InputComponent  inputComponent) const
+void CPlayerInputComponent::SetInput() const
 {
-    entityManager->SetComponentData<InputComponent>(*inputEntity, { inputComponent });
+    entityManager->SetComponentData<InputComponent>(inputEntity, { inputComponent });
 }
 
 

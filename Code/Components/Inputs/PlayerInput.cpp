@@ -61,7 +61,8 @@ void CPlayerInputComponent::RegisterInputs()
     m_pInputComponent->RegisterAction("player", "moveright", [this](int activationMode, float value)
     {
       
-     
+        inputComponent.MovementAxis = Vec2(value, 0);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "moveright", eAID_KeyboardMouse, EKeyId::eKI_D);
     m_pInputComponent->BindAction("player", "moveright", eAID_XboxPad, EKeyId::eKI_XI_ThumbLX);
@@ -69,27 +70,37 @@ void CPlayerInputComponent::RegisterInputs()
     
     m_pInputComponent->RegisterAction("player", "moveforward", [this](int activationMode, float value)
     {
-        
+        inputComponent.MovementAxis = Vec2( 0, value);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "moveforward", eAID_KeyboardMouse, EKeyId::eKI_W);
     m_pInputComponent->BindAction("player", "moveforward", eAID_XboxPad, EKeyId::eKI_XI_ThumbLY);
-  
+
+
+
+
     m_pInputComponent->RegisterAction("player", "moveback", [this](int activationMode, float value)
     {
-       
+        inputComponent.MovementAxis = Vec2(0, -value);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "moveback", eAID_KeyboardMouse, EKeyId::eKI_S);
-  
+
+
+
+
     m_pInputComponent->RegisterAction("player", "moveback_XboxPad", [this](int activationMode, float value)
     {
-
+        inputComponent.MovementAxis = Vec2(0, -value);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "moveback_XboxPad", eAID_XboxPad, EKeyId::eKI_XI_ThumbLY);
    
 
     m_pInputComponent->RegisterAction("player", "mouse_rotateyaw", [this](int activationMode, float value)
     {
-       
+        inputComponent.AimAxis = Vec2(value,0);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "mouse_rotateyaw", eAID_KeyboardMouse, EKeyId::eKI_MouseX);
     m_pInputComponent->BindAction("player", "mouse_rotateyaw", eAID_XboxPad, EKeyId::eKI_XI_ThumbRX);
@@ -98,7 +109,8 @@ void CPlayerInputComponent::RegisterInputs()
 
     m_pInputComponent->RegisterAction("player", "mouse_rotatepitch", [this](int activationMode, float value)
     {
-     
+        inputComponent.AimAxis = Vec2( 0,value);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "mouse_rotatepitch", eAID_KeyboardMouse, EKeyId::eKI_MouseY);
     m_pInputComponent->BindAction("player", "mouse_rotatepitch", eAID_XboxPad, EKeyId::eKI_XI_ThumbRY);
@@ -115,7 +127,8 @@ void CPlayerInputComponent::RegisterInputs()
         {
 
         }
-       
+        inputComponent.Sprint = static_cast<EInputState>(activationMode);
+        SetInput();
     });
     m_pInputComponent->BindAction("player", "sprint", eAID_KeyboardMouse, EKeyId::eKI_LShift);
     m_pInputComponent->BindAction("player", "sprint", eAID_XboxPad, EKeyId::eKI_XI_B);
@@ -132,10 +145,10 @@ void CPlayerInputComponent::RegisterInputs()
         {
 
         }
-
+        inputComponent.Combat.FirstAttack = static_cast<EInputState>(activationMode);
+        SetInput();
       
-    });
-    // Bind the shoot action to left mouse click
+    });   
     m_pInputComponent->BindAction("player", "Attack", eAID_KeyboardMouse, EKeyId::eKI_Mouse1);
     m_pInputComponent->BindAction("player", "Attack", eAID_XboxPad, EKeyId::eKI_XI_TriggerRBtn);
   
@@ -153,7 +166,8 @@ void CPlayerInputComponent::RegisterInputs()
         {
 
         }
-        
+        inputComponent.Combat.SecondAttack = static_cast<EInputState>(activationMode);
+        SetInput();
     });
 
 

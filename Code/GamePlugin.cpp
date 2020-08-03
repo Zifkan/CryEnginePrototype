@@ -86,7 +86,7 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         case ESYSTEM_EVENT_LEVEL_GAMEPLAY_START:
         {            
             if (gEnv->IsEditor()) return;
-            InitPlayerInput();
+            
 
             EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
         }
@@ -95,7 +95,6 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         case ESYSTEM_EVENT_GAME_MODE_SWITCH_START:
         {
             if (!gEnv->IsEditor()) return;
-            InitPlayerInput();
 
             auto w = CCryWorld::instance()->DefaultWorld;
            
@@ -131,11 +130,6 @@ void CGamePlugin::OnClientDisconnected(int channelId, EDisconnectionCause cause,
 
 		m_players.erase(it);
 	}
-}
-
-void CGamePlugin::InitPlayerInput()
-{
-   
 }
 
 void CGamePlugin::InitGameCamera()

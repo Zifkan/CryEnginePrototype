@@ -6,8 +6,11 @@
 #include "PlayerInput.h"
 #include <CryCore/StaticInstanceList.h>
 
-#include "Core/CryWorld.h"
+
+
+#include "Core/CryEcsWorld.h"
 #include "ECS/Components/InputComponent.h"
+#include "ECS/Components/PlayerComponents.h"
 
 
 static void RegisterCPlayerInputComponent(Schematyc::IEnvRegistrar& registrar)
@@ -45,8 +48,8 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 
 void CPlayerInputComponent::RegisterInputs()
 {
-    entityManager = CCryWorld::instance()->EntityManager;
-    inputEntity = entityManager->CreateEntity();
+     entityManager = CryEcsWorld::instance()->EntityManager;
+     inputEntity = entityManager->CreateEntity();
     
 
     // Register an action, and the callback that will be sent when it's triggered
@@ -186,11 +189,11 @@ void CPlayerInputComponent::RegisterInputs()
 void CPlayerInputComponent::Initialize()
 {
     m_pInputComponent = m_pEntity->GetOrCreateComponent< Cry::DefaultComponents::CInputComponent>();
+
+  
 }
 
 void CPlayerInputComponent::SetInput() const
 {
     entityManager->SetComponentData<InputComponent>(inputEntity, { inputComponent });
 }
-
-

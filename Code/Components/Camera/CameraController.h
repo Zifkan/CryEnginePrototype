@@ -3,8 +3,10 @@
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Cameras/CameraComponent.h>
+#include "GamePlugin.h"
+#include "Core/IConvertGameObjectToEntity.h"
 
-class CCameraController final : public IEntityComponent
+class CCameraController final : public IEntityComponent, public IConvertGameObjectToEntity
 {
 public:
     
@@ -60,6 +62,9 @@ protected:
     float ClampAngle(float angle, float min, float max);
 
 
+public:
+    virtual void Convert(flecs::entity entity, CEntityManager dstManager);
+protected:
     IEntity* m_pTargetEntity = nullptr;
 
     Vec2 m_deltaRotation = ZERO;

@@ -5,8 +5,10 @@
 #include <CryEntitySystem/IEntityClass.h>
 #include <CryNetwork/INetwork.h>
 
-#include "ECS/Systems/Input/InputMoveProcessingSystem.h"
 
+#include "CryECSPlugin.h"
+#include "Systems/SystemLauncher.h"
+#include "Core/CryEcsWorld.h"
 
 // The entry-point of the application
 // An instance of CGamePlugin is automatically created when the library is loaded
@@ -50,14 +52,15 @@ public:
 protected:
 	// Map containing player components, key is the channel id received in OnClientConnectionReceived
 	std::unordered_map<int, EntityId> m_players;
+    CryEcsWorld* world;
 
 private:
 
-   
-    InputMoveProcessingSystem s;
-    
+    SystemLauncher* systemsLauncher;  
 
     void InitGameCamera();
+
+    void RegisterSystem();
 
 public:
     virtual void MainUpdate(float frameTime);

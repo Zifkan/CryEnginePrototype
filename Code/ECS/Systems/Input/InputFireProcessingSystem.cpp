@@ -1,4 +1,5 @@
-﻿#include "InputFireProcessingSystem.h"
+﻿#include "StdAfx.h"
+#include "InputFireProcessingSystem.h"
 
 void InputFireProcessingSystem::OnCreate()
 {

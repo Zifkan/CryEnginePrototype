@@ -36,6 +36,7 @@ protected:
     virtual void GameUpdate(float fFrameTime);
 
     void PropertyChanged() override;
+    void SetupActions() override;
 private:
     float m_attackStaminaCost = 15;
 };

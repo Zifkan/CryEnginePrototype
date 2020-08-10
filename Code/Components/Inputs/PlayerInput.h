@@ -22,6 +22,7 @@ public:
         desc.SetEditorCategory("Input");
         desc.SetLabel("Player Input");
         desc.SetDescription("Exposes support for inputs and action maps");
+        desc.SetComponentFlags({ IEntityComponent::EFlags::Transform, IEntityComponent::EFlags::Attach });
     }
     
 

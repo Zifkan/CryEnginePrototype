@@ -30,15 +30,22 @@ add_sources("ECS_Components_uber.cpp"
     SOURCE_GROUP "ECS\\\\Components"
 		"ECS/Components/InputComponent.h"
 		"ECS/Components/PlayerComponents.h"
+		"ECS/Components/CameraComponent.h"
 )
 
 add_sources("ECS_Systems_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "ECS\\\\Systems\\\\Input"	
-		"ECS/Systems/Input/InputMoveProcessingSystem .cpp"
-		"ECS/Systems/Input/InputFireProcessingSystem.cpp"
-		"ECS/Systems/Input/InputFireProcessingSystem.h"
+		"ECS/Systems/Input/InputMoveProcessingSystem.cpp"
+		"ECS/Systems/Input/InputFireProcessingSystem.cpp"		
 		"ECS/Systems/Input/InputMoveProcessingSystem.h"
+		"ECS/Systems/Input/InputFireProcessingSystem.h"
+	SOURCE_GROUP "ECS\\\\Systems\\\\Camera"	
+		"ECS/Systems/Camera/CameraSystem.cpp"
+		"ECS/Systems/Camera/CameraSystem.h"
+	SOURCE_GROUP "ECS\\\\Systems\\\\Transform"	
+		"ECS/Systems/Transform/TransformSystem.cpp"
+		"ECS/Systems/Transform/TransformSystem.h"
 )
 
 add_sources("Camera_uber.cpp"
@@ -51,6 +58,8 @@ add_sources("Characters_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "Components\\\\Characters"
 		"Components/Characters/CharacterComponent.cpp"
+			"Components/Characters/PlayerComponent.cpp"
+		"Components/Characters/PlayerComponent.h"
 		"Components/Characters/CharacterComponent.h"
 )
 add_sources("Enemies_uber.cpp"
@@ -240,9 +249,10 @@ endif()
 # Make any custom changes here, modifications outside of the block will be discarded on regeneration.
 
 set(CryFlecs_DIR "${CryFlecs_DIR}")
+set(empty_DIR "${empty_DIR}")
 
 target_include_directories(${THIS_PROJECT}
 PRIVATE
-    "${CryFlecs_DIR}/Code"    
+    "${CryFlecs_DIR}/Code"
 )
 #END-CUSTOM

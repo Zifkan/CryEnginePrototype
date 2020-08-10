@@ -108,3 +108,7 @@ void CPlayerComponent::GameUpdate(float fFrameTime)
 void CPlayerComponent::PropertyChanged()
 {
 }
+
+void CPlayerComponent::SetupActions()
+{
+}

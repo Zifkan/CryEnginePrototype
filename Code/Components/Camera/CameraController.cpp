@@ -169,3 +169,8 @@ float CCameraController::ClampAngle(float angle, float min, float max)
     return CLAMP(angle, min, max);
 }
 
+void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
+{
+ 
+}
+

@@ -17,8 +17,8 @@
 #include "Components/Camera/CameraController.h"
 #include "Components/Characters/PlayerComponent.h"
 #include "ECS/Components/PlayerComponents.h"
+#include "ECS/Systems/Camera/CameraSystem.h"
 #include "ECS/Systems/Input/InputMoveProcessingSystem.h"
-#include "ECS/Systems/Transform/TransformSystem.h"
 
 CGamePlugin::~CGamePlugin()
 {
@@ -100,12 +100,14 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
     {
         if (!gEnv->IsEditor()) return;
 
+        pEcsPlugin = gEnv->pSystem->GetIPluginManager()->QueryPlugin<CryECSPlugin>();
 
-        gEnv->pSystem->GetIPluginManager()->QueryPlugin<CryECSPlugin>()->World = new CryEcsWorld();
+        pEcsPlugin->World = new CryEcsWorld();
 
         world = CryEcsWorld::instance();
         auto w = world->DefaultWorld;
         flecs::component<InputComponent>(*w, "InputComponent");
+        flecs::component<CameraComponent>(*w, "CameraComponent");
         flecs::component<PlayerTag>(*w, "PlayerTag");
 
         RegisterSystem();
@@ -158,15 +160,19 @@ void CGamePlugin::InitGameCamera()
 
 void CGamePlugin::RegisterSystem()
 {
-   systemsLauncher = new SystemLauncher(world);
+    systemsLauncher = new SystemLauncher(world);
 
-   systemsLauncher->RegisterSystem(new InputMoveProcessingSystem());
-   
+    systemsLauncher->RegisterSystem(new InputMoveProcessingSystem());
+    systemsLauncher->RegisterSystem(new  CameraSystem());
 }
 
 void CGamePlugin::MainUpdate(float frameTime)
-{       
+{
+    pEcsPlugin->UpdateTransformSystemGroup(frameTime);
+
+
     systemsLauncher->Update(frameTime);
+   
 }
 
 

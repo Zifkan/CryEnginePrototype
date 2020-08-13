@@ -3,8 +3,10 @@
 struct CameraComponent
 {
 
-    float heightOffset;
-    float focusHeightOffset;
+    IEntity* CameraEntity;
+
+    float HeightOffset;
+    float FocusHeightOffset;
 
     float xDelta = 0.0f;
     float yDelta = 0.0f;

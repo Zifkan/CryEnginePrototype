@@ -27,6 +27,13 @@ add_sources("Code_uber.cpp"
 
 add_sources("ECS_Components_uber.cpp"
     PROJECTS Game
+    SOURCE_GROUP "ECS\\\\Converts"
+		"ECS/Converts/ConvertToEntity.cpp"
+		"ECS/Converts/ConvertToEntity.h"
+)
+
+add_sources("ECS_Components_uber.cpp"
+    PROJECTS Game
     SOURCE_GROUP "ECS\\\\Components"
 		"ECS/Components/InputComponent.h"
 		"ECS/Components/PlayerComponents.h"

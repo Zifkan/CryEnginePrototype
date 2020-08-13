@@ -5,6 +5,8 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include <CryCore/StaticInstanceList.h>
 #include <CryPhysics/physinterface.h>
+#include "ECS/Components/CameraComponent.h"
+
 
 
 static void RegisterCameraController(Schematyc::IEnvRegistrar& registrar)
@@ -30,33 +32,6 @@ void CCameraController::Initialize()
     currentRadius = radius;
 }
 
-Cry::Entity::EventFlags CCameraController::GetEventMask() const
-{
-    return ENTITY_EVENT_START_GAME | ENTITY_EVENT_UPDATE | ENTITY_EVENT_EDITOR_PROPERTY_CHANGED;
-}
-
-void CCameraController::ProcessEvent(const SEntityEvent& event)
-{
-    switch (event.event)
-    {
-    case ENTITY_EVENT_START_GAME:
-    {
-        m_pPlayerEntity = gEnv->pEntitySystem->FindEntityByName("Player");
-        //TODO: Create select targer system
-        m_pEnemy = gEnv->pEntitySystem->FindEntityByName("Enemy");
-    }
-    break;
-    case ENTITY_EVENT_UPDATE:
-    {
-        if (!gEnv->IsGameOrSimulation()) return;
-
-        SEntityUpdateContext* pCtx = (SEntityUpdateContext*)event.nParam[0];
-        UpdateCamera(pCtx->fFrameTime); 
-        CollisionDetection(pCtx->fFrameTime);
-    }
-    break;
-    }
-}
 /*
 void CCameraController::InitInput()
 {   
@@ -171,6 +146,21 @@ float CCameraController::ClampAngle(float angle, float min, float max)
 
 void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
 {
- 
+    dstManager.SetComponentData<CameraComponent>(entity,
+    {
+            m_pEntity,heightOffset, focusHeightOffset,x,y,radius, currentRadius,xSpeed,ySpeed, yMinLimit,yMaxLimit,m_pitchLimit
+         });
+
+   
+
 }
 
+Cry::Entity::EventFlags CCameraController::GetEventMask() const
+{
+    return CConvertToEntity::GetEventMask();
+}
+
+void CCameraController::ProcessEvent(const SEntityEvent& event)
+{
+    CConvertToEntity::ProcessEvent(event);
+}

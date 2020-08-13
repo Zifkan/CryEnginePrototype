@@ -2,8 +2,5 @@
 
 struct PlayerTag
 {   
-   CryTransform::CTransformPtr pCryEntity;
-
-
-   
+   IEntity* pCryEntity;   
 };

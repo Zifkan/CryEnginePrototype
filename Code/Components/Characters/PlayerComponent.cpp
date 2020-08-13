@@ -13,6 +13,9 @@
 #include "StateMachine/StateAction/PushBackAction.h"
 #include <CryCore/StaticInstanceList.h>
 
+#include "Core/CryEcsWorld.h"
+#include "ECS/Components/PlayerComponents.h"
+
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
 {
@@ -77,6 +80,10 @@ void CPlayerComponent::HitReaction(float damage)
 
 void CPlayerComponent::StartGame()
 {
+    auto e = CryEcsWorld::instance()->EntityManager->CreateEntity(flecs::Singleton);
+
+    CryEcsWorld::instance()->EntityManager->SetComponentData<PlayerTag>(e, { m_pEntity });
+
     m_pMainCamera = gEnv->pEntitySystem->FindEntityByName("GameCamera");
     CRY_ASSERT(m_pMainCamera != nullptr);
 

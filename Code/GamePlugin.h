@@ -58,6 +58,8 @@ private:
 
     SystemLauncher* systemsLauncher;  
 
+    CryECSPlugin* pEcsPlugin;
+
     void InitGameCamera();
 
     void RegisterSystem();

@@ -1,13 +1,21 @@
 #include "CameraSystem.h"
 
+#include "ECS/Components/PlayerComponents.h"
+
 void CameraSystem::OnCreate()
 {
-    SystemRun->each([](flecs::entity e, CameraComponent& camera)
+    SystemRun->each([this](flecs::entity e, CameraComponent& camera)
     {
+        auto s = flecs::entity(*m_pWorld->DefaultWorld, flecs::Singleton);
+        const PlayerTag* playerComponent = s.get<PlayerTag>();
+        const InputComponent* input = s.get<InputComponent>();
+
+        if(playerComponent==nullptr || camera.CameraEntity == nullptr || input == nullptr) return;
+
         const auto frameTime = e.delta_time();
 
-        Vec2 deltaRotation = ZERO;
-        const auto heightOffset = camera.heightOffset;
+        Vec2 deltaRotation = input->AimAxis;
+        const auto heightOffset = camera.HeightOffset;
         const auto yMinLimit = camera.yMinLimit;
         const auto yMaxLimit = camera.yMaxLimit;
         const auto m_pitchLimit = camera.m_pitchLimit;
@@ -15,16 +23,17 @@ void CameraSystem::OnCreate()
         const auto ySpeed = camera.ySpeed;
         const auto currentRadius = camera.currentRadius;
 
-    //    float x = 0.0f;
-      //  float y = 0.0f;
+        float x = 0.0f;
+        float y = 0.0f;
 
+        IEntity* m_pTargetEntity  = nullptr;
 
         Quat rotation = ZERO;
-       /* if (m_pTargetEntity)
+        if (m_pTargetEntity)
         {
             Vec3 target = m_pTargetEntity->GetPos();
 
-            Vec3 location = m_pPlayerEntity->GetPos() + Vec3(0, 0, heightOffset);
+            Vec3 location = playerComponent->pCryEntity->GetPos() + Vec3(0, 0, heightOffset);
 
             x = target.x - location.x;
             y = target.y - location.y;
@@ -46,14 +55,15 @@ void CameraSystem::OnCreate()
             y -= deltaRotation.y * ySpeed * frameTime;
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
-            auto angles = Ang3::GetAnglesXYZ(m_pEntity->GetRotation());
+            auto angles = Ang3::GetAnglesXYZ(camera.CameraEntity->GetRotation());
             rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y), 0, DEG2RAD(x)));
-        }
-
-       
+        }       
 
         Vec3 negDistance = Vec3(0.0f, -currentRadius, 0);
-        Vec3 position = rotation * negDistance + (m_pPlayerEntity->GetWorldPos() + Vec3(0, 0, heightOffset));*/
+        Vec3 position = rotation * negDistance + (playerComponent->pCryEntity->GetWorldPos() + Vec3(0, 0, heightOffset));
+
+        CryTransform::CTransform tr = CryTransform::CTransform(position, CryTransform::CRotation(rotation), Vec3(1, 1, 1));
+        camera.CameraEntity->SetWorldTM(tr.ToMatrix34());
     });
 }
 

@@ -49,7 +49,7 @@ void CPlayerInputComponent::ProcessEvent(const SEntityEvent& event)
 void CPlayerInputComponent::RegisterInputs()
 {
      entityManager = CryEcsWorld::instance()->EntityManager;
-     inputEntity = entityManager->CreateEntity();
+     inputEntity = entityManager->CreateEntity(flecs::Singleton);
     
 
     // Register an action, and the callback that will be sent when it's triggered

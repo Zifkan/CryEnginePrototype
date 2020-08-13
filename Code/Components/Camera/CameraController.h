@@ -3,10 +3,9 @@
 #include <CryEntitySystem/IEntitySystem.h>
 #include <CryEntitySystem/IEntityComponent.h>
 #include <DefaultComponents/Cameras/CameraComponent.h>
-#include "GamePlugin.h"
-#include "Core/IConvertGameObjectToEntity.h"
+#include "ECS/Converts/ConvertToEntity.h"
 
-class CCameraController final : public IEntityComponent, public IConvertGameObjectToEntity
+class CCameraController final : public CConvertToEntity
 {
 public:
     
@@ -14,11 +13,7 @@ public:
 
     // IEntityComponent
     virtual void Initialize() override;
-
-
-    Cry::Entity::EventFlags GetEventMask() const override;
-
-    virtual void ProcessEvent(const SEntityEvent& event) override;
+  
    
     // ~IEntityComponent
 
@@ -63,7 +58,10 @@ protected:
 
 
 public:
-    virtual void Convert(flecs::entity entity, CEntityManager dstManager);
+    void Convert(flecs::entity entity, CEntityManager dstManager) override;
+
+    virtual Cry::Entity::EventFlags GetEventMask() const;
+    virtual void ProcessEvent(const SEntityEvent& event);
 protected:
     IEntity* m_pTargetEntity = nullptr;
 

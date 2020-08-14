@@ -55,7 +55,7 @@ void CPlayerInputComponent::RegisterInputs()
     // Register an action, and the callback that will be sent when it's triggered
     m_pInputComponent->RegisterAction("player", "moveleft", [this](int activationMode, float value)
     {
-        inputComponent.MovementAxis = Vec2(-value, 0);
+        inputComponent.MovementAxis = Vec2(-value, inputComponent.MovementAxis.y);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "moveleft", eAID_KeyboardMouse, EKeyId::eKI_A);
@@ -64,7 +64,7 @@ void CPlayerInputComponent::RegisterInputs()
     m_pInputComponent->RegisterAction("player", "moveright", [this](int activationMode, float value)
     {
       
-        inputComponent.MovementAxis = Vec2(value, 0);
+        inputComponent.MovementAxis = Vec2(value, inputComponent.MovementAxis.y);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "moveright", eAID_KeyboardMouse, EKeyId::eKI_D);
@@ -73,7 +73,7 @@ void CPlayerInputComponent::RegisterInputs()
     
     m_pInputComponent->RegisterAction("player", "moveforward", [this](int activationMode, float value)
     {
-        inputComponent.MovementAxis = Vec2( 0, value);
+        inputComponent.MovementAxis = Vec2(inputComponent.MovementAxis.x, value);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "moveforward", eAID_KeyboardMouse, EKeyId::eKI_W);
@@ -81,28 +81,18 @@ void CPlayerInputComponent::RegisterInputs()
 
 
 
-
     m_pInputComponent->RegisterAction("player", "moveback", [this](int activationMode, float value)
     {
-        inputComponent.MovementAxis = Vec2(0, -value);
+        inputComponent.MovementAxis = Vec2(inputComponent.MovementAxis.x, -value);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "moveback", eAID_KeyboardMouse, EKeyId::eKI_S);
-
-
-
-
-    m_pInputComponent->RegisterAction("player", "moveback_XboxPad", [this](int activationMode, float value)
-    {
-        inputComponent.MovementAxis = Vec2(0, -value);
-        SetInput();
-    });
-    m_pInputComponent->BindAction("player", "moveback_XboxPad", eAID_XboxPad, EKeyId::eKI_XI_ThumbLY);
-   
+    m_pInputComponent->BindAction("player", "moveback", eAID_XboxPad, EKeyId::eKI_XI_ThumbLY);
+          
 
     m_pInputComponent->RegisterAction("player", "mouse_rotateyaw", [this](int activationMode, float value)
     {
-        inputComponent.AimAxis = Vec2(value,0);
+        inputComponent.AimAxis = Vec2(value, inputComponent.AimAxis.y);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "mouse_rotateyaw", eAID_KeyboardMouse, EKeyId::eKI_MouseX);
@@ -112,7 +102,7 @@ void CPlayerInputComponent::RegisterInputs()
 
     m_pInputComponent->RegisterAction("player", "mouse_rotatepitch", [this](int activationMode, float value)
     {
-        inputComponent.AimAxis = Vec2( 0,value);
+        inputComponent.AimAxis = Vec2(inputComponent.AimAxis.x,value);
         SetInput();
     });
     m_pInputComponent->BindAction("player", "mouse_rotatepitch", eAID_KeyboardMouse, EKeyId::eKI_MouseY);

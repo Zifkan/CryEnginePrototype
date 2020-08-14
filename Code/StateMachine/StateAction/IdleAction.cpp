@@ -22,9 +22,9 @@ IAction::EStatus IdleAction::Update(float timePassed)
     if (!m_pMainCameraComponent) return m_eStatus;
 
 
-    m_pAnimationComponent->SetTagWithId(m_rotateTagId, m_pMainCameraComponent->IsCameraFocus());
+//    m_pAnimationComponent->SetTagWithId(m_rotateTagId, m_pMainCameraComponent->IsCameraFocus());
 
-    if ( m_pMainCameraComponent->IsCameraFocus())
+   // if ( m_pMainCameraComponent->IsCameraFocus())
     {      
 
         if (timer <= 1)
@@ -43,7 +43,7 @@ IAction::EStatus IdleAction::Update(float timePassed)
         const auto lookDir = GetLookDirNormalized(m_pCharacterEntity->GetPos(), m_pMainCameraEntity->GetPos());
         m_pCharacterEntity->SetRotation(Quat::CreateSlerp(m_pCharacterEntity->GetRotation(), Quat::CreateRotationVDir(Vec3(lookDir.x, lookDir.y, 0)), timer));
     }
-    else
+ //   else
     {
         m_lastDirection = m_pCharacterEntity->GetForwardDir();
         timer = 0;

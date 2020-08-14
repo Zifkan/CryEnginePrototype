@@ -67,13 +67,13 @@ Vec3 MovementAction::GetLookDirNormalized(Vec3 target, Vec3 location)
 
 void MovementAction::SetRotation(Vec3 moveDirection)
 {
-    if (m_pMainCameraComponent->IsCameraFocus())
+  //  if (m_pMainCameraComponent->IsCameraFocus())
     {
         const auto lookDir = GetLookDirNormalized(m_pCharacterEntity->GetPos(), m_pMainCameraEntity->GetPos());
         m_pCharacterEntity->SetRotation(Quat::CreateRotationVDir(Vec3(lookDir.x, lookDir.y, 0)));
     }
 
-    if (m_moveDirection.GetLength2() > 0 && !m_pMainCameraComponent->IsCameraFocus())
+  //  if (m_moveDirection.GetLength2() > 0 && !m_pMainCameraComponent->IsCameraFocus())
     {
         m_pCharacterEntity->SetRotation(quaternion::CreateRotationVDir(moveDirection));
     }

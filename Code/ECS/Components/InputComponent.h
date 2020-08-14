@@ -13,7 +13,11 @@ struct CombatMapData
 
 struct InputComponent
 {
-    InputComponent(){}
+    InputComponent()
+    {
+        MovementAxis = ZERO;
+        AimAxis = ZERO;
+    }
 
     Vec2 MovementAxis;
     Vec2 AimAxis;

@@ -2,6 +2,8 @@
 
 #include "ECS/Components/PlayerComponents.h"
 
+
+
 void CameraSystem::OnCreate()
 {
     SystemRun->each([this](flecs::entity e, CameraComponent& camera)
@@ -12,9 +14,18 @@ void CameraSystem::OnCreate()
 
         if(playerComponent==nullptr || camera.CameraEntity == nullptr || input == nullptr) return;
 
-        const auto frameTime = e.delta_time();
+        const auto frameTime = GetDeltaTime();
 
-        Vec2 deltaRotation = input->AimAxis;
+        Vec2 vec2 = Vec2(CLAMP(input->AimAxis.x, -1, 1), CLAMP(input->AimAxis.y, -1, 1)) ;
+
+
+        if (crymath::abs(vec2.x) < 0.4f  &&  crymath::abs(vec2.y) > crymath::abs(vec2.x))
+            vec2 = Vec2(0, vec2.y);
+        if (crymath::abs(vec2.y) < 0.4f  &&  crymath::abs(vec2.x) > crymath::abs(vec2.y))
+            vec2 = Vec2(vec2.x, 0);
+
+        Vec2  deltaRotation = vec2;
+
         const auto heightOffset = camera.HeightOffset;
         const auto yMinLimit = camera.yMinLimit;
         const auto yMaxLimit = camera.yMaxLimit;
@@ -22,9 +33,6 @@ void CameraSystem::OnCreate()
         const auto xSpeed = camera.xSpeed;
         const auto ySpeed = camera.ySpeed;
         const auto currentRadius = camera.currentRadius;
-
-        float x = 0.0f;
-        float y = 0.0f;
 
         IEntity* m_pTargetEntity  = nullptr;
 

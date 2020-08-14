@@ -1,5 +1,8 @@
 #include "CameraSystem.h"
 
+#include <CryPhysics/physinterface.h>
+
+
 #include "ECS/Components/PlayerComponents.h"
 
 
@@ -37,6 +40,9 @@ void CameraSystem::OnCreate()
         IEntity* m_pTargetEntity  = nullptr;
 
         Quat rotation = ZERO;
+        float x = camera.x;
+        float y = camera.y;
+
         if (m_pTargetEntity)
         {
             Vec3 target = m_pTargetEntity->GetPos();
@@ -67,6 +73,10 @@ void CameraSystem::OnCreate()
             rotation = Quat::CreateRotationXYZ(Ang3(DEG2RAD(y), 0, DEG2RAD(x)));
         }       
 
+
+        camera.x = x;
+        camera.y = y;
+
         Vec3 negDistance = Vec3(0.0f, -currentRadius, 0);
         Vec3 position = rotation * negDistance + (playerComponent->pCryEntity->GetWorldPos() + Vec3(0, 0, heightOffset));
 
@@ -82,5 +92,38 @@ float CameraSystem::ClampAngle(float angle, float min, float max)
     if (angle > 360)
         angle -= 360;
     return CLAMP(angle, min, max);
+}
+
+void CameraCollisionSystem::OnCreate()
+{
+    SystemRun->each([this](flecs::entity e, CameraComponent& camera)
+    {
+        auto s = flecs::entity(*m_pWorld->DefaultWorld, flecs::Singleton);
+        const PlayerTag* playerComponent = s.get<PlayerTag>();
+     
+        if (playerComponent == nullptr || camera.CameraEntity == nullptr) return;
+
+        const auto frameTime = GetDeltaTime();
+        const auto heightOffset = camera.HeightOffset;
+
+        static IPhysicalEntity* pSkipEnts[10];
+        pSkipEnts[0] = playerComponent->pCryEntity->GetPhysics();
+        auto org = playerComponent->pCryEntity->GetWorldPos() + Vec3(0, 0, heightOffset);
+        ray_hit rayhit;
+        // Perform the ray cast.
+        int hits = gEnv->pPhysicalWorld->RayWorldIntersection(org, camera.CameraEntity->GetWorldPos() - org,
+            ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,
+            &rayhit, 1, pSkipEnts, 2);
+
+        if (hits)
+        {
+            camera.currentRadius -= frameTime;
+        }
+        else
+        {
+            if (camera.currentRadius < camera.radius)
+                camera.currentRadius += frameTime;
+        }
+    });
 }
 

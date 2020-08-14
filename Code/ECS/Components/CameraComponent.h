@@ -19,4 +19,7 @@ struct CameraComponent
     float yMinLimit = -90.0f;
     float yMaxLimit = 90.0f;
     float m_pitchLimit = -35.f;
+
+    float x;
+    float y;
 };

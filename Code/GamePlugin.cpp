@@ -163,6 +163,8 @@ void CGamePlugin::RegisterSystem()
     systemsLauncher = new SystemLauncher(world);
 
     systemsLauncher->RegisterSystem(new InputMoveProcessingSystem());
+
+    systemsLauncher->RegisterSystem(new  CameraCollisionSystem());
     systemsLauncher->RegisterSystem(new  CameraSystem());
 }
 

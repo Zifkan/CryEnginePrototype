@@ -32,29 +32,6 @@ void CCameraController::Initialize()
     currentRadius = radius;
 }
 
-void CCameraController::CollisionDetection(float frameTime)
-{
-
-    // Skip the target actor for this.
-    ray_hit rayhit;
-    static IPhysicalEntity* pSkipEnts[10];
-    pSkipEnts[0] = m_pPlayerEntity->GetPhysics();
-    auto org = m_pPlayerEntity->GetWorldPos() + Vec3(0, 0, heightOffset);
-    // Perform the ray cast.
-    int hits = gEnv->pPhysicalWorld->RayWorldIntersection(org,  m_pEntity->GetWorldPos()-org,
-        ent_static | ent_sleeping_rigid | ent_rigid | ent_independent | ent_terrain, rwi_stop_at_pierceable | rwi_colltype_any,
-        &rayhit, 1, pSkipEnts, 2);
-
-    if (hits)
-    {
-        currentRadius -= frameTime;
-    }
-    else
-    {
-        if (currentRadius<radius)
-            currentRadius += frameTime;
-    }
-}
 void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
 {
     dstManager.SetComponentData<CameraComponent>(entity,

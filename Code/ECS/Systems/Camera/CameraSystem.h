@@ -8,7 +8,12 @@ public:
 
     float ClampAngle(float angle, float min, float max);
 
-private:
-    float x;
-    float y;
+};
+
+
+class CameraCollisionSystem final : public SystemBase<CameraComponent>
+{
+public:
+    void OnCreate() override;
+
 };

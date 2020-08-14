@@ -41,19 +41,14 @@ public:
     }
 
 
-
     void Convert(flecs::entity entity, CEntityManager dstManager) override;
 
     virtual Cry::Entity::EventFlags GetEventMask() const;
     virtual void ProcessEvent(const SEntityEvent& event);
 
-protected:
-
-    void CollisionDetection(float frameTime);
+protected:  
 
     Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;   
-    IEntity* m_pPlayerEntity = nullptr;
-    IEntity* m_pTargetEntity = nullptr;
 
     Vec2 m_deltaRotation = ZERO;
 

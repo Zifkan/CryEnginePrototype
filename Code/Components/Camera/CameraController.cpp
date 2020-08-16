@@ -5,6 +5,10 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include <CryCore/StaticInstanceList.h>
 #include <CryPhysics/physinterface.h>
+
+
+#include "Components/TransformComponents.h"
+#include "Core/CryEcsWorld.h"
 #include "ECS/Components/CameraComponent.h"
 
 
@@ -30,17 +34,20 @@ void CCameraController::Initialize()
     SetName("GameCamera");
 
     currentRadius = radius;
+    entityName = "Camera";
+
 }
 
 void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
 {
-    dstManager.SetComponentData<CameraComponent>(entity,
+    
+     dstManager.SetComponentData<CameraComponent>(entity,
     {
             m_pEntity,heightOffset, focusHeightOffset,x,y,radius, currentRadius,xSpeed,ySpeed, yMinLimit,yMaxLimit,m_pitchLimit
          });
 
-   
-
+     dstManager.SetComponentData<LocalToWorld>(entity,{ZERO});
+    
 }
 
 Cry::Entity::EventFlags CCameraController::GetEventMask() const
@@ -50,5 +57,5 @@ Cry::Entity::EventFlags CCameraController::GetEventMask() const
 
 void CCameraController::ProcessEvent(const SEntityEvent& event)
 {
-    CConvertToEntity::ProcessEvent(event);
+     CConvertToEntity::ProcessEvent(event);    
 }

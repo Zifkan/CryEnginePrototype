@@ -3,7 +3,7 @@
 #include <CryPhysics/physinterface.h>
 
 
-#include "ECS/Components/PlayerComponents.h"
+#include "ECS/Components/CharacterComponents.h"
 
 
 

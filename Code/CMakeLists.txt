@@ -36,8 +36,9 @@ add_sources("ECS_Components_uber.cpp"
     PROJECTS Game
     SOURCE_GROUP "ECS\\\\Components"
 		"ECS/Components/InputComponent.h"
-		"ECS/Components/PlayerComponents.h"
+		"ECS/Components/CharacterComponents.h"
 		"ECS/Components/CameraComponent.h"
+		"ECS/Components/MovementComponents.h"
 )
 
 add_sources("ECS_Systems_uber.cpp"
@@ -53,6 +54,15 @@ add_sources("ECS_Systems_uber.cpp"
 	SOURCE_GROUP "ECS\\\\Systems\\\\Transform"	
 		"ECS/Systems/Transform/TransformSystem.cpp"
 		"ECS/Systems/Transform/TransformSystem.h"
+		SOURCE_GROUP "ECS\\\\Systems\\\\Movement"	
+		"ECS/Systems/Movement/MovementVelocitySystem.cpp"
+		"ECS/Systems/Movement/MovementVelocitySystem.h"
+		"ECS/Systems/Movement/RotationSystem.cpp"
+		"ECS/Systems/Movement/RotationSystem.h"
+		"ECS/Systems/Movement/MovementCharacterSystem.cpp"
+		"ECS/Systems/Movement/MovementCharacterSystem.h"
+		"ECS/Systems/Movement/PlayerViewDirectionSystem.cpp"
+		"ECS/Systems/Movement/PlayerViewDirectionSystem.h"
 )
 
 add_sources("Camera_uber.cpp"

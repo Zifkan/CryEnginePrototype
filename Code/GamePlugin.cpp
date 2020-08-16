@@ -16,9 +16,12 @@
 #include "CryECSPlugin.h"
 #include "Components/Camera/CameraController.h"
 #include "Components/Characters/PlayerComponent.h"
-#include "ECS/Components/PlayerComponents.h"
 #include "ECS/Systems/Camera/CameraSystem.h"
 #include "ECS/Systems/Input/InputMoveProcessingSystem.h"
+#include "ECS/Systems/Movement/MovementCharacterSystem.h"
+#include "ECS/Systems/Movement/MovementVelocitySystem.h"
+#include "ECS/Systems/Movement/PlayerViewDirectionSystem.h"
+#include "ECS/Systems/Movement/RotationSystem.h"
 
 CGamePlugin::~CGamePlugin()
 {
@@ -110,6 +113,15 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         flecs::component<CameraComponent>(*w, "CameraComponent");
         flecs::component<PlayerTag>(*w, "PlayerTag");
 
+        flecs::component<Velocity>(*w, "Velocity");
+        flecs::component<CharacterComponent>(*w, "CharacterComponent");
+        flecs::component<MoveDirectionData>(*w, "MoveDirectionData");
+        flecs::component<MovementSpeed>(*w, "MovementSpeed");
+        flecs::component<Rotation>(*w, "Rotation");
+        flecs::component<ViewDirectionData>(*w, "ViewDirectionData");
+
+        
+
         RegisterSystem();
         EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
 
@@ -166,6 +178,12 @@ void CGamePlugin::RegisterSystem()
 
     systemsLauncher->RegisterSystem(new  CameraCollisionSystem());
     systemsLauncher->RegisterSystem(new  CameraSystem());
+    systemsLauncher->RegisterSystem(new  PlayerViewDirectionSystem());
+
+    systemsLauncher->RegisterSystem(new  MovementVelocitySystem());
+    systemsLauncher->RegisterSystem(new  RotationSystem());
+
+    systemsLauncher->RegisterSystem(new  MovementCharacterSystem());
 }
 
 void CGamePlugin::MainUpdate(float frameTime)

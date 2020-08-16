@@ -10,7 +10,8 @@ public:
     {
         desc.SetGUID("{15038638-6AEB-4F52-AEB5-80658F82B92F}"_cry_guid);
         desc.SetEditorCategory("ECS");
-        desc.SetLabel("Convert To Entity");
+        desc.SetLabel("Convert To Entity");  
+
     }
 
     Cry::Entity::EventFlags GetEventMask() const override;
@@ -18,5 +19,6 @@ public:
     void ProcessEvent(const SEntityEvent& event) override;
 
     void Convert(flecs::entity entity, CEntityManager dstManager) override {};   
-   
+protected:
+    const char*  entityName = nullptr;
 };

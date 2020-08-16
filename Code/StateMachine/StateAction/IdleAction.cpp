@@ -20,11 +20,11 @@ IdleAction::IdleAction(IEntity* characterEntity,
 IAction::EStatus IdleAction::Update(float timePassed)
 {
     if (!m_pMainCameraComponent) return m_eStatus;
+/*
 
+   m_pAnimationComponent->SetTagWithId(m_rotateTagId, m_pMainCameraComponent->IsCameraFocus());
 
-//    m_pAnimationComponent->SetTagWithId(m_rotateTagId, m_pMainCameraComponent->IsCameraFocus());
-
-   // if ( m_pMainCameraComponent->IsCameraFocus())
+    if ( m_pMainCameraComponent->IsCameraFocus())
     {      
 
         if (timer <= 1)
@@ -33,7 +33,7 @@ IAction::EStatus IdleAction::Update(float timePassed)
             timer += timePassed;
            // auto angle = (viewAngles.z);
            // CryLog("x = %g y = %g z = %g", viewAngles.x, viewAngles.y,viewAngles.z);
-            CryLog("Angle: %f", viewAngle.z);
+         
          // CryLog("Angle: %f",  angle);
             m_pAnimationComponent->SetMotionParameter(eMotionParamID_TurnAngle, viewAngle.z);
         }
@@ -52,7 +52,7 @@ IAction::EStatus IdleAction::Update(float timePassed)
 
     if (m_rootScope->IsDifferent(m_fragmentID, m_fragTags))
         SetFragment(m_fragmentID, m_fragTags);
-
+        */
     return m_eStatus;;
 }
 

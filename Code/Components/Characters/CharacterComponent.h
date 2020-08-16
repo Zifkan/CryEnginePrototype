@@ -65,7 +65,7 @@ protected:
 
     void InitWeaponSystem();
 
-    bool IsDead;
+ 
 
     uint32 m_currentStatus;
 };

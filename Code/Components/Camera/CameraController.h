@@ -35,8 +35,7 @@ public:
         desc.AddMember(&CCameraController::heightOffset,'heig', "Height", "Height", "Camera height offset", 3.0f);
         desc.AddMember(&CCameraController::focusHeightOffset, 'fhei', "FocusHeight", "Focus Height", "Focus Camera height offset", 3.0f);
         desc.AddMember(&CCameraController::m_pitchLimit, 'plim', "PitchLimit", "Focus Pitch Limit", "Focus Pitch Limit", -35.f);
-
-
+       
         desc.SetComponentFlags({ EFlags::Singleton});
     }
 

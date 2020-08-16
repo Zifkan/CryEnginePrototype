@@ -13,8 +13,11 @@
 #include "StateMachine/StateAction/PushBackAction.h"
 #include <CryCore/StaticInstanceList.h>
 
+
+#include "Components/TransformComponents.h"
 #include "Core/CryEcsWorld.h"
-#include "ECS/Components/PlayerComponents.h"
+#include "ECS/Components/CharacterComponents.h"
+#include "ECS/Components/MovementComponents.h"
 
 
 static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -83,6 +86,13 @@ void CPlayerComponent::StartGame()
     auto e = CryEcsWorld::instance()->EntityManager->CreateEntity(flecs::Singleton);
 
     CryEcsWorld::instance()->EntityManager->SetComponentData<PlayerTag>(e, { m_pEntity });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<Velocity>(e, { ZERO });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<CharacterComponent>(e, { m_pCharacterController });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<MovementSpeed>(e, { 20.f });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<MoveDirectionData>(e, { ZERO });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<ViewDirectionData>(e, {ZERO});
+    CryEcsWorld::instance()->EntityManager->SetComponentData<Rotation>(e, { ZERO });
+    
 
     m_pMainCamera = gEnv->pEntitySystem->FindEntityByName("GameCamera");
     CRY_ASSERT(m_pMainCamera != nullptr);
@@ -102,14 +112,8 @@ void CPlayerComponent::GameUpdate(float fFrameTime)
 {
     CCharacterComponent::GameUpdate(fFrameTime);
 
-    if (IsDead)
-    {
-   //     m_pAnimationComponent->SetTag("Dying", true);
-    }
-    else
-    {
-        m_stateMachine->SetCurrentState(typeid(IdleAction));
-    }
+       
+    m_stateMachine->SetCurrentState(typeid(IdleAction));
 }
 
 void CPlayerComponent::PropertyChanged()

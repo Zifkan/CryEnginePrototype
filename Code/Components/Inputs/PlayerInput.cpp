@@ -10,7 +10,6 @@
 
 #include "Core/CryEcsWorld.h"
 #include "ECS/Components/InputComponent.h"
-#include "ECS/Components/PlayerComponents.h"
 
 
 static void RegisterCPlayerInputComponent(Schematyc::IEnvRegistrar& registrar)

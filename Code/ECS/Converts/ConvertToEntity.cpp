@@ -28,9 +28,9 @@ void CConvertToEntity::ProcessEvent(const SEntityEvent& event)
     switch (event.event)
     {
     case ENTITY_EVENT_START_GAME:
-    {
+    {    
         auto* world = CryEcsWorld::instance(); 
-        auto e = world->EntityManager->CreateEntity();
+        auto e = world->EntityManager->CreateEntity(entityName);
         Convert(e, *world->EntityManager);
     }
     break;

@@ -14,14 +14,19 @@
 #include <CryCore/Platform/platform_impl.inl>
 
 #include "CryECSPlugin.h"
+#include "Components/CryEntityComponent.h"
 #include "Components/Camera/CameraController.h"
 #include "Components/Characters/PlayerComponent.h"
+#include "Core/SimpleModule.h"
 #include "ECS/Systems/Camera/CameraSystem.h"
 #include "ECS/Systems/Input/InputMoveProcessingSystem.h"
 #include "ECS/Systems/Movement/MovementCharacterSystem.h"
 #include "ECS/Systems/Movement/MovementVelocitySystem.h"
 #include "ECS/Systems/Movement/PlayerViewDirectionSystem.h"
 #include "ECS/Systems/Movement/RotationSystem.h"
+#include "Systems/Transforms/TransformSystemLaunch.h"
+
+
 
 CGamePlugin::~CGamePlugin()
 {
@@ -108,21 +113,23 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         pEcsPlugin->World = new CryEcsWorld();
 
         world = CryEcsWorld::instance();
-        auto w = world->DefaultWorld;
-        flecs::component<InputComponent>(*w, "InputComponent");
-        flecs::component<CameraComponent>(*w, "CameraComponent");
-        flecs::component<PlayerTag>(*w, "PlayerTag");
+        auto em = world->EntityManager;
 
-        flecs::component<Velocity>(*w, "Velocity");
-        flecs::component<CharacterComponent>(*w, "CharacterComponent");
-        flecs::component<MoveDirectionData>(*w, "MoveDirectionData");
-        flecs::component<MovementSpeed>(*w, "MovementSpeed");
-        flecs::component<Rotation>(*w, "Rotation");
-        flecs::component<ViewDirectionData>(*w, "ViewDirectionData");
+       
 
-        
+        em->RegisterComponent<InputComponent>("InputComponent");
+        em->RegisterComponent<CameraComponent>("CameraComponent");
+        em->RegisterComponent<PlayerTag>("PlayerTag");
+        em->RegisterComponent<Velocity>("Velocity");
+        em->RegisterComponent<CharacterComponent>("CharacterComponent");
+        em->RegisterComponent<MoveDirectionData>("MoveDirectionData");
+        em->RegisterComponent<MovementSpeed>("MovementSpeed");
+        em->RegisterComponent<Rotation>("Rotation");
 
-        RegisterSystem();
+        flecs::import<SimpleModule>(*world->DefaultWorld);
+
+        pEcsPlugin->RegisterComponents();
+       
         EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
 
     }
@@ -181,18 +188,15 @@ void CGamePlugin::RegisterSystem()
     systemsLauncher->RegisterSystem(new  PlayerViewDirectionSystem());
 
     systemsLauncher->RegisterSystem(new  MovementVelocitySystem());
-    systemsLauncher->RegisterSystem(new  RotationSystem());
+    systemsLauncher->RegisterSystem(new  CharacterRotationSystem());
 
     systemsLauncher->RegisterSystem(new  MovementCharacterSystem());
+
 }
 
 void CGamePlugin::MainUpdate(float frameTime)
-{
-    pEcsPlugin->UpdateTransformSystemGroup(frameTime);
-
-
-    systemsLauncher->Update(frameTime);
-   
+{     
+     systemsLauncher->Update(frameTime);   
 }
 
 

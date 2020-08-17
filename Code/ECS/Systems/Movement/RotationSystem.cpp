@@ -1,6 +1,6 @@
 #include "RotationSystem.h"
 
-void RotationSystem::OnCreate()
+void CharacterRotationSystem::OnCreate()
 {
     SystemRun->each([this](flecs::entity e, Rotation& rotation, ViewDirectionData& viewDir)
     {

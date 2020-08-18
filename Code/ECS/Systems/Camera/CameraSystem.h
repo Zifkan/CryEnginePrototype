@@ -1,7 +1,8 @@
 #pragma once
 #include "ECS/Components/CameraComponent.h"
+#include "Components/TransformComponents.h"
 
-class CameraSystem final : public SystemBase<CameraComponent>
+class CameraSystem final : public SystemBase<CameraComponent, Rotation , Translation>
 {
 public:
     void OnCreate() override;

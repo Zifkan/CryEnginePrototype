@@ -5,7 +5,7 @@
 #include "ECS/Components/MovementComponents.h"
 #include "Systems/SystemBase.h"
 
-class MovementCharacterSystem final : public SystemBase<Velocity, CharacterComponent, Rotation>
+class MovementCharacterSystem final : public SystemBase<MovementVelocity, CharacterComponent, Rotation>
 {
 public:
     void OnCreate() override;

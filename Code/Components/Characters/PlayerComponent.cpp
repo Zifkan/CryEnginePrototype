@@ -86,7 +86,7 @@ void CPlayerComponent::StartGame()
     auto e = CryEcsWorld::instance()->EntityManager->CreateEntity(flecs::Singleton);
 
     CryEcsWorld::instance()->EntityManager->SetComponentData<PlayerTag>(e, { m_pEntity });
-    CryEcsWorld::instance()->EntityManager->SetComponentData<Velocity>(e, { ZERO });
+    CryEcsWorld::instance()->EntityManager->SetComponentData<MovementVelocity>(e, { ZERO });
     CryEcsWorld::instance()->EntityManager->SetComponentData<CharacterComponent>(e, { m_pCharacterController });
     CryEcsWorld::instance()->EntityManager->SetComponentData<MovementSpeed>(e, { 20.f });
     CryEcsWorld::instance()->EntityManager->SetComponentData<MoveDirectionData>(e, { ZERO });

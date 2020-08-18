@@ -18,7 +18,7 @@ struct ViewDirectionData
     Vec3 Axises;
 };
 
-struct Velocity
+struct MovementVelocity
 {
     Vec3 Value;
 };

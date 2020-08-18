@@ -5,8 +5,8 @@
 #include <CrySchematyc/Env/Elements/EnvFunction.h>
 #include <CryCore/StaticInstanceList.h>
 #include <CryPhysics/physinterface.h>
-
-
+#include "Components/CopyTransformFromCryEntity.h"
+#include "Components/CryEntityComponent.h"
 #include "Components/TransformComponents.h"
 #include "Core/CryEcsWorld.h"
 #include "ECS/Components/CameraComponent.h"
@@ -47,7 +47,10 @@ void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
          });
 
      dstManager.SetComponentData<LocalToWorld>(entity,{ZERO});
-    
+     dstManager.SetComponentData<CopyTransformFromCryEntity>(entity, {});
+     dstManager.SetComponentData<CryEntityComponent>(entity, {m_pEntity});
+     dstManager.SetComponentData<Rotation>(entity, { ZERO });    
+     dstManager.SetComponentData<Translation>(entity, { ZERO });    
 }
 
 Cry::Entity::EventFlags CCameraController::GetEventMask() const

@@ -58,11 +58,15 @@ private:
 
     SystemLauncher* systemsLauncher;  
 
+
+    SystemLauncher* transformLauncher;
+
     CryECSPlugin* pEcsPlugin;
 
     void InitGameCamera();
 
     void RegisterSystem();
+    void RegisterTransformSystems();
 
 public:
     virtual void MainUpdate(float frameTime);

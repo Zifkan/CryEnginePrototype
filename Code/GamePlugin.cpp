@@ -24,7 +24,6 @@
 #include "ECS/Systems/Movement/MovementVelocitySystem.h"
 #include "ECS/Systems/Movement/PlayerViewDirectionSystem.h"
 #include "ECS/Systems/Movement/RotationSystem.h"
-#include "Systems/Transforms/TransformSystemLaunch.h"
 
 
 
@@ -110,6 +109,9 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
         pEcsPlugin = gEnv->pSystem->GetIPluginManager()->QueryPlugin<CryECSPlugin>();
 
+
+
+
         pEcsPlugin->World = new CryEcsWorld();
 
         world = CryEcsWorld::instance();
@@ -120,16 +122,22 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         em->RegisterComponent<InputComponent>("InputComponent");
         em->RegisterComponent<CameraComponent>("CameraComponent");
         em->RegisterComponent<PlayerTag>("PlayerTag");
-        em->RegisterComponent<Velocity>("Velocity");
+        em->RegisterComponent<MovementVelocity>("MovementVelocity");
         em->RegisterComponent<CharacterComponent>("CharacterComponent");
         em->RegisterComponent<MoveDirectionData>("MoveDirectionData");
         em->RegisterComponent<MovementSpeed>("MovementSpeed");
+
+
+        em->RegisterComponent<WorldToLocal>("WorldToLocal");
+        em->RegisterComponent<Translation>("Translation");
+        em->RegisterComponent<CopyTransformToGameObject>("CopyTransformToGameObject");
         em->RegisterComponent<Rotation>("Rotation");
+        em->RegisterComponent<CryEntityComponent>("CryEntityComponent");
 
-        flecs::import<SimpleModule>(*world->DefaultWorld);
+     
+        RegisterTransformSystems();
+        RegisterSystem();
 
-        pEcsPlugin->RegisterComponents();
-       
         EnableUpdate(IEnginePlugin::EUpdateStep::MainUpdate, true);
 
     }
@@ -181,12 +189,12 @@ void CGamePlugin::RegisterSystem()
 {
     systemsLauncher = new SystemLauncher(world);
 
-    systemsLauncher->RegisterSystem(new InputMoveProcessingSystem());
+   
 
     systemsLauncher->RegisterSystem(new  CameraCollisionSystem());
     systemsLauncher->RegisterSystem(new  CameraSystem());
     systemsLauncher->RegisterSystem(new  PlayerViewDirectionSystem());
-
+    systemsLauncher->RegisterSystem(new  InputMoveProcessingSystem());
     systemsLauncher->RegisterSystem(new  MovementVelocitySystem());
     systemsLauncher->RegisterSystem(new  CharacterRotationSystem());
 
@@ -194,9 +202,24 @@ void CGamePlugin::RegisterSystem()
 
 }
 
+void CGamePlugin::RegisterTransformSystems()
+{
+    transformLauncher = new SystemLauncher(world);
+
+
+     transformLauncher->RegisterSystem(new CopyTransformFromCryEntitySystem());
+     transformLauncher->RegisterSystem(new TRSToLocalToWorldSystem());
+     transformLauncher->RegisterSystem(new WorldToLocalSystem());
+     transformLauncher->RegisterSystem(new CopyTransformToCryEntitySystem());
+}
+
+
 void CGamePlugin::MainUpdate(float frameTime)
-{     
-     systemsLauncher->Update(frameTime);   
+{
+
+    gEnv->pSystem->GetIPluginManager()->QueryPlugin<CryECSPlugin>()->UpdateTransformSystemGroup(frameTime);
+    transformLauncher->Update(frameTime);
+    systemsLauncher->Update(frameTime);
 }
 
 

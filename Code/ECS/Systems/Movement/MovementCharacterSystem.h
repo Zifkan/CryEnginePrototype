@@ -9,4 +9,6 @@ class MovementCharacterSystem final : public SystemBase<MovementVelocity, Charac
 {
 public:
     void OnCreate() override;
+
+    Quat lastRot;
 };

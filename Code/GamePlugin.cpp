@@ -20,10 +20,10 @@
 #include "Core/SimpleModule.h"
 #include "ECS/Systems/Camera/CameraSystem.h"
 #include "ECS/Systems/Input/InputMoveProcessingSystem.h"
+#include "ECS/Systems/Movement/CharacterRotationSystem.h"
 #include "ECS/Systems/Movement/MovementCharacterSystem.h"
 #include "ECS/Systems/Movement/MovementVelocitySystem.h"
 #include "ECS/Systems/Movement/PlayerViewDirectionSystem.h"
-#include "ECS/Systems/Movement/RotationSystem.h"
 
 
 
@@ -131,6 +131,7 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
         em->RegisterComponent<WorldToLocal>("WorldToLocal");
         em->RegisterComponent<Translation>("Translation");
         em->RegisterComponent<CopyTransformToGameObject>("CopyTransformToGameObject");
+        em->RegisterComponent<Scale>("Scale");
         em->RegisterComponent<Rotation>("Rotation");
         em->RegisterComponent<CryEntityComponent>("CryEntityComponent");
 

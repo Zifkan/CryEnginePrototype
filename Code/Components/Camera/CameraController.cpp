@@ -33,7 +33,7 @@ void CCameraController::Initialize()
  
     SetName("GameCamera");
 
-    currentRadius = radius;
+    currentRadius = radius; 
     entityName = "Camera";
 
 }
@@ -50,7 +50,9 @@ void CCameraController::Convert(flecs::entity entity, CEntityManager dstManager)
      dstManager.SetComponentData<CopyTransformFromCryEntity>(entity, {});
      dstManager.SetComponentData<CryEntityComponent>(entity, {m_pEntity});
      dstManager.SetComponentData<Rotation>(entity, { ZERO });    
-     dstManager.SetComponentData<Translation>(entity, { ZERO });    
+     dstManager.SetComponentData<Translation>(entity, { ZERO });
+     dstManager.SetComponentData<WorldToLocal>(entity, { ZERO });
+     
 }
 
 Cry::Entity::EventFlags CCameraController::GetEventMask() const
